@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>KDT OS Mastery</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-<main class="app-shell">
+<main class="app-shell mastery-page">
     {% include '_nav.html' %}
 
-    <section class="content-panel">
+    <section class="content-panel mastery-content">
         <section class="hero mastery-hero">
             <p class="eyebrow">KDT OS Intelligence Layer</p>
             <h1>Mastery Map</h1>
@@ -22,7 +23,7 @@
         {% set mastery = data.get('mastery', {}) %}
         {% set totals = mastery.get('totals', {}) %}
 
-        <section class="grid four">
+        <section class="grid four mastery-metrics">
             <div class="metric">
                 <strong>{{ totals.get('skills', 0) }}</strong>
                 <span>Tracked Skills</span>
@@ -41,17 +42,22 @@
             </div>
         </section>
 
-        <section class="card accent">
-            <h2>Today's Best Moves</h2>
-            <p class="muted">
-                These are selected from quest quality, mastery gaps, project memory,
-                and your learning style.
-            </p>
+        <section class="card accent mastery-section">
+            <div class="section-heading-row">
+                <div>
+                    <p class="eyebrow">Focus</p>
+                    <h2>Today's Best Moves</h2>
+                    <p class="muted">
+                        These are selected from quest quality, mastery gaps, project memory,
+                        and your learning style.
+                    </p>
+                </div>
+            </div>
 
             {% if data.get('moves') %}
-                <div class="reports">
+                <div class="reports mastery-move-grid">
                     {% for move in data.get('moves', []) %}
-                        <div class="report-card">
+                        <div class="report-card mastery-move-card">
                             <small>Priority {{ move.get('priority') }} · {{ move.get('type') }}</small>
                             <strong>{{ move.get('title') }}</strong>
                             <p>{{ move.get('why') }}</p>
@@ -65,10 +71,11 @@
             {% endif %}
         </section>
 
-        <section class="card">
+        <section class="card mastery-section">
+            <p class="eyebrow">Skills</p>
             <h2>Concept Mastery</h2>
             <p class="muted">
-                A skill is not truly mastered until its smaller concepts are proven.
+                A skill is not truly mastered until its smaller concepts are proven with real quest evidence.
             </p>
 
             {% if mastery.get('skills') %}
@@ -106,10 +113,11 @@
             {% endif %}
         </section>
 
-        <section class="grid two">
-            <div class="card">
+        <section class="grid two mastery-bottom-grid">
+            <div class="card mastery-section">
+                <p class="eyebrow">You</p>
                 <h2>Adaptive Profile</h2>
-                <p class="muted">How KDT OS should shape guidance for you.</p>
+                <p class="muted">How KDT OS should shape guidance for your learning style.</p>
 
                 {% set adaptive = data.get('adaptive', {}) %}
 
@@ -128,14 +136,15 @@
                 </ul>
             </div>
 
-            <div class="card">
+            <div class="card mastery-section">
+                <p class="eyebrow">Memory</p>
                 <h2>Project Memory</h2>
                 <p class="muted">KDT OS should treat projects as evolving entities.</p>
 
                 {% set projects = data.get('projects', {}).get('projects', []) %}
                 {% if projects %}
                     {% for project in projects[:6] %}
-                        <div class="mini">
+                        <div class="mini mastery-project-mini">
                             <strong>{{ project.get('name') }}</strong>
                             <p>
                                 Versions: {{ project.get('versions') }} ·
@@ -153,10 +162,11 @@
             </div>
         </section>
 
-        <section class="card">
+        <section class="card mastery-section">
+            <p class="eyebrow">Governance</p>
             <h2>Quest System Health</h2>
             {% set qs = data.get('quest_summary', {}) %}
-            <div class="grid four">
+            <div class="grid four mastery-metrics compact">
                 <div class="metric">
                     <strong>{{ qs.get('total', 0) }}</strong>
                     <span>Active Quests</span>
