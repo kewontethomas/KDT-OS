@@ -1,0 +1,16 @@
+{
+  "created_at": "2026-06-01T03:04:54",
+  "original_file": "python_function_practice_expense_totaler_20260601_030446.json",
+  "quest_title": "Python Function Practice: Expense Totaler",
+  "skill": "Python",
+  "original_score": 85,
+  "action": "Keep with warning",
+  "replacement_file": "python_function_practice_expense_totaler_20260601_030454.json",
+  "failure_reasons": [
+    {
+      "check": "Useful step-by-step guide",
+      "fix": "Give at least 8 exact steps that move from start to proof."
+    }
+  ],
+  "lesson_learned": "Future quests must include exact blocker, smallest action, steps, success criteria, proof, and return path before becoming active."
+}

@@ -1,12 +1,12 @@
 {
-  "created_at": "2026-06-01T01:34:06",
-  "source_project": "Teach Me Mode",
-  "origin_report": "",
-  "resume_project": "Teach Me Mode",
+  "created_at": "2026-06-01T02:37:33",
+  "source_project": "Project Analysis: FieldSeed",
+  "origin_report": "20260531_031935_FieldSeed.json",
+  "resume_project": "FieldSeed",
   "connected_goal": "",
-  "skill": "I don't understand what CPU usage means.",
-  "user_gap": "I don't know where to start.",
-  "quest_type": "Teach Me Quest",
+  "skill": "SQLite",
+  "user_gap": "KDT OS detected SQLite in this uploaded project and created a ready practice quest.",
+  "quest_type": "Auto Practice Quest",
   "difficulty": "Beginner",
   "estimated_time": "30-60 minutes",
   "ai_generated": false,
@@ -15,52 +15,74 @@
   "submissions": [],
   "status": "Superseded",
   "resume_rule": "After this quest is complete, return to the original project or goal that caused this quest unless you intentionally choose a different path.",
-  "title": "I don't understand what CPU usage means. Single Proof Quest",
-  "goal": "Create one visible proof that you can use I don't understand what CPU usage means. in a tiny controlled task.",
-  "what_to_build": "A folder named i_don_t_understand_what_cpu_usage_means_single_proof with one README.md and one artifact that proves I don't understand what CPU usage means. one time.",
+  "title": "SQLite CRUD Quest: Workout Database",
+  "type": "Practice Quest",
+  "goal": "Practice saving, reading, updating, and deleting records in SQLite.",
+  "what_to_build": "A small Python app that stores workouts with exercise name, sets, reps, and date.",
   "requirements": [
-    "Create folder i_don_t_understand_what_cpu_usage_means_single_proof",
-    "Create README.md",
-    "Create one visible artifact for I don't understand what CPU usage means.",
-    "Write exactly what you practiced",
-    "Write one thing still confusing"
+    "Create folder workout_database_crud",
+    "Create app.py",
+    "Create workouts.db",
+    "Create workouts table",
+    "Add menu options for Create, Read, Update, Delete",
+    "Add README.md with run steps"
   ],
   "success_criteria": [
-    "Folder exists",
-    "README.md exists",
-    "Artifact exists",
-    "Explanation is specific",
-    "Proof can be reviewed"
+    "CREATE TABLE exists",
+    "INSERT INTO exists",
+    "SELECT exists",
+    "UPDATE exists",
+    "DELETE exists"
   ],
   "steps": [
-    "Create folder i_don_t_understand_what_cpu_usage_means_single_proof",
-    "Create README.md",
-    "Create one small artifact showing I don't understand what CPU usage means.",
-    "Run/open/show the artifact",
-    "Write three bullet points in README.md: what I did, what worked, what confused me",
-    "Zip the folder",
-    "Upload it as proof"
+    "Create a folder named workout_database_crud",
+    "Create app.py",
+    "Import sqlite3",
+    "Create workouts table with id, exercise, sets, reps, date",
+    "Add a menu with choices 1 Add, 2 View, 3 Edit, 4 Delete, 5 Exit",
+    "Make each choice work",
+    "Create README.md with run instructions"
+  ],
+  "verification_patterns": [
+    "sqlite3",
+    "CREATE TABLE",
+    "INSERT INTO",
+    "SELECT",
+    "UPDATE",
+    "DELETE"
   ],
   "proof_required": [
     "Upload ZIP",
+    "Include app.py",
     "Include README.md",
-    "Include the artifact",
-    "Answer: what did this prove?"
+    "Include workouts.db if created",
+    "Answer: what is the difference between a row and a table?"
   ],
-  "verification_patterns": [],
-  "why_this_exists": "This replaces an older quest that looked too generic. KDT OS regenerated it using the skill (I don't understand what CPU usage means.), source (Teach Me Mode), and your need for exact, verifiable steps.",
+  "why_this_exists": "This replaces an older quest that looked too generic. KDT OS regenerated it using the skill (SQLite), source (Project Analysis: FieldSeed), and your need for exact, verifiable steps.",
   "teach_me_breakdown": [
     {
-      "label": "What is this skill?",
-      "answer": "I don't understand what CPU usage means. is a skill KDT OS can practice through small exact quests."
+      "label": "What is a database?",
+      "answer": "A database is a structured place where an app stores information so it can be used again later."
     },
     {
-      "label": "Why practice it?",
-      "answer": "Practicing it in a tiny project makes it easier to use later in a larger project."
+      "label": "What is a table?",
+      "answer": "A table is like one spreadsheet tab. It stores one type of thing, such as workouts, contacts, or skills."
+    },
+    {
+      "label": "What is a column?",
+      "answer": "A column is one field, like Name, Age, Exercise, Sets, or Reps."
+    },
+    {
+      "label": "What is a row?",
+      "answer": "A row is one saved item. One contact or one workout is one row."
+    },
+    {
+      "label": "What is CRUD?",
+      "answer": "CRUD means Create, Read, Update, Delete. It is the basic full cycle for stored data."
     }
   ],
   "quest_quality": {
-    "score": 96,
+    "score": 100,
     "rating": "10/10 Ready",
     "checks": [
       {
@@ -125,7 +147,7 @@
       },
       {
         "name": "Named output/result",
-        "ok": false,
+        "ok": true,
         "fix": "State what visible result, file, screen, or terminal output proves the work.",
         "weight": 4
       },
@@ -136,10 +158,10 @@
         "weight": 4
       }
     ],
-    "passed": 11,
+    "passed": 12,
     "total": 12,
     "penalties": [],
-    "specificity_score": 3,
+    "specificity_score": 4,
     "template_clone": false
   },
   "quest_standard": {
@@ -154,10 +176,10 @@
       "Return point"
     ]
   },
-  "regenerated_from": "Teach_Me_Mode_I_don_t_understand_what_CPU_usage_means__20260601_001213.json",
-  "version": 3,
+  "regenerated_from": "Project_Analysis_FieldSeed_SQLite_20260531_034204.json",
+  "version": 2,
   "governance_note": "Generated by Quest Governance v2 because the previous quest was weak, vague, cloned, or below the 85% quality standard.",
-  "archived_at": "2026-06-01T02:37:33",
-  "archive_reason": "Quest failed Quest Intelligence v2 review and was regenerated with a specific replacement.",
-  "superseded_by": "CPU_Usage_Task_Manager_Proof_Quest_20260601_023733.json"
+  "archived_at": "2026-06-01T03:04:23",
+  "archive_reason": "Quest failed V20 anti-duplicate/specificity review and was regenerated.",
+  "superseded_by": "sqlite_crud_quest_workout_database_20260601_030423.json"
 }

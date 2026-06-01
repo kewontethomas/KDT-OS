@@ -69,7 +69,7 @@
       "answer": "An endpoint is the URL you request, like /weather or /api/tasks."
     }
   ],
-  "status": "Assigned",
+  "status": "Superseded",
   "submissions": [],
   "resume_rule": "After this quest is complete, return to the original project or goal that caused this quest unless you intentionally choose a different path.",
   "quest_quality": {
@@ -131,5 +131,8 @@
       "Proof",
       "Return point"
     ]
-  }
+  },
+  "archived_at": "2026-06-01T03:05:09",
+  "archive_reason": "Quest failed V20 anti-duplicate/specificity review and was regenerated.",
+  "superseded_by": "api_weather_lookup_app_20260601_030509.json"
 }

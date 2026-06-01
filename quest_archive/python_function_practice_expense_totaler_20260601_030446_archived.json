@@ -1,0 +1,169 @@
+{
+  "created_at": "2026-06-01T03:04:46",
+  "source_project": "Project Analysis: FieldSeed",
+  "origin_report": "20260531_031935_FieldSeed.json",
+  "resume_project": "FieldSeed",
+  "connected_goal": "",
+  "skill": "Python",
+  "user_gap": "KDT OS detected Python in this uploaded project and created a ready practice quest.",
+  "quest_type": "Auto Practice Quest",
+  "title": "Python Function Practice: Expense Totaler",
+  "goal": "Practice functions, lists, return values, and terminal output with one complete mini app.",
+  "what_to_build": "A command-line app named app.py with calculate_total(expenses) and print_summary(expenses) using at least three expenses.",
+  "requirements": [
+    "Create folder python_expense_totaler",
+    "Create app.py",
+    "Create expenses list",
+    "Create calculate_total(expenses)",
+    "Create print_summary(expenses)",
+    "Use return",
+    "Create README.md"
+  ],
+  "steps": [
+    "Create folder python_expense_totaler",
+    "Create app.py",
+    "Create a list named expenses with three numbers",
+    "Define calculate_total(expenses)",
+    "Inside calculate_total, return sum(expenses)",
+    "Define print_summary(expenses)",
+    "Inside print_summary, call calculate_total and store it in total",
+    "Print each expense on its own line",
+    "Print Final total: followed by the total",
+    "Call print_summary(expenses) at the bottom",
+    "Run python app.py",
+    "Create README.md and answer: what does return send back?",
+    "Zip and submit the folder"
+  ],
+  "success_criteria": [
+    "app.py exists",
+    "calculate_total function exists",
+    "print_summary function exists",
+    "expenses list has at least three numbers",
+    "Final total prints correctly",
+    "README.md explains return"
+  ],
+  "proof_required": [
+    "Upload ZIP",
+    "Include app.py",
+    "Include README.md",
+    "Include screenshot or copied terminal output",
+    "Answer: what value did calculate_total return?"
+  ],
+  "verification_patterns": [
+    "def calculate_total",
+    "def print_summary",
+    "return",
+    "sum(",
+    "expenses"
+  ],
+  "difficulty": "Beginner",
+  "estimated_time": "25-45 minutes",
+  "ai_generated": false,
+  "ai_parse_mode": "quest_intelligence_v20_specific_template",
+  "ai_raw_response": "",
+  "teach_me_breakdown": [
+    {
+      "label": "What is this skill?",
+      "answer": "Python is a skill KDT OS can practice through small exact quests."
+    },
+    {
+      "label": "Why practice it?",
+      "answer": "Practicing it in a tiny project makes it easier to use later in a larger project."
+    }
+  ],
+  "status": "Superseded",
+  "submissions": [],
+  "why_this_exists": "Quest Intelligence V20 replaced or created this as a specific Python quest with exact steps, measurable proof, and a return path.",
+  "resume_rule": "After this quest is complete, submit proof, update skill evidence, then return to the project or goal that caused this quest.",
+  "quest_quality": {
+    "score": 85,
+    "rating": "Approved",
+    "checks": [
+      {
+        "name": "Specific skill normalized",
+        "ok": true,
+        "fix": "Normalize confusion text into a real skill name.",
+        "weight": 6
+      },
+      {
+        "name": "Exact artifact named",
+        "ok": true,
+        "fix": "Name exact files, screenshots, database, or proof artifact.",
+        "weight": 12
+      },
+      {
+        "name": "Skill-specific details",
+        "ok": true,
+        "fix": "Add technology-specific commands, fields, functions, UI IDs, or outputs.",
+        "weight": 18
+      },
+      {
+        "name": "No generic template language",
+        "ok": true,
+        "fix": "Remove generic language that could fit any skill.",
+        "weight": 18
+      },
+      {
+        "name": "Useful step-by-step guide",
+        "ok": false,
+        "fix": "Give at least 8 exact steps that move from start to proof.",
+        "weight": 16
+      },
+      {
+        "name": "Required features are concrete",
+        "ok": true,
+        "fix": "List concrete files, fields, buttons, functions, or actions.",
+        "weight": 8
+      },
+      {
+        "name": "Measurable success criteria",
+        "ok": true,
+        "fix": "Success criteria must prove the quest worked.",
+        "weight": 10
+      },
+      {
+        "name": "Proof is specific",
+        "ok": true,
+        "fix": "Proof must name exactly what to upload and answer.",
+        "weight": 8
+      },
+      {
+        "name": "Understanding check included",
+        "ok": true,
+        "fix": "Require an explanation so proof is not blind copying.",
+        "weight": 4
+      },
+      {
+        "name": "Not semantically duplicated",
+        "ok": true,
+        "fix": "Archive or regenerate duplicate active quests.",
+        "weight": 14
+      }
+    ],
+    "passed": 9,
+    "total": 10,
+    "penalties": [],
+    "specificity_score": 5,
+    "generic_hits": 0,
+    "template_clone": false,
+    "duplicate_note": ""
+  },
+  "quest_standard": {
+    "rule": "Every KDT OS quest must be specific, non-duplicated, beginner-safe, step-by-step useful, measurable, and proof-backed.",
+    "minimum_fields": [
+      "Specific skill",
+      "Exact artifact",
+      "Useful steps",
+      "Success criteria",
+      "Proof",
+      "Understanding check",
+      "Return point"
+    ]
+  },
+  "regenerated_from": "Python_Function_Practice_Expense_Totaler_20260601_013510.json",
+  "version": 3,
+  "governance_note": "Generated by Quest Intelligence V20 because the previous quest was duplicated, generic, or not step-by-step useful enough.",
+  "archived_at": "2026-06-01T03:04:54",
+  "archive_reason": "Quest failed V20 anti-duplicate/specificity review and was regenerated.",
+  "superseded_by": "python_function_practice_expense_totaler_20260601_030454.json"
+}

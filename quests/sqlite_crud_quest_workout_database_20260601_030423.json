@@ -1,0 +1,182 @@
+{
+  "created_at": "2026-06-01T03:04:23",
+  "source_project": "Project Analysis: FieldSeed",
+  "origin_report": "20260531_031935_FieldSeed.json",
+  "resume_project": "FieldSeed",
+  "connected_goal": "",
+  "skill": "SQLite",
+  "user_gap": "KDT OS detected SQLite in this uploaded project and created a ready practice quest.",
+  "quest_type": "Auto Practice Quest",
+  "title": "SQLite CRUD Quest: Workout Database",
+  "goal": "Build a real SQLite CRUD app so database practice creates lasting proof.",
+  "what_to_build": "A command-line Python app named app.py that creates workouts.db, saves workouts, lists them, updates one, and deletes one.",
+  "requirements": [
+    "Create folder workout_database_crud",
+    "Create app.py",
+    "Import sqlite3",
+    "Create workouts.db",
+    "Create workouts table with id, exercise, sets, reps, date",
+    "Add menu options: Add, List, Update, Delete, Exit",
+    "Create README.md"
+  ],
+  "steps": [
+    "Create a folder named workout_database_crud",
+    "Create a file named app.py",
+    "At the top import sqlite3",
+    "Connect to workouts.db",
+    "Create a workouts table with id INTEGER PRIMARY KEY, exercise TEXT, sets INTEGER, reps INTEGER, date TEXT",
+    "Write add_workout() that inserts one workout",
+    "Write list_workouts() that selects and prints all rows",
+    "Write update_workout() that updates sets or reps by id",
+    "Write delete_workout() that deletes by id",
+    "Create a while loop menu with choices 1 Add, 2 List, 3 Update, 4 Delete, 5 Exit",
+    "Run python app.py and add at least two workouts",
+    "Close and rerun the app to prove saved rows still exist",
+    "Create README.md with the run command and one sentence explaining what a row is",
+    "Zip and submit the folder"
+  ],
+  "success_criteria": [
+    "app.py exists",
+    "workouts.db is created after running",
+    "CREATE TABLE is used",
+    "INSERT, SELECT, UPDATE, and DELETE are used",
+    "At least two workouts can be listed after restart",
+    "README.md explains row vs table"
+  ],
+  "proof_required": [
+    "Upload ZIP",
+    "Include app.py",
+    "Include README.md",
+    "Include workouts.db if it was created",
+    "Include screenshot or copied terminal output showing rows listed after restart",
+    "Answer: what is the difference between a table and a row?"
+  ],
+  "verification_patterns": [
+    "sqlite3",
+    "CREATE TABLE",
+    "INSERT",
+    "SELECT",
+    "UPDATE",
+    "DELETE",
+    "workouts.db"
+  ],
+  "difficulty": "Beginner",
+  "estimated_time": "45-75 minutes",
+  "ai_generated": false,
+  "ai_parse_mode": "quest_intelligence_v20_specific_template",
+  "ai_raw_response": "",
+  "teach_me_breakdown": [
+    {
+      "label": "What is a database?",
+      "answer": "A database is a structured place where an app stores information so it can be used again later."
+    },
+    {
+      "label": "What is a table?",
+      "answer": "A table is like one spreadsheet tab. It stores one type of thing, such as workouts, contacts, or skills."
+    },
+    {
+      "label": "What is a column?",
+      "answer": "A column is one field, like Name, Age, Exercise, Sets, or Reps."
+    },
+    {
+      "label": "What is a row?",
+      "answer": "A row is one saved item. One contact or one workout is one row."
+    },
+    {
+      "label": "What is CRUD?",
+      "answer": "CRUD means Create, Read, Update, Delete. It is the basic full cycle for stored data."
+    }
+  ],
+  "status": "Assigned",
+  "submissions": [],
+  "why_this_exists": "Quest Intelligence V20 replaced or created this as a specific SQLite quest with exact steps, measurable proof, and a return path.",
+  "resume_rule": "After this quest is complete, submit proof, update skill evidence, then return to the project or goal that caused this quest.",
+  "quest_quality": {
+    "score": 100,
+    "rating": "10/10 Ready",
+    "checks": [
+      {
+        "name": "Specific skill normalized",
+        "ok": true,
+        "fix": "Normalize confusion text into a real skill name.",
+        "weight": 6
+      },
+      {
+        "name": "Exact artifact named",
+        "ok": true,
+        "fix": "Name exact files, screenshots, database, or proof artifact.",
+        "weight": 12
+      },
+      {
+        "name": "Skill-specific details",
+        "ok": true,
+        "fix": "Add technology-specific commands, fields, functions, UI IDs, or outputs.",
+        "weight": 18
+      },
+      {
+        "name": "No generic template language",
+        "ok": true,
+        "fix": "Remove generic language that could fit any skill.",
+        "weight": 18
+      },
+      {
+        "name": "Useful step-by-step guide",
+        "ok": true,
+        "fix": "Give at least 8 exact steps that move from start to proof.",
+        "weight": 16
+      },
+      {
+        "name": "Required features are concrete",
+        "ok": true,
+        "fix": "List concrete files, fields, buttons, functions, or actions.",
+        "weight": 8
+      },
+      {
+        "name": "Measurable success criteria",
+        "ok": true,
+        "fix": "Success criteria must prove the quest worked.",
+        "weight": 10
+      },
+      {
+        "name": "Proof is specific",
+        "ok": true,
+        "fix": "Proof must name exactly what to upload and answer.",
+        "weight": 8
+      },
+      {
+        "name": "Understanding check included",
+        "ok": true,
+        "fix": "Require an explanation so proof is not blind copying.",
+        "weight": 4
+      },
+      {
+        "name": "Not semantically duplicated",
+        "ok": true,
+        "fix": "Archive or regenerate duplicate active quests.",
+        "weight": 14
+      }
+    ],
+    "passed": 10,
+    "total": 10,
+    "penalties": [],
+    "specificity_score": 10,
+    "generic_hits": 0,
+    "template_clone": false,
+    "duplicate_note": ""
+  },
+  "quest_standard": {
+    "rule": "Every KDT OS quest must be specific, non-duplicated, beginner-safe, step-by-step useful, measurable, and proof-backed.",
+    "minimum_fields": [
+      "Specific skill",
+      "Exact artifact",
+      "Useful steps",
+      "Success criteria",
+      "Proof",
+      "Understanding check",
+      "Return point"
+    ]
+  },
+  "regenerated_from": "SQLite_CRUD_Quest_Workout_Database_20260601_023733.json",
+  "version": 3,
+  "governance_note": "Generated by Quest Intelligence V20 because the previous quest was duplicated, generic, or not step-by-step useful enough."
+}

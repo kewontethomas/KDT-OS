@@ -1,66 +1,68 @@
 {
-  "created_at": "2026-06-01T01:34:06",
+  "created_at": "2026-06-01T02:36:59",
   "source_project": "Teach Me Mode",
   "origin_report": "",
   "resume_project": "Teach Me Mode",
   "connected_goal": "",
-  "skill": "I don't understand what CPU usage means.",
+  "skill": "Active Directory",
   "user_gap": "I don't know where to start.",
   "quest_type": "Teach Me Quest",
   "difficulty": "Beginner",
-  "estimated_time": "30-60 minutes",
+  "estimated_time": "20-40 minutes",
   "ai_generated": false,
   "ai_parse_mode": "governance_context_template_v2",
   "ai_raw_response": "",
   "submissions": [],
-  "status": "Superseded",
+  "status": "Assigned",
   "resume_rule": "After this quest is complete, return to the original project or goal that caused this quest unless you intentionally choose a different path.",
-  "title": "I don't understand what CPU usage means. Single Proof Quest",
-  "goal": "Create one visible proof that you can use I don't understand what CPU usage means. in a tiny controlled task.",
-  "what_to_build": "A folder named i_don_t_understand_what_cpu_usage_means_single_proof with one README.md and one artifact that proves I don't understand what CPU usage means. one time.",
+  "title": "Active Directory OU Proof Quest",
+  "type": "Teach Me Quest",
+  "goal": "Prove you understand what an OU is by creating a visible OU structure in ADUC.",
+  "what_to_build": "In Active Directory Users and Computers, create one OU named KDT_Practice, create a sub-OU named Workstations, and move one test user or computer object into the correct OU.",
   "requirements": [
-    "Create folder i_don_t_understand_what_cpu_usage_means_single_proof",
-    "Create README.md",
-    "Create one visible artifact for I don't understand what CPU usage means.",
-    "Write exactly what you practiced",
-    "Write one thing still confusing"
+    "Open Active Directory Users and Computers",
+    "Create OU named KDT_Practice",
+    "Create sub-OU named Workstations",
+    "Move one test user or computer into an OU",
+    "Take a screenshot showing the OU tree",
+    "Write a short explanation in README.md"
   ],
   "success_criteria": [
-    "Folder exists",
-    "README.md exists",
-    "Artifact exists",
-    "Explanation is specific",
-    "Proof can be reviewed"
+    "KDT_Practice OU is visible",
+    "Workstations sub-OU is visible",
+    "At least one object is shown inside the OU or explanation says why no object was available",
+    "Screenshot clearly shows ADUC",
+    "README explains why OUs are useful"
   ],
   "steps": [
-    "Create folder i_don_t_understand_what_cpu_usage_means_single_proof",
+    "Open Server Manager or Start Menu",
+    "Open Active Directory Users and Computers",
+    "Expand your domain in the left tree",
+    "Right-click the domain or a safe practice container",
+    "Select New > Organizational Unit",
+    "Name the OU KDT_Practice",
+    "Right-click KDT_Practice and create a sub-OU named Workstations",
+    "Move one safe test user or computer into KDT_Practice or Workstations",
+    "Take a screenshot showing the domain tree and new OU",
     "Create README.md",
-    "Create one small artifact showing I don't understand what CPU usage means.",
-    "Run/open/show the artifact",
-    "Write three bullet points in README.md: what I did, what worked, what confused me",
-    "Zip the folder",
-    "Upload it as proof"
+    "In README.md answer: What is an OU? Why not put everything in Users?",
+    "Upload the screenshot and README.md"
+  ],
+  "verification_patterns": [
+    "KDT_Practice",
+    "Workstations",
+    "Organizational Unit",
+    "ADUC",
+    "README.md"
   ],
   "proof_required": [
-    "Upload ZIP",
+    "Upload screenshot showing ADUC and KDT_Practice",
     "Include README.md",
-    "Include the artifact",
-    "Answer: what did this prove?"
-  ],
-  "verification_patterns": [],
-  "why_this_exists": "This replaces an older quest that looked too generic. KDT OS regenerated it using the skill (I don't understand what CPU usage means.), source (Teach Me Mode), and your need for exact, verifiable steps.",
-  "teach_me_breakdown": [
-    {
-      "label": "What is this skill?",
-      "answer": "I don't understand what CPU usage means. is a skill KDT OS can practice through small exact quests."
-    },
-    {
-      "label": "Why practice it?",
-      "answer": "Practicing it in a tiny project makes it easier to use later in a larger project."
-    }
+    "Answer: What did the OU organize?",
+    "Answer: How would a GPO use this OU later?"
   ],
   "quest_quality": {
-    "score": 96,
+    "score": 100,
     "rating": "10/10 Ready",
     "checks": [
       {
@@ -125,7 +127,7 @@
       },
       {
         "name": "Named output/result",
-        "ok": false,
+        "ok": true,
         "fix": "State what visible result, file, screen, or terminal output proves the work.",
         "weight": 4
       },
@@ -136,10 +138,10 @@
         "weight": 4
       }
     ],
-    "passed": 11,
+    "passed": 12,
     "total": 12,
     "penalties": [],
-    "specificity_score": 3,
+    "specificity_score": 4,
     "template_clone": false
   },
   "quest_standard": {
@@ -154,10 +156,7 @@
       "Return point"
     ]
   },
-  "regenerated_from": "Teach_Me_Mode_I_don_t_understand_what_CPU_usage_means__20260601_001213.json",
-  "version": 3,
-  "governance_note": "Generated by Quest Governance v2 because the previous quest was weak, vague, cloned, or below the 85% quality standard.",
-  "archived_at": "2026-06-01T02:37:33",
-  "archive_reason": "Quest failed Quest Intelligence v2 review and was regenerated with a specific replacement.",
-  "superseded_by": "CPU_Usage_Task_Manager_Proof_Quest_20260601_023733.json"
+  "regenerated_from": "I_don_t_understand_Active_Directory_OUs_Single_Proof_Quest_20260601_013421.json",
+  "version": 4,
+  "governance_note": "Generated by Quest Governance v2 because the previous quest was weak, vague, cloned, or below the 85% quality standard."
 }

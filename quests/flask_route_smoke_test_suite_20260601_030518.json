@@ -1,0 +1,166 @@
+{
+  "created_at": "2026-06-01T03:05:18",
+  "source_project": "Project Analysis: FieldSeed",
+  "origin_report": "20260531_031935_FieldSeed.json",
+  "resume_project": "FieldSeed",
+  "connected_goal": "",
+  "skill": "Testing",
+  "user_gap": "KDT OS detected Testing in this uploaded project and created a ready practice quest.",
+  "quest_type": "Auto Practice Quest",
+  "title": "Flask Route Smoke Test Suite",
+  "goal": "Prove a Flask project still opens its important pages after changes.",
+  "what_to_build": "A pytest file named tests/test_routes.py that imports the Flask app and checks at least three routes return HTTP 200 or redirect safely.",
+  "requirements": [
+    "Create tests folder",
+    "Create tests/test_routes.py",
+    "Import the Flask app",
+    "Create a test client",
+    "Test /",
+    "Test /quests or /projects",
+    "Run python -m pytest",
+    "Document failures in README.md"
+  ],
+  "steps": [
+    "Create a folder named tests",
+    "Create tests/test_routes.py",
+    "Open app.py and confirm the Flask object is named app",
+    "In test_routes.py write from app import app",
+    "Create client = app.test_client() inside each test or a fixture",
+    "Write test_home_route() that requests /",
+    "Assert the status code is 200 or 302",
+    "Write test_quests_route() for /quests",
+    "Write test_projects_route() for /projects",
+    "Run python -m pytest",
+    "If an import fails, write the exact error in README.md",
+    "Add the test command to README.md",
+    "Zip and submit the updated project"
+  ],
+  "success_criteria": [
+    "tests/test_routes.py exists",
+    "At least three route tests exist",
+    "app.test_client() is used",
+    "pytest runs and shows pass/fail output",
+    "README.md includes the test command"
+  ],
+  "proof_required": [
+    "Upload ZIP",
+    "Include tests/test_routes.py",
+    "Include README.md",
+    "Include screenshot or copied pytest output",
+    "Answer: which route would have caught the broken nav issue?"
+  ],
+  "verification_patterns": [
+    "def test_",
+    "test_client",
+    "status_code",
+    "pytest",
+    "/quests"
+  ],
+  "difficulty": "Beginner",
+  "estimated_time": "45-75 minutes",
+  "ai_generated": false,
+  "ai_parse_mode": "quest_intelligence_v20_specific_template",
+  "ai_raw_response": "",
+  "teach_me_breakdown": [
+    {
+      "label": "What is this skill?",
+      "answer": "Testing is a skill KDT OS can practice through small exact quests."
+    },
+    {
+      "label": "Why practice it?",
+      "answer": "Practicing it in a tiny project makes it easier to use later in a larger project."
+    }
+  ],
+  "status": "Assigned",
+  "submissions": [],
+  "why_this_exists": "Quest Intelligence V20 replaced or created this as a specific Testing quest with exact steps, measurable proof, and a return path.",
+  "resume_rule": "After this quest is complete, submit proof, update skill evidence, then return to the project or goal that caused this quest.",
+  "quest_quality": {
+    "score": 100,
+    "rating": "10/10 Ready",
+    "checks": [
+      {
+        "name": "Specific skill normalized",
+        "ok": true,
+        "fix": "Normalize confusion text into a real skill name.",
+        "weight": 6
+      },
+      {
+        "name": "Exact artifact named",
+        "ok": true,
+        "fix": "Name exact files, screenshots, database, or proof artifact.",
+        "weight": 12
+      },
+      {
+        "name": "Skill-specific details",
+        "ok": true,
+        "fix": "Add technology-specific commands, fields, functions, UI IDs, or outputs.",
+        "weight": 18
+      },
+      {
+        "name": "No generic template language",
+        "ok": true,
+        "fix": "Remove generic language that could fit any skill.",
+        "weight": 18
+      },
+      {
+        "name": "Useful step-by-step guide",
+        "ok": true,
+        "fix": "Give at least 8 exact steps that move from start to proof.",
+        "weight": 16
+      },
+      {
+        "name": "Required features are concrete",
+        "ok": true,
+        "fix": "List concrete files, fields, buttons, functions, or actions.",
+        "weight": 8
+      },
+      {
+        "name": "Measurable success criteria",
+        "ok": true,
+        "fix": "Success criteria must prove the quest worked.",
+        "weight": 10
+      },
+      {
+        "name": "Proof is specific",
+        "ok": true,
+        "fix": "Proof must name exactly what to upload and answer.",
+        "weight": 8
+      },
+      {
+        "name": "Understanding check included",
+        "ok": true,
+        "fix": "Require an explanation so proof is not blind copying.",
+        "weight": 4
+      },
+      {
+        "name": "Not semantically duplicated",
+        "ok": true,
+        "fix": "Archive or regenerate duplicate active quests.",
+        "weight": 14
+      }
+    ],
+    "passed": 10,
+    "total": 10,
+    "penalties": [],
+    "specificity_score": 5,
+    "generic_hits": 0,
+    "template_clone": false,
+    "duplicate_note": ""
+  },
+  "quest_standard": {
+    "rule": "Every KDT OS quest must be specific, non-duplicated, beginner-safe, step-by-step useful, measurable, and proof-backed.",
+    "minimum_fields": [
+      "Specific skill",
+      "Exact artifact",
+      "Useful steps",
+      "Success criteria",
+      "Proof",
+      "Understanding check",
+      "Return point"
+    ]
+  },
+  "regenerated_from": "Project_Analysis_FieldSeed_Testing_20260531_034204.json",
+  "version": 2,
+  "governance_note": "Generated by Quest Intelligence V20 because the previous quest was duplicated, generic, or not step-by-step useful enough."
+}
