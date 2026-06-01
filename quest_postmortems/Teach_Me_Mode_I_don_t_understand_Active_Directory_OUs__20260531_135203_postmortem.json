@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-06-01T00:11:45",
+  "original_file": "Teach_Me_Mode_I_don_t_understand_Active_Directory_OUs__20260531_135203.json",
+  "quest_title": "Teach Me Quest: I don't understand Active Directory OUs.",
+  "skill": "I don't understand Active Directory OUs.",
+  "original_score": 62,
+  "action": "Regenerate",
+  "replacement_file": "Teach_Me_Mode_I_don_t_understand_Active_Directory_OUs__20260601_001145.json",
+  "failure_reasons": [
+    {
+      "check": "Success criteria",
+      "fix": "List measurable conditions that prove completion."
+    },
+    {
+      "check": "Return path",
+      "fix": "Connect this quest back to a project, goal, or parent quest."
+    },
+    {
+      "check": "Not vague",
+      "fix": "Replace broad words like learn/practice with exact files, commands, or actions."
+    }
+  ],
+  "lesson_learned": "Future quests must include exact blocker, smallest action, steps, success criteria, proof, and return path before becoming active."
+}

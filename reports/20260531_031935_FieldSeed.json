@@ -1,0 +1,542 @@
+{
+  "project_name": "FieldSeed",
+  "analyzed_at": "2026-05-31T03:19:35",
+  "root_folder": "D:\\KDT_OS_PROJECT_ANALYZER_V1\\workspace\\20260531_031935_FIELDSEED_CORE_LOOP_V1\\FIELDSEED_VISION_BUILD",
+  "summary": {
+    "file_count": 45,
+    "text_file_count": 45,
+    "total_size_bytes": 110010,
+    "health_score": 80,
+    "functions_detected": 113,
+    "classes_detected": 1,
+    "routes_detected": 0
+  },
+  "summary_explanations": {
+    "health_score": "A quick quality estimate based on detected risks. It is not a final grade. It tells you whether the project looks stable enough to keep building or needs cleanup first.",
+    "file_count": "How many files the analyzer found after ignoring folders like .git, node_modules, and virtual environments.",
+    "functions_detected": "How many Python functions were detected. More functions usually means the project has more behavior and more pieces to understand.",
+    "routes_detected": "How many Flask/FastAPI-style web routes were detected. A route usually means a page or API endpoint users can interact with."
+  },
+  "extensions": {
+    ".py": 16,
+    ".md": 8,
+    ".txt": 8,
+    ".json": 8,
+    ".bat": 5
+  },
+  "important_files": [
+    "fieldseed/app.py"
+  ],
+  "sample_files": [
+    "README_AUTONOMOUS_GROWTH_UPDATE.md",
+    "README_COLLECTOR_MISSION_UPDATE.md",
+    "README_CORE_LOOP_V1.md",
+    "README_FIELDSEED_VISION_BUILD.md",
+    "README_KNOWLEDGE_FLOW_UPDATE.md",
+    "README_REAL_REPAIR_ENGINE_UPDATE.md",
+    "README_SELF_HEALING_GROWTH_UPDATE.md",
+    "README_TICKET_SEARCH_CONTACT_UPDATE.md",
+    "START_COLLECTOR_MODE.bat",
+    "START_FIELDSEED.bat",
+    "START_RESCUE_MODE.bat",
+    "fieldseed/app.py",
+    "fieldseed/paths.py",
+    "fieldseed/__init__.py",
+    "tools/FIELDSEED_RESCUE_MENU.bat",
+    "tools/SMART_WINDOWS_UPDATE_RECOVERY.bat",
+    "fieldseed/core/agent_loop.py",
+    "fieldseed/core/ai_bridge.py",
+    "fieldseed/core/core_loop.py",
+    "fieldseed/core/database.py"
+  ],
+  "technologies": [
+    {
+      "name": "Python",
+      "score": 120,
+      "explanation": "A general-purpose programming language. In your projects, it usually powers backend logic, automation, file scanning, or data processing."
+    },
+    {
+      "name": "PowerShell",
+      "score": 13,
+      "explanation": "Windows automation scripting. Useful for IT support, health checks, setup scripts, and admin tasks."
+    },
+    {
+      "name": "SQLite",
+      "score": 12,
+      "explanation": "A lightweight database stored in a local file. Useful for personal apps because it does not require a separate database server."
+    },
+    {
+      "name": "GitHub/Versioning",
+      "score": 8,
+      "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+    }
+  ],
+  "capabilities": [
+    {
+      "name": "Ticket System",
+      "score": 354,
+      "explanation": "The project likely manages issues, incidents, root causes, resolutions, or support tickets."
+    },
+    {
+      "name": "Repair Planning",
+      "score": 194,
+      "explanation": "The project likely suggests fixes, repairs files, creates backups, or plans recovery steps."
+    },
+    {
+      "name": "Health Monitoring",
+      "score": 183,
+      "explanation": "The project likely checks whether something is working correctly, scans for issues, or reports status."
+    },
+    {
+      "name": "Evidence Collection",
+      "score": 94,
+      "explanation": "The project likely saves screenshots, attachments, proof, logs, or supporting evidence."
+    },
+    {
+      "name": "Task Management",
+      "score": 93,
+      "explanation": "The project likely tracks tasks, statuses, checklists, or completions."
+    },
+    {
+      "name": "Knowledge Base",
+      "score": 90,
+      "explanation": "The project likely stores lessons, notes, memory, documentation, or reusable knowledge."
+    },
+    {
+      "name": "Database Storage",
+      "score": 42,
+      "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+    },
+    {
+      "name": "Project Tracking",
+      "score": 25,
+      "explanation": "The project likely stores project progress, milestones, roadmap items, or build status."
+    },
+    {
+      "name": "File Handling",
+      "score": 25,
+      "explanation": "The project reads, writes, moves, scans, or extracts files. This is a major skill for tools like analyzers and automation apps."
+    },
+    {
+      "name": "Automation/Scheduling",
+      "score": 22,
+      "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+    },
+    {
+      "name": "Journal/Reflection",
+      "score": 14,
+      "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+    },
+    {
+      "name": "Notifications/Reminders",
+      "score": 12,
+      "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+    },
+    {
+      "name": "Idea Capture",
+      "score": 6,
+      "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+    },
+    {
+      "name": "Dashboard/UI",
+      "score": 6,
+      "explanation": "The project has visible screens, forms, buttons, or dashboard pages. This means it is meant for a person to use, not just run silently."
+    },
+    {
+      "name": "Learning/Practice",
+      "score": 5,
+      "explanation": "The project likely includes drills, lessons, quests, mastery tracking, or repeated practice."
+    },
+    {
+      "name": "Authentication/Login",
+      "score": 2,
+      "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+    }
+  ],
+  "risks": [
+    {
+      "name": "Broad exception handling",
+      "count": 26,
+      "explanation": "The code catches errors too generally, usually with except Exception or bare except. This can hide real problems and make debugging harder. It does not mean the app is broken, but it means future repairs may be harder to trust."
+    },
+    {
+      "name": "No tests detected",
+      "count": 1,
+      "explanation": "The analyzer did not find obvious test files. This means the project may work, but it has no automatic proof that it still works after changes."
+    }
+  ],
+  "test_files": [],
+  "recommendations": [
+    {
+      "text": "Add a small tests folder or at least a basic smoke test so the project can prove it still runs.",
+      "explanation": "This gives you proof that the app still starts or core functions still work after you change code. It reduces fear when improving the project."
+    },
+    {
+      "text": "Track repeated practice attempts, mistakes, and mastery level so learning becomes measurable.",
+      "explanation": "This supports your learning style: repetition, mistakes, review, and mastery tracking."
+    },
+    {
+      "text": "Preserve this as a reusable capability for KDT OS project inspection and self-health checks.",
+      "explanation": "This project contains a capability that can make KDT OS stronger later instead of being rebuilt from scratch."
+    }
+  ],
+  "learning_opportunities": [
+    {
+      "skill": "Testing",
+      "why": "This project has no obvious tests. Learning smoke tests will help you trust changes before building more.",
+      "practice_options": [
+        "Smoke tests",
+        "Import tests",
+        "Route tests"
+      ],
+      "suggested_artifact": {
+        "title": "Smoke Test Builder",
+        "type": "Practice Quest",
+        "goal": "Practice proving a project still runs after changes.",
+        "what_to_build": "Add a tiny tests folder to a project and create at least one test that proves the app imports or starts.",
+        "requirements": [
+          "Create tests folder",
+          "Create test_smoke.py",
+          "Import the app or main module",
+          "Run pytest",
+          "Document test command"
+        ],
+        "success_criteria": [
+          "tests folder exists",
+          "test file exists",
+          "pytest or unittest detected",
+          "README includes test command"
+        ],
+        "steps": [
+          "Create tests folder",
+          "Create test_smoke.py",
+          "Import your app module",
+          "Write one assert",
+          "Install pytest if needed",
+          "Run pytest",
+          "Put the command in README.md"
+        ],
+        "proof": [
+          "Upload updated ZIP",
+          "Include tests folder",
+          "Include README test command"
+        ],
+        "verification_patterns": [
+          "pytest",
+          "unittest",
+          "def test_",
+          "assert ",
+          "tests/|tests\\\\"
+        ]
+      }
+    },
+    {
+      "skill": "Python",
+      "why": "This project uses Python. Practicing it separately will make the project easier to understand and improve.",
+      "practice_options": [
+        "Functions",
+        "File scanning",
+        "Error handling",
+        "JSON reports"
+      ],
+      "suggested_artifact": {
+        "title": "Exact Practice Quest",
+        "type": "Practice Quest",
+        "goal": "Practice one skill with a small, clear build.",
+        "what_to_build": "A small project that demonstrates the requested skill one time in a visible way.",
+        "requirements": [
+          "Create the required files",
+          "Use the skill directly",
+          "Show the result",
+          "Write what confused you"
+        ],
+        "success_criteria": [
+          "The target skill appears in the code",
+          "The project can be explained in README",
+          "Proof can be uploaded"
+        ],
+        "steps": [
+          "Create a project folder",
+          "Create the main file",
+          "Implement the smallest working version",
+          "Test it",
+          "Add README.md",
+          "Upload ZIP"
+        ],
+        "proof": [
+          "Upload ZIP",
+          "Include README.md",
+          "Write what you practiced"
+        ],
+        "verification_patterns": []
+      }
+    },
+    {
+      "skill": "SQLite",
+      "why": "This project uses SQLite. Practicing it separately will make the project easier to understand and improve.",
+      "practice_options": [
+        "Create tables",
+        "Insert records",
+        "Query records",
+        "Update records",
+        "Delete records"
+      ],
+      "suggested_artifact": {
+        "title": "Workout Database CRUD App",
+        "type": "Practice Quest",
+        "goal": "Practice saving, reading, updating, and deleting records in SQLite.",
+        "what_to_build": "A small Python app that stores workouts with exercise name, sets, reps, and date.",
+        "requirements": [
+          "Create a workouts table",
+          "Add a workout",
+          "View all workouts",
+          "Edit one workout",
+          "Delete one workout"
+        ],
+        "success_criteria": [
+          "CREATE TABLE exists",
+          "INSERT INTO exists",
+          "SELECT exists",
+          "UPDATE exists",
+          "DELETE exists"
+        ],
+        "steps": [
+          "Create a folder named workout_database_crud",
+          "Create app.py",
+          "Import sqlite3",
+          "Create workouts table with id, exercise, sets, reps, date",
+          "Add a menu with choices 1 Add, 2 View, 3 Edit, 4 Delete, 5 Exit",
+          "Make each choice work",
+          "Create README.md with run instructions"
+        ],
+        "proof": [
+          "Upload project ZIP",
+          "Include app.py",
+          "Include README.md",
+          "Include the .db file if one is created"
+        ],
+        "verification_patterns": [
+          "sqlite3",
+          "CREATE TABLE",
+          "INSERT INTO",
+          "SELECT",
+          "UPDATE",
+          "DELETE"
+        ]
+      }
+    },
+    {
+      "skill": "Health Monitoring",
+      "why": "This project uses Health Monitoring. Practicing it separately will make the project easier to understand and improve.",
+      "practice_options": [
+        "Create checks",
+        "Score results",
+        "Show warnings",
+        "Recommend fixes"
+      ],
+      "suggested_artifact": {
+        "title": "Exact Practice Quest",
+        "type": "Practice Quest",
+        "goal": "Practice one skill with a small, clear build.",
+        "what_to_build": "A small project that demonstrates the requested skill one time in a visible way.",
+        "requirements": [
+          "Create the required files",
+          "Use the skill directly",
+          "Show the result",
+          "Write what confused you"
+        ],
+        "success_criteria": [
+          "The target skill appears in the code",
+          "The project can be explained in README",
+          "Proof can be uploaded"
+        ],
+        "steps": [
+          "Create a project folder",
+          "Create the main file",
+          "Implement the smallest working version",
+          "Test it",
+          "Add README.md",
+          "Upload ZIP"
+        ],
+        "proof": [
+          "Upload ZIP",
+          "Include README.md",
+          "Write what you practiced"
+        ],
+        "verification_patterns": []
+      }
+    },
+    {
+      "skill": "Task Management",
+      "why": "This project uses Task Management. Practicing it separately will make the project easier to understand and improve.",
+      "practice_options": [
+        "Add tasks",
+        "Mark complete",
+        "Filter status",
+        "Save progress"
+      ],
+      "suggested_artifact": {
+        "title": "Exact Practice Quest",
+        "type": "Practice Quest",
+        "goal": "Practice one skill with a small, clear build.",
+        "what_to_build": "A small project that demonstrates the requested skill one time in a visible way.",
+        "requirements": [
+          "Create the required files",
+          "Use the skill directly",
+          "Show the result",
+          "Write what confused you"
+        ],
+        "success_criteria": [
+          "The target skill appears in the code",
+          "The project can be explained in README",
+          "Proof can be uploaded"
+        ],
+        "steps": [
+          "Create a project folder",
+          "Create the main file",
+          "Implement the smallest working version",
+          "Test it",
+          "Add README.md",
+          "Upload ZIP"
+        ],
+        "proof": [
+          "Upload ZIP",
+          "Include README.md",
+          "Write what you practiced"
+        ],
+        "verification_patterns": []
+      }
+    },
+    {
+      "skill": "File Handling",
+      "why": "This project uses File Handling. Practicing it separately will make the project easier to understand and improve.",
+      "practice_options": [
+        "Read files",
+        "Write files",
+        "Analyze folders",
+        "Extract ZIPs"
+      ],
+      "suggested_artifact": {
+        "title": "Mini File Scanner",
+        "type": "Practice Quest",
+        "goal": "Practice scanning a folder and summarizing what files are inside.",
+        "what_to_build": "A Python command-line tool that scans a folder path and creates a summary report of file types.",
+        "requirements": [
+          "Create app.py",
+          "Ask the user for a folder path",
+          "Loop through files in the folder",
+          "Count file extensions",
+          "Print total files",
+          "Save summary to report.json"
+        ],
+        "success_criteria": [
+          "app.py exists",
+          "os.walk or pathlib is used",
+          "report.json is created",
+          "file extension counts appear in the output"
+        ],
+        "steps": [
+          "Create a new folder named mini_file_scanner",
+          "Create app.py",
+          "Write code to ask for a folder path",
+          "Scan that folder",
+          "Count file extensions",
+          "Print the result",
+          "Save the result to report.json",
+          "Create README.md explaining how to run it"
+        ],
+        "proof": [
+          "Upload a ZIP of the project folder",
+          "Include app.py",
+          "Include report.json",
+          "Include README.md"
+        ],
+        "verification_patterns": [
+          "os\\.walk",
+          "Path\\(",
+          "\\.suffix",
+          "json\\.dump",
+          "report\\.json"
+        ]
+      }
+    },
+    {
+      "skill": "Learning/Practice",
+      "why": "This project uses Learning/Practice. Practicing it separately will make the project easier to understand and improve.",
+      "practice_options": [
+        "Create drills",
+        "Track attempts",
+        "Repeat weak concepts",
+        "Show mastery"
+      ],
+      "suggested_artifact": {
+        "title": "Exact Practice Quest",
+        "type": "Practice Quest",
+        "goal": "Practice one skill with a small, clear build.",
+        "what_to_build": "A small project that demonstrates the requested skill one time in a visible way.",
+        "requirements": [
+          "Create the required files",
+          "Use the skill directly",
+          "Show the result",
+          "Write what confused you"
+        ],
+        "success_criteria": [
+          "The target skill appears in the code",
+          "The project can be explained in README",
+          "Proof can be uploaded"
+        ],
+        "steps": [
+          "Create a project folder",
+          "Create the main file",
+          "Implement the smallest working version",
+          "Test it",
+          "Add README.md",
+          "Upload ZIP"
+        ],
+        "proof": [
+          "Upload ZIP",
+          "Include README.md",
+          "Write what you practiced"
+        ],
+        "verification_patterns": []
+      }
+    }
+  ],
+  "next_decision": {
+    "question": "What do you want to do with this project?",
+    "options": [
+      {
+        "id": "keep",
+        "label": "Keep as its own project",
+        "explanation": "Use this when the project has its own purpose and should remain separate."
+      },
+      {
+        "id": "reuse",
+        "label": "Reuse parts inside KDT OS",
+        "explanation": "Use this when parts of this project should become KDT OS capabilities."
+      },
+      {
+        "id": "skills",
+        "label": "Find learning quests",
+        "explanation": "Use this to extract small practice builds from the skills detected here."
+      },
+      {
+        "id": "archive",
+        "label": "Pause/archive it",
+        "explanation": "Use this when the project is not important right now, but should not be forgotten."
+      },
+      {
+        "id": "continue",
+        "label": "Continue building the next feature",
+        "explanation": "Use this when this project should stay active and receive the next upgrade."
+      }
+    ]
+  },
+  "decisions": [],
+  "auto_generated_quests": [
+    "Project_Analysis_FieldSeed_Health_Monitoring_20260531_034204.json",
+    "Project_Analysis_FieldSeed_Python_20260531_034204.json",
+    "Project_Analysis_FieldSeed_SQLite_20260531_034204.json",
+    "Project_Analysis_FieldSeed_Testing_20260531_034204.json"
+  ]
+}

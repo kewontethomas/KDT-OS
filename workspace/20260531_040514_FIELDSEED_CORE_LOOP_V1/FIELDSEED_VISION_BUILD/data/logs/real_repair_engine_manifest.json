@@ -1,0 +1,13 @@
+{
+  "name": "FieldSeed Real Repair Engine Build",
+  "python_files_checked": 15,
+  "failures": [],
+  "features": {
+    "real_repair_plans": true,
+    "confirmation_before_repair": true,
+    "backup_before_repair": true,
+    "compile_test_after_repair": true,
+    "rollback_on_failure": true,
+    "screenshot_evidence_tracking": true
+  }
+}

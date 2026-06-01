@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-06-01T00:12:13",
+  "original_file": "Teach_Me_Mode_I_don_t_understand_what_CPU_usage_means__20260531_113936.json",
+  "quest_title": "Teach Me Quest: I don't understand what CPU usage means.",
+  "skill": "I don't understand what CPU usage means.",
+  "original_score": 75,
+  "action": "Upgrade",
+  "replacement_file": "Teach_Me_Mode_I_don_t_understand_what_CPU_usage_means__20260601_001213.json",
+  "failure_reasons": [
+    {
+      "check": "Success criteria",
+      "fix": "List measurable conditions that prove completion."
+    },
+    {
+      "check": "Return path",
+      "fix": "Connect this quest back to a project, goal, or parent quest."
+    }
+  ],
+  "lesson_learned": "Future quests must include exact blocker, smallest action, steps, success criteria, proof, and return path before becoming active."
+}

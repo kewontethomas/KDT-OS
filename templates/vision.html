@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>KDT OS Vision Test</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head><body><main class="shell">
+{% include '_nav.html' %}
+{% with messages = get_flashed_messages() %}{% if messages %}<div class="alert success">{% for message in messages %}<p>{{ message }}</p>{% endfor %}</div>{% endif %}{% endwith %}
+<section class="hero"><p class="eyebrow">VISION PROOF TEST</p><h1>Test screenshot understanding</h1><p>Uses your configured vision model, usually LLaVA. This is the first step toward screenshot proof verification.</p></section>
+<section class="card {% if snapshot.rows|selectattr('task','equalto','vision')|list and (snapshot.rows|selectattr('task','equalto','vision')|list)[0].installed %}ai-ready{% else %}ai-warn{% endif %}"><h2>Vision Model</h2><p><strong>Configured:</strong> {{ snapshot.settings.vision_model }}</p><p>If missing, open Model Manager and pull it.</p><a class="button-link" href="{{ url_for('model_manager') }}">Open Model Manager</a></section>
+<section class="card accent"><form method="post" enctype="multipart/form-data"><label>Screenshot / image<input type="file" name="image" accept=".png,.jpg,.jpeg,.webp" required></label><label>What should KDT OS verify?<textarea name="prompt">Describe this screenshot. Then say whether it appears to match the requested proof.</textarea></label><button type="submit">Analyze Screenshot</button></form></section>
+{% if result %}<section class="card"><h2>Vision Result</h2><p><strong>Model:</strong> {{ result.model }}</p><p><strong>Status:</strong> {{ 'OK' if result.ok else 'Failed' }}</p>{% if result.error %}<p class="danger">{{ result.error }}</p>{% endif %}<pre class="ai-raw">{{ result.text }}</pre></section>{% endif %}
+</main></body></html>

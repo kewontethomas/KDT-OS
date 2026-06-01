@@ -1,0 +1,15 @@
+{
+  "name": "FieldSeed Core Loop V1",
+  "python_files_checked": 16,
+  "failures": [],
+  "features": {
+    "background_observer": true,
+    "memory_writer": true,
+    "observer_events": true,
+    "pattern_detector": true,
+    "automatic_repair_candidates": true,
+    "approval_gate": true,
+    "test_rollback": true,
+    "confidence_growth": true
+  }
+}

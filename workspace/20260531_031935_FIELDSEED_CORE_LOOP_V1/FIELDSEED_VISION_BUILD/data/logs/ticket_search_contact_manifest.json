@@ -1,0 +1,12 @@
+{
+  "name": "FieldSeed Ticket Search Contact Build",
+  "python_files_checked": 14,
+  "failures": [],
+  "features": {
+    "ticket_id_optional": true,
+    "search_tickets": true,
+    "contact_person": true,
+    "search_by_site_contact_issue": true,
+    "collector_contact_person": true
+  }
+}

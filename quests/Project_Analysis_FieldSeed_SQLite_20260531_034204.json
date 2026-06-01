@@ -1,0 +1,76 @@
+{
+  "created_at": "2026-05-31T03:42:04",
+  "source_project": "Project Analysis: FieldSeed",
+  "origin_report": "20260531_031935_FieldSeed.json",
+  "resume_project": "FieldSeed",
+  "connected_goal": "",
+  "skill": "SQLite",
+  "user_gap": "KDT OS detected SQLite in this uploaded project and created a ready practice quest.",
+  "title": "Workout Database CRUD App",
+  "quest_type": "Auto Practice Quest",
+  "why_this_exists": "This quest came from: Project Analysis: FieldSeed. The skill being practiced is: SQLite. Your stated blocker is: KDT OS detected SQLite in this uploaded project and created a ready practice quest. This quest exists so practice connects back to something you care about instead of becoming random homework.",
+  "goal": "Practice saving, reading, updating, and deleting records in SQLite.",
+  "what_to_build": "A small Python app that stores workouts with exercise name, sets, reps, and date.",
+  "requirements": [
+    "Create a workouts table",
+    "Add a workout",
+    "View all workouts",
+    "Edit one workout",
+    "Delete one workout"
+  ],
+  "success_criteria": [
+    "CREATE TABLE exists",
+    "INSERT INTO exists",
+    "SELECT exists",
+    "UPDATE exists",
+    "DELETE exists"
+  ],
+  "steps": [
+    "Create a folder named workout_database_crud",
+    "Create app.py",
+    "Import sqlite3",
+    "Create workouts table with id, exercise, sets, reps, date",
+    "Add a menu with choices 1 Add, 2 View, 3 Edit, 4 Delete, 5 Exit",
+    "Make each choice work",
+    "Create README.md with run instructions"
+  ],
+  "proof_required": [
+    "Upload project ZIP",
+    "Include app.py",
+    "Include README.md",
+    "Include the .db file if one is created"
+  ],
+  "verification_patterns": [
+    "sqlite3",
+    "CREATE TABLE",
+    "INSERT INTO",
+    "SELECT",
+    "UPDATE",
+    "DELETE"
+  ],
+  "teach_me_breakdown": [
+    {
+      "label": "What is a database?",
+      "answer": "A database is a structured place where an app stores information so it can be used again later."
+    },
+    {
+      "label": "What is a table?",
+      "answer": "A table is like one spreadsheet tab. It stores one type of thing, such as workouts, contacts, or skills."
+    },
+    {
+      "label": "What is a column?",
+      "answer": "A column is one field, like Name, Age, Exercise, Sets, or Reps."
+    },
+    {
+      "label": "What is a row?",
+      "answer": "A row is one saved item. One contact or one workout is one row."
+    },
+    {
+      "label": "What is CRUD?",
+      "answer": "CRUD means Create, Read, Update, Delete. It is the basic full cycle for stored data."
+    }
+  ],
+  "status": "Assigned",
+  "submissions": [],
+  "resume_rule": "After this quest is complete, return to the original project or goal that caused this quest unless you intentionally choose a different path."
+}

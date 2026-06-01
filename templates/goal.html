@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>{{ goal.goal_name }}</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head><body><main class="shell">
+{% include '_nav.html' %}
+{% with messages = get_flashed_messages() %}{% if messages %}<div class="alert success">{% for message in messages %}<p>{{ message }}</p>{% endfor %}</div>{% endif %}{% endwith %}
+<section class="hero"><p class="eyebrow">Goal</p><h1>{{ goal.goal_name }}</h1><p>{{ goal.why }}</p></section>
+<section class="card"><h2>What You Want To Build / Achieve</h2><p>{{ goal.what_i_want_to_build }}</p></section>
+
+<section class="card accent"><h2>Goal Skill Gap</h2><p>{{ goal_gap.summary }}</p>
+{% if goal_gap.blockers %}<div class="callout"><strong>Recommended next skill:</strong> {{ goal_gap.next_skill }}<br><span class="muted">KDT OS chose this because it is needed for the goal and still needs proof, refresh, or beginner practice.</span></div>{% endif %}
+<div class="reports">{% for item in goal_gap.required_skills %}
+<div class="mini"><strong>{{ item.skill }}</strong><span class="status-dot {% if item.status == 'Rusty' %}status-rusty{% elif item.status in ['Practiced','Proficient'] %}status-practiced{% elif item.status == 'Unknown' %}status-unknown{% endif %}">{{ item.status }}</span><p>{{ item.description }}</p><p><strong>What KDT OS recommends:</strong> {{ item.action }}</p><p class="muted">{{ item.reason }}</p>
+{% if item.projects %}<small>Evidence from: {{ item.projects|join(', ') }}</small>{% endif %}
+<form action="{{ url_for('generate_recommended_goal_quest', filename=filename) }}" method="post"><input type="hidden" name="skill" value="{{ item.skill }}"><input type="hidden" name="gap" value="I need exact practice with {{ item.skill }} so I can move forward with {{ goal.goal_name }}."><button type="submit">Create Exact Quest For This Skill</button></form></div>
+{% endfor %}</div></section>
+
+<section class="card accent"><h2>Generate a Custom Quest For This Goal</h2><p class="muted">Pick a skill you need. KDT OS will create an exact quest with proof requirements.</p><form action="{{ url_for('generate_goal_quest', filename=filename) }}" method="post"><label>Skill to practice<select name="skill"><option>JavaScript</option><option>SQLite</option><option>Flask</option><option>Python</option><option>React</option><option>API / Routes</option><option>File Handling</option><option>Testing</option></select></label><label>What are you stuck on?<input name="gap" placeholder="Example: I forgot how local storage works"></label><button type="submit">Generate Goal Quest</button></form></section>
+<section class="card"><h2>Known Skills From Your Uploads</h2>{% if skills %}<div class="skill-list vertical">{% for name, item in skills.items() %}<a class="skill-pill detail" href="{{ url_for('view_skill', skill_name=name) }}"><strong>{{ name }}</strong><span>{{ item.status }}</span><small>{{ item.confidence_label or 'Detected, not verified yet' }}</small></a>{% endfor %}</div>{% else %}<p class="muted">Analyze projects to build this list.</p>{% endif %}</section>
+</main></body></html>

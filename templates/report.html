@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ report.project_name }} Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="shell">
+    {% include '_nav.html' %}
+    <a class="back" href="{{ url_for('index') }}">← Back</a>
+    {% with messages = get_flashed_messages() %}{% if messages %}<div class="alert success">{% for message in messages %}<p>{{ message }}</p>{% endfor %}</div>{% endif %}{% endwith %}
+
+    <section class="hero"><p class="eyebrow">Project Report</p><h1>{{ report.project_name }}</h1><p>Analyzed {{ report.analyzed_at }}</p></section>
+
+    <section class="grid">
+        <div class="metric"><strong>{{ report.summary.health_score }}%</strong><span>Health Score</span><details><summary>Explain</summary><p>{{ report.summary_explanations.health_score }}</p></details></div>
+        <div class="metric"><strong>{{ report.summary.file_count }}</strong><span>Files</span><details><summary>Explain</summary><p>{{ report.summary_explanations.file_count }}</p></details></div>
+        <div class="metric"><strong>{{ report.summary.functions_detected }}</strong><span>Functions</span><details><summary>Explain</summary><p>{{ report.summary_explanations.functions_detected }}</p></details></div>
+        <div class="metric"><strong>{{ report.summary.routes_detected }}</strong><span>Routes</span><details><summary>Explain</summary><p>{{ report.summary_explanations.routes_detected }}</p></details></div>
+    </section>
+
+    
+{% if report.project_update %}
+<section class="card accent"><h2>Project Update / Version History</h2>
+{% if report.project_update.matched_existing_project %}
+<p>KDT OS matched this upload to an existing project and saved it as a new version.</p>
+<p><strong>Previous report:</strong> {{ report.project_update.previous_report }}</p>
+{% if report.project_update.comparison %}
+<div class="grid two">
+<div class="mini"><strong>Health Change</strong><p>{{ report.project_update.comparison.previous_health }} → {{ report.project_update.comparison.current_health }} ({{ report.project_update.comparison.health_change }})</p></div>
+<div class="mini"><strong>Code Change</strong><p>Files: {{ report.project_update.comparison.file_count_change }} · Functions: {{ report.project_update.comparison.function_count_change }}</p></div>
+</div>
+<p><strong>New capabilities:</strong> {{ report.project_update.comparison.new_capabilities|join(', ') or 'None detected' }}</p>
+<p><strong>Removed capabilities:</strong> {{ report.project_update.comparison.removed_capabilities|join(', ') or 'None detected' }}</p>
+{% endif %}
+{% else %}
+<p>This is the first known version of this project. Future uploads with the same project name will be compared against this one.</p>
+{% endif %}
+</section>
+{% endif %}
+
+<section class="card"><h2>Detected Capabilities</h2>{% if report.capabilities %}<div class="stack">{% for item in report.capabilities %}<details class="explain-card"><summary>{{ item.name }} <small>{{ item.score }} · {{ item.confidence_label or "Detected" }}</small></summary><p>{{ item.explanation }}</p><p class="muted">Raw count is project evidence only. It does not prove personal mastery.</p></details>{% endfor %}</div>{% else %}<p class="muted">No clear capabilities detected yet.</p>{% endif %}</section>
+    <section class="card"><h2>Detected Technologies</h2>{% if report.technologies %}<div class="stack">{% for item in report.technologies %}<details class="explain-card"><summary>{{ item.name }} <small>{{ item.score }} · {{ item.confidence_label or "Detected" }}</small></summary><p>{{ item.explanation }}</p><p class="muted">Raw count is project evidence only. It does not prove personal mastery.</p></details>{% endfor %}</div>{% else %}<p class="muted">No clear technologies detected yet.</p>{% endif %}</section>
+    <section class="card"><h2>Recommendations</h2><div class="stack">{% for rec in report.recommendations %}<details class="explain-card" open><summary>{{ rec.text }}</summary><p>{{ rec.explanation }}</p></details>{% endfor %}</div></section>
+
+    {% if report.gap_analysis %}
+    <section class="card accent"><h2>Gap Analysis / Next Best Build</h2>
+        <p class="muted">{{ report.gap_analysis.note }}</p>
+        <div class="grid two">
+            <div><h3>Strengths</h3>{% if report.gap_analysis.strengths %}<ul>{% for s in report.gap_analysis.strengths %}<li><strong>{{ s.name }}</strong> — {{ s.reason }}</li>{% endfor %}</ul>{% else %}<p class="muted">No clear strengths found yet.</p>{% endif %}</div>
+            <div><h3>Current Gaps</h3>{% if report.gap_analysis.gaps %}<ul>{% for g in report.gap_analysis.gaps %}<li><strong>{{ g.name }}</strong> — {{ g.why }}<br><span class="muted">Next: {{ g.next_action }}</span></li>{% endfor %}</ul>{% else %}<p class="muted">No clear gaps found yet.</p>{% endif %}</div>
+        </div>
+        {% if report.gap_analysis.recommended_next_build %}<div class="mini"><strong>Recommended next build:</strong> {{ report.gap_analysis.recommended_next_build.name }} — {{ report.gap_analysis.recommended_next_build.next_action }}</div>{% endif %}
+    </section>
+    {% endif %}
+
+    <section class="card"><h2>Risks / Gaps</h2>{% if report.risks %}<div class="stack">{% for risk in report.risks %}<details class="explain-card"><summary>{{ risk.name }}{% if risk.count %}: {{ risk.count }}{% endif %}</summary><p>{{ risk.explanation }}</p></details>{% endfor %}</div>{% else %}<p class="muted">No obvious risks detected.</p>{% endif %}</section>
+
+    {% if report.auto_generated_quests %}
+    <section class="card accent"><h2>Auto-Generated Quests</h2><p>KDT OS created starter quests from this project analysis so you can practice detected skills immediately.</p><ul>{% for q in report.auto_generated_quests %}<li><a href="{{ url_for('view_quest', filename=q) }}">{{ q }}</a></li>{% endfor %}</ul></section>
+    {% endif %}
+
+    <section class="card accent">
+        <h2>Learning Opportunities</h2>
+        <p class="muted">KDT OS can turn detected skills into exact practice, refresh, weak-skill, or goal/project-blocker quests.</p>
+        {% if report.learning_opportunities %}
+            <div class="quest-grid">
+            {% for item in report.learning_opportunities %}
+                <div class="quest-card"><h3>{{ item.skill }}</h3><p>{{ item.why }}</p><p><strong>Practice options:</strong> {{ item.practice_options|join(', ') }}</p>
+                    <form action="{{ url_for('create_quest', filename=filename) }}" method="post">
+                        <input type="hidden" name="skill" value="{{ item.skill }}">
+                        <label>Quest type<select name="quest_type"><option>Practice Quest</option><option>Refresh Quest</option><option>Goal Quest</option><option>Weak Skill Quest</option></select></label>
+                        <label>What part do you not understand yet?<input type="text" name="user_gap" placeholder="Example: I don't understand how to save records"></label>
+                        <button type="submit">Create Exact Quest</button>
+                    </form>
+                </div>
+            {% endfor %}
+            </div>
+        {% else %}<p class="muted">No learning opportunities found yet.</p>{% endif %}
+    </section>
+
+    <section class="card"><h2>Important Files</h2>{% if report.important_files %}<ul class="file-list">{% for file in report.important_files %}<li>{{ file }}</li>{% endfor %}</ul>{% else %}<p class="muted">No common important files detected.</p>{% endif %}</section>
+
+    <section class="card"><h2>Next Decision</h2><p>{{ report.next_decision.question }}</p><div class="decision-list">{% for option in report.next_decision.options %}<form action="{{ url_for('save_decision', filename=filename) }}" method="post" class="decision-form"><input type="hidden" name="decision_id" value="{{ option.id }}"><input type="hidden" name="decision_label" value="{{ option.label }}"><details><summary>{{ option.label }}</summary><p>{{ option.explanation }}</p><label>Why are you choosing this?<input type="text" name="reason" placeholder="Optional, but future-you will thank you"></label><button type="submit">Save This Decision</button></details></form>{% endfor %}</div>{% if report.decisions %}<h3>Decision History</h3><ul>{% for decision in report.decisions %}<li><strong>{{ decision.decision_label }}</strong> — {{ decision.reason }} <small>{{ decision.made_at }}</small></li>{% endfor %}</ul>{% endif %}</section>
+
+    <a class="download" href="{{ url_for('download_report', filename=filename) }}">Download JSON Report</a>
+</main>
+</body>
+</html>

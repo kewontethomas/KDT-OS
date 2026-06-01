@@ -1,0 +1,15 @@
+{
+  "enabled": true,
+  "provider": "ollama",
+  "model": "llama3.1:8b",
+  "reasoning_model": "llama3.1:8b",
+  "code_model": "deepseek-coder:latest",
+  "vision_model": "llava:latest",
+  "auto_pull_models": false,
+  "model_pull_policy": "ask_first",
+  "host": "http://127.0.0.1:11434",
+  "auto_start": true,
+  "last_status": "Ollama is running and ready.",
+  "fast_model": "llama3.2:3b",
+  "embedding_model": "nomic-embed-text:latest"
+}

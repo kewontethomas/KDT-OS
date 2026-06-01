@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>KDT OS Projects</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><main class="shell">
+{% include '_nav.html' %}
+<section class="hero"><p class="eyebrow">Project Evolution</p><h1>Projects</h1><p>Track each project as it grows. Re-upload the same project name to save a new version and compare what changed.</p></section>
+<section class="card">
+{% if projects %}<div class="reports">{% for project in projects %}
+<a class="report-card" href="{{ url_for('view_project', filename=project.filename) }}"><strong>{{ project.project_name }}</strong><span>{{ project.status }}</span><small>{{ project.versions|length }} version(s) · Last analyzed: {{ project.last_analyzed }}</small><p>{{ project.latest_capabilities|join(', ') }}</p></a>
+{% endfor %}</div>{% else %}<p class="muted">No projects tracked yet. Analyze a project first.</p>{% endif %}
+</section>
+</main></body></html>

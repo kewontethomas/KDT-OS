@@ -1,0 +1,13 @@
+OK: fieldseed/__init__.py 
+OK: fieldseed/paths.py 
+OK: fieldseed/app.py 
+OK: fieldseed/core/__init__.py 
+OK: fieldseed/core/database.py 
+OK: fieldseed/core/fact_engine.py 
+OK: fieldseed/core/ticket_manager.py 
+OK: fieldseed/core/truth_gate.py 
+OK: fieldseed/core/ai_bridge.py 
+OK: fieldseed/core/agent_loop.py 
+OK: fieldseed/core/evidence_engine.py 
+OK: fieldseed/modes/__init__.py 
+OK: fieldseed/modes/collector.py 

@@ -1,0 +1,15 @@
+{
+  "name": "FieldSeed Vision Build",
+  "python_files_checked": 13,
+  "failures": [],
+  "features": {
+    "no_guess_fact_engine": true,
+    "truth_locked_ai": true,
+    "active_agent": true,
+    "conversational_tickets": true,
+    "collector_mode": true,
+    "rescue_mode": true,
+    "confirmed_knowledge": true,
+    "growth_queue": true
+  }
+}

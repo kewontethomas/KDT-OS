@@ -1,0 +1,14 @@
+{
+  "name": "FieldSeed Collector Mission Build",
+  "python_files_checked": 14,
+  "failures": [],
+  "features": {
+    "collector_mission_setup": true,
+    "site_information": true,
+    "ticket_id": true,
+    "collection_level": true,
+    "progress_bar": true,
+    "live_status_log": true,
+    "wmic_failsafe_disk_collection": true
+  }
+}

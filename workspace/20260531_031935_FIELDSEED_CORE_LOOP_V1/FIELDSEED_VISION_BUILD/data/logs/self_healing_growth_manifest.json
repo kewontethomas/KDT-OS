@@ -1,0 +1,13 @@
+{
+  "name": "FieldSeed Self-Healing Growth Build",
+  "python_files_checked": 15,
+  "failures": [],
+  "features": {
+    "visual_self_inspection": true,
+    "known_issue_scan": true,
+    "patch_preview": true,
+    "confirmation_before_apply": true,
+    "rollback_structure": true,
+    "risky_patch_refusal": true
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "FieldSeed Autonomous Growth Build",
+  "python_files_checked": 15,
+  "failures": [],
+  "features": {
+    "autonomous_repair_candidates": true,
+    "repair_queue": true,
+    "removed_one_off_repair_buttons": true,
+    "confirmation_before_repair": true,
+    "backup_test_rollback": true
+  }
+}

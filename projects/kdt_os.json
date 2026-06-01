@@ -1,0 +1,80 @@
+{
+  "project_name": "KDT OS",
+  "created_at": "2026-06-01T00:46:02",
+  "versions": [
+    {
+      "version": 1,
+      "report_file": "20260601_004601_KDT_OS.json",
+      "analyzed_at": "2026-06-01T00:46:02",
+      "health_score": 75,
+      "file_count": 150,
+      "function_count": 402,
+      "capabilities": [
+        "Learning/Practice",
+        "Project Tracking",
+        "Health Monitoring",
+        "Evidence Collection",
+        "Ticket System",
+        "Task Management",
+        "Repair Planning",
+        "Knowledge Base",
+        "Database Storage",
+        "Dashboard/UI",
+        "File Handling",
+        "Journal/Reflection"
+      ],
+      "technologies": [
+        "Python",
+        "GitHub/Versioning",
+        "SQLite",
+        "HTML/CSS",
+        "API / Routes",
+        "PowerShell",
+        "JavaScript",
+        "Flask",
+        "React",
+        "SQLAlchemy",
+        "FastAPI",
+        "Django"
+      ],
+      "comparison": null
+    }
+  ],
+  "current_report": "20260601_004601_KDT_OS.json",
+  "status": "Active",
+  "knowledge_type": "fact",
+  "source_type": "Local Folder",
+  "confidence": 100,
+  "verification_status": "Verified",
+  "source_note": "Created by scanning a local project folder instead of uploading a ZIP.",
+  "source_path": "D:\\KDT_OS_PROJECT_ANALYZER_V1",
+  "last_analyzed": "2026-06-01T00:46:02",
+  "latest_capabilities": [
+    "Learning/Practice",
+    "Project Tracking",
+    "Health Monitoring",
+    "Evidence Collection",
+    "Ticket System",
+    "Task Management",
+    "Repair Planning",
+    "Knowledge Base",
+    "Database Storage",
+    "Dashboard/UI",
+    "File Handling",
+    "Journal/Reflection"
+  ],
+  "latest_technologies": [
+    "Python",
+    "GitHub/Versioning",
+    "SQLite",
+    "HTML/CSS",
+    "API / Routes",
+    "PowerShell",
+    "JavaScript",
+    "Flask",
+    "React",
+    "SQLAlchemy",
+    "FastAPI",
+    "Django"
+  ]
+}

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>KDT OS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="shell">
+    {% include '_nav.html' %}
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="alert">
+            {% for message in messages %}<p>{{ message }}</p>{% endfor %}
+        </div>
+    {% endif %}
+    {% endwith %}
+
+    <section class="hero product-hero home-hero">
+        <p class="eyebrow">Personal Growth Operating System</p>
+        <h1>KDT OS</h1>
+        <p class="hero-lead">Build projects. Learn skills. Prove progress. Grow into the person you are working to become.</p>
+        <div class="hero-actions">
+            <a class="button-link" href="{{ url_for('path_builder') }}">Plan My Next Build</a>
+            <a class="button-link ghost" href="{{ url_for('sources') }}">Connect a Project Folder</a>
+        </div>
+    </section>
+
+    <section class="grid four focus-grid">
+        <div class="metric focus-card">
+            <span>Current Goals</span>
+            <strong>{{ goals|length }}</strong>
+            <p class="muted">Goals are the reason behind the work.</p>
+        </div>
+        <div class="metric focus-card">
+            <span>Tracked Projects</span>
+            <strong>{{ projects|length }}</strong>
+            <p class="muted">Real projects KDT OS can analyze and grow.</p>
+        </div>
+        <div class="metric focus-card">
+            <span>Active Quests</span>
+            <strong>{{ quests|length }}</strong>
+            <p class="muted">Small proof-backed actions.</p>
+        </div>
+        <div class="metric focus-card">
+            <span>Verified Skills</span>
+            <strong>{{ skill_graph.verified }}</strong>
+            <p class="muted">Earned through proof, not assumptions.</p>
+        </div>
+    </section>
+
+    <section class="grid two">
+        <div class="card spotlight">
+            <p class="eyebrow">Next Best Move</p>
+            <h2>Choose one real thing to improve today.</h2>
+            {% if quests %}
+                {% set q = quests[0] %}
+                <div class="mini current-card">
+                    <strong>{{ q.title }}</strong>
+                    <p>{{ q.what_to_build }}</p>
+                    <a class="button-link" href="{{ url_for('view_quest', filename=q.filename) }}">Open Current Quest</a>
+                </div>
+            {% else %}
+                <p class="muted">No quest yet. Start with a real project or blocker.</p>
+                <a class="button-link" href="{{ url_for('path_builder') }}">Create a Path</a>
+            {% endif %}
+        </div>
+
+        <div class="card ai-card {% if ai_status.available %}ai-ready{% else %}ai-warn{% endif %}">
+            <p class="eyebrow">AI Layer</p>
+            <h2>Ollama Status</h2>
+            <p>{{ ai_status.message }}</p>
+            <p class="muted">Model: {{ ai_status.model }} · Host: {{ ai_status.host }}</p>
+            <a class="button-link" href="{{ url_for('ai_settings') }}">AI Settings</a>
+        </div>
+    </section>
+
+    <section class="card trust-card">
+        <p class="eyebrow">Knowledge Trust</p>
+        <h2>KDT OS separates facts from guesses.</h2>
+        <div class="trust-grid">
+            <div><strong>Verified Projects</strong><span>{{ trust.verified_projects }}</span></div>
+            <div><strong>Inferred Projects</strong><span>{{ trust.inferred_projects }}</span></div>
+            <div><strong>Suggested Paths</strong><span>{{ trust.suggested_projects_or_paths }}</span></div>
+            <div><strong>Verified Skills</strong><span>{{ trust.verified_skills }}</span></div>
+            <div><strong>Unverified Skills</strong><span>{{ trust.unverified_skills }}</span></div>
+        </div>
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <h2>Active Projects</h2>
+            {% if projects %}
+                <div class="stack">
+                    {% for project in projects[:4] %}
+                    <a class="mini link-card" href="{{ url_for('view_project', filename=project.filename) }}">
+                        <strong>{{ project.project_name }}</strong>
+                        <span>{{ project.status }} · {{ project.versions|length }} version(s)</span>
+                        <p>{{ project.latest_capabilities|join(', ') }}</p>
+                    </a>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p class="muted">No projects tracked yet.</p>
+            {% endif %}
+        </div>
+
+        <div class="card">
+            <h2>Recent Paths</h2>
+            {% if paths %}
+                <div class="stack">
+                    {% for p in paths %}
+                    <a class="mini link-card" href="{{ url_for('view_path', filename=p.filename) }}">
+                        <strong>{{ p.project.name if p.project else 'Project Path' }}</strong>
+                        <p>{{ p.problem_summary }}</p>
+                    </a>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p class="muted">No paths created yet.</p>
+            {% endif %}
+        </div>
+    </section>
+
+    <section class="card accent">
+        <h2>Analyze or Update a Project</h2>
+        <p class="muted">Use ZIP uploads for packages and backups. Use Sources for live folders you keep editing.</p>
+        <form action="{{ url_for('analyze') }}" method="post" enctype="multipart/form-data">
+            <label>Project Name <input name="project_name" placeholder="Example: KDT OS"></label>
+            <label>Project ZIP <input type="file" name="project_zip" accept=".zip" required></label>
+            <button type="submit">Analyze ZIP</button>
+        </form>
+    </section>
+</main>
+</body>
+</html>

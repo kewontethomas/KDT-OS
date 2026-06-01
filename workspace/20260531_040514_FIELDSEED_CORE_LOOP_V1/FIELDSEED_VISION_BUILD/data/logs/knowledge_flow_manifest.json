@@ -1,0 +1,13 @@
+{
+  "name": "FieldSeed Knowledge Flow Build",
+  "python_files_checked": 14,
+  "failures": [],
+  "features": {
+    "natural_knowledge_understanding": true,
+    "open_ticket_board": true,
+    "add_findings": true,
+    "close_with_solution": true,
+    "auto_database_update": true,
+    "confirmed_knowledge_creation": true
+  }
+}

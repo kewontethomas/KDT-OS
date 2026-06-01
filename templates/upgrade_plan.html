@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>{{ plan.upgrade_name }}</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head><body><main class="shell">
+{% include '_nav.html' %}
+{% with messages = get_flashed_messages() %}{% if messages %}<div class="alert success">{% for message in messages %}<p>{{ message }}</p>{% endfor %}</div>{% endif %}{% endwith %}
+<a class="back" href="{{ url_for('upgrade') }}">← Back to Upgrades</a>
+<section class="hero"><p class="eyebrow">UPGRADE PLAN</p><h1>{{ plan.upgrade_name }}</h1><p>{{ plan.why_needed }}</p></section>
+<section class="grid two"><div class="card"><h2>Current Gap</h2><p>{{ plan.current_gap }}</p></div><div class="card"><h2>Requested</h2><p>{{ plan.requested }}</p><p><strong>Source:</strong> {{ 'AI-generated' if plan.ai_generated else 'Fallback' }}</p></div></section>
+<section class="grid two"><div class="card"><h2>Affected Systems</h2><ul>{% for item in plan.affected_systems %}<li>{{ item }}</li>{% endfor %}</ul></div><div class="card"><h2>Likely Files</h2><ul>{% for item in plan.likely_files %}<li>{{ item }}</li>{% endfor %}</ul></div></section>
+<section class="card"><h2>Implementation Steps</h2><ol>{% for step in plan.implementation_steps %}<li>{{ step }}</li>{% endfor %}</ol></section>
+<section class="card"><h2>Verification Plan</h2><ul>{% for step in plan.verification_plan %}<li>{{ step }}</li>{% endfor %}</ul></section>
+<section class="card accent"><h2>Upgrade Quest</h2><p>Turn this upgrade plan into an exact quest with files, steps, proof, and a return point.</p><form action="{{ url_for('create_upgrade_quest', filename=filename) }}" method="post"><button type="submit">Create Upgrade Quest</button></form>{% if plan.created_quests %}<h3>Created Quest(s)</h3><ul>{% for q in plan.created_quests %}<li><a href="{{ url_for('view_quest', filename=q.quest_file) }}">{{ q.title }}</a></li>{% endfor %}</ul>{% endif %}</section>
+<section class="card accent"><h2>Verify Finished Upgrade</h2><p class="muted">Upload the updated KDT OS ZIP. KDT OS will check likely files and record the verification result.</p><form action="{{ url_for('verify_upgrade_plan', filename=filename) }}" method="post" enctype="multipart/form-data"><label>Updated KDT OS ZIP<input type="file" name="upgrade_zip" accept=".zip" required></label><button type="submit">Verify Upgrade Proof</button></form></section>
+{% if plan.verification_submissions %}<section class="card"><h2>Verification History</h2>{% for v in plan.verification_submissions %}<div class="mini"><strong>{{ v.status }}</strong><p>Files checked: {{ v.file_count }}</p><p>Likely files found: {{ v.likely_files_found|join(', ') }}</p><small>{{ v.submitted_at }}</small></div>{% endfor %}</section>{% endif %}
+</main></body></html>

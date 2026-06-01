@@ -1,0 +1,57 @@
+{
+  "created_at": "2026-05-31T13:52:03",
+  "source_project": "Teach Me Mode",
+  "origin_report": "",
+  "resume_project": "",
+  "connected_goal": "",
+  "skill": "I don't understand Active Directory OUs.",
+  "user_gap": "I don't know where to start.",
+  "title": "Teach Me Quest: I don't understand Active Directory OUs.",
+  "quest_type": "Teach Me Quest",
+  "why_this_exists": "You asked Teach Me Mode for help with I don't understand Active Directory OUs.. Your blocker was: I don't know where to start.. Ollama generated this exact quest so you can practice the next achievable step.",
+  "goal": "Create and manage an Organizational Unit (OU) in an existing Active Directory domain.",
+  "what_to_build": "A single OU named \"Sales\" within the default Users container, with one user account moved to it.",
+  "requirements": [
+    "Access to a Windows Server 2012 or later Domain Controller",
+    "Active Directory Users and Computers (ADUC) console installed",
+    "A test domain with at least one user account created"
+  ],
+  "success_criteria": [
+    "The Sales OU is created, and one user account is successfully moved into it."
+  ],
+  "steps": [
+    "Open the ADUC console on your Domain Controller.",
+    "In the console tree, navigate to Users > [YourDomainName] > Users.",
+    "Right-click on the Users container and select New > Organizational Unit.",
+    "Name the new OU \"Sales\" and click OK.",
+    "Move one user account from the Users container to the newly created Sales OU by:",
+    "Selecting the user account in the console tree",
+    "Right-clicking on the selected user and selecting Move",
+    "Browsing to the Sales OU and clicking OK"
+  ],
+  "proof_required": [
+    "Take a screenshot of the ADUC console showing the newly created Sales OU with the user account listed within it."
+  ],
+  "verification_patterns": [],
+  "difficulty": "Beginner",
+  "estimated_time": "30-45 minutes",
+  "ai_generated": true,
+  "ai_parse_mode": "teach_me_sectioned_plain_text",
+  "ai_raw_response": "Here's your beginner-friendly practice quest for understanding Active Directory OUs:\n\n**Goal:**\nCreate and manage an Organizational Unit (OU) in an existing Active Directory domain.\n\n**What To Build:**\nA single OU named \"Sales\" within the default Users container, with one user account moved to it.\n\n**Difficulty:**\nBeginner\n\n**Estimated Time:**\n30-45 minutes\n\n**Requirements:**\n\n* Access to a Windows Server 2012 or later Domain Controller\n* Active Directory Users and Computers (ADUC) console installed\n* A test domain with at least one user account created\n\n**Exact Steps:**\n\n1. Open the ADUC console on your Domain Controller.\n2. In the console tree, navigate to **Users** > **[YourDomainName]** > **Users**.\n3. Right-click on the **Users** container and select **New** > **Organizational Unit**.\n4. Name the new OU \"Sales\" and click **OK**.\n5. Move one user account from the Users container to the newly created Sales OU by:\n\t* Selecting the user account in the console tree\n\t* Right-clicking on the selected user and selecting **Move**\n\t* Browsing to the Sales OU and clicking **OK**\n\n**Success Criteria:**\nThe Sales OU is created, and one user account is successfully moved into it.\n\n**Proof Needed:**\nTake a screenshot of the ADUC console showing the newly created Sales OU with the user account listed within it.",
+  "teach_me_breakdown": [
+    {
+      "label": "What is this skill?",
+      "answer": "I don't understand Active Directory OUs. is a skill KDT OS can practice through small exact quests."
+    },
+    {
+      "label": "Why practice it?",
+      "answer": "Practicing it in a tiny project makes it easier to use later in a larger project."
+    }
+  ],
+  "status": "Superseded",
+  "submissions": [],
+  "resume_rule": "After this quest is complete, return to the original project or goal that caused this quest unless you intentionally choose a different path.",
+  "archived_at": "2026-06-01T00:11:45",
+  "archive_reason": "Quest failed quality governance and was regenerated.",
+  "superseded_by": "Teach_Me_Mode_I_don_t_understand_Active_Directory_OUs__20260601_001145.json"
+}

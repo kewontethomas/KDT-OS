@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Quest Quality</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head><body><main class="shell">
+{% include '_nav.html' %}
+<a class="back" href="{{ url_for('view_quest', filename=filename) }}">← Back to Quest</a>
+<section class="hero"><p class="eyebrow">Quest Quality Engine</p><h1>{{ quest.title }}</h1><p>{{ quest.quest_quality.rating }} · {{ quest.quest_quality.score }}%</p></section>
+{% if quest.quest_quality.penalties %}<section class="card warning"><h2>Penalties</h2><ul>{% for p in quest.quest_quality.penalties %}<li>{{ p }}</li>{% endfor %}</ul></section>{% endif %}
+<section class="card"><h2>10/10 Quest Checklist</h2><div class="stack">
+{% for c in quest.quest_quality.checks %}<div class="mini"><strong>{% if c.ok %}✓{% else %}✗{% endif %} {{ c.name }}</strong><p>{% if c.ok %}Passed{% else %}{{ c.fix }}{% endif %}</p></div>{% endfor %}
+</div></section>
+<section class="card accent"><h2>Rule</h2><p>Every KDT OS quest must be small enough to start, exact enough to follow, unique enough to be useful, connected to a goal/project, and verifiable by proof.</p></section>
+</main></body></html>

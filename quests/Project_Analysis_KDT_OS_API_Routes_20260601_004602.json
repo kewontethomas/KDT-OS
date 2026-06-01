@@ -1,0 +1,135 @@
+{
+  "created_at": "2026-06-01T00:46:02",
+  "source_project": "Project Analysis: KDT OS",
+  "origin_report": "20260601_004601_KDT_OS.json",
+  "resume_project": "KDT OS",
+  "connected_goal": "",
+  "skill": "API / Routes",
+  "user_gap": "KDT OS detected API / Routes in this uploaded project and created a ready practice quest.",
+  "title": "API Weather Lookup App",
+  "quest_type": "Auto Practice Quest",
+  "why_this_exists": "This quest came from: Project Analysis: KDT OS. The skill being practiced is: API / Routes. Your stated blocker is: KDT OS detected API / Routes in this uploaded project and created a ready practice quest. This quest exists so practice connects back to something you care about instead of becoming random homework.",
+  "goal": "Practice making an API request and displaying JSON data.",
+  "what_to_build": "A browser app that fetches weather or sample API data after a button click and displays it in a result box.",
+  "requirements": [
+    "Input field",
+    "Button",
+    "fetch() request",
+    "JSON parsing",
+    "Display result",
+    "Error message"
+  ],
+  "success_criteria": [
+    "fetch() detected",
+    "JSON parsing detected",
+    "Button event detected",
+    "Data displayed in HTML"
+  ],
+  "steps": [
+    "Create index.html, style.css, script.js",
+    "Create input field",
+    "Create button",
+    "Create result div",
+    "Use fetch() in script.js",
+    "Use response.json()",
+    "Update result div",
+    "Add try/catch or .catch()"
+  ],
+  "proof_required": [
+    "Upload ZIP with HTML/CSS/JS",
+    "Include README",
+    "Include screenshot if possible"
+  ],
+  "verification_patterns": [
+    "fetch\\(",
+    "\\.json\\(\\)",
+    "addEventListener",
+    "innerText|textContent|innerHTML"
+  ],
+  "difficulty": "Beginner",
+  "estimated_time": "30-60 minutes",
+  "ai_generated": false,
+  "ai_parse_mode": "template",
+  "ai_raw_response": "",
+  "teach_me_breakdown": [
+    {
+      "label": "What is an API?",
+      "answer": "An API is a way for one app to ask another app or service for data."
+    },
+    {
+      "label": "What is fetch()?",
+      "answer": "fetch() is JavaScript's way to make a web request from the browser."
+    },
+    {
+      "label": "What is JSON?",
+      "answer": "JSON is a data format that looks like JavaScript objects and is commonly returned by APIs."
+    },
+    {
+      "label": "What is an endpoint?",
+      "answer": "An endpoint is the URL you request, like /weather or /api/tasks."
+    }
+  ],
+  "status": "Assigned",
+  "submissions": [],
+  "resume_rule": "After this quest is complete, return to the original project or goal that caused this quest unless you intentionally choose a different path.",
+  "quest_quality": {
+    "score": 100,
+    "rating": "10/10 Ready",
+    "checks": [
+      {
+        "name": "Exact blocker identified",
+        "ok": true,
+        "fix": "Add the specific thing the user does not understand or cannot do yet."
+      },
+      {
+        "name": "Smallest visible action",
+        "ok": true,
+        "fix": "State the smallest visible thing to create, do, or prove."
+      },
+      {
+        "name": "Step-by-step instructions",
+        "ok": true,
+        "fix": "Add at least 3 exact steps from start to finish."
+      },
+      {
+        "name": "Required features",
+        "ok": true,
+        "fix": "List the concrete files, fields, buttons, commands, or actions required."
+      },
+      {
+        "name": "Success criteria",
+        "ok": true,
+        "fix": "List measurable conditions that prove completion."
+      },
+      {
+        "name": "Proof method",
+        "ok": true,
+        "fix": "State exactly what to upload or answer as proof."
+      },
+      {
+        "name": "Return path",
+        "ok": true,
+        "fix": "Connect this quest back to a project, goal, or parent quest."
+      },
+      {
+        "name": "Not vague",
+        "ok": true,
+        "fix": "Replace broad words like learn/practice with exact files, commands, or actions."
+      }
+    ],
+    "passed": 8,
+    "total": 8
+  },
+  "quest_standard": {
+    "rule": "Every KDT OS quest must include exact steps, proof, success criteria, and a return path.",
+    "minimum_fields": [
+      "Goal",
+      "Blocker",
+      "What to build/do",
+      "Steps",
+      "Success criteria",
+      "Proof",
+      "Return point"
+    ]
+  }
+}
