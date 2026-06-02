@@ -1,0 +1,840 @@
+{
+  "created_at": "2026-06-02T03:45:58",
+  "roadmaps": [
+    {
+      "name": "KDT OS Builder Path",
+      "mission": "Grow KDT OS from a Flask project into a personal learning and project operating system.",
+      "completion": 23,
+      "steps": [
+        {
+          "index": 1,
+          "step": "Project Tracking",
+          "skill": "Project Tracking",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Complete one tiny proof artifact for Project Tracking and explain what it proves.",
+          "quest": null
+        },
+        {
+          "index": 2,
+          "step": "Quest System",
+          "skill": "Learning/Practice",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Complete one tiny proof artifact for Quest System and explain what it proves.",
+          "quest": null
+        },
+        {
+          "index": 3,
+          "step": "Evidence Collection",
+          "skill": "Evidence Collection",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Complete one tiny proof artifact for Evidence Collection and explain what it proves.",
+          "quest": null
+        },
+        {
+          "index": 4,
+          "step": "Learning Intelligence",
+          "skill": "Learning Intelligence",
+          "status": "Missing",
+          "score": 0,
+          "recommended_action": "Complete one tiny proof artifact for Learning Intelligence and explain what it proves.",
+          "quest": null
+        },
+        {
+          "index": 5,
+          "step": "Skill Verification",
+          "skill": "Skill Verification",
+          "status": "Missing",
+          "score": 0,
+          "recommended_action": "Complete one tiny proof artifact for Skill Verification and explain what it proves.",
+          "quest": null
+        },
+        {
+          "index": 6,
+          "step": "Proof Promotion",
+          "skill": "Proof Promotion",
+          "status": "Missing",
+          "score": 0,
+          "recommended_action": "Complete one tiny proof artifact for Proof Promotion and explain what it proves.",
+          "quest": null
+        },
+        {
+          "index": 7,
+          "step": "Learning Memory",
+          "skill": "Learning Memory",
+          "status": "Missing",
+          "score": 0,
+          "recommended_action": "Complete one tiny proof artifact for Learning Memory and explain what it proves.",
+          "quest": null
+        },
+        {
+          "index": 8,
+          "step": "Skill Refresh",
+          "skill": "Skill Refresh",
+          "status": "Missing",
+          "score": 0,
+          "recommended_action": "Complete one tiny proof artifact for Skill Refresh and explain what it proves.",
+          "quest": null
+        },
+        {
+          "index": 9,
+          "step": "Route Extraction",
+          "skill": "Route Extraction",
+          "status": "Missing",
+          "score": 0,
+          "recommended_action": "Create one Flask route, load it in the browser, and screenshot the result.",
+          "quest": null
+        },
+        {
+          "index": 10,
+          "step": "Core Storage",
+          "skill": "Core Storage",
+          "status": "Missing",
+          "score": 0,
+          "recommended_action": "Complete one tiny proof artifact for Core Storage and explain what it proves.",
+          "quest": null
+        },
+        {
+          "index": 11,
+          "step": "Testing",
+          "skill": "Testing",
+          "status": "Practicing",
+          "score": 55,
+          "recommended_action": "Write one smoke test or one assert that proves the feature works.",
+          "quest": {
+            "title": "Flask Route Smoke Test Suite",
+            "filename": "flask_route_smoke_test_suite_20260601_030518.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 12,
+          "step": "Architecture",
+          "skill": "Route Extraction",
+          "status": "Missing",
+          "score": 0,
+          "recommended_action": "Complete one tiny proof artifact for Architecture and explain what it proves.",
+          "quest": null
+        }
+      ],
+      "next_step": {
+        "index": 4,
+        "step": "Learning Intelligence",
+        "skill": "Learning Intelligence",
+        "status": "Missing",
+        "score": 0,
+        "recommended_action": "Complete one tiny proof artifact for Learning Intelligence and explain what it proves.",
+        "quest": null
+      },
+      "blocked_count": 8,
+      "proven_count": 0
+    },
+    {
+      "name": "IT Support Growth Path",
+      "mission": "Build field-ready support skills for Windows, servers, logs, AD, and automation.",
+      "completion": 54,
+      "steps": [
+        {
+          "index": 1,
+          "step": "Windows Troubleshooting",
+          "skill": "Health Monitoring",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Complete one tiny proof artifact for Windows Troubleshooting and explain what it proves.",
+          "quest": {
+            "title": "Mini Health Checker",
+            "filename": "Mini_Health_Checker_20260601_013450.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 2,
+          "step": "CPU Usage",
+          "skill": "CPU Usage",
+          "status": "Practicing",
+          "score": 55,
+          "recommended_action": "Complete one tiny proof artifact for CPU Usage and explain what it proves.",
+          "quest": {
+            "title": "CPU Usage Task Manager Proof Quest",
+            "filename": "CPU_Usage_Task_Manager_Proof_Quest_20260601_023733.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 3,
+          "step": "Event Viewer",
+          "skill": "Windows Server Logs",
+          "status": "Missing",
+          "score": 0,
+          "recommended_action": "Complete one tiny proof artifact for Event Viewer and explain what it proves.",
+          "quest": null
+        },
+        {
+          "index": 4,
+          "step": "Active Directory",
+          "skill": "Active Directory",
+          "status": "Practicing",
+          "score": 55,
+          "recommended_action": "Write a proof note explaining the object, where it lives, and what action you performed.",
+          "quest": {
+            "title": "Active Directory OU Proof Quest",
+            "filename": "Active_Directory_OU_Proof_Quest_20260601_023659.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 5,
+          "step": "Group Policy",
+          "skill": "Active Directory",
+          "status": "Practicing",
+          "score": 55,
+          "recommended_action": "Write a proof note explaining the object, where it lives, and what action you performed.",
+          "quest": {
+            "title": "Active Directory OU Proof Quest",
+            "filename": "Active_Directory_OU_Proof_Quest_20260601_023659.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 6,
+          "step": "PowerShell",
+          "skill": "PowerShell",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Complete one tiny proof artifact for PowerShell and explain what it proves.",
+          "quest": null
+        },
+        {
+          "index": 7,
+          "step": "Networking",
+          "skill": "Networking",
+          "status": "Missing",
+          "score": 0,
+          "recommended_action": "Complete one tiny proof artifact for Networking and explain what it proves.",
+          "quest": null
+        },
+        {
+          "index": 8,
+          "step": "Documentation",
+          "skill": "Journal/Reflection",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Complete one tiny proof artifact for Documentation and explain what it proves.",
+          "quest": null
+        },
+        {
+          "index": 9,
+          "step": "Ticket System",
+          "skill": "Ticket System",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Complete one tiny proof artifact for Ticket System and explain what it proves.",
+          "quest": null
+        },
+        {
+          "index": 10,
+          "step": "Automation/Scheduling",
+          "skill": "Automation/Scheduling",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Complete one tiny proof artifact for Automation/Scheduling and explain what it proves.",
+          "quest": null
+        }
+      ],
+      "next_step": {
+        "index": 2,
+        "step": "CPU Usage",
+        "skill": "CPU Usage",
+        "status": "Practicing",
+        "score": 55,
+        "recommended_action": "Complete one tiny proof artifact for CPU Usage and explain what it proves.",
+        "quest": {
+          "title": "CPU Usage Task Manager Proof Quest",
+          "filename": "CPU_Usage_Task_Manager_Proof_Quest_20260601_023733.json",
+          "score": 100
+        }
+      },
+      "blocked_count": 2,
+      "proven_count": 0
+    },
+    {
+      "name": "Flask Backend Path",
+      "mission": "Turn Python scripts into useful web tools with routes, templates, storage, and proof.",
+      "completion": 57,
+      "steps": [
+        {
+          "index": 1,
+          "step": "Python",
+          "skill": "Python",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Write one small Python file that demonstrates this concept and upload the file as proof.",
+          "quest": {
+            "title": "Python Function Practice: Expense Totaler",
+            "filename": "Python_Function_Practice_Expense_Totaler_20260601_013510.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 2,
+          "step": "Flask",
+          "skill": "Flask",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Create one Flask route, load it in the browser, and screenshot the result.",
+          "quest": null
+        },
+        {
+          "index": 3,
+          "step": "Routes",
+          "skill": "API / Routes",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Create one Flask route, load it in the browser, and screenshot the result.",
+          "quest": {
+            "title": "API Weather Lookup App",
+            "filename": "api_weather_lookup_app_20260601_030509.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 4,
+          "step": "Templates",
+          "skill": "Flask",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Complete one tiny proof artifact for Templates and explain what it proves.",
+          "quest": null
+        },
+        {
+          "index": 5,
+          "step": "Forms",
+          "skill": "HTML/CSS",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Complete one tiny proof artifact for Forms and explain what it proves.",
+          "quest": {
+            "title": "Exact Practice Quest",
+            "filename": "Project_Analysis_KDT_OS_HTML_CSS_20260601_004602.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 6,
+          "step": "JSON",
+          "skill": "Python",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Complete one tiny proof artifact for JSON and explain what it proves.",
+          "quest": {
+            "title": "Python Function Practice: Expense Totaler",
+            "filename": "Python_Function_Practice_Expense_Totaler_20260601_013510.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 7,
+          "step": "SQLite",
+          "skill": "SQLite",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Build or refresh a tiny SQLite CRUD table with insert, select, update, and delete proof.",
+          "quest": {
+            "title": "SQLite CRUD Quest: Workout Database",
+            "filename": "sqlite_crud_quest_workout_database_20260601_030423.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 8,
+          "step": "Testing",
+          "skill": "Testing",
+          "status": "Practicing",
+          "score": 55,
+          "recommended_action": "Write one smoke test or one assert that proves the feature works.",
+          "quest": {
+            "title": "Flask Route Smoke Test Suite",
+            "filename": "flask_route_smoke_test_suite_20260601_030518.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 9,
+          "step": "Project Structure",
+          "skill": "Project Structure",
+          "status": "Missing",
+          "score": 0,
+          "recommended_action": "Complete one tiny proof artifact for Project Structure and explain what it proves.",
+          "quest": null
+        },
+        {
+          "index": 10,
+          "step": "Deployment",
+          "skill": "Deployment",
+          "status": "Missing",
+          "score": 0,
+          "recommended_action": "Complete one tiny proof artifact for Deployment and explain what it proves.",
+          "quest": null
+        }
+      ],
+      "next_step": {
+        "index": 8,
+        "step": "Testing",
+        "skill": "Testing",
+        "status": "Practicing",
+        "score": 55,
+        "recommended_action": "Write one smoke test or one assert that proves the feature works.",
+        "quest": {
+          "title": "Flask Route Smoke Test Suite",
+          "filename": "flask_route_smoke_test_suite_20260601_030518.json",
+          "score": 100
+        }
+      },
+      "blocked_count": 2,
+      "proven_count": 0
+    },
+    {
+      "name": "Web App Builder Path",
+      "mission": "Build browser apps that look good, respond to clicks, save data, and use APIs.",
+      "completion": 64,
+      "steps": [
+        {
+          "index": 1,
+          "step": "HTML/CSS",
+          "skill": "HTML/CSS",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Complete one tiny proof artifact for HTML/CSS and explain what it proves.",
+          "quest": {
+            "title": "Exact Practice Quest",
+            "filename": "Project_Analysis_KDT_OS_HTML_CSS_20260601_004602.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 2,
+          "step": "Responsive Layout",
+          "skill": "HTML/CSS",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Complete one tiny proof artifact for Responsive Layout and explain what it proves.",
+          "quest": {
+            "title": "Exact Practice Quest",
+            "filename": "Project_Analysis_KDT_OS_HTML_CSS_20260601_004602.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 3,
+          "step": "JavaScript",
+          "skill": "JavaScript",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Complete one tiny proof artifact for JavaScript and explain what it proves.",
+          "quest": null
+        },
+        {
+          "index": 4,
+          "step": "DOM Events",
+          "skill": "JavaScript",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Complete one tiny proof artifact for DOM Events and explain what it proves.",
+          "quest": {
+            "title": "API Weather Lookup App",
+            "filename": "api_weather_lookup_app_20260601_030509.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 5,
+          "step": "Forms",
+          "skill": "HTML/CSS",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Complete one tiny proof artifact for Forms and explain what it proves.",
+          "quest": {
+            "title": "Exact Practice Quest",
+            "filename": "Project_Analysis_KDT_OS_HTML_CSS_20260601_004602.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 6,
+          "step": "Local Storage",
+          "skill": "Local Storage",
+          "status": "Missing",
+          "score": 0,
+          "recommended_action": "Complete one tiny proof artifact for Local Storage and explain what it proves.",
+          "quest": null
+        },
+        {
+          "index": 7,
+          "step": "Fetch/API",
+          "skill": "API / Routes",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Create a button that fetches JSON and displays one field on the page.",
+          "quest": {
+            "title": "API Weather Lookup App",
+            "filename": "api_weather_lookup_app_20260601_030509.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 8,
+          "step": "API / Routes",
+          "skill": "API / Routes",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Create one Flask route, load it in the browser, and screenshot the result.",
+          "quest": {
+            "title": "API Weather Lookup App",
+            "filename": "api_weather_lookup_app_20260601_030509.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 9,
+          "step": "Testing",
+          "skill": "Testing",
+          "status": "Practicing",
+          "score": 55,
+          "recommended_action": "Write one smoke test or one assert that proves the feature works.",
+          "quest": {
+            "title": "Flask Route Smoke Test Suite",
+            "filename": "flask_route_smoke_test_suite_20260601_030518.json",
+            "score": 100
+          }
+        }
+      ],
+      "next_step": {
+        "index": 6,
+        "step": "Local Storage",
+        "skill": "Local Storage",
+        "status": "Missing",
+        "score": 0,
+        "recommended_action": "Complete one tiny proof artifact for Local Storage and explain what it proves.",
+        "quest": null
+      },
+      "blocked_count": 1,
+      "proven_count": 0
+    },
+    {
+      "name": "SQLite & Data Path",
+      "mission": "Store, update, query, and reason about real app data.",
+      "completion": 67,
+      "steps": [
+        {
+          "index": 1,
+          "step": "SQLite",
+          "skill": "SQLite",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Build or refresh a tiny SQLite CRUD table with insert, select, update, and delete proof.",
+          "quest": {
+            "title": "SQLite CRUD Quest: Workout Database",
+            "filename": "sqlite_crud_quest_workout_database_20260601_030423.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 2,
+          "step": "Tables",
+          "skill": "SQLite",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Build or refresh a tiny SQLite CRUD table with insert, select, update, and delete proof.",
+          "quest": {
+            "title": "SQLite CRUD Quest: Workout Database",
+            "filename": "sqlite_crud_quest_workout_database_20260601_030423.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 3,
+          "step": "INSERT",
+          "skill": "SQLite",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Build or refresh a tiny SQLite CRUD table with insert, select, update, and delete proof.",
+          "quest": {
+            "title": "SQLite CRUD Quest: Workout Database",
+            "filename": "sqlite_crud_quest_workout_database_20260601_030423.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 4,
+          "step": "SELECT",
+          "skill": "SQLite",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Build or refresh a tiny SQLite CRUD table with insert, select, update, and delete proof.",
+          "quest": {
+            "title": "SQLite CRUD Quest: Workout Database",
+            "filename": "sqlite_crud_quest_workout_database_20260601_030423.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 5,
+          "step": "UPDATE",
+          "skill": "SQLite",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Build or refresh a tiny SQLite CRUD table with insert, select, update, and delete proof.",
+          "quest": {
+            "title": "SQLite CRUD Quest: Workout Database",
+            "filename": "sqlite_crud_quest_workout_database_20260601_030423.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 6,
+          "step": "DELETE",
+          "skill": "SQLite",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Build or refresh a tiny SQLite CRUD table with insert, select, update, and delete proof.",
+          "quest": {
+            "title": "SQLite CRUD Quest: Workout Database",
+            "filename": "sqlite_crud_quest_workout_database_20260601_030423.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 7,
+          "step": "Filtering",
+          "skill": "SQLite",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Complete one tiny proof artifact for Filtering and explain what it proves.",
+          "quest": {
+            "title": "SQLite CRUD Quest: Workout Database",
+            "filename": "sqlite_crud_quest_workout_database_20260601_030423.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 8,
+          "step": "Relationships",
+          "skill": "SQLite",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Complete one tiny proof artifact for Relationships and explain what it proves.",
+          "quest": {
+            "title": "SQLite CRUD Quest: Workout Database",
+            "filename": "sqlite_crud_quest_workout_database_20260601_030423.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 9,
+          "step": "Reports",
+          "skill": "Project Tracking",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Complete one tiny proof artifact for Reports and explain what it proves.",
+          "quest": null
+        },
+        {
+          "index": 10,
+          "step": "Backup/Restore",
+          "skill": "Backup/Restore",
+          "status": "Missing",
+          "score": 0,
+          "recommended_action": "Complete one tiny proof artifact for Backup/Restore and explain what it proves.",
+          "quest": null
+        }
+      ],
+      "next_step": {
+        "index": 10,
+        "step": "Backup/Restore",
+        "skill": "Backup/Restore",
+        "status": "Missing",
+        "score": 0,
+        "recommended_action": "Complete one tiny proof artifact for Backup/Restore and explain what it proves.",
+        "quest": null
+      },
+      "blocked_count": 1,
+      "proven_count": 0
+    },
+    {
+      "name": "Python Developer Path",
+      "mission": "Build reliable Python tools, automation scripts, and backend logic.",
+      "completion": 73,
+      "steps": [
+        {
+          "index": 1,
+          "step": "Python",
+          "skill": "Python",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Write one small Python file that demonstrates this concept and upload the file as proof.",
+          "quest": {
+            "title": "Python Function Practice: Expense Totaler",
+            "filename": "Python_Function_Practice_Expense_Totaler_20260601_013510.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 2,
+          "step": "Variables",
+          "skill": "Python",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Write one small Python file that demonstrates this concept and upload the file as proof.",
+          "quest": {
+            "title": "Python Function Practice: Expense Totaler",
+            "filename": "Python_Function_Practice_Expense_Totaler_20260601_013510.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 3,
+          "step": "Functions",
+          "skill": "Python",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Write one small Python file that demonstrates this concept and upload the file as proof.",
+          "quest": {
+            "title": "Python Function Practice: Expense Totaler",
+            "filename": "Python_Function_Practice_Expense_Totaler_20260601_013510.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 4,
+          "step": "Lists",
+          "skill": "Python",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Write one small Python file that demonstrates this concept and upload the file as proof.",
+          "quest": {
+            "title": "Python Function Practice: Expense Totaler",
+            "filename": "Python_Function_Practice_Expense_Totaler_20260601_013510.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 5,
+          "step": "Dictionaries",
+          "skill": "Python",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Write one small Python file that demonstrates this concept and upload the file as proof.",
+          "quest": {
+            "title": "Python Function Practice: Expense Totaler",
+            "filename": "Python_Function_Practice_Expense_Totaler_20260601_013510.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 6,
+          "step": "File Handling",
+          "skill": "File Handling",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Complete one tiny proof artifact for File Handling and explain what it proves.",
+          "quest": {
+            "title": "Flask Route Smoke Test Suite",
+            "filename": "flask_route_smoke_test_suite_20260601_030518.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 7,
+          "step": "JSON",
+          "skill": "Python",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Complete one tiny proof artifact for JSON and explain what it proves.",
+          "quest": {
+            "title": "Python Function Practice: Expense Totaler",
+            "filename": "Python_Function_Practice_Expense_Totaler_20260601_013510.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 8,
+          "step": "Error Handling",
+          "skill": "Python",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Complete one tiny proof artifact for Error Handling and explain what it proves.",
+          "quest": {
+            "title": "Python Function Practice: Expense Totaler",
+            "filename": "Python_Function_Practice_Expense_Totaler_20260601_013510.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 9,
+          "step": "Testing",
+          "skill": "Testing",
+          "status": "Practicing",
+          "score": 55,
+          "recommended_action": "Write one smoke test or one assert that proves the feature works.",
+          "quest": {
+            "title": "Flask Route Smoke Test Suite",
+            "filename": "flask_route_smoke_test_suite_20260601_030518.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 10,
+          "step": "SQLite",
+          "skill": "SQLite",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Build or refresh a tiny SQLite CRUD table with insert, select, update, and delete proof.",
+          "quest": {
+            "title": "SQLite CRUD Quest: Workout Database",
+            "filename": "sqlite_crud_quest_workout_database_20260601_030423.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 11,
+          "step": "API / Routes",
+          "skill": "API / Routes",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Create one Flask route, load it in the browser, and screenshot the result.",
+          "quest": {
+            "title": "API Weather Lookup App",
+            "filename": "api_weather_lookup_app_20260601_030509.json",
+            "score": 100
+          }
+        },
+        {
+          "index": 12,
+          "step": "Flask",
+          "skill": "Flask",
+          "status": "Practiced",
+          "score": 75,
+          "recommended_action": "Create one Flask route, load it in the browser, and screenshot the result.",
+          "quest": null
+        }
+      ],
+      "next_step": {
+        "index": 9,
+        "step": "Testing",
+        "skill": "Testing",
+        "status": "Practicing",
+        "score": 55,
+        "recommended_action": "Write one smoke test or one assert that proves the feature works.",
+        "quest": {
+          "title": "Flask Route Smoke Test Suite",
+          "filename": "flask_route_smoke_test_suite_20260601_030518.json",
+          "score": 100
+        }
+      },
+      "blocked_count": 0,
+      "proven_count": 0
+    }
+  ]
+}

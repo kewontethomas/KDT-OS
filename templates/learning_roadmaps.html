@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KDT OS Learning Roadmaps</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="shell">
+    {% include '_nav.html' %}
+
+    <section class="hero product-hero">
+        <p class="eyebrow">V37 · Learning Roadmaps</p>
+        <h1>Learning Roadmaps</h1>
+        <p>KDT OS now turns skills, quests, projects, and proof into ordered paths so you know what comes next.</p>
+    </section>
+
+    {% set totals = data.get('totals', {}) %}
+    <section class="grid four">
+        <div class="metric"><strong>{{ totals.get('active_roadmaps', 0) }}</strong><span>Active Roadmaps</span></div>
+        <div class="metric"><strong>{{ totals.get('average_completion', 0) }}%</strong><span>Average Completion</span></div>
+        <div class="metric"><strong>{{ totals.get('recommended_next_skills', 0) }}</strong><span>Next Skill Picks</span></div>
+        <div class="metric"><strong>{{ totals.get('blocked_paths', 0) }}</strong><span>Blocked Paths</span></div>
+    </section>
+
+    <section class="card accent">
+        <p class="eyebrow">Next Best Roadmap Move</p>
+        {% if data.get('recommended') %}
+        <h2>{{ data.recommended.step }}</h2>
+        <p><b>Path:</b> {{ data.recommended.roadmap }} · <b>Status:</b> {{ data.recommended.status }}</p>
+        <div class="score-line">{{ data.recommended.recommended_action }}</div>
+        {% if data.recommended.quest %}
+        <a class="button-link" href="{{ url_for('view_quest', filename=data.recommended.quest.filename) }}">Open Matching Quest</a>
+        {% endif %}
+        {% else %}
+        <h2>No roadmap blocker found</h2>
+        <p>All roadmap steps look handled from current evidence.</p>
+        {% endif %}
+        <a class="button-link ghost" href="{{ url_for('learning_roadmaps_json') }}">View JSON</a>
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">Roadmap Rule</p>
+            <h2>Know what comes after this</h2>
+            <p>{{ data.get('rule') }}</p>
+            <ul>
+                <li>Missing means no strong evidence yet.</li>
+                <li>Practicing means quests exist but proof is not fully trusted.</li>
+                <li>Proven means verified proof exists or the skill has been promoted.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <p class="eyebrow">Next Skill Queue</p>
+            <h2>Short list for growth</h2>
+            <div class="route-list">
+                {% for step in data.get('next_steps', [])[:5] %}
+                <div class="route-row">
+                    <span>{{ step.step }}</span>
+                    <small>{{ step.roadmap }} · {{ step.status }} · {{ step.completion }}% path completion</small>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Roadmaps</p>
+        <h2>Your current developer and IT growth paths</h2>
+        <div class="reports">
+            {% for roadmap in data.get('roadmaps', []) %}
+            <div class="report-card {% if roadmap.completion >= 80 %}success{% elif roadmap.blocked_count > 5 %}danger{% endif %}">
+                <small>{{ roadmap.proven_count }} proven · {{ roadmap.blocked_count }} blocker(s)</small>
+                <strong>{{ roadmap.name }}</strong>
+                <p>{{ roadmap.mission }}</p>
+                <div class="mastery-bar"><span style="width: {{ roadmap.completion }}%;"></span></div>
+                <p><b>{{ roadmap.completion }}%</b> complete</p>
+                {% if roadmap.next_step %}
+                <div class="score-line"><b>Next:</b> {{ roadmap.next_step.step }} — {{ roadmap.next_step.recommended_action }}</div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Detailed Roadmap Steps</p>
+        <h2>Step-by-step path status</h2>
+        {% for roadmap in data.get('roadmaps', []) %}
+        <details class="breakdown-box" {% if loop.first %}open{% endif %}>
+            <summary><b>{{ roadmap.name }}</b> · {{ roadmap.completion }}% complete</summary>
+            <div class="route-list">
+                {% for step in roadmap.steps %}
+                <div class="route-row">
+                    <span>{{ step.index }}. {{ step.step }} — {{ step.status }}</span>
+                    <small>{{ step.recommended_action }}</small>
+                    {% if step.quest %}
+                    <small>Matching quest: {{ step.quest.title }} · {{ step.quest.score }}%</small>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </details>
+        {% endfor %}
+    </section>
+</main>
+</body>
+</html>
