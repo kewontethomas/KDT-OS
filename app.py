@@ -15,7 +15,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Dict, List, Any
 
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory, flash
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory, flash, jsonify
 
 APP_ROOT = Path(__file__).parent.resolve()
 UPLOAD_DIR = APP_ROOT / "uploads"
@@ -4223,10 +4223,12 @@ import sys
 from kdt_quest_intelligence_v20 import install as install_v20
 from kdt_intelligence_v21 import install as install_v21
 from kdt_self_check_v22 import install as install_v22
+from kdt_auto_governance_v23 import install as install_v23
 
 install_v20(sys.modules[__name__])
 install_v21(sys.modules[__name__])
 install_v22(sys.modules[__name__])
+install_v23(sys.modules[__name__])
 
 if __name__ == "__main__":
     ensure_ollama_ready(wait_seconds=3.0)

@@ -1518,3 +1518,56 @@ textarea {
     grid-template-columns:1fr;
   }
 }
+
+/* =========================================
+   V23 Auto Governance Gate
+========================================= */
+.auto-governance-actions form{
+  margin:0;
+}
+.auto-governance-actions form button{
+  width:auto;
+  margin-top:0;
+}
+.self-check-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:14px;
+}
+.self-check-issue{
+  border:1px solid #bfdbfe;
+  background:#eff6ff;
+  border-radius:20px;
+  padding:16px;
+  overflow-wrap:anywhere;
+}
+.self-check-issue.high{
+  border-color:#fb7185;
+  background:#fff1f2;
+}
+.self-check-issue.medium{
+  border-color:#fb923c;
+  background:#fff7ed;
+}
+.issue-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  margin-bottom:8px;
+}
+.issue-top small{
+  color:#64748b;
+  font-weight:900;
+  font-size:.75rem;
+}
+.exact-fix{
+  border:1px dashed #c4b5fd;
+  background:#fff;
+  border-radius:14px;
+  padding:12px;
+  margin-top:12px;
+}
+.exact-fix p{
+  margin:.35rem 0 0;
+}

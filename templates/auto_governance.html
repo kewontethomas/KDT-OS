@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KDT OS Auto Governance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="shell">
+    {% include '_nav.html' %}
+
+    <section class="hero product-hero">
+        <p class="eyebrow">V23 · Auto Governance Gate</p>
+        <h1>Auto Governance</h1>
+        <p class="hero-lead">KDT OS now checks weak, duplicated, and generic quests before they poison your learning data.</p>
+    </section>
+
+    <section class="grid four">
+        <div class="metric"><strong>{{ plan.total_active_quests }}</strong><span>Active Quests Scanned</span></div>
+        <div class="metric"><strong>{{ plan.issues }}</strong><span>Issues Found</span></div>
+        <div class="metric"><strong>{{ plan.high_risk }}</strong><span>High Risk</span></div>
+        <div class="metric"><strong>{{ plan.medium_risk }}</strong><span>Medium Risk</span></div>
+    </section>
+
+    <section class="card accent auto-governance-actions">
+        <p class="eyebrow">Repair Control</p>
+        <h2>Run the gate</h2>
+        <p class="muted">Dry run previews the exact actions. Auto Repair safely rescores metadata and uses Quest Intelligence to archive/regenerate weak quests.</p>
+        <div class="hero-actions">
+            <form action="{{ url_for('auto_governance_run') }}" method="post">
+                <input type="hidden" name="dry_run" value="1">
+                <button type="submit">Preview Repair Plan</button>
+            </form>
+            <form action="{{ url_for('auto_governance_run') }}" method="post">
+                <button type="submit">Auto Repair Quest Governance</button>
+            </form>
+            <a class="button-link ghost" href="{{ url_for('auto_governance_json') }}">View JSON</a>
+        </div>
+    </section>
+
+    {% if result %}
+    <section class="card success">
+        <p class="eyebrow">Run Result</p>
+        <h2>{% if result.dry_run %}Dry Run Complete{% else %}Auto Repair Complete{% endif %}</h2>
+        <div class="grid four">
+            <div class="metric"><strong>{{ result.actions_taken|length }}</strong><span>Actions Taken</span></div>
+            <div class="metric"><strong>{{ result.created_files|length }}</strong><span>Replacements Created</span></div>
+            <div class="metric"><strong>{{ result.rescored|length }}</strong><span>Rescored</span></div>
+            <div class="metric"><strong>{{ result.errors|length }}</strong><span>Errors</span></div>
+        </div>
+        {% if result.created_files %}<p><b>Created:</b> {{ result.created_files|join(', ') }}</p>{% endif %}
+        {% if result.log_file %}<p><b>Log:</b> {{ result.log_file }}</p>{% endif %}
+        {% if result.errors %}<pre class="ai-raw">{{ result.errors|tojson(indent=2) }}</pre>{% endif %}
+    </section>
+    {% endif %}
+
+    <section class="card">
+        <p class="eyebrow">Governance Plan</p>
+        <h2>Issues KDT OS can repair</h2>
+        {% if plan.items %}
+        <div class="self-check-grid">
+            {% for item in plan.get('items', []) %}
+            <article class="self-check-issue {{ item.risk }}">
+                <div class="issue-top"><span class="status-pill">{{ item.risk|title }}</span><small>{{ item.filename }}</small></div>
+                <h3>{{ item.title }}</h3>
+                <p class="quest-meta">{{ item.skill }} · Score {{ item.score }}%</p>
+                <p><b>Actions:</b> {{ item.actions|join(', ') }}</p>
+                <ul>
+                    {% for reason in item.reasons %}<li>{{ reason }}</li>{% endfor %}
+                </ul>
+                <div class="exact-fix"><b>Exact fix</b><p>{{ item.exact_fix }}</p></div>
+            </article>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No repairable quest governance issues found. Good work.</p>
+        {% endif %}
+    </section>
+</main>
+</body>
+</html>
