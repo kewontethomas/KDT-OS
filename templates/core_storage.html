@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KDT OS Core Storage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="shell">
+    {% include '_nav.html' %}
+
+    <section class="hero product-hero">
+        <p class="eyebrow">V29 · Core Storage Layer</p>
+        <h1>Core Storage</h1>
+        <p>KDT OS now has shared JSON, text, and path helpers so future modules do not depend on one giant Flask file.</p>
+    </section>
+
+    <section class="grid four">
+        <div class="metric"><strong>{{ snapshot.app_py_lines }}</strong><span>app.py Lines</span></div>
+        <div class="metric"><strong>{{ snapshot.readiness }}%</strong><span>Storage Readiness</span></div>
+        <div class="metric"><strong>{{ snapshot.direct_storage_weight }}</strong><span>Raw Storage Calls</span></div>
+        <div class="metric"><strong>{{ snapshot.core_files|length }}</strong><span>Core Files</span></div>
+    </section>
+
+    <section class="card accent">
+        <p class="eyebrow">Core Rule</p>
+        <h2>Centralize storage before moving more routes</h2>
+        <p>{{ snapshot.rule }}</p>
+        <div class="score-line">V29 creates core/paths.py, core/storage.py, and core/constants.py. Future extracted modules should use these helpers first.</div>
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">New Core Files</p>
+            <h2>Shared foundation created</h2>
+            <div class="reports">
+                {% for mod in snapshot.core_files %}
+                <div class="report-card {% if mod.exists %}success{% endif %}">
+                    <strong>{{ mod.path }}</strong>
+                    <p>{{ mod.lines }} lines · {% if mod.exists %}Ready{% else %}Missing{% endif %}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="card">
+            <p class="eyebrow">Proof</p>
+            <h2>Storage helpers are available</h2>
+            <ul>
+                <li><b>load_json(path, default)</b></li>
+                <li><b>save_json(path, data)</b></li>
+                <li><b>read_text(path)</b></li>
+                <li><b>list_json_files(folder)</b></li>
+                <li><b>load_json_records(folder)</b></li>
+            </ul>
+            <a class="button-link ghost" href="{{ url_for('core_storage_json') }}">View JSON</a>
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Data Folders</p>
+        <h2>Storage areas KDT OS can now centralize</h2>
+        <div class="reports">
+            {% for folder in snapshot.folder_status %}
+            <div class="report-card">
+                <small>{{ folder.path }}</small>
+                <strong>{{ folder.name }}</strong>
+                <p>{{ folder.count }} JSON file(s)</p>
+                {% if folder.sample %}
+                <details>
+                    <summary>Sample records</summary>
+                    <ul>
+                        {% for item in folder.sample %}
+                        <li>{{ item.file }} · {{ item.type }} · ok={{ item.ok }}</li>
+                        {% endfor %}
+                    </ul>
+                </details>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Remaining app.py Storage Weight</p>
+        <h2>What still needs extraction later</h2>
+        <div class="trust-grid">
+            {% for name, count in snapshot.storage_patterns_remaining.items() %}
+            <div><strong>{{ name }}</strong><span>{{ count }}</span></div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Next Extraction Targets</p>
+        <h2>Use the core layer without breaking working pages</h2>
+        <div class="reports">
+            {% for target in snapshot.next_targets %}
+            <div class="report-card">
+                <small>{{ target.phase }}</small>
+                <strong>{{ target.title }}</strong>
+                <p><b>Move:</b> {{ target.move }}</p>
+                <p><b>Proof:</b> {{ target.proof }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+</body>
+</html>
