@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-06-02T03:45:58",
+  "created_at": "2026-06-02T07:26:41",
   "roadmaps": [
     {
       "name": "KDT OS Builder Path",
@@ -740,8 +740,8 @@
           "score": 75,
           "recommended_action": "Complete one tiny proof artifact for File Handling and explain what it proves.",
           "quest": {
-            "title": "Flask Route Smoke Test Suite",
-            "filename": "flask_route_smoke_test_suite_20260601_030518.json",
+            "title": "SQLite CRUD Quest: Workout Database",
+            "filename": "sqlite_crud_quest_workout_database_20260601_030423.json",
             "score": 100
           }
         },

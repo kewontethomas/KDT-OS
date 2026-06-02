@@ -1,0 +1,616 @@
+{
+  "version": "V38",
+  "created_at": "2026-06-02T11:18:20",
+  "recommended_count": 10,
+  "beginner_count": 7,
+  "intermediate_count": 3,
+  "strategic_count": 3,
+  "top_project": {
+    "name": "Flask Route Smoke Test Suite",
+    "type": "Project Upgrade",
+    "difficulty": "Beginner",
+    "time": "1-2 hours",
+    "skills": [
+      "Flask",
+      "Testing",
+      "Routes",
+      "Python"
+    ],
+    "why": "Protects KDT OS from breaking as it grows by proving important routes still load.",
+    "first_step": "Create tests/test_routes.py and add one test that checks the home route returns 200.",
+    "proof": "Upload test_routes.py and a screenshot or copied output from pytest.",
+    "score": 100,
+    "bucket": "Beginner",
+    "reasons": [
+      "Strengthens priority skill: Flask",
+      "Strengthens priority skill: Testing",
+      "Targets current weak area: Testing",
+      "Moves a roadmap forward: Testing",
+      "Strengthens priority skill: Python",
+      "Targets current weak area: Python"
+    ]
+  },
+  "recommended_projects": [
+    {
+      "name": "Flask Route Smoke Test Suite",
+      "type": "Project Upgrade",
+      "difficulty": "Beginner",
+      "time": "1-2 hours",
+      "skills": [
+        "Flask",
+        "Testing",
+        "Routes",
+        "Python"
+      ],
+      "why": "Protects KDT OS from breaking as it grows by proving important routes still load.",
+      "first_step": "Create tests/test_routes.py and add one test that checks the home route returns 200.",
+      "proof": "Upload test_routes.py and a screenshot or copied output from pytest.",
+      "score": 100,
+      "bucket": "Beginner",
+      "reasons": [
+        "Strengthens priority skill: Flask",
+        "Strengthens priority skill: Testing",
+        "Targets current weak area: Testing",
+        "Moves a roadmap forward: Testing",
+        "Strengthens priority skill: Python",
+        "Targets current weak area: Python"
+      ]
+    },
+    {
+      "name": "System Health Dashboard",
+      "type": "Career Project",
+      "difficulty": "Intermediate",
+      "time": "4-6 hours",
+      "skills": [
+        "Health Monitoring",
+        "Python",
+        "Dashboard/UI",
+        "File Handling"
+      ],
+      "why": "Turns your server troubleshooting experience into a reusable tool for CPU, RAM, disk, and service checks.",
+      "first_step": "Create a Python script that outputs fake or real CPU, memory, disk, and service status as OK/WARNING.",
+      "proof": "Upload code and a screenshot of the dashboard or terminal health report.",
+      "score": 100,
+      "bucket": "Strategic",
+      "reasons": [
+        "Strengthens priority skill: Health Monitoring",
+        "Targets current weak area: Health Monitoring",
+        "Strengthens priority skill: Python",
+        "Targets current weak area: Python",
+        "Strengthens priority skill: HTML/CSS",
+        "Strategic project for career or KDT OS growth."
+      ]
+    },
+    {
+      "name": "Workout Database App",
+      "type": "Practice Project",
+      "difficulty": "Beginner",
+      "time": "2-4 hours",
+      "skills": [
+        "SQLite",
+        "Python",
+        "CRUD",
+        "Data Validation"
+      ],
+      "why": "Builds the exact SQLite CRUD skills KDT OS keeps detecting as useful while staying small and personal.",
+      "first_step": "Create a folder with app.py and workouts.json or workouts.db, then add one workout record with exercise, reps, sets, and date.",
+      "proof": "Upload a ZIP showing create, list, update, and delete working on workout records.",
+      "score": 99,
+      "bucket": "Beginner",
+      "reasons": [
+        "Strengthens priority skill: SQLite",
+        "Targets current weak area: SQLite",
+        "Strengthens priority skill: Python",
+        "Targets current weak area: Python",
+        "Small enough to finish and prove quickly."
+      ]
+    },
+    {
+      "name": "JavaScript Form Saver",
+      "type": "Practice Project",
+      "difficulty": "Beginner",
+      "time": "2-3 hours",
+      "skills": [
+        "JavaScript",
+        "Forms",
+        "Local Storage",
+        "HTML/CSS"
+      ],
+      "why": "Builds browser app confidence by saving form input without needing a backend yet.",
+      "first_step": "Create a form with name, note, and category fields, then save one entry to localStorage.",
+      "proof": "Upload ZIP and screenshot showing saved data still appears after refresh.",
+      "score": 91,
+      "bucket": "Beginner",
+      "reasons": [
+        "Strengthens priority skill: JavaScript",
+        "Strengthens priority skill: Local Storage",
+        "Moves a roadmap forward: Local Storage",
+        "Strengthens priority skill: HTML/CSS",
+        "Small enough to finish and prove quickly."
+      ]
+    },
+    {
+      "name": "API Weather Lookup App",
+      "type": "Practice Project",
+      "difficulty": "Beginner",
+      "time": "2-4 hours",
+      "skills": [
+        "JavaScript",
+        "API / Routes",
+        "HTML/CSS",
+        "Fetch/API"
+      ],
+      "why": "Turns API and JavaScript gaps into a visible browser app with an easy proof target.",
+      "first_step": "Create index.html, style.css, and script.js with a button that displays sample weather JSON.",
+      "proof": "Upload a ZIP and screenshot showing city, temperature, and condition displayed after button click.",
+      "score": 75,
+      "bucket": "Beginner",
+      "reasons": [
+        "Strengthens priority skill: JavaScript",
+        "Strengthens priority skill: API / Routes",
+        "Strengthens priority skill: HTML/CSS",
+        "Small enough to finish and prove quickly."
+      ]
+    },
+    {
+      "name": "Help Desk Ticket Tracker",
+      "type": "Career Project",
+      "difficulty": "Intermediate",
+      "time": "4-8 hours",
+      "skills": [
+        "Flask",
+        "SQLite",
+        "Forms",
+        "Ticket System",
+        "IT Support"
+      ],
+      "why": "Connects your IT support experience to a portfolio project that demonstrates real workflow understanding.",
+      "first_step": "Create a ticket form with fields for issue, device, priority, status, and resolution notes.",
+      "proof": "Upload a ZIP and screenshots showing create, update status, and resolution notes.",
+      "score": 70,
+      "bucket": "Strategic",
+      "reasons": [
+        "Strengthens priority skill: Flask",
+        "Strengthens priority skill: SQLite",
+        "Targets current weak area: SQLite",
+        "Strategic project for career or KDT OS growth."
+      ]
+    },
+    {
+      "name": "Expense Tracker CLI",
+      "type": "Practice Project",
+      "difficulty": "Beginner",
+      "time": "2-3 hours",
+      "skills": [
+        "Python",
+        "Functions",
+        "Lists",
+        "JSON",
+        "File Handling"
+      ],
+      "why": "Strengthens Python basics with a useful real-life tool and gives clear proof through saved totals.",
+      "first_step": "Create expense_tracker.py with a list of three expenses and print the total.",
+      "proof": "Upload the Python file and a screenshot of the terminal total.",
+      "score": 63,
+      "bucket": "Beginner",
+      "reasons": [
+        "Strengthens priority skill: Python",
+        "Targets current weak area: Python",
+        "Small enough to finish and prove quickly."
+      ]
+    },
+    {
+      "name": "Personal Project Portfolio Page",
+      "type": "Portfolio Project",
+      "difficulty": "Beginner",
+      "time": "2-4 hours",
+      "skills": [
+        "HTML/CSS",
+        "Responsive Layout",
+        "Project Tracking"
+      ],
+      "why": "Creates a clean place to show KDT OS, FieldSeed, and future projects while improving layout skills.",
+      "first_step": "Create index.html with cards for three projects: KDT OS, FieldSeed, and one future app.",
+      "proof": "Upload HTML/CSS and screenshot at full screen and mobile width.",
+      "score": 57,
+      "bucket": "Beginner",
+      "reasons": [
+        "Strengthens priority skill: HTML/CSS",
+        "Small enough to finish and prove quickly."
+      ]
+    }
+  ],
+  "all_projects": [
+    {
+      "name": "Flask Route Smoke Test Suite",
+      "type": "Project Upgrade",
+      "difficulty": "Beginner",
+      "time": "1-2 hours",
+      "skills": [
+        "Flask",
+        "Testing",
+        "Routes",
+        "Python"
+      ],
+      "why": "Protects KDT OS from breaking as it grows by proving important routes still load.",
+      "first_step": "Create tests/test_routes.py and add one test that checks the home route returns 200.",
+      "proof": "Upload test_routes.py and a screenshot or copied output from pytest.",
+      "score": 100,
+      "bucket": "Beginner",
+      "reasons": [
+        "Strengthens priority skill: Flask",
+        "Strengthens priority skill: Testing",
+        "Targets current weak area: Testing",
+        "Moves a roadmap forward: Testing",
+        "Strengthens priority skill: Python",
+        "Targets current weak area: Python"
+      ]
+    },
+    {
+      "name": "System Health Dashboard",
+      "type": "Career Project",
+      "difficulty": "Intermediate",
+      "time": "4-6 hours",
+      "skills": [
+        "Health Monitoring",
+        "Python",
+        "Dashboard/UI",
+        "File Handling"
+      ],
+      "why": "Turns your server troubleshooting experience into a reusable tool for CPU, RAM, disk, and service checks.",
+      "first_step": "Create a Python script that outputs fake or real CPU, memory, disk, and service status as OK/WARNING.",
+      "proof": "Upload code and a screenshot of the dashboard or terminal health report.",
+      "score": 100,
+      "bucket": "Strategic",
+      "reasons": [
+        "Strengthens priority skill: Health Monitoring",
+        "Targets current weak area: Health Monitoring",
+        "Strengthens priority skill: Python",
+        "Targets current weak area: Python",
+        "Strengthens priority skill: HTML/CSS",
+        "Strategic project for career or KDT OS growth."
+      ]
+    },
+    {
+      "name": "Workout Database App",
+      "type": "Practice Project",
+      "difficulty": "Beginner",
+      "time": "2-4 hours",
+      "skills": [
+        "SQLite",
+        "Python",
+        "CRUD",
+        "Data Validation"
+      ],
+      "why": "Builds the exact SQLite CRUD skills KDT OS keeps detecting as useful while staying small and personal.",
+      "first_step": "Create a folder with app.py and workouts.json or workouts.db, then add one workout record with exercise, reps, sets, and date.",
+      "proof": "Upload a ZIP showing create, list, update, and delete working on workout records.",
+      "score": 99,
+      "bucket": "Beginner",
+      "reasons": [
+        "Strengthens priority skill: SQLite",
+        "Targets current weak area: SQLite",
+        "Strengthens priority skill: Python",
+        "Targets current weak area: Python",
+        "Small enough to finish and prove quickly."
+      ]
+    },
+    {
+      "name": "JavaScript Form Saver",
+      "type": "Practice Project",
+      "difficulty": "Beginner",
+      "time": "2-3 hours",
+      "skills": [
+        "JavaScript",
+        "Forms",
+        "Local Storage",
+        "HTML/CSS"
+      ],
+      "why": "Builds browser app confidence by saving form input without needing a backend yet.",
+      "first_step": "Create a form with name, note, and category fields, then save one entry to localStorage.",
+      "proof": "Upload ZIP and screenshot showing saved data still appears after refresh.",
+      "score": 91,
+      "bucket": "Beginner",
+      "reasons": [
+        "Strengthens priority skill: JavaScript",
+        "Strengthens priority skill: Local Storage",
+        "Moves a roadmap forward: Local Storage",
+        "Strengthens priority skill: HTML/CSS",
+        "Small enough to finish and prove quickly."
+      ]
+    },
+    {
+      "name": "API Weather Lookup App",
+      "type": "Practice Project",
+      "difficulty": "Beginner",
+      "time": "2-4 hours",
+      "skills": [
+        "JavaScript",
+        "API / Routes",
+        "HTML/CSS",
+        "Fetch/API"
+      ],
+      "why": "Turns API and JavaScript gaps into a visible browser app with an easy proof target.",
+      "first_step": "Create index.html, style.css, and script.js with a button that displays sample weather JSON.",
+      "proof": "Upload a ZIP and screenshot showing city, temperature, and condition displayed after button click.",
+      "score": 75,
+      "bucket": "Beginner",
+      "reasons": [
+        "Strengthens priority skill: JavaScript",
+        "Strengthens priority skill: API / Routes",
+        "Strengthens priority skill: HTML/CSS",
+        "Small enough to finish and prove quickly."
+      ]
+    },
+    {
+      "name": "Help Desk Ticket Tracker",
+      "type": "Career Project",
+      "difficulty": "Intermediate",
+      "time": "4-8 hours",
+      "skills": [
+        "Flask",
+        "SQLite",
+        "Forms",
+        "Ticket System",
+        "IT Support"
+      ],
+      "why": "Connects your IT support experience to a portfolio project that demonstrates real workflow understanding.",
+      "first_step": "Create a ticket form with fields for issue, device, priority, status, and resolution notes.",
+      "proof": "Upload a ZIP and screenshots showing create, update status, and resolution notes.",
+      "score": 70,
+      "bucket": "Strategic",
+      "reasons": [
+        "Strengthens priority skill: Flask",
+        "Strengthens priority skill: SQLite",
+        "Targets current weak area: SQLite",
+        "Strategic project for career or KDT OS growth."
+      ]
+    },
+    {
+      "name": "Expense Tracker CLI",
+      "type": "Practice Project",
+      "difficulty": "Beginner",
+      "time": "2-3 hours",
+      "skills": [
+        "Python",
+        "Functions",
+        "Lists",
+        "JSON",
+        "File Handling"
+      ],
+      "why": "Strengthens Python basics with a useful real-life tool and gives clear proof through saved totals.",
+      "first_step": "Create expense_tracker.py with a list of three expenses and print the total.",
+      "proof": "Upload the Python file and a screenshot of the terminal total.",
+      "score": 63,
+      "bucket": "Beginner",
+      "reasons": [
+        "Strengthens priority skill: Python",
+        "Targets current weak area: Python",
+        "Small enough to finish and prove quickly."
+      ]
+    },
+    {
+      "name": "Personal Project Portfolio Page",
+      "type": "Portfolio Project",
+      "difficulty": "Beginner",
+      "time": "2-4 hours",
+      "skills": [
+        "HTML/CSS",
+        "Responsive Layout",
+        "Project Tracking"
+      ],
+      "why": "Creates a clean place to show KDT OS, FieldSeed, and future projects while improving layout skills.",
+      "first_step": "Create index.html with cards for three projects: KDT OS, FieldSeed, and one future app.",
+      "proof": "Upload HTML/CSS and screenshot at full screen and mobile width.",
+      "score": 57,
+      "bucket": "Beginner",
+      "reasons": [
+        "Strengthens priority skill: HTML/CSS",
+        "Small enough to finish and prove quickly."
+      ]
+    },
+    {
+      "name": "KDT OS Quest Quality Repair Tool",
+      "type": "KDT OS Upgrade",
+      "difficulty": "Intermediate",
+      "time": "3-6 hours",
+      "skills": [
+        "Project Tracking",
+        "Governance",
+        "Python",
+        "JSON"
+      ],
+      "why": "Improves KDT OS directly by making weak quests easier to repair and trust.",
+      "first_step": "Create a function that loads active quest JSON and prints quests missing quest_quality metadata.",
+      "proof": "Upload the function and a before/after report showing detected quest files.",
+      "score": 43,
+      "bucket": "Strategic",
+      "reasons": [
+        "Strengthens priority skill: Python",
+        "Targets current weak area: Python",
+        "Similar project may already exist; consider extending instead of duplicating.",
+        "Strategic project for career or KDT OS growth."
+      ]
+    },
+    {
+      "name": "Active Directory OU Practice Notes",
+      "type": "IT Support Proof",
+      "difficulty": "Beginner",
+      "time": "30-60 minutes",
+      "skills": [
+        "Active Directory",
+        "Documentation",
+        "IT Support"
+      ],
+      "why": "Converts your AD/OU confusion into a proof-backed explanation you can reuse for interviews and field work.",
+      "first_step": "Create README.md explaining what an OU is, why it matters, and where one test user/computer should go.",
+      "proof": "Upload README.md and, if available, a screenshot from your lab showing the OU structure.",
+      "score": 36,
+      "bucket": "Beginner",
+      "reasons": [
+        "Strengthens priority skill: Active Directory",
+        "Small enough to finish and prove quickly."
+      ]
+    }
+  ],
+  "skill_map": {
+    "Flask": [
+      "Flask Route Smoke Test Suite",
+      "Help Desk Ticket Tracker"
+    ],
+    "Testing": [
+      "Flask Route Smoke Test Suite"
+    ],
+    "Routes": [
+      "Flask Route Smoke Test Suite"
+    ],
+    "Python": [
+      "Flask Route Smoke Test Suite",
+      "System Health Dashboard",
+      "Workout Database App",
+      "Expense Tracker CLI",
+      "KDT OS Quest Quality Repair Tool"
+    ],
+    "Health Monitoring": [
+      "System Health Dashboard"
+    ],
+    "HTML/CSS": [
+      "System Health Dashboard",
+      "JavaScript Form Saver",
+      "API Weather Lookup App",
+      "Personal Project Portfolio Page"
+    ],
+    "File Handling": [
+      "System Health Dashboard",
+      "Expense Tracker CLI"
+    ],
+    "SQLite": [
+      "Workout Database App",
+      "Help Desk Ticket Tracker"
+    ],
+    "CRUD": [
+      "Workout Database App"
+    ],
+    "Data Validation": [
+      "Workout Database App"
+    ],
+    "JavaScript": [
+      "JavaScript Form Saver",
+      "API Weather Lookup App"
+    ],
+    "Forms": [
+      "JavaScript Form Saver",
+      "Help Desk Ticket Tracker"
+    ],
+    "Local Storage": [
+      "JavaScript Form Saver"
+    ],
+    "API / Routes": [
+      "API Weather Lookup App"
+    ],
+    "Fetch/API": [
+      "API Weather Lookup App"
+    ],
+    "Ticket System": [
+      "Help Desk Ticket Tracker"
+    ],
+    "IT Support": [
+      "Help Desk Ticket Tracker",
+      "Active Directory OU Practice Notes"
+    ],
+    "Functions": [
+      "Expense Tracker CLI"
+    ],
+    "Lists": [
+      "Expense Tracker CLI"
+    ],
+    "JSON": [
+      "Expense Tracker CLI",
+      "KDT OS Quest Quality Repair Tool"
+    ],
+    "Responsive Layout": [
+      "Personal Project Portfolio Page"
+    ],
+    "Project Tracking": [
+      "Personal Project Portfolio Page",
+      "KDT OS Quest Quality Repair Tool"
+    ],
+    "Governance": [
+      "KDT OS Quest Quality Repair Tool"
+    ],
+    "Active Directory": [
+      "Active Directory OU Practice Notes"
+    ],
+    "Documentation": [
+      "Active Directory OU Practice Notes"
+    ]
+  },
+  "signals": {
+    "weak_skills": {
+      "I don't understand what CPU usage means.": 1,
+      "I don't understand Active Directory OUs.": 1,
+      "Testing": 1,
+      "SQLite": 1,
+      "Python": 1,
+      "Health Monitoring": 1
+    },
+    "strong_skills": {
+      "SQLite": 2,
+      "Testing": 1,
+      "API / Routes": 1,
+      "I don't understand what CPU usage means.": 3,
+      "I don't understand Active Directory OUs.": 2,
+      "HTML/CSS": 2,
+      "Python": 2,
+      "Health Monitoring": 1,
+      "CPU Usage": 1,
+      "Active Directory": 1
+    },
+    "active_skills": {
+      "SQLite": 12,
+      "Testing": 6,
+      "Flask": 1,
+      "API / Routes": 4,
+      "JavaScript": 2,
+      "HTML/CSS": 8,
+      "I don't understand what CPU usage means.": 4,
+      "I don't understand Active Directory OUs.": 3,
+      "Python": 3,
+      "Health Monitoring": 4,
+      "CPU Usage": 1,
+      "Active Directory": 1
+    },
+    "verified_skills": {},
+    "roadmap_skills": {
+      "Learning Intelligence": 2,
+      "CPU Usage": 2,
+      "Testing": 4,
+      "Local Storage": 2,
+      "Backup/Restore": 2
+    },
+    "refresh_skills": {},
+    "project_gap_skills": {},
+    "priority_skills": {
+      "I don't understand what CPU usage means.": 7,
+      "I don't understand Active Directory OUs.": 6,
+      "Testing": 21,
+      "SQLite": 15,
+      "Python": 6,
+      "Health Monitoring": 7,
+      "Learning Intelligence": 6,
+      "CPU Usage": 7,
+      "Local Storage": 6,
+      "Backup/Restore": 6,
+      "Flask": 1,
+      "API / Routes": 4,
+      "JavaScript": 2,
+      "HTML/CSS": 8,
+      "Active Directory": 1
+    },
+    "source_projects": [
+      "FieldSeed",
+      "KDT OS"
+    ]
+  },
+  "rule": "KDT OS should turn learning gaps into real projects with a reason, first step, and proof requirement."
+}

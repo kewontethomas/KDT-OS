@@ -16,10 +16,10 @@
         </a>
 
         <details class="nav-group" {% if request.endpoint in
-            ['projects','view_project','project_issue','sources','analyze_folder','path_builder','view_path','create_bridge_chain']
+            ['projects','view_project','project_issue','sources','analyze_folder','path_builder','view_path','create_bridge_chain','project_coach','project_coach_json']
             %}open{% endif %}>
             <summary
-                class="{% if request.endpoint in ['projects','view_project','project_issue','sources','analyze_folder','path_builder','view_path','create_bridge_chain'] %}active{% endif %}">
+                class="{% if request.endpoint in ['projects','view_project','project_issue','sources','analyze_folder','path_builder','view_path','create_bridge_chain','project_coach','project_coach_json'] %}active{% endif %}">
                 Build
             </summary>
             <a href="{{ url_for('projects') }}"
@@ -29,6 +29,8 @@
             <a href="{{ url_for('path_builder') }}"
                 class="{% if request.endpoint in ['path_builder','view_path','create_bridge_chain'] %}active{% endif %}">Build
                 Planner</a>
+            <a href="{{ url_for('project_coach') }}"
+                class="{% if request.endpoint in ['project_coach','project_coach_json'] %}active{% endif %}">Project Coach</a>
         </details>
 
         <details class="nav-group" {% if request.endpoint in

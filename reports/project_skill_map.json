@@ -1,0 +1,95 @@
+{
+  "created_at": "2026-06-02T11:18:20",
+  "skill_map": {
+    "Flask": [
+      "Flask Route Smoke Test Suite",
+      "Help Desk Ticket Tracker"
+    ],
+    "Testing": [
+      "Flask Route Smoke Test Suite"
+    ],
+    "Routes": [
+      "Flask Route Smoke Test Suite"
+    ],
+    "Python": [
+      "Flask Route Smoke Test Suite",
+      "System Health Dashboard",
+      "Workout Database App",
+      "Expense Tracker CLI",
+      "KDT OS Quest Quality Repair Tool"
+    ],
+    "Health Monitoring": [
+      "System Health Dashboard"
+    ],
+    "HTML/CSS": [
+      "System Health Dashboard",
+      "JavaScript Form Saver",
+      "API Weather Lookup App",
+      "Personal Project Portfolio Page"
+    ],
+    "File Handling": [
+      "System Health Dashboard",
+      "Expense Tracker CLI"
+    ],
+    "SQLite": [
+      "Workout Database App",
+      "Help Desk Ticket Tracker"
+    ],
+    "CRUD": [
+      "Workout Database App"
+    ],
+    "Data Validation": [
+      "Workout Database App"
+    ],
+    "JavaScript": [
+      "JavaScript Form Saver",
+      "API Weather Lookup App"
+    ],
+    "Forms": [
+      "JavaScript Form Saver",
+      "Help Desk Ticket Tracker"
+    ],
+    "Local Storage": [
+      "JavaScript Form Saver"
+    ],
+    "API / Routes": [
+      "API Weather Lookup App"
+    ],
+    "Fetch/API": [
+      "API Weather Lookup App"
+    ],
+    "Ticket System": [
+      "Help Desk Ticket Tracker"
+    ],
+    "IT Support": [
+      "Help Desk Ticket Tracker",
+      "Active Directory OU Practice Notes"
+    ],
+    "Functions": [
+      "Expense Tracker CLI"
+    ],
+    "Lists": [
+      "Expense Tracker CLI"
+    ],
+    "JSON": [
+      "Expense Tracker CLI",
+      "KDT OS Quest Quality Repair Tool"
+    ],
+    "Responsive Layout": [
+      "Personal Project Portfolio Page"
+    ],
+    "Project Tracking": [
+      "Personal Project Portfolio Page",
+      "KDT OS Quest Quality Repair Tool"
+    ],
+    "Governance": [
+      "KDT OS Quest Quality Repair Tool"
+    ],
+    "Active Directory": [
+      "Active Directory OU Practice Notes"
+    ],
+    "Documentation": [
+      "Active Directory OU Practice Notes"
+    ]
+  }
+}

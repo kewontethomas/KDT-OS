@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KDT OS Project Coach</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="shell">
+    {% include '_nav.html' %}
+
+    <section class="hero product-hero">
+        <p class="eyebrow">V38 · Project Coach</p>
+        <h1>Project Coach</h1>
+        <p>KDT OS turns weak skills, roadmaps, refresh needs, and proof history into real projects you can build.</p>
+    </section>
+
+    <section class="grid four">
+        <div class="metric"><strong>{{ snapshot.recommended_count }}</strong><span>Recommended Projects</span></div>
+        <div class="metric"><strong>{{ snapshot.beginner_count }}</strong><span>Beginner Builds</span></div>
+        <div class="metric"><strong>{{ snapshot.intermediate_count }}</strong><span>Intermediate Builds</span></div>
+        <div class="metric"><strong>{{ snapshot.strategic_count }}</strong><span>Strategic Builds</span></div>
+    </section>
+
+    {% set top = snapshot.top_project %}
+    <section class="card accent">
+        <p class="eyebrow">Build This First</p>
+        {% if top %}
+        <h2>{{ top.name }}</h2>
+        <p><b>{{ top.difficulty }}</b> · {{ top.time }} · Score {{ top.score }}%</p>
+        <div class="score-line">{{ top.why }}</div>
+        <p><b>First step:</b> {{ top.first_step }}</p>
+        <p><b>Proof:</b> {{ top.proof }}</p>
+        <div class="pill-row">
+            {% for skill in top.skills %}<span class="tag-pill">{{ skill }}</span>{% endfor %}
+        </div>
+        <a class="button-link ghost" href="{{ url_for('project_coach_json') }}">View JSON</a>
+        {% else %}
+        <h2>No project recommendations yet</h2>
+        <p>Add quests, roadmaps, or learning proof so KDT OS can recommend projects.</p>
+        {% endif %}
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">Coach Rule</p>
+            <h2>Skills should turn into builds</h2>
+            <p>{{ snapshot.rule }}</p>
+            <ul>
+                <li>Weak skills become small practice projects.</li>
+                <li>Roadmap gaps become ordered build ideas.</li>
+                <li>Refresh needs become quick proof projects.</li>
+                <li>Strong skills become bigger strategic projects.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <p class="eyebrow">Signals Used</p>
+            <h2>Why these projects were selected</h2>
+            <ul>
+                <li>Weak skills: {{ snapshot.signals.weak_skills|length }}</li>
+                <li>Roadmap skills: {{ snapshot.signals.roadmap_skills|length }}</li>
+                <li>Refresh skills: {{ snapshot.signals.refresh_skills|length }}</li>
+                <li>Verified skills: {{ snapshot.signals.verified_skills|length }}</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Recommended Builds</p>
+        <h2>Projects KDT OS thinks will move you forward</h2>
+        <div class="reports">
+            {% for project in snapshot.recommended_projects %}
+            <article class="report-card {% if project.score >= 85 %}success{% elif project.score >= 70 %}warning{% endif %}">
+                <small>{{ project.type }} · {{ project.difficulty }} · {{ project.time }}</small>
+                <strong>{{ project.name }}</strong>
+                <div class="score-line">Score {{ project.score }}%</div>
+                <p>{{ project.why }}</p>
+                <p><b>First step:</b> {{ project.first_step }}</p>
+                <p><b>Proof:</b> {{ project.proof }}</p>
+                <div class="pill-row">
+                    {% for skill in project.skills %}<span class="tag-pill">{{ skill }}</span>{% endfor %}
+                </div>
+                {% if project.reasons %}
+                <details>
+                    <summary>Why this project?</summary>
+                    <ul>{% for reason in project.reasons %}<li>{{ reason }}</li>{% endfor %}</ul>
+                </details>
+                {% endif %}
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">Beginner Project Ladder</p>
+            <h2>Small projects you can finish</h2>
+            <div class="route-list">
+                {% for project in snapshot.all_projects if project.difficulty == 'Beginner' %}
+                <div class="route-row"><span>{{ project.name }}</span><small>{{ project.score }}% · {{ project.skills|join(', ') }}</small></div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="card">
+            <p class="eyebrow">Strategic Builds</p>
+            <h2>Projects that help your career or KDT OS</h2>
+            <div class="route-list">
+                {% for project in snapshot.all_projects if project.bucket == 'Strategic' %}
+                <div class="route-row"><span>{{ project.name }}</span><small>{{ project.score }}% · {{ project.skills|join(', ') }}</small></div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Project Skill Map</p>
+        <h2>Which projects build which skills</h2>
+        <div class="trust-grid">
+            {% for skill, projects in snapshot.skill_map.items() %}
+            <div><strong>{{ skill }}</strong><span>{{ projects|length }} project(s)</span></div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+</body>
+</html>
