@@ -4276,6 +4276,12 @@ try:
 except Exception as exc:
     print(f"KDT OS V34 Proof Promotion failed to install: {exc}")
 
+try:
+    from kdt_learning_memory_v35 import install as install_v35
+    install_v35(sys.modules[__name__])
+except Exception as exc:
+    print(f"KDT OS V35 Learning Memory failed to install: {exc}")
+
 if __name__ == "__main__":
     ensure_ollama_ready(wait_seconds=3.0)
     app.run(debug=True)

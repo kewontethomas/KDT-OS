@@ -1,0 +1,446 @@
+{
+  "version": "V35",
+  "created_at": "2026-06-02T03:15:54",
+  "tracked_skills": 28,
+  "proof_items": 48,
+  "strong_skills": 0,
+  "stale_skills": 0,
+  "memory_strength": 30,
+  "skills": [
+    {
+      "skill": "Python",
+      "score": 0,
+      "proof_count": 2,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "FieldSeed",
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "PowerShell",
+      "score": 0,
+      "proof_count": 2,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "FieldSeed",
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "SQLite",
+      "score": 0,
+      "proof_count": 2,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "FieldSeed",
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "GitHub/Versioning",
+      "score": 0,
+      "proof_count": 2,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "FieldSeed",
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "Ticket System",
+      "score": 0,
+      "proof_count": 2,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "FieldSeed",
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "Repair Planning",
+      "score": 0,
+      "proof_count": 2,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "FieldSeed",
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "Health Monitoring",
+      "score": 0,
+      "proof_count": 2,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "FieldSeed",
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "Evidence Collection",
+      "score": 0,
+      "proof_count": 2,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "FieldSeed",
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "Task Management",
+      "score": 0,
+      "proof_count": 2,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "FieldSeed",
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "Knowledge Base",
+      "score": 0,
+      "proof_count": 2,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "FieldSeed",
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "Database Storage",
+      "score": 0,
+      "proof_count": 2,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "FieldSeed",
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "Project Tracking",
+      "score": 0,
+      "proof_count": 2,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "FieldSeed",
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "File Handling",
+      "score": 0,
+      "proof_count": 2,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "FieldSeed",
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "Automation/Scheduling",
+      "score": 0,
+      "proof_count": 2,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "FieldSeed",
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "Journal/Reflection",
+      "score": 0,
+      "proof_count": 2,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "FieldSeed",
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "Notifications/Reminders",
+      "score": 0,
+      "proof_count": 2,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "FieldSeed",
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "Idea Capture",
+      "score": 0,
+      "proof_count": 2,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "FieldSeed",
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "Dashboard/UI",
+      "score": 0,
+      "proof_count": 2,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "FieldSeed",
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "Learning/Practice",
+      "score": 0,
+      "proof_count": 2,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "FieldSeed",
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "Authentication/Login",
+      "score": 0,
+      "proof_count": 2,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "FieldSeed",
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "HTML/CSS",
+      "score": 0,
+      "proof_count": 1,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "API / Routes",
+      "score": 0,
+      "proof_count": 1,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "JavaScript",
+      "score": 0,
+      "proof_count": 1,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "Flask",
+      "score": 0,
+      "proof_count": 1,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "React",
+      "score": 0,
+      "proof_count": 1,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "SQLAlchemy",
+      "score": 0,
+      "proof_count": 1,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "FastAPI",
+      "score": 0,
+      "proof_count": 1,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "KDT OS"
+      ],
+      "recent_events": []
+    },
+    {
+      "skill": "Django",
+      "score": 0,
+      "proof_count": 1,
+      "first_verified": null,
+      "last_verified": null,
+      "days_since_verified": null,
+      "status": "Learning",
+      "trend": "Started",
+      "projects": [
+        "KDT OS"
+      ],
+      "recent_events": []
+    }
+  ],
+  "strongest": [],
+  "stale": [],
+  "timeline": [],
+  "next_refresh": {
+    "skill": "Django",
+    "score": 0,
+    "proof_count": 1,
+    "first_verified": null,
+    "last_verified": null,
+    "days_since_verified": null,
+    "status": "Learning",
+    "trend": "Started",
+    "projects": [
+      "KDT OS"
+    ],
+    "recent_events": []
+  },
+  "quest_activity": {
+    "total_verification_quests": 0,
+    "verified_quests": 0,
+    "assigned_verification_quests": 0
+  },
+  "rule": "A skill is not long-term memory until KDT OS can show when it was proven, how often it was proven, and whether it needs refresh."
+}

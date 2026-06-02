@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KDT OS Learning Memory</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="shell">
+    {% include '_nav.html' %}
+
+    <section class="hero product-hero">
+        <p class="eyebrow">V35 · Learning Memory Engine</p>
+        <h1>Learning Memory</h1>
+        <p>KDT OS now tracks what you proved, when you proved it, and which skills need refresh.</p>
+    </section>
+
+    <section class="grid four">
+        <div class="metric"><strong>{{ data.memory_strength }}%</strong><span>Memory Strength</span></div>
+        <div class="metric"><strong>{{ data.tracked_skills }}</strong><span>Tracked Skills</span></div>
+        <div class="metric"><strong>{{ data.proof_items }}</strong><span>Proof Items</span></div>
+        <div class="metric"><strong>{{ data.stale_skills }}</strong><span>Need Refresh</span></div>
+    </section>
+
+    <section class="card accent">
+        <p class="eyebrow">Memory Rule</p>
+        <h2>Proof should not disappear after a quest</h2>
+        <p>{{ data.rule }}</p>
+        {% if data.next_refresh %}
+        <div class="score-line">Next refresh: {{ data.next_refresh.skill }} · {{ data.next_refresh.status }} · {{ data.next_refresh.proof_count }} proof item(s)</div>
+        {% else %}
+        <div class="score-line">No refresh target yet. Complete and promote a verification quest first.</div>
+        {% endif %}
+        <a class="button-link ghost" href="{{ url_for('learning_memory_json') }}">View JSON</a>
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">Strongest Memories</p>
+            <h2>Skills with proof-backed history</h2>
+            {% if data.strongest %}
+            <div class="compact-list">
+                {% for skill in data.strongest %}
+                <div><strong>{{ skill.skill }}</strong><span>{{ skill.score }}% · {{ skill.proof_count }} proof(s) · {{ skill.trend }}</span></div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p>No strong verified skill memories yet.</p>
+            {% endif %}
+        </div>
+        <div class="card">
+            <p class="eyebrow">Refresh Queue</p>
+            <h2>Skills that may fade without practice</h2>
+            {% if data.stale %}
+            <div class="compact-list">
+                {% for skill in data.stale %}
+                <div><strong>{{ skill.skill }}</strong><span>{{ skill.days_since_verified }} day(s) since proof · {{ skill.status }}</span></div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p>No stale verified skills yet. KDT OS will flag skills after they go too long without proof.</p>
+            {% endif %}
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Skill Memory Map</p>
+        <h2>What KDT OS remembers you have proven</h2>
+        {% if data.skills %}
+        <div class="reports">
+            {% for skill in data.skills %}
+            <div class="report-card {% if skill.status == 'Strong' %}success{% elif skill.status == 'Needs Refresh' %}warning{% endif %}">
+                <small>{{ skill.status }} · {{ skill.trend }}</small>
+                <strong>{{ skill.skill }}</strong>
+                <div class="score-line">{{ skill.score }}% · {{ skill.proof_count }} proof item(s)</div>
+                <p><b>First verified:</b> {{ skill.first_verified or 'Not verified yet' }}</p>
+                <p><b>Last verified:</b> {{ skill.last_verified or 'Not verified yet' }}</p>
+                {% if skill.projects %}<p><b>Connected to:</b> {{ skill.projects|join(', ') }}</p>{% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No learning memory yet. Create a verification quest, complete proof, then promote it.</p>
+        {% endif %}
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">Verification Activity</p>
+            <h2>Proof pipeline</h2>
+            <div class="trust-grid">
+                <div><strong>{{ data.quest_activity.total_verification_quests }}</strong><span>Verification Quests</span></div>
+                <div><strong>{{ data.quest_activity.verified_quests }}</strong><span>Verified Quests</span></div>
+                <div><strong>{{ data.quest_activity.assigned_verification_quests }}</strong><span>Still Assigned</span></div>
+            </div>
+        </div>
+        <div class="card">
+            <p class="eyebrow">Recent Timeline</p>
+            <h2>Recent proof promotions</h2>
+            {% if data.timeline %}
+            <div class="compact-list">
+                {% for item in data.timeline[:8] %}
+                <div><strong>{{ item.skill }}</strong><span>{{ item.at }} · {{ item.title }}</span></div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p>No promoted proof history yet.</p>
+            {% endif %}
+        </div>
+    </section>
+</main>
+</body>
+</html>
