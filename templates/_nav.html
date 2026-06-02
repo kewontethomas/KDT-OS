@@ -11,6 +11,9 @@
         <a href="{{ url_for('index') }}" class="{% if request.endpoint == 'index' %}active{% endif %}">
             <span>Home</span>
         </a>
+        <a href="{{ url_for('command_center') }}" class="{% if request.endpoint in ['command_center','command_center_json'] %}active{% endif %}">
+            <span>Command Center</span>
+        </a>
 
         <details class="nav-group" {% if request.endpoint in
             ['projects','view_project','project_issue','sources','analyze_folder','path_builder','view_path','create_bridge_chain']
@@ -114,6 +117,7 @@
 
 <div class="mobile-nav-strip">
     <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('command_center') }}">Today</a>
     <a href="{{ url_for('projects') }}">Build</a>
     <a href="{{ url_for('teach') }}">Learn</a>
     <a href="{{ url_for('quest_maintenance') }}">Verify</a>

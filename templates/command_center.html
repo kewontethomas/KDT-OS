@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KDT OS Command Center</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="shell">
+    {% include '_nav.html' %}
+
+    <section class="hero product-hero">
+        <p class="eyebrow">V30 · Command Center</p>
+        <h1>Command Center</h1>
+        <p>{{ snapshot.headline }}</p>
+    </section>
+
+    <section class="grid four">
+        <div class="metric"><strong>{{ snapshot.counts.active_quests }}</strong><span>Active Quests</span></div>
+        <div class="metric"><strong>{{ snapshot.counts.strong_quests }}</strong><span>Strong Quests</span></div>
+        <div class="metric"><strong>{{ snapshot.counts.projects }}</strong><span>Tracked Projects</span></div>
+        <div class="metric"><strong>{{ snapshot.counts.goals }}</strong><span>Goals</span></div>
+    </section>
+
+    <section class="card accent">
+        <p class="eyebrow">Next Best Action</p>
+        <h2>{{ snapshot.best_action.title }}</h2>
+        <p class="muted">{{ snapshot.best_action.subtitle }} · Score {{ snapshot.best_action.score }}%</p>
+        <p><b>Why this is first:</b> {{ snapshot.best_action.why }}</p>
+        <div class="score-line"><b>Do now:</b> {{ snapshot.best_action.do_now }}</div>
+
+        {% if snapshot.best_action.filename %}
+        <p>
+            <a class="button-link" href="{{ url_for('view_quest', filename=snapshot.best_action.filename) }}">Open Recommended Quest</a>
+            <a class="button-link ghost" href="{{ url_for('command_center_json') }}">View JSON</a>
+        </p>
+        {% else %}
+        <p>
+            <a class="button-link" href="{{ url_for('path_builder') }}">Create a Path</a>
+            <a class="button-link ghost" href="{{ url_for('command_center_json') }}">View JSON</a>
+        </p>
+        {% endif %}
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">Today’s Steps</p>
+            <h2>Keep it small and finishable</h2>
+            <ol class="step-list">
+                {% for step in snapshot.today_steps %}
+                <li>{{ step }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+
+        <div class="card">
+            <p class="eyebrow">Proof Required</p>
+            <h2>Do not just “feel” progress</h2>
+            <ul>
+                {% for proof in snapshot.best_action.proof %}
+                <li>{{ proof }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">Project Context</p>
+            {% if snapshot.project_context %}
+            <h2>{{ snapshot.project_context.name }}</h2>
+            <p>{{ snapshot.project_context.why }}</p>
+            <p><b>Technologies:</b> {{ snapshot.project_context.technologies|join(', ') if snapshot.project_context.technologies else 'None detected yet' }}</p>
+            <p><b>Capabilities:</b> {{ snapshot.project_context.capabilities|join(', ') if snapshot.project_context.capabilities else 'None detected yet' }}</p>
+            {% else %}
+            <h2>No tracked project yet</h2>
+            <p>Upload a project through Sources so KDT OS can make learning decisions from real evidence.</p>
+            {% endif %}
+        </div>
+
+        <div class="card">
+            <p class="eyebrow">Blockers</p>
+            <h2>What could slow you down</h2>
+            <div class="reports">
+                {% for b in snapshot.blockers %}
+                <div class="report-card">
+                    <strong>{{ b.title }}</strong>
+                    <p>{{ b.detail }}</p>
+                    <small><b>Fix:</b> {{ b.fix }}</small>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Strong Quest Bench</p>
+        <h2>Safe quests KDT OS can recommend next</h2>
+        {% if snapshot.strong_quests %}
+        <div class="reports">
+            {% for q in snapshot.strong_quests %}
+            <div class="report-card success">
+                <small>{{ q.skill }}</small>
+                <strong>{{ q.title }}</strong>
+                <p>Score: {{ q.score }}%</p>
+                <a class="button-link ghost" href="{{ url_for('view_quest', filename=q.filename) }}">Open</a>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No strong quests detected yet. Use Action Center to repair or approve quests.</p>
+        {% endif %}
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">System Rule</p>
+        <h2>KDT OS should guide action, not just show pages</h2>
+        <p>{{ snapshot.system_note }}</p>
+        <div class="trust-grid">
+            <div><strong>{{ snapshot.storage_ready }}</strong><span>Core Storage Ready</span></div>
+            <div><strong>{{ snapshot.governance_available }}</strong><span>Governance Available</span></div>
+        </div>
+    </section>
+</main>
+</body>
+</html>

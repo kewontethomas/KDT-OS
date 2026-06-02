@@ -4245,6 +4245,13 @@ try:
 except Exception as exc:
     print(f"KDT OS V29 Core Storage failed to install: {exc}")
 
+
+try:
+    from kdt_command_center_v30 import install as install_v30
+    install_v30(sys.modules[__name__])
+except Exception as exc:
+    print(f"KDT OS V30 Command Center failed to install: {exc}")
+
 if __name__ == "__main__":
     ensure_ollama_ready(wait_seconds=3.0)
     app.run(debug=True)
