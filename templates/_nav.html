@@ -72,10 +72,10 @@
         </details>
 
         <details class="nav-group" {% if request.endpoint in
-            ['upgrade','view_upgrade_plan','create_upgrade_quest','verify_upgrade_plan','ai_settings','ai_diagnostics','model_manager','self_check','self_check_json','modular_core','modular_core_json','route_extraction','route_extraction_json','core_storage','core_storage_json']
+            ['upgrade','view_upgrade_plan','create_upgrade_quest','verify_upgrade_plan','ai_settings','ai_diagnostics','model_manager','self_check','self_check_json','modular_core','modular_core_json','route_extraction','route_extraction_json','core_storage','core_storage_json','shared_helpers','shared_helpers_json']
             %}open{% endif %}>
             <summary
-                class="{% if request.endpoint in ['upgrade','view_upgrade_plan','create_upgrade_quest','verify_upgrade_plan','ai_settings','ai_diagnostics','model_manager','self_check','self_check_json','modular_core','modular_core_json','route_extraction','route_extraction_json','core_storage','core_storage_json'] %}active{% endif %}">
+                class="{% if request.endpoint in ['upgrade','view_upgrade_plan','create_upgrade_quest','verify_upgrade_plan','ai_settings','ai_diagnostics','model_manager','self_check','self_check_json','modular_core','modular_core_json','route_extraction','route_extraction_json','core_storage','core_storage_json','shared_helpers','shared_helpers_json'] %}active{% endif %}">
                 System
             </summary>
             <a href="{{ url_for('upgrade') }}"
@@ -93,6 +93,8 @@
                 class="{% if request.endpoint in ['route_extraction','route_extraction_json'] %}active{% endif %}">Route Extraction</a>
             <a href="{{ url_for('core_storage') }}"
                 class="{% if request.endpoint in ['core_storage','core_storage_json'] %}active{% endif %}">Core Storage</a>
+            <a href="{{ url_for('shared_helpers') }}"
+                class="{% if request.endpoint in ['shared_helpers','shared_helpers_json'] %}active{% endif %}">Shared Helpers</a>
         </details>
         </nav>
 
