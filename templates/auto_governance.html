@@ -11,9 +11,9 @@
     {% include '_nav.html' %}
 
     <section class="hero product-hero">
-        <p class="eyebrow">V23 · Auto Governance Gate</p>
+        <p class="eyebrow">V24 · Unified Governance Gate</p>
         <h1>Auto Governance</h1>
-        <p class="hero-lead">KDT OS now checks weak, duplicated, and generic quests before they poison your learning data.</p>
+        <p class="hero-lead">KDT OS now uses the same scanner for Self Check and Auto Governance, so weak, duplicated, and generic quests can be repaired consistently.</p>
     </section>
 
     <section class="grid four">
@@ -58,7 +58,7 @@
     <section class="card">
         <p class="eyebrow">Governance Plan</p>
         <h2>Issues KDT OS can repair</h2>
-        {% if plan.items %}
+        {% if plan.get('items', []) %}
         <div class="self-check-grid">
             {% for item in plan.get('items', []) %}
             <article class="self-check-issue {{ item.risk }}">
