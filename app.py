@@ -4282,6 +4282,12 @@ try:
 except Exception as exc:
     print(f"KDT OS V35 Learning Memory failed to install: {exc}")
 
+try:
+    from kdt_skill_refresh_v36 import install as install_v36
+    install_v36(sys.modules[__name__])
+except Exception as exc:
+    print(f"KDT OS V36 Skill Refresh failed to install: {exc}")
+
 if __name__ == "__main__":
     ensure_ollama_ready(wait_seconds=3.0)
     app.run(debug=True)

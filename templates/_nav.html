@@ -73,6 +73,8 @@
                 class="{% if request.endpoint in ['proof_promotion','proof_promotion_json','promote_skill_proof'] %}active{% endif %}">Proof Promotion</a>
             <a href="{{ url_for('learning_memory') }}"
                 class="{% if request.endpoint in ['learning_memory','learning_memory_json'] %}active{% endif %}">Learning Memory</a>
+            <a href="{{ url_for('skill_refresh') }}"
+                class="{% if request.endpoint in ['skill_refresh','skill_refresh_json'] %}active{% endif %}">Skill Refresh</a>
             <a href="{{ url_for('quest_archive') }}"
                 class="{% if request.endpoint == 'quest_archive' %}active{% endif %}">Archive</a>
             <a href="{{ url_for('vision_test') }}"

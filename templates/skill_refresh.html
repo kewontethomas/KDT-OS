@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KDT OS Skill Refresh</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="shell">
+    {% include '_nav.html' %}
+
+    <section class="hero product-hero">
+        <p class="eyebrow">V36 · Skill Decay & Refresh Engine</p>
+        <h1>Skill Refresh</h1>
+        <p>
+            KDT OS now checks whether verified skills are staying fresh.
+            If a skill has not been practiced recently, it becomes a refresh target.
+        </p>
+        <div class="hero-actions">
+            <a class="button-link" href="{{ url_for('learning_memory') }}">Open Learning Memory</a>
+            <a class="button-link ghost" href="{{ url_for('skill_refresh_json') }}">View JSON</a>
+        </div>
+    </section>
+
+    <section class="grid four">
+        <div class="metric">
+            <strong>{{ data.verified_skills }}</strong>
+            <span>Verified Skills</span>
+        </div>
+        <div class="metric">
+            <strong>{{ data.need_refresh }}</strong>
+            <span>Need Refresh</span>
+        </div>
+        <div class="metric">
+            <strong>{{ data.average_days_since_practice }}</strong>
+            <span>Avg Days Since Practice</span>
+        </div>
+        <div class="metric">
+            <strong>{{ data.critical_decay }}</strong>
+            <span>Critical Decay Risks</span>
+        </div>
+    </section>
+
+    <section class="card accent">
+        <p class="eyebrow">Rule</p>
+        <h2>Verified does not mean permanent</h2>
+        <p>{{ data.rule }}</p>
+        <div class="score-line">
+            Green = healthy · Yellow = review soon · Red = refresh now
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Today</p>
+        <h2>Weekly Refresh Queue</h2>
+        <p class="muted">These are the highest-priority skills to review based on decay risk and active project importance.</p>
+
+        {% if data.weekly_queue %}
+            <div class="reports">
+                {% for item in data.weekly_queue %}
+                <div class="report-card {% if item.risk_level == 'High' %}needs-work{% elif item.risk_level == 'Medium' %}warning{% else %}success{% endif %}">
+                    <small>{{ item.risk_level }} Risk · {{ item.risk_score }}%</small>
+                    <strong>{{ item.skill }}</strong>
+                    <p><b>Refresh:</b> {{ item.refresh_title }}</p>
+                    <p>{{ item.refresh_action }}</p>
+                    <p><b>Proof:</b> {{ item.refresh_proof }}</p>
+                    <p class="muted">{{ item.estimated_time }} · Importance {{ item.importance }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No refresh queue yet. Promote proof through Proof Promotion first.</p>
+        {% endif %}
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">High Priority</p>
+            <h2>Critical Decay Risks</h2>
+            {% if data.critical %}
+                <div class="mastery-list">
+                    {% for item in data.critical %}
+                    <article class="mastery-skill-card">
+                        <div class="mastery-skill-head">
+                            <div>
+                                <strong>{{ item.skill }}</strong>
+                                <small>
+                                    Last verified:
+                                    {% if item.days_since_verified is not none %}
+                                        {{ item.days_since_verified }} days ago
+                                    {% else %}
+                                        Not verified yet
+                                    {% endif %}
+                                </small>
+                            </div>
+                            <div class="mastery-score">{{ item.risk_score }}%</div>
+                        </div>
+                        <div class="mastery-bar">
+                            <span style="width: {{ item.risk_score }}%;"></span>
+                        </div>
+                        <p>{{ item.risk_reason }}</p>
+                    </article>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>No critical decay risks yet.</p>
+            {% endif %}
+        </div>
+
+        <div class="card">
+            <p class="eyebrow">Healthy</p>
+            <h2>Stable Skills</h2>
+            {% if data.healthy %}
+                <div class="reports">
+                    {% for item in data.healthy %}
+                    <div class="report-card success">
+                        <small>{{ item.risk_level }} · {{ item.risk_score }}%</small>
+                        <strong>{{ item.skill }}</strong>
+                        <p>{{ item.proof_count }} proof item(s) · {{ item.status }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>No stable verified skills yet. That is normal until more proof is promoted.</p>
+            {% endif %}
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">All Skills</p>
+        <h2>Decay Table</h2>
+        <div class="route-list">
+            {% for item in data.all_skills %}
+            <div class="route-row">
+                <span>
+                    {{ item.skill }}
+                    <b>· {{ item.risk_level }}</b>
+                </span>
+                <small>
+                    Risk {{ item.risk_score }}% ·
+                    Proofs {{ item.proof_count }} ·
+                    Last:
+                    {% if item.days_since_verified is not none %}
+                        {{ item.days_since_verified }} days ago
+                    {% else %}
+                        never
+                    {% endif %}
+                </small>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+</body>
+</html>
