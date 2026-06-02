@@ -4270,6 +4270,12 @@ try:
 except Exception as exc:
     print(f"KDT OS V33 Skill Verification failed to install: {exc}")
 
+try:
+    from kdt_proof_promotion_v34 import install as install_v34
+    install_v34(sys.modules[__name__])
+except Exception as exc:
+    print(f"KDT OS V34 Proof Promotion failed to install: {exc}")
+
 if __name__ == "__main__":
     ensure_ollama_ready(wait_seconds=3.0)
     app.run(debug=True)

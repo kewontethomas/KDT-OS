@@ -53,10 +53,10 @@
         </details>
 
         <details class="nav-group" {% if request.endpoint in
-            ['quest_maintenance','regenerate_weak_quests','regenerate_single_quest','quest_archive','quest_quality','vision_test','auto_governance','auto_governance_run','auto_governance_json','action_center','action_center_run','action_center_json','skill_verification','skill_verification_json','create_skill_verification']
+            ['quest_maintenance','regenerate_weak_quests','regenerate_single_quest','quest_archive','quest_quality','vision_test','auto_governance','auto_governance_run','auto_governance_json','action_center','action_center_run','action_center_json','skill_verification','skill_verification_json','create_skill_verification','proof_promotion','proof_promotion_json','promote_skill_proof']
             %}open{% endif %}>
             <summary
-                class="{% if request.endpoint in ['quest_maintenance','regenerate_weak_quests','regenerate_single_quest','quest_archive','quest_quality','vision_test','auto_governance','auto_governance_run','auto_governance_json','action_center','action_center_run','action_center_json','skill_verification','skill_verification_json','create_skill_verification'] %}active{% endif %}">
+                class="{% if request.endpoint in ['quest_maintenance','regenerate_weak_quests','regenerate_single_quest','quest_archive','quest_quality','vision_test','auto_governance','auto_governance_run','auto_governance_json','action_center','action_center_run','action_center_json','skill_verification','skill_verification_json','create_skill_verification','proof_promotion','proof_promotion_json','promote_skill_proof'] %}active{% endif %}">
                 Verify
             </summary>
             <a href="{{ url_for('quest_maintenance') }}"
@@ -69,6 +69,8 @@
                 class="{% if request.endpoint in ['action_center','action_center_run','action_center_json'] %}active{% endif %}">Action Center</a>
             <a href="{{ url_for('skill_verification') }}"
                 class="{% if request.endpoint in ['skill_verification','skill_verification_json','create_skill_verification'] %}active{% endif %}">Skill Verification</a>
+            <a href="{{ url_for('proof_promotion') }}"
+                class="{% if request.endpoint in ['proof_promotion','proof_promotion_json','promote_skill_proof'] %}active{% endif %}">Proof Promotion</a>
             <a href="{{ url_for('quest_archive') }}"
                 class="{% if request.endpoint == 'quest_archive' %}active{% endif %}">Archive</a>
             <a href="{{ url_for('vision_test') }}"

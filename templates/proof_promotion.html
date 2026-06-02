@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KDT OS Proof Promotion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="shell">
+    {% include '_nav.html' %}
+
+    <section class="hero product-hero">
+        <p class="eyebrow">V34 · Proof Promotion Engine</p>
+        <h1>Proof Promotion</h1>
+        <p>KDT OS now turns completed verification quests into trusted skill records instead of leaving proof disconnected.</p>
+    </section>
+
+    <section class="grid four">
+        <div class="metric"><strong>{{ data.verification_quests }}</strong><span>Verification Quests</span></div>
+        <div class="metric"><strong>{{ data.pending_reviews }}</strong><span>Pending Reviews</span></div>
+        <div class="metric"><strong>{{ data.ready_to_promote }}</strong><span>Ready To Promote</span></div>
+        <div class="metric"><strong>{{ data.verified_skills }}</strong><span>Verified Skills</span></div>
+    </section>
+
+    <section class="card accent">
+        <p class="eyebrow">Trust Rule</p>
+        <h2>Proof must become memory</h2>
+        <p>{{ data.rule }}</p>
+        {% if data.next_focus %}
+        <div class="score-line">Next review: {{ data.next_focus.title }} · {{ data.next_focus.skill }} · {{ data.next_focus.status }}</div>
+        {% else %}
+        <div class="score-line">No verification quests are waiting. Create one from Skill Verification.</div>
+        {% endif %}
+        <a class="button-link ghost" href="{{ url_for('proof_promotion_json') }}">View JSON</a>
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">How to use this</p>
+            <h2>Review proof, then promote</h2>
+            <ul>
+                <li>Open the verification quest.</li>
+                <li>Confirm the uploaded code, screenshot, or written answer proves the skill.</li>
+                <li>Promote only after the proof is reviewable.</li>
+                <li>KDT OS writes the result to skill_library/skills.json and reports/verified_skill_ledger.json.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <p class="eyebrow">Why it matters</p>
+            <h2>Estimated is not trusted</h2>
+            <p>Learning Intelligence can estimate that you have seen a skill, but V34 is what lets KDT OS remember that you proved it.</p>
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Review Queue</p>
+        <h2>Verification quests waiting for proof review</h2>
+        {% if data.pending %}
+        <div class="reports">
+            {% for q in data.pending %}
+            <div class="report-card {% if q.ready_for_promotion %}warning{% else %}danger{% endif %}">
+                <small>{{ q.skill }} · {{ q.status }} · {{ q.filename }}</small>
+                <strong>{{ q.title }}</strong>
+                <p>{{ q.what_to_build }}</p>
+                <p><b>Proof needed:</b>
+                    {% if q.proof is string %}{{ q.proof }}{% else %}{{ q.proof|join('; ') }}{% endif %}
+                </p>
+                <div class="score-line">{% if q.ready_for_promotion %}Ready after review{% else %}Needs completed proof before promotion{% endif %}</div>
+                <a class="button-link small ghost" href="{{ url_for('view_quest', filename=q.filename) }}">Open Quest</a>
+                <form method="post" action="{{ url_for('promote_skill_proof', filename=q.filename) }}">
+                    <button class="button-link small" type="submit">Promote After Review</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No pending verification quests.</p>
+        {% endif %}
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Verified Skill Ledger</p>
+        <h2>Skills promoted from proof</h2>
+        {% if data.verified %}
+        <div class="compact-list">
+            {% for row in data.verified %}
+            <div><strong>{{ row.skill }}</strong><span>{{ row.score }}% · {{ row.status }} · {{ row.completed }} proof item(s)</span></div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No skills have been promoted from verification proof yet.</p>
+        {% endif %}
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Recent Promotions</p>
+        <h2>Governance memory</h2>
+        {% if data.ledger %}
+        <div class="compact-list">
+            {% for item in data.ledger %}
+            <div><strong>{{ item.skill }}</strong><span>{{ item.at }} · {{ item.quest_title }}</span></div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No promotion history yet.</p>
+        {% endif %}
+    </section>
+</main>
+</body>
+</html>
