@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KDT OS Action Center</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="shell">
+    {% include '_nav.html' %}
+
+    <section class="hero product-hero">
+        <p class="eyebrow">V26 · Governance Action Engine</p>
+        <h1>Action Center</h1>
+        <p class="hero-lead">Turn governance findings into safe repairs, duplicate cleanup, approvals, and logged system history.</p>
+    </section>
+
+    {% set plan = snapshot.get('plan', {}) %}
+    {% set proposed = snapshot.get('proposed', {}) %}
+
+    <section class="grid four">
+        <div class="metric">
+            <strong>{{ plan.get('total_active_quests', 0) }}</strong>
+            <span>Active Quests</span>
+        </div>
+        <div class="metric">
+            <strong>{{ plan.get('average_score', 0) }}%</strong>
+            <span>Average Score</span>
+        </div>
+        <div class="metric">
+            <strong>{{ proposed.get('repair_metadata', 0) }}</strong>
+            <span>Metadata Repairs</span>
+        </div>
+        <div class="metric">
+            <strong>{{ proposed.get('archive_duplicates', 0) }}</strong>
+            <span>Duplicate Archives</span>
+        </div>
+    </section>
+
+    {% if result %}
+    <section class="card success action-result-card">
+        <p class="eyebrow">Action Result</p>
+        <h2>{{ result.get('requested_action', 'Action')|replace('_',' ')|title }}</h2>
+        {% set summary = result.get('summary', {}) %}
+        <div class="grid four">
+            <div class="metric"><strong>{{ summary.get('successful_actions', 0) }}</strong><span>Successful Actions</span></div>
+            <div class="metric"><strong>{{ summary.get('metadata_repairs', 0) }}</strong><span>Metadata Repairs</span></div>
+            <div class="metric"><strong>{{ summary.get('duplicates_archived', 0) }}</strong><span>Duplicates Archived</span></div>
+            <div class="metric"><strong>{{ summary.get('strong_approved', 0) }}</strong><span>Strong Approved</span></div>
+        </div>
+        {% if result.get('log_file') %}
+            <p class="muted">Report written to: {{ result.get('log_file') }}</p>
+        {% endif %}
+        {% if result.get('errors') %}
+            <details class="explain-card">
+                <summary>Errors / skipped actions</summary>
+                <ul>
+                    {% for err in result.get('errors', [])[:10] %}
+                    <li>{{ err.get('file', err.get('action', 'unknown')) }} — {{ err.get('error', 'unknown error') }}</li>
+                    {% endfor %}
+                </ul>
+            </details>
+        {% endif %}
+    </section>
+    {% endif %}
+
+    <section class="card accent action-console">
+        <p class="eyebrow">Repair Console</p>
+        <h2>Choose one safe action</h2>
+        <p class="muted">V26 preserves history. Duplicate cleanup archives weaker quests with postmortems instead of deleting them.</p>
+
+        <div class="action-button-grid">
+            <form method="post" action="{{ url_for('action_center_run') }}">
+                <input type="hidden" name="action" value="preview">
+                <button type="submit">Preview Only</button>
+                <small>Shows what KDT OS would repair without changing files.</small>
+            </form>
+
+            <form method="post" action="{{ url_for('action_center_run') }}">
+                <input type="hidden" name="action" value="repair_metadata">
+                <button type="submit">Repair Metadata</button>
+                <small>Adds quest_quality, governance data, proof fields, and understanding checks.</small>
+            </form>
+
+            <form method="post" action="{{ url_for('action_center_run') }}">
+                <input type="hidden" name="action" value="archive_duplicates">
+                <button type="submit">Archive Duplicates</button>
+                <small>Keeps the strongest quest in each cluster and archives weak copies.</small>
+            </form>
+
+            <form method="post" action="{{ url_for('action_center_run') }}">
+                <input type="hidden" name="action" value="approve_strong">
+                <button type="submit">Approve Strong Quests</button>
+                <small>Marks 90%+ clean quests as governance approved.</small>
+            </form>
+
+            <form method="post" action="{{ url_for('action_center_run') }}" class="wide-action">
+                <input type="hidden" name="action" value="safe_cleanup">
+                <button type="submit">Run Safe Cleanup</button>
+                <small>Repairs metadata, archives weak duplicates, approves strong quests, and writes a report.</small>
+            </form>
+        </div>
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">Proposed Actions</p>
+            <h2>What KDT OS can do now</h2>
+            <div class="action-list">
+                <div><strong>{{ proposed.get('repair_metadata', 0) }}</strong><span>metadata repairs</span></div>
+                <div><strong>{{ proposed.get('archive_duplicates', 0) }}</strong><span>duplicate archives</span></div>
+                <div><strong>{{ proposed.get('approve_strong', 0) }}</strong><span>strong approvals</span></div>
+                <div><strong>{{ proposed.get('manual_review', 0) }}</strong><span>manual review items</span></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <p class="eyebrow">Recent Governance Actions</p>
+            <h2>System history</h2>
+            {% if snapshot.get('recent_actions') %}
+                {% for action in snapshot.get('recent_actions', [])[:6] %}
+                <div class="mini">
+                    <strong>{{ action.get('action', 'action')|replace('_',' ')|title }}</strong>
+                    <p>{{ action.get('created_at') }}</p>
+                    <small>{{ action.get('result', {}) }}</small>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p class="muted">No V26 actions logged yet.</p>
+            {% endif %}
+        </div>
+    </section>
+
+    <section class="card">
+        <div class="section-head">
+            <div>
+                <p class="eyebrow">Duplicate Cleanup Plan</p>
+                <h2>Weak duplicate archives</h2>
+            </div>
+            <span class="count-pill">{{ snapshot.get('duplicate_targets', [])|length }} target(s)</span>
+        </div>
+
+        {% if snapshot.get('duplicate_targets') %}
+        <div class="compact-issue-list">
+            {% for target in snapshot.get('duplicate_targets', [])[:12] %}
+            <div class="compact-issue-row">
+                <strong>{{ target.get('filename') }}</strong>
+                <span>{{ target.get('cluster') }}</span>
+                <small>{{ target.get('reason') }}</small>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+            <p class="muted">No duplicate archive targets detected.</p>
+        {% endif %}
+    </section>
+
+    <section class="card">
+        <div class="section-head">
+            <div>
+                <p class="eyebrow">Metadata Repair Plan</p>
+                <h2>Quests needing safer metadata</h2>
+            </div>
+            <span class="count-pill">{{ snapshot.get('repair_targets', [])|length }} target(s)</span>
+        </div>
+
+        {% if snapshot.get('repair_targets') %}
+        <div class="compact-issue-list">
+            {% for item in snapshot.get('repair_targets', [])[:16] %}
+            <div class="compact-issue-row score-{{ item.get('risk','warning') }}">
+                <strong>{{ item.get('title') }}</strong>
+                <span>{{ item.get('score') }}% · {{ item.get('risk') }}</span>
+                <small>{{ item.get('filename') }}</small>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+            <p class="muted">No metadata repairs needed.</p>
+        {% endif %}
+    </section>
+
+    <section class="card">
+        <div class="section-head">
+            <div>
+                <p class="eyebrow">Approval Plan</p>
+                <h2>Strong quests ready to approve</h2>
+            </div>
+            <span class="count-pill">{{ snapshot.get('approval_targets', [])|length }} target(s)</span>
+        </div>
+
+        {% if snapshot.get('approval_targets') %}
+        <div class="compact-issue-list">
+            {% for item in snapshot.get('approval_targets', [])[:12] %}
+            <div class="compact-issue-row strong">
+                <strong>{{ item.get('title') }}</strong>
+                <span>{{ item.get('score') }}%</span>
+                <small>{{ item.get('filename') }}</small>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+            <p class="muted">No strong quests ready for approval yet.</p>
+        {% endif %}
+    </section>
+</main>
+</body>
+</html>

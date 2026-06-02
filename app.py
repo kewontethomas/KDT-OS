@@ -4226,6 +4226,7 @@ from kdt_self_check_v22 import install as install_v22
 from kdt_auto_governance_v23 import install as install_v23
 from kdt_unified_governance_v24 import install as install_v24
 from kdt_governance_intelligence_v25 import install as install_v25
+from kdt_action_engine_v26 import install as install_v26
 
 install_v20(sys.modules[__name__])
 install_v21(sys.modules[__name__])
@@ -4233,6 +4234,7 @@ install_v22(sys.modules[__name__])
 install_v23(sys.modules[__name__])
 install_v24(sys.modules[__name__])
 install_v25(sys.modules[__name__])
+install_v26(sys.modules[__name__])
 
 if __name__ == "__main__":
     ensure_ollama_ready(wait_seconds=3.0)
