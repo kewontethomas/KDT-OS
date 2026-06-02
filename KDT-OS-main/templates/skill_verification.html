@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KDT OS Skill Verification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="shell">
+    {% include '_nav.html' %}
+
+    <section class="hero product-hero">
+        <p class="eyebrow">V33 · Skill Verification Engine</p>
+        <h1>Skill Verification</h1>
+        <p>KDT OS now separates estimated skill strength from proof-backed verified ability.</p>
+    </section>
+
+    <section class="grid four">
+        <div class="metric"><strong>{{ data.total_skills }}</strong><span>Tracked Skills</span></div>
+        <div class="metric"><strong>{{ data.estimated_only }}</strong><span>Estimated Only</span></div>
+        <div class="metric"><strong>{{ data.verified_skills }}</strong><span>Verified Skills</span></div>
+        <div class="metric"><strong>{{ data.needs_verification }}</strong><span>Need Verification</span></div>
+    </section>
+
+    <section class="card accent">
+        <p class="eyebrow">Verify This First</p>
+        <h2>{{ data.primary_gap.skill }}</h2>
+        <p>This skill has a large gap between estimated strength and proof-backed verification.</p>
+        <div class="score-line">Estimated {{ data.primary_gap.estimated_score }}% · Verified {{ data.primary_gap.verified_score }}% · Gap {{ data.primary_gap.verification_gap }}%</div>
+        <p><b>Recommended check:</b> {{ data.primary_gap.recommended_challenge }}</p>
+        <form method="post" action="{{ url_for('create_skill_verification', skill=data.primary_gap.skill) }}">
+            <button class="button-link" type="submit">Create Verification Quest</button>
+            <a class="button-link ghost" href="{{ url_for('skill_verification_json') }}">View JSON</a>
+        </form>
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">System Rule</p>
+            <h2>Estimated is not verified</h2>
+            <p>{{ data.rule }}</p>
+            <ul>
+                <li>Estimated score comes from quests and project evidence.</li>
+                <li>Verified score requires completed proof or verification quests.</li>
+                <li>Large gaps become recommended verification challenges.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <p class="eyebrow">How To Use This</p>
+            <h2>Prove one skill at a time</h2>
+            <p>Pick the top gap, create a verification quest, complete it, and submit proof. KDT OS should then trust that skill more.</p>
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Skill Verification Radar</p>
+        <h2>What is estimated vs actually proven?</h2>
+        <div class="reports">
+            {% for skill in data.skills %}
+            <div class="report-card {% if skill.verified_score >= 70 %}success{% elif skill.verification_gap >= 30 %}danger{% else %}warning{% endif %}">
+                <small>{{ skill.status }} · {{ skill.quests|length }} quest(s)</small>
+                <strong>{{ skill.skill }}</strong>
+                <p>Estimated: <b>{{ skill.estimated_score }}%</b> · Verified: <b>{{ skill.verified_score }}%</b></p>
+                <div class="score-line">Verification gap: {{ skill.verification_gap }}%</div>
+                <p><b>Challenge:</b> {{ skill.recommended_challenge }}</p>
+                <form method="post" action="{{ url_for('create_skill_verification', skill=skill.skill) }}">
+                    <button class="button-link small" type="submit">Create Check</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Already Verified</p>
+        <h2>Skills with proof-backed strength</h2>
+        {% if data.strong_skills %}
+        <div class="compact-list">
+            {% for skill in data.strong_skills %}
+            <div><strong>{{ skill.skill }}</strong><span>{{ skill.verified_score }}% verified</span></div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No skills are strongly verified yet. Create and complete one verification quest.</p>
+        {% endif %}
+    </section>
+</main>
+</body>
+</html>
