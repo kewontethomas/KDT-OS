@@ -15,6 +15,288 @@
   ],
   "adaptive_events": [
     {
+      "at": "2026-06-02T00:38:15",
+      "event_type": "model_roles_auto_detected",
+      "summary": "KDT OS auto-assigned Ollama model roles from installed models.",
+      "details": {
+        "reasoning": {
+          "setting_key": "reasoning_model",
+          "configured": "llama3.1:8b",
+          "detected": "llama3.1:8b",
+          "installed": true,
+          "will_use": "llama3.1:8b",
+          "changed": false
+        },
+        "code": {
+          "setting_key": "code_model",
+          "configured": "deepseek-coder:latest",
+          "detected": "deepseek-coder:latest",
+          "installed": true,
+          "will_use": "deepseek-coder:latest",
+          "changed": false
+        },
+        "vision": {
+          "setting_key": "vision_model",
+          "configured": "llava:latest",
+          "detected": "llava:latest",
+          "installed": true,
+          "will_use": "llava:latest",
+          "changed": false
+        },
+        "embedding": {
+          "setting_key": "embedding_model",
+          "configured": "nomic-embed-text:latest",
+          "detected": "nomic-embed-text:latest",
+          "installed": true,
+          "will_use": "nomic-embed-text:latest",
+          "changed": false
+        },
+        "fast": {
+          "setting_key": "fast_model",
+          "configured": "llama3.2:3b",
+          "detected": "llama3.2:3b",
+          "installed": true,
+          "will_use": "llama3.2:3b",
+          "changed": false
+        }
+      }
+    },
+    {
+      "at": "2026-06-02T00:37:48",
+      "event_type": "model_roles_auto_detected",
+      "summary": "KDT OS auto-assigned Ollama model roles from installed models.",
+      "details": {
+        "reasoning": {
+          "setting_key": "reasoning_model",
+          "configured": "llama3.1:8b",
+          "detected": "llama3.1:8b",
+          "installed": true,
+          "will_use": "llama3.1:8b",
+          "changed": false
+        },
+        "code": {
+          "setting_key": "code_model",
+          "configured": "deepseek-coder:latest",
+          "detected": "deepseek-coder:latest",
+          "installed": true,
+          "will_use": "deepseek-coder:latest",
+          "changed": false
+        },
+        "vision": {
+          "setting_key": "vision_model",
+          "configured": "llava:latest",
+          "detected": "llava:latest",
+          "installed": true,
+          "will_use": "llava:latest",
+          "changed": false
+        },
+        "embedding": {
+          "setting_key": "embedding_model",
+          "configured": "nomic-embed-text:latest",
+          "detected": "nomic-embed-text:latest",
+          "installed": true,
+          "will_use": "nomic-embed-text:latest",
+          "changed": false
+        },
+        "fast": {
+          "setting_key": "fast_model",
+          "configured": "llama3.2:3b",
+          "detected": "llama3.2:3b",
+          "installed": true,
+          "will_use": "llama3.2:3b",
+          "changed": false
+        }
+      }
+    },
+    {
+      "at": "2026-06-02T00:28:21",
+      "event_type": "model_roles_auto_detected",
+      "summary": "KDT OS auto-assigned Ollama model roles from installed models.",
+      "details": {
+        "reasoning": {
+          "setting_key": "reasoning_model",
+          "configured": "llama3.1:8b",
+          "detected": "llama3.1:8b",
+          "installed": true,
+          "will_use": "llama3.1:8b",
+          "changed": false
+        },
+        "code": {
+          "setting_key": "code_model",
+          "configured": "deepseek-coder:latest",
+          "detected": "deepseek-coder:latest",
+          "installed": true,
+          "will_use": "deepseek-coder:latest",
+          "changed": false
+        },
+        "vision": {
+          "setting_key": "vision_model",
+          "configured": "llava:latest",
+          "detected": "llava:latest",
+          "installed": true,
+          "will_use": "llava:latest",
+          "changed": false
+        },
+        "embedding": {
+          "setting_key": "embedding_model",
+          "configured": "nomic-embed-text:latest",
+          "detected": "nomic-embed-text:latest",
+          "installed": true,
+          "will_use": "nomic-embed-text:latest",
+          "changed": false
+        },
+        "fast": {
+          "setting_key": "fast_model",
+          "configured": "llama3.2:3b",
+          "detected": "llama3.2:3b",
+          "installed": true,
+          "will_use": "llama3.2:3b",
+          "changed": false
+        }
+      }
+    },
+    {
+      "at": "2026-06-02T00:13:43",
+      "event_type": "model_roles_auto_detected",
+      "summary": "KDT OS auto-assigned Ollama model roles from installed models.",
+      "details": {
+        "reasoning": {
+          "setting_key": "reasoning_model",
+          "configured": "llama3.1:8b",
+          "detected": "llama3.1:8b",
+          "installed": true,
+          "will_use": "llama3.1:8b",
+          "changed": false
+        },
+        "code": {
+          "setting_key": "code_model",
+          "configured": "deepseek-coder:latest",
+          "detected": "deepseek-coder:latest",
+          "installed": true,
+          "will_use": "deepseek-coder:latest",
+          "changed": false
+        },
+        "vision": {
+          "setting_key": "vision_model",
+          "configured": "llava:latest",
+          "detected": "llava:latest",
+          "installed": true,
+          "will_use": "llava:latest",
+          "changed": false
+        },
+        "embedding": {
+          "setting_key": "embedding_model",
+          "configured": "nomic-embed-text:latest",
+          "detected": "nomic-embed-text:latest",
+          "installed": true,
+          "will_use": "nomic-embed-text:latest",
+          "changed": false
+        },
+        "fast": {
+          "setting_key": "fast_model",
+          "configured": "llama3.2:3b",
+          "detected": "llama3.2:3b",
+          "installed": true,
+          "will_use": "llama3.2:3b",
+          "changed": false
+        }
+      }
+    },
+    {
+      "at": "2026-06-02T00:12:31",
+      "event_type": "model_roles_auto_detected",
+      "summary": "KDT OS auto-assigned Ollama model roles from installed models.",
+      "details": {
+        "reasoning": {
+          "setting_key": "reasoning_model",
+          "configured": "llama3.1:8b",
+          "detected": "llama3.1:8b",
+          "installed": true,
+          "will_use": "llama3.1:8b",
+          "changed": false
+        },
+        "code": {
+          "setting_key": "code_model",
+          "configured": "deepseek-coder:latest",
+          "detected": "deepseek-coder:latest",
+          "installed": true,
+          "will_use": "deepseek-coder:latest",
+          "changed": false
+        },
+        "vision": {
+          "setting_key": "vision_model",
+          "configured": "llava:latest",
+          "detected": "llava:latest",
+          "installed": true,
+          "will_use": "llava:latest",
+          "changed": false
+        },
+        "embedding": {
+          "setting_key": "embedding_model",
+          "configured": "nomic-embed-text:latest",
+          "detected": "nomic-embed-text:latest",
+          "installed": true,
+          "will_use": "nomic-embed-text:latest",
+          "changed": false
+        },
+        "fast": {
+          "setting_key": "fast_model",
+          "configured": "llama3.2:3b",
+          "detected": "llama3.2:3b",
+          "installed": true,
+          "will_use": "llama3.2:3b",
+          "changed": false
+        }
+      }
+    },
+    {
+      "at": "2026-06-02T00:12:24",
+      "event_type": "model_roles_auto_detected",
+      "summary": "KDT OS auto-assigned Ollama model roles from installed models.",
+      "details": {
+        "reasoning": {
+          "setting_key": "reasoning_model",
+          "configured": "llama3.1:8b",
+          "detected": "llama3.1:8b",
+          "installed": true,
+          "will_use": "llama3.1:8b",
+          "changed": false
+        },
+        "code": {
+          "setting_key": "code_model",
+          "configured": "deepseek-coder:latest",
+          "detected": "deepseek-coder:latest",
+          "installed": true,
+          "will_use": "deepseek-coder:latest",
+          "changed": false
+        },
+        "vision": {
+          "setting_key": "vision_model",
+          "configured": "llava:latest",
+          "detected": "llava:latest",
+          "installed": true,
+          "will_use": "llava:latest",
+          "changed": false
+        },
+        "embedding": {
+          "setting_key": "embedding_model",
+          "configured": "nomic-embed-text:latest",
+          "detected": "nomic-embed-text:latest",
+          "installed": true,
+          "will_use": "nomic-embed-text:latest",
+          "changed": false
+        },
+        "fast": {
+          "setting_key": "fast_model",
+          "configured": "llama3.2:3b",
+          "detected": "llama3.2:3b",
+          "installed": true,
+          "will_use": "llama3.2:3b",
+          "changed": false
+        }
+      }
+    },
+    {
       "at": "2026-06-01T23:01:29",
       "event_type": "model_roles_auto_detected",
       "summary": "KDT OS auto-assigned Ollama model roles from installed models.",
@@ -1625,7 +1907,7 @@
     }
   ],
   "pattern_counts": {
-    "model_roles_auto_detected": 34,
+    "model_roles_auto_detected": 40,
     "path_created": 1
   }
 }

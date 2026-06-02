@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KDT OS Route Extraction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="shell">
+    {% include '_nav.html' %}
+
+    <section class="hero product-hero">
+        <p class="eyebrow">V28 · Route Extraction Engine</p>
+        <h1>Route Extraction</h1>
+        <p>KDT OS has started moving route families out of app.py without breaking the working system.</p>
+    </section>
+
+    <section class="grid four">
+        <div class="metric"><strong>{{ snapshot.app_py_lines }}</strong><span>app.py Lines</span></div>
+        <div class="metric"><strong>{{ snapshot.total_routes }}</strong><span>Routes Registered</span></div>
+        <div class="metric"><strong>{{ snapshot.extraction_health }}%</strong><span>Extraction Health</span></div>
+        <div class="metric"><strong>{{ snapshot.architecture_risk }}</strong><span>Architecture Risk</span></div>
+    </section>
+
+    <section class="card accent">
+        <p class="eyebrow">Extraction Rule</p>
+        <h2>Small, safe route-family moves only</h2>
+        <p>{{ snapshot.rule }}</p>
+        <div class="score-line">V28 extracted Verify/System registration first. The old route bodies remain stable until shared helpers are moved.</div>
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">What changed</p>
+            <h2>Extracted registration modules</h2>
+            <div class="reports">
+                {% for mod in snapshot.extracted_modules %}
+                <div class="report-card {% if mod.exists %}success{% endif %}">
+                    <strong>{{ mod.path }}</strong>
+                    <p>{{ mod.lines }} lines · {% if mod.exists %}Created{% else %}Missing{% endif %}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="card">
+            <p class="eyebrow">Proof</p>
+            <h2>app.py now delegates route families</h2>
+            <ul>
+                <li>Verify registrar: <b>{{ snapshot.import_status.uses_verify_registrar }}</b></li>
+                <li>System registrar: <b>{{ snapshot.import_status.uses_system_registrar }}</b></li>
+                <li>Direct Verify installs removed: <b>{{ snapshot.import_status.direct_verify_installs_removed }}</b></li>
+                <li>Direct System install removed: <b>{{ snapshot.import_status.direct_system_install_removed }}</b></li>
+            </ul>
+            <a class="button-link ghost" href="{{ url_for('route_extraction_json') }}">View JSON</a>
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Route Families</p>
+        <h2>Registered route map after extraction</h2>
+        <div class="trust-grid">
+            {% for family, count in snapshot.family_counts.items() %}
+            <div><strong>{{ family }}</strong><span>{{ count }}</span></div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">Verify Routes</p>
+            <h2>Routes protected by the Verify family</h2>
+            <div class="route-list">
+                {% for r in snapshot.verify_routes %}
+                <div class="route-row"><span>{{ r.rule }}</span><small>{{ r.endpoint }} · {{ r.methods|join(', ') }}</small></div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="card">
+            <p class="eyebrow">System Routes</p>
+            <h2>Routes protected by the System family</h2>
+            <div class="route-list">
+                {% for r in snapshot.system_routes %}
+                <div class="route-row"><span>{{ r.rule }}</span><small>{{ r.endpoint }} · {{ r.methods|join(', ') }}</small></div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Next Extraction Targets</p>
+        <h2>Keep reducing app.py safely</h2>
+        <div class="reports">
+            {% for target in snapshot.next_targets %}
+            <div class="report-card">
+                <small>{{ target.phase }}</small>
+                <strong>{{ target.title }}</strong>
+                <p><b>Move:</b> {{ target.move }}</p>
+                <p><b>Success:</b> {{ target.success }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+</body>
+</html>
