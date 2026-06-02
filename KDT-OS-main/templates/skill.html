@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>{{ skill_name }} Skill</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head><body><main class="shell">
+{% include '_nav.html' %}
+<a class="back" href="{{ url_for('index') }}">← Back</a>
+<section class="hero"><p class="eyebrow">Skill Detail</p><h1>{{ skill_name }}</h1><p>{{ skill.confidence_label or 'KDT OS has evidence for this skill, but it may not be proven by completed quests yet.' }}</p></section>
+<section class="grid two">
+  <div class="card"><h2>Status</h2><p><strong>{{ skill.status }}</strong></p><p>Verified confidence: {{ skill.verified_confidence or skill.confidence or 0 }}%</p><p>Completed proof quests: {{ skill.completed_quests|length }}</p><p>Submissions: {{ skill.submissions|length }}</p><p>Detected in projects: {{ skill.evidence_count }}</p><p>Last verified: {{ skill.last_verified_at or 'Not verified yet' }}</p></div>
+  <div class="card"><h2>What this means</h2><p>KDT OS may detect this skill in uploaded projects, but that only means exposure. The score only rises when you complete proof-backed quests or submit work that can be checked.</p></div>
+</section>
+<section class="card"><h2>Projects Using This Skill</h2>{% if skill.projects %}<ul>{% for p in skill.projects %}<li>{{ p }}</li>{% endfor %}</ul>{% else %}<p class="muted">No project evidence yet.</p>{% endif %}</section>
+<section class="card"><h2>Evidence Timeline</h2>{% if skill.evidence %}{% for e in skill.evidence[-10:]|reverse %}<div class="mini"><strong>{{ e.project }}</strong><p>{{ e.explanation }}</p><small>{{ e.seen_at }} · Score: {{ e.score }}</small></div>{% endfor %}{% else %}<p class="muted">No detailed evidence yet.</p>{% endif %}</section>
+<section class="card"><h2>Quest History</h2>{% if quests %}<div class="reports">{% for q in quests %}<a class="report-card" href="{{ url_for('view_quest', filename=q.filename) }}"><strong>{{ q.title }}</strong><span>{{ q.status }}</span><p>{{ q.what_to_build }}</p></a>{% endfor %}</div>{% else %}<p class="muted">No quests for this skill yet.</p>{% endif %}</section>
+<section class="card accent"><h2>Create Refresh Quest</h2><p class="muted">Use this when you have seen the skill before but need exact practice before using it in a real project.</p><form action="{{ url_for('teach_create') }}" method="post"><input type="hidden" name="skill" value="{{ skill_name }}"><label>What is stopping you?<input name="confusion" value="I need a detailed refresh quest for {{ skill_name }} before I use it in a real project."></label><button type="submit">Create Exact Refresh Quest</button></form></section>
+</main></body></html>

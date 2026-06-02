@@ -1,0 +1,185 @@
+{
+  "created_at": "2026-06-01T02:37:33",
+  "source_project": "Project Analysis: FieldSeed",
+  "origin_report": "20260531_031935_FieldSeed.json",
+  "resume_project": "FieldSeed",
+  "connected_goal": "",
+  "skill": "SQLite",
+  "user_gap": "KDT OS detected SQLite in this uploaded project and created a ready practice quest.",
+  "quest_type": "Auto Practice Quest",
+  "difficulty": "Beginner",
+  "estimated_time": "30-60 minutes",
+  "ai_generated": false,
+  "ai_parse_mode": "governance_context_template_v2",
+  "ai_raw_response": "",
+  "submissions": [],
+  "status": "Superseded",
+  "resume_rule": "After this quest is complete, return to the original project or goal that caused this quest unless you intentionally choose a different path.",
+  "title": "SQLite CRUD Quest: Workout Database",
+  "type": "Practice Quest",
+  "goal": "Practice saving, reading, updating, and deleting records in SQLite.",
+  "what_to_build": "A small Python app that stores workouts with exercise name, sets, reps, and date.",
+  "requirements": [
+    "Create folder workout_database_crud",
+    "Create app.py",
+    "Create workouts.db",
+    "Create workouts table",
+    "Add menu options for Create, Read, Update, Delete",
+    "Add README.md with run steps"
+  ],
+  "success_criteria": [
+    "CREATE TABLE exists",
+    "INSERT INTO exists",
+    "SELECT exists",
+    "UPDATE exists",
+    "DELETE exists"
+  ],
+  "steps": [
+    "Create a folder named workout_database_crud",
+    "Create app.py",
+    "Import sqlite3",
+    "Create workouts table with id, exercise, sets, reps, date",
+    "Add a menu with choices 1 Add, 2 View, 3 Edit, 4 Delete, 5 Exit",
+    "Make each choice work",
+    "Create README.md with run instructions"
+  ],
+  "verification_patterns": [
+    "sqlite3",
+    "CREATE TABLE",
+    "INSERT INTO",
+    "SELECT",
+    "UPDATE",
+    "DELETE"
+  ],
+  "proof_required": [
+    "Upload ZIP",
+    "Include app.py",
+    "Include README.md",
+    "Include workouts.db if created",
+    "Answer: what is the difference between a row and a table?"
+  ],
+  "why_this_exists": "This replaces an older quest that looked too generic. KDT OS regenerated it using the skill (SQLite), source (Project Analysis: FieldSeed), and your need for exact, verifiable steps.",
+  "teach_me_breakdown": [
+    {
+      "label": "What is a database?",
+      "answer": "A database is a structured place where an app stores information so it can be used again later."
+    },
+    {
+      "label": "What is a table?",
+      "answer": "A table is like one spreadsheet tab. It stores one type of thing, such as workouts, contacts, or skills."
+    },
+    {
+      "label": "What is a column?",
+      "answer": "A column is one field, like Name, Age, Exercise, Sets, or Reps."
+    },
+    {
+      "label": "What is a row?",
+      "answer": "A row is one saved item. One contact or one workout is one row."
+    },
+    {
+      "label": "What is CRUD?",
+      "answer": "CRUD means Create, Read, Update, Delete. It is the basic full cycle for stored data."
+    }
+  ],
+  "quest_quality": {
+    "score": 100,
+    "rating": "10/10 Ready",
+    "checks": [
+      {
+        "name": "Exact blocker identified",
+        "ok": true,
+        "fix": "Add the specific thing the user does not understand or cannot do yet.",
+        "weight": 8
+      },
+      {
+        "name": "Smallest visible action",
+        "ok": true,
+        "fix": "State the smallest visible thing to create, do, or prove.",
+        "weight": 10
+      },
+      {
+        "name": "Exact file/artifact named",
+        "ok": true,
+        "fix": "Name the exact file, folder, screenshot, database, or artifact required.",
+        "weight": 12
+      },
+      {
+        "name": "Step-by-step instructions",
+        "ok": true,
+        "fix": "Add at least 7 exact steps from start to finish.",
+        "weight": 12
+      },
+      {
+        "name": "Required features",
+        "ok": true,
+        "fix": "List concrete files, fields, buttons, commands, or actions required.",
+        "weight": 8
+      },
+      {
+        "name": "Measurable success criteria",
+        "ok": true,
+        "fix": "List measurable conditions that prove completion.",
+        "weight": 10
+      },
+      {
+        "name": "Specific proof method",
+        "ok": true,
+        "fix": "State exactly what to upload or answer as proof.",
+        "weight": 10
+      },
+      {
+        "name": "Return path",
+        "ok": true,
+        "fix": "Connect this quest back to a project, goal, or parent quest.",
+        "weight": 6
+      },
+      {
+        "name": "Not a template clone",
+        "ok": true,
+        "fix": "This quest looks like the same generic template under a different title. Regenerate from project/skill context.",
+        "weight": 16
+      },
+      {
+        "name": "Project/skill specificity",
+        "ok": true,
+        "fix": "Add technology-specific files, commands, fields, outputs, or UI elements.",
+        "weight": 10
+      },
+      {
+        "name": "Named output/result",
+        "ok": true,
+        "fix": "State what visible result, file, screen, or terminal output proves the work.",
+        "weight": 4
+      },
+      {
+        "name": "Understanding check",
+        "ok": true,
+        "fix": "Require a short explanation so proof is not just uploaded blindly.",
+        "weight": 4
+      }
+    ],
+    "passed": 12,
+    "total": 12,
+    "penalties": [],
+    "specificity_score": 4,
+    "template_clone": false
+  },
+  "quest_standard": {
+    "rule": "Every KDT OS quest must include exact steps, proof, success criteria, and a return path.",
+    "minimum_fields": [
+      "Goal",
+      "Blocker",
+      "What to build/do",
+      "Steps",
+      "Success criteria",
+      "Proof",
+      "Return point"
+    ]
+  },
+  "regenerated_from": "Project_Analysis_FieldSeed_SQLite_20260531_034204.json",
+  "version": 2,
+  "governance_note": "Generated by Quest Governance v2 because the previous quest was weak, vague, cloned, or below the 85% quality standard.",
+  "archived_at": "2026-06-01T03:04:23",
+  "archive_reason": "Quest failed V20 anti-duplicate/specificity review and was regenerated.",
+  "superseded_by": "sqlite_crud_quest_workout_database_20260601_030423.json"
+}

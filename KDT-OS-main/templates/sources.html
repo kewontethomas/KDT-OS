@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>KDT OS Sources</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <main class="shell">
+        {% include '_nav.html' %}
+        <section class="hero product-hero">
+            <p class="eyebrow">Project Source Manager</p>
+            <h1>Connect the real places your projects live.</h1>
+            <p>KDT OS should not depend on ZIP files only. Attach folders for active projects, upload ZIPs for packaged
+                work, and keep manual ideas separate until they become real.</p>
+        </section>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert">
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        <section class="grid two">
+            <div class="card accent source-card big-action">
+                <p class="eyebrow">Active Project</p>
+                <h2>Analyze Folder</h2>
+                <p class="muted">Use this for living projects you keep editing on your computer.</p>
+                <form action="{{ url_for('analyze_folder') }}" method="post">
+                    <label>Project name<input type="text" name="project_name" placeholder="Example: KDT OS"></label>
+                    <label>Folder path<input type="text" name="project_folder_path"
+                            placeholder="Example: D:\\KDT_OS_PROJECT_ANALYZER_V1"></label>
+                    <button type="submit">Scan Folder</button>
+                </form>
+            </div>
+            <div class="card source-card">
+                <p class="eyebrow">Packaged Project</p>
+                <h2>Upload ZIP</h2>
+                <p class="muted">Use this for backups, GitHub exports, completed proof packages, and archived versions.
+                </p>
+                <form action="{{ url_for('analyze') }}" method="post" enctype="multipart/form-data">
+                    <label>Project name<input type="text" name="project_name" placeholder="Example: FieldSeed"></label>
+                    <label>Project ZIP<input type="file" name="project_zip" accept=".zip" required></label>
+                    <button type="submit">Analyze ZIP</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Tracked Project Sources</h2>
+            {% if projects %}
+            <div class="reports">
+                {% for p in projects %}
+                <a class="report-card source-item" href="{{ url_for('view_project', filename=p.filename) }}">
+                    <span class="source-badge {% if p.source_type == 'Local Folder' %}verified{% endif %}">{{
+                        p.source_type or 'Uploaded ZIP' }}</span>
+                    <strong>{{ p.project_name }}</strong>
+                    {% if p.source_path %}<small>{{ p.source_path }}</small>{% endif %}
+                    <p>{{ p.latest_technologies|join(', ') or p.latest_capabilities|join(', ') }}</p>
+                </a>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p class="muted">No tracked sources yet. Add a folder or upload a ZIP.</p>
+            {% endif %}
+        </section>
+
+        <section class="card guidance-card">
+            <h2>How KDT OS should treat sources</h2>
+            <div class="grid three">
+                <div class="mini"><strong>Folder</strong>
+                    <p>Best for real active projects. KDT OS can rescan and compare changes over time.</p>
+                </div>
+                <div class="mini"><strong>ZIP</strong>
+                    <p>Best for snapshots, proof, backups, and exports.</p>
+                </div>
+                <div class="mini"><strong>Manual Idea</strong>
+                    <p>Useful for planning, but not verified until a folder, ZIP, or proof exists.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

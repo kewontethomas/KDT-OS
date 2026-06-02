@@ -1,0 +1,67 @@
+{
+  "created_at": "2026-05-31T03:42:04",
+  "source_project": "Project Analysis: FieldSeed",
+  "origin_report": "20260531_031935_FieldSeed.json",
+  "resume_project": "FieldSeed",
+  "connected_goal": "",
+  "skill": "Health Monitoring",
+  "user_gap": "KDT OS detected Health Monitoring in this uploaded project and created a ready practice quest.",
+  "title": "Exact Practice Quest",
+  "quest_type": "Auto Practice Quest",
+  "why_this_exists": "This quest came from: Project Analysis: FieldSeed. The skill being practiced is: Health Monitoring. Your stated blocker is: KDT OS detected Health Monitoring in this uploaded project and created a ready practice quest. This quest exists so practice connects back to something you care about instead of becoming random homework.",
+  "goal": "Practice one skill with a small, clear build.",
+  "what_to_build": "A small project that demonstrates the requested skill one time in a visible way.",
+  "requirements": [
+    "Create the required files",
+    "Use the skill directly",
+    "Show the result",
+    "Write what confused you"
+  ],
+  "success_criteria": [
+    "The target skill appears in the code",
+    "The project can be explained in README",
+    "Proof can be uploaded"
+  ],
+  "steps": [
+    "Create a project folder",
+    "Create the main file",
+    "Implement the smallest working version",
+    "Test it",
+    "Add README.md",
+    "Upload ZIP"
+  ],
+  "proof_required": [
+    "Upload ZIP",
+    "Include README.md",
+    "Write what you practiced"
+  ],
+  "verification_patterns": [],
+  "teach_me_breakdown": [
+    {
+      "label": "What is this skill?",
+      "answer": "Health Monitoring is a skill KDT OS can practice through small exact quests."
+    },
+    {
+      "label": "Why practice it?",
+      "answer": "Practicing it in a tiny project makes it easier to use later in a larger project."
+    }
+  ],
+  "status": "Superseded",
+  "submissions": [],
+  "resume_rule": "After this quest is complete, return to the original project or goal that caused this quest unless you intentionally choose a different path.",
+  "breakdown_history": [
+    {
+      "created_at": "2026-05-31T04:42:23",
+      "breakdown_file": "Breakdown_of_Exact_Practice_Quest_Health_Monitoring_20260531_044223.json",
+      "obstacle": ""
+    },
+    {
+      "created_at": "2026-05-31T05:13:21",
+      "breakdown_file": "Breakdown_of_Exact_Practice_Quest_Health_Monitoring_20260531_051321.json",
+      "obstacle": ""
+    }
+  ],
+  "archived_at": "2026-06-01T01:34:50",
+  "archive_reason": "Quest failed Quest Intelligence v2 review and was regenerated with a specific replacement.",
+  "superseded_by": "Mini_Health_Checker_20260601_013450.json"
+}

@@ -32,20 +32,20 @@
         </details>
 
         <details class="nav-group" {% if request.endpoint in
-            ['teach','teach_create','learning_intelligence','learning_intelligence_json','quests','view_quest','submit_quest_proof','break_down_quest','create_quest_from_report','view_skill','skill_graph','growth','goals','view_goal','mastery','system_intelligence']
+            ['teach','teach_create','quests','view_quest','submit_quest_proof','break_down_quest','create_quest_from_report','view_skill','skill_graph','growth','goals','view_goal','mastery','system_intelligence','learning_intelligence','learning_intelligence_json']
             %}open{% endif %}>
             <summary
-                class="{% if request.endpoint in ['teach','teach_create','learning_intelligence','learning_intelligence_json','quests','view_quest','submit_quest_proof','break_down_quest','create_quest_from_report','view_skill','skill_graph','growth','goals','view_goal','mastery','system_intelligence'] %}active{% endif %}">
+                class="{% if request.endpoint in ['teach','teach_create','quests','view_quest','submit_quest_proof','break_down_quest','create_quest_from_report','view_skill','skill_graph','growth','goals','view_goal','mastery','system_intelligence','learning_intelligence','learning_intelligence_json'] %}active{% endif %}">
                 Learn
             </summary>
             <a href="{{ url_for('teach') }}"
                 class="{% if request.endpoint in ['teach','teach_create'] %}active{% endif %}">Teach Me</a>
-            <a href="{{ url_for('learning_intelligence') }}"
-                class="{% if request.endpoint in ['learning_intelligence','learning_intelligence_json'] %}active{% endif %}">Learning Intelligence</a>
             <a href="{{ url_for('quests') }}"
                 class="{% if request.endpoint in ['quests','view_quest','submit_quest_proof','break_down_quest','create_quest_from_report'] %}active{% endif %}">Quests</a>
             <a href="{{ url_for('growth') }}" class="{% if request.endpoint == 'growth' %}active{% endif %}">Growth</a>
-            <a href="{{ url_for('mastery') }}" class="{% if request.endpoint in ['mastery','system_intelligence'] %}active{% endif %}">Mastery</a>
+            <a href="{{ url_for('mastery') }}" class="{% if request.endpoint in ['mastery','system_intelligence','learning_intelligence','learning_intelligence_json'] %}active{% endif %}">Mastery</a>
+            <a href="{{ url_for('learning_intelligence') }}"
+                class="{% if request.endpoint in ['learning_intelligence','learning_intelligence_json'] %}active{% endif %}">Learning Intelligence</a>
             <a href="{{ url_for('skill_graph') }}"
                 class="{% if request.endpoint in ['skill_graph','view_skill'] %}active{% endif %}">Verified Skills</a>
             <a href="{{ url_for('goals') }}"

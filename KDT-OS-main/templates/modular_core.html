@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KDT OS Modular Core</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    {% include '_nav.html' %}
+
+    <main class="shell">
+        <section class="hero product-hero">
+            <p class="eyebrow">V27 · Modular Core</p>
+            <h1>Modular Core</h1>
+            <p class="hero-lead">
+                KDT OS is now preparing to become a maintainable platform instead of one giant Flask file.
+            </p>
+        </section>
+
+        <section class="grid four">
+            <div class="metric">
+                <strong>{{ data.target.app_py_current_lines }}</strong>
+                <span>app.py Lines</span>
+            </div>
+            <div class="metric">
+                <strong>{{ data.routes.total_routes }}</strong>
+                <span>Routes Mapped</span>
+            </div>
+            <div class="metric">
+                <strong>{{ data.modules.count }}</strong>
+                <span>Version Modules</span>
+            </div>
+            <div class="metric {% if data.target.risk == 'High' %}warn{% endif %}">
+                <strong>{{ data.target.risk }}</strong>
+                <span>Architecture Risk</span>
+            </div>
+        </section>
+
+        <section class="card accent">
+            <p class="eyebrow">Core Rule</p>
+            <h2>Do not rewrite everything at once.</h2>
+            <p>{{ data.target.rule }}</p>
+            <div class="score-line">
+                Target: reduce app.py from {{ data.target.app_py_current_lines }} lines to about {{
+                data.target.app_py_target_lines }} lines over multiple safe extraction passes.
+            </div>
+        </section>
+
+        <section class="grid two">
+            <div class="card">
+                <p class="eyebrow">Scaffold Created</p>
+                <h2>New platform folders</h2>
+                <div class="skill-list">
+                    {% for folder in data.scaffold.created %}
+                    <span class="skill-pill"><strong>{{ folder }}</strong></span>
+                    {% endfor %}
+                </div>
+                <p class="muted">{{ data.scaffold.note }}</p>
+            </div>
+
+            <div class="card">
+                <p class="eyebrow">Next Best Action</p>
+                <h2>Extract shared helpers first</h2>
+                <p>{{ data.next_best_action }}</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">Route Map</p>
+                    <h2>Where your app is growing</h2>
+                    <p class="muted">Routes are grouped by operating-system area so future files can be split safely.</p>
+                </div>
+                <a class="button-link ghost" href="{{ url_for('modular_core_json') }}">View JSON</a>
+            </div>
+
+            <div class="route-category-grid">
+                {% for name, count in data.routes.category_counts.items() %}
+                <div class="route-category">
+                    <strong>{{ name }}</strong>
+                    <span>{{ count }} route(s)</span>
+                </div>
+                {% endfor %}
+            </div>
+
+            <details class="explain-card">
+                <summary>Show all mapped routes</summary>
+                <div class="route-table">
+                    {% for row in data.routes.routes %}
+                    <div class="route-row">
+                        <span class="route-chip">{{ row.category }}</span>
+                        <strong>{{ row.rule }}</strong>
+                        <small>{{ row.endpoint }} · {{ row.methods|join(', ') }}</small>
+                    </div>
+                    {% endfor %}
+                </div>
+            </details>
+        </section>
+
+        <section class="card">
+            <p class="eyebrow">Extension Modules</p>
+            <h2>Current modular systems</h2>
+            <div class="reports">
+                {% for module in data.modules.modules %}
+                <div class="report-card">
+                    <small>{{ module.role }}</small>
+                    <strong>{{ module.file }}</strong>
+                    <p>{{ module.lines }} lines</p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="card">
+            <p class="eyebrow">Extraction Plan</p>
+            <h2>Safe path to a cleaner architecture</h2>
+            <div class="timeline-list">
+                {% for step in data.extraction_plan %}
+                <div class="timeline-item">
+                    <span>{{ step.phase }}</span>
+                    <div>
+                        <strong>{{ step.name }}</strong>
+                        <p><b>Status:</b> {{ step.status }}</p>
+                        <p><b>Move:</b> {{ step.move }}</p>
+                        <p><b>Proof:</b> {{ step.proof }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

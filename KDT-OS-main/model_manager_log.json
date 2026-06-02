@@ -1,0 +1,26 @@
+[
+  {
+    "model": "nomic-embed-text",
+    "ok": true,
+    "message": "",
+    "at": "2026-05-31T20:47:56"
+  },
+  {
+    "model": "llama3.2:3b",
+    "ok": true,
+    "message": "",
+    "at": "2026-05-31T20:16:45"
+  },
+  {
+    "model": "llava:latest",
+    "ok": true,
+    "message": "",
+    "at": "2026-05-31T20:08:25"
+  },
+  {
+    "model": "deepseek-coder:latest",
+    "ok": true,
+    "message": "",
+    "at": "2026-05-31T20:07:03"
+  }
+]

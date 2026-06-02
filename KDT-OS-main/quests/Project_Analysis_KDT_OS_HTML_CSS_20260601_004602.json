@@ -1,0 +1,120 @@
+{
+  "created_at": "2026-06-01T00:46:02",
+  "source_project": "Project Analysis: KDT OS",
+  "origin_report": "20260601_004601_KDT_OS.json",
+  "resume_project": "KDT OS",
+  "connected_goal": "",
+  "skill": "HTML/CSS",
+  "user_gap": "KDT OS detected HTML/CSS in this uploaded project and created a ready practice quest.",
+  "title": "Exact Practice Quest",
+  "quest_type": "Auto Practice Quest",
+  "why_this_exists": "This quest came from: Project Analysis: KDT OS. The skill being practiced is: HTML/CSS. Your stated blocker is: KDT OS detected HTML/CSS in this uploaded project and created a ready practice quest. This quest exists so practice connects back to something you care about instead of becoming random homework.",
+  "goal": "Practice one skill with a small, clear build.",
+  "what_to_build": "A small project that demonstrates the requested skill one time in a visible way.",
+  "requirements": [
+    "Create the required files",
+    "Use the skill directly",
+    "Show the result",
+    "Write what confused you"
+  ],
+  "success_criteria": [
+    "The target skill appears in the code",
+    "The project can be explained in README",
+    "Proof can be uploaded"
+  ],
+  "steps": [
+    "Create a project folder",
+    "Create the main file",
+    "Implement the smallest working version",
+    "Test it",
+    "Add README.md",
+    "Upload ZIP"
+  ],
+  "proof_required": [
+    "Upload ZIP",
+    "Include README.md",
+    "Write what you practiced"
+  ],
+  "verification_patterns": [],
+  "difficulty": "Beginner",
+  "estimated_time": "30-60 minutes",
+  "ai_generated": false,
+  "ai_parse_mode": "template",
+  "ai_raw_response": "",
+  "teach_me_breakdown": [
+    {
+      "label": "What is this skill?",
+      "answer": "HTML/CSS is a skill KDT OS can practice through small exact quests."
+    },
+    {
+      "label": "Why practice it?",
+      "answer": "Practicing it in a tiny project makes it easier to use later in a larger project."
+    }
+  ],
+  "status": "Superseded",
+  "submissions": [],
+  "resume_rule": "After this quest is complete, return to the original project or goal that caused this quest unless you intentionally choose a different path.",
+  "quest_quality": {
+    "score": 100,
+    "rating": "10/10 Ready",
+    "checks": [
+      {
+        "name": "Exact blocker identified",
+        "ok": true,
+        "fix": "Add the specific thing the user does not understand or cannot do yet."
+      },
+      {
+        "name": "Smallest visible action",
+        "ok": true,
+        "fix": "State the smallest visible thing to create, do, or prove."
+      },
+      {
+        "name": "Step-by-step instructions",
+        "ok": true,
+        "fix": "Add at least 3 exact steps from start to finish."
+      },
+      {
+        "name": "Required features",
+        "ok": true,
+        "fix": "List the concrete files, fields, buttons, commands, or actions required."
+      },
+      {
+        "name": "Success criteria",
+        "ok": true,
+        "fix": "List measurable conditions that prove completion."
+      },
+      {
+        "name": "Proof method",
+        "ok": true,
+        "fix": "State exactly what to upload or answer as proof."
+      },
+      {
+        "name": "Return path",
+        "ok": true,
+        "fix": "Connect this quest back to a project, goal, or parent quest."
+      },
+      {
+        "name": "Not vague",
+        "ok": true,
+        "fix": "Replace broad words like learn/practice with exact files, commands, or actions."
+      }
+    ],
+    "passed": 8,
+    "total": 8
+  },
+  "quest_standard": {
+    "rule": "Every KDT OS quest must include exact steps, proof, success criteria, and a return path.",
+    "minimum_fields": [
+      "Goal",
+      "Blocker",
+      "What to build/do",
+      "Steps",
+      "Success criteria",
+      "Proof",
+      "Return point"
+    ]
+  },
+  "archived_at": "2026-06-01T01:33:21",
+  "archive_reason": "Quest failed Quest Intelligence v2 review and was regenerated with a specific replacement.",
+  "superseded_by": "Responsive_Card_Layout_20260601_013321.json"
+}

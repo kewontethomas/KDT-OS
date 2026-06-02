@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>KDT OS Quests</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head><body><main class="shell">
+{% include '_nav.html' %}
+<section class="hero"><p class="eyebrow">Quest Center</p><h1>Practice, Refresh, and Goal Quests</h1><p>Every card here is a main quest. Smaller breakdowns stay inside their parent quest so your Quest Center stays clean.</p></section>
+{% if cleanup_message %}<section class="callout"><strong>Cleanup completed.</strong><p>{{ cleanup_message }}</p></section>{% endif %}
+<section class="card">{% if quests %}<div class="reports quest-board">{% for q in quests %}<a class="report-card quest-card-ui {% if q.is_micro %}micro{% endif %}" href="{{ url_for('view_quest', filename=q.filename) }}"><div class="quest-top"><span class="quest-type">{{ q.display_type }}</span><small>{{ q.status }}</small></div><strong>{{ q.title }}</strong><span>{{ q.skill }}</span>{% if q.breakdown_count %}<small>{{ q.breakdown_count }} breakdown step(s) attached</small>{% endif %}{% if q.resume_project %}<small>Return to: {{ q.resume_project }}</small>{% endif %}<p>{{ q.what_to_build }}</p>{% if q.short_reason %}<p class="muted small-text">{{ q.short_reason }}{% if q.short_reason|length >= 180 %}...{% endif %}</p>{% endif %}</a>{% endfor %}</div>{% else %}<p class="muted">No quests yet.</p>{% endif %}</section>
+</main></body></html>

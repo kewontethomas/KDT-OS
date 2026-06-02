@@ -1,0 +1,11 @@
+{
+  "created_at": "2026-06-01T03:04:46",
+  "original_file": "Python_Function_Practice_Expense_Totaler_20260601_013510.json",
+  "quest_title": "Python Function Practice: Expense Totaler",
+  "skill": "Python",
+  "original_score": 100,
+  "action": "Keep",
+  "replacement_file": "python_function_practice_expense_totaler_20260601_030446.json",
+  "failure_reasons": [],
+  "lesson_learned": "Future quests must include exact blocker, smallest action, steps, success criteria, proof, and return path before becoming active."
+}

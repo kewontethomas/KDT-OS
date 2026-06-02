@@ -1,0 +1,283 @@
+[
+  {
+    "type": "quest_regenerated_v20",
+    "old": "Project_Analysis_FieldSeed_Testing_20260531_034204.json",
+    "new": "flask_route_smoke_test_suite_20260601_030518.json",
+    "new_score": 100,
+    "created_at": "2026-06-01T03:05:18"
+  },
+  {
+    "type": "quest_archived",
+    "quest": "Project_Analysis_FieldSeed_Testing_20260531_034204.json",
+    "replacement": "flask_route_smoke_test_suite_20260601_030518.json",
+    "score": 82,
+    "reason": "Quest failed V20 anti-duplicate/specificity review and was regenerated.",
+    "created_at": "2026-06-01T03:05:18"
+  },
+  {
+    "type": "quest_regenerated_v20",
+    "old": "Project_Analysis_KDT_OS_API_Routes_20260601_004602.json",
+    "new": "api_weather_lookup_app_20260601_030509.json",
+    "new_score": 100,
+    "created_at": "2026-06-01T03:05:09"
+  },
+  {
+    "type": "quest_archived",
+    "quest": "Project_Analysis_KDT_OS_API_Routes_20260601_004602.json",
+    "replacement": "api_weather_lookup_app_20260601_030509.json",
+    "score": 73,
+    "reason": "Quest failed V20 anti-duplicate/specificity review and was regenerated.",
+    "created_at": "2026-06-01T03:05:09"
+  },
+  {
+    "type": "quest_regenerated_v20",
+    "old": "python_function_practice_expense_totaler_20260601_030446.json",
+    "new": "python_function_practice_expense_totaler_20260601_030454.json",
+    "new_score": 85,
+    "created_at": "2026-06-01T03:04:54"
+  },
+  {
+    "type": "quest_archived",
+    "quest": "python_function_practice_expense_totaler_20260601_030446.json",
+    "replacement": "python_function_practice_expense_totaler_20260601_030454.json",
+    "score": 85,
+    "reason": "Quest failed V20 anti-duplicate/specificity review and was regenerated.",
+    "created_at": "2026-06-01T03:04:54"
+  },
+  {
+    "type": "quest_regenerated_v20",
+    "old": "Python_Function_Practice_Expense_Totaler_20260601_013510.json",
+    "new": "python_function_practice_expense_totaler_20260601_030446.json",
+    "new_score": 85,
+    "created_at": "2026-06-01T03:04:46"
+  },
+  {
+    "type": "quest_archived",
+    "quest": "Python_Function_Practice_Expense_Totaler_20260601_013510.json",
+    "replacement": "python_function_practice_expense_totaler_20260601_030446.json",
+    "score": 100,
+    "reason": "Quest failed V20 anti-duplicate/specificity review and was regenerated.",
+    "created_at": "2026-06-01T03:04:46"
+  },
+  {
+    "type": "quest_regenerated_v20",
+    "old": "SQLite_CRUD_Quest_Workout_Database_20260601_023733.json",
+    "new": "sqlite_crud_quest_workout_database_20260601_030423.json",
+    "new_score": 100,
+    "created_at": "2026-06-01T03:04:23"
+  },
+  {
+    "type": "quest_archived",
+    "quest": "SQLite_CRUD_Quest_Workout_Database_20260601_023733.json",
+    "replacement": "sqlite_crud_quest_workout_database_20260601_030423.json",
+    "score": 82,
+    "reason": "Quest failed V20 anti-duplicate/specificity review and was regenerated.",
+    "created_at": "2026-06-01T03:04:23"
+  },
+  {
+    "type": "quest_regenerated_v2",
+    "old": "Project_Analysis_FieldSeed_SQLite_20260531_034204.json",
+    "new": "SQLite_CRUD_Quest_Workout_Database_20260601_023733.json",
+    "old_score": 96,
+    "new_score": 100,
+    "created_at": "2026-06-01T02:37:33"
+  },
+  {
+    "type": "quest_archived",
+    "quest": "Project_Analysis_FieldSeed_SQLite_20260531_034204.json",
+    "replacement": "SQLite_CRUD_Quest_Workout_Database_20260601_023733.json",
+    "score": 96,
+    "reason": "Quest failed Quest Intelligence v2 review and was regenerated with a specific replacement.",
+    "created_at": "2026-06-01T02:37:33"
+  },
+  {
+    "type": "quest_regenerated_v2",
+    "old": "Project_Analysis_KDT_OS_SQLite_20260601_004602.json",
+    "new": "SQLite_CRUD_Quest_Workout_Database_20260601_023733.json",
+    "old_score": 96,
+    "new_score": 100,
+    "created_at": "2026-06-01T02:37:33"
+  },
+  {
+    "type": "quest_archived",
+    "quest": "Project_Analysis_KDT_OS_SQLite_20260601_004602.json",
+    "replacement": "SQLite_CRUD_Quest_Workout_Database_20260601_023733.json",
+    "score": 96,
+    "reason": "Quest failed Quest Intelligence v2 review and was regenerated with a specific replacement.",
+    "created_at": "2026-06-01T02:37:33"
+  },
+  {
+    "type": "quest_regenerated_v2",
+    "old": "I_don_t_understand_what_CPU_usage_means_Single_Proof_Quest_20260601_013343.json",
+    "new": "CPU_Usage_Task_Manager_Proof_Quest_20260601_023733.json",
+    "old_score": 62,
+    "new_score": 100,
+    "created_at": "2026-06-01T02:37:33"
+  },
+  {
+    "type": "quest_archived",
+    "quest": "I_don_t_understand_what_CPU_usage_means_Single_Proof_Quest_20260601_013343.json",
+    "replacement": "CPU_Usage_Task_Manager_Proof_Quest_20260601_023733.json",
+    "score": 62,
+    "reason": "Quest failed Quest Intelligence v2 review and was regenerated with a specific replacement.",
+    "created_at": "2026-06-01T02:37:33"
+  },
+  {
+    "type": "quest_regenerated_v2",
+    "old": "I_don_t_understand_what_CPU_usage_means_Single_Proof_Quest_20260601_013406.json",
+    "new": "CPU_Usage_Task_Manager_Proof_Quest_20260601_023733.json",
+    "old_score": 62,
+    "new_score": 100,
+    "created_at": "2026-06-01T02:37:33"
+  },
+  {
+    "type": "quest_archived",
+    "quest": "I_don_t_understand_what_CPU_usage_means_Single_Proof_Quest_20260601_013406.json",
+    "replacement": "CPU_Usage_Task_Manager_Proof_Quest_20260601_023733.json",
+    "score": 62,
+    "reason": "Quest failed Quest Intelligence v2 review and was regenerated with a specific replacement.",
+    "created_at": "2026-06-01T02:37:33"
+  },
+  {
+    "type": "quest_regenerated_v2",
+    "old": "I_don_t_understand_Active_Directory_OUs_Single_Proof_Quest_20260601_013421.json",
+    "new": "Active_Directory_OU_Proof_Quest_20260601_023659.json",
+    "old_score": 62,
+    "new_score": 100,
+    "created_at": "2026-06-01T02:36:59"
+  },
+  {
+    "type": "quest_archived",
+    "quest": "I_don_t_understand_Active_Directory_OUs_Single_Proof_Quest_20260601_013421.json",
+    "replacement": "Active_Directory_OU_Proof_Quest_20260601_023659.json",
+    "score": 62,
+    "reason": "Quest failed Quest Intelligence v2 review and was regenerated with a specific replacement.",
+    "created_at": "2026-06-01T02:36:59"
+  },
+  {
+    "type": "quest_regenerated_v2",
+    "old": "Project_Analysis_FieldSeed_Python_20260531_034204.json",
+    "new": "Python_Function_Practice_Expense_Totaler_20260601_013510.json",
+    "old_score": 62,
+    "new_score": 100,
+    "created_at": "2026-06-01T01:35:10"
+  },
+  {
+    "type": "quest_archived",
+    "quest": "Project_Analysis_FieldSeed_Python_20260531_034204.json",
+    "replacement": "Python_Function_Practice_Expense_Totaler_20260601_013510.json",
+    "score": 62,
+    "reason": "Quest failed Quest Intelligence v2 review and was regenerated with a specific replacement.",
+    "created_at": "2026-06-01T01:35:10"
+  },
+  {
+    "type": "quest_regenerated_v2",
+    "old": "Project_Analysis_FieldSeed_Health_Monitoring_20260531_034204.json",
+    "new": "Mini_Health_Checker_20260601_013450.json",
+    "old_score": 62,
+    "new_score": 100,
+    "created_at": "2026-06-01T01:34:50"
+  },
+  {
+    "type": "quest_archived",
+    "quest": "Project_Analysis_FieldSeed_Health_Monitoring_20260531_034204.json",
+    "replacement": "Mini_Health_Checker_20260601_013450.json",
+    "score": 62,
+    "reason": "Quest failed Quest Intelligence v2 review and was regenerated with a specific replacement.",
+    "created_at": "2026-06-01T01:34:50"
+  },
+  {
+    "type": "quest_regenerated_v2",
+    "old": "Teach_Me_Mode_I_don_t_understand_Active_Directory_OUs__20260601_001145.json",
+    "new": "I_don_t_understand_Active_Directory_OUs_Single_Proof_Quest_20260601_013421.json",
+    "old_score": 62,
+    "new_score": 96,
+    "created_at": "2026-06-01T01:34:21"
+  },
+  {
+    "type": "quest_archived",
+    "quest": "Teach_Me_Mode_I_don_t_understand_Active_Directory_OUs__20260601_001145.json",
+    "replacement": "I_don_t_understand_Active_Directory_OUs_Single_Proof_Quest_20260601_013421.json",
+    "score": 62,
+    "reason": "Quest failed Quest Intelligence v2 review and was regenerated with a specific replacement.",
+    "created_at": "2026-06-01T01:34:21"
+  },
+  {
+    "type": "quest_regenerated_v2",
+    "old": "Teach_Me_Mode_I_don_t_understand_what_CPU_usage_means__20260601_001213.json",
+    "new": "I_don_t_understand_what_CPU_usage_means_Single_Proof_Quest_20260601_013406.json",
+    "old_score": 62,
+    "new_score": 96,
+    "created_at": "2026-06-01T01:34:06"
+  },
+  {
+    "type": "quest_archived",
+    "quest": "Teach_Me_Mode_I_don_t_understand_what_CPU_usage_means__20260601_001213.json",
+    "replacement": "I_don_t_understand_what_CPU_usage_means_Single_Proof_Quest_20260601_013406.json",
+    "score": 62,
+    "reason": "Quest failed Quest Intelligence v2 review and was regenerated with a specific replacement.",
+    "created_at": "2026-06-01T01:34:06"
+  },
+  {
+    "type": "quest_regenerated_v2",
+    "old": "Teach_Me_Mode_I_don_t_understand_what_CPU_usage_means__20260601_001213.json",
+    "new": "I_don_t_understand_what_CPU_usage_means_Single_Proof_Quest_20260601_013343.json",
+    "old_score": 62,
+    "new_score": 96,
+    "created_at": "2026-06-01T01:33:43"
+  },
+  {
+    "type": "quest_archived",
+    "quest": "Teach_Me_Mode_I_don_t_understand_what_CPU_usage_means__20260601_001213.json",
+    "replacement": "I_don_t_understand_what_CPU_usage_means_Single_Proof_Quest_20260601_013343.json",
+    "score": 62,
+    "reason": "Quest failed Quest Intelligence v2 review and was regenerated with a specific replacement.",
+    "created_at": "2026-06-01T01:33:43"
+  },
+  {
+    "type": "quest_regenerated_v2",
+    "old": "Project_Analysis_KDT_OS_HTML_CSS_20260601_004602.json",
+    "new": "Responsive_Card_Layout_20260601_013321.json",
+    "old_score": 62,
+    "new_score": 96,
+    "created_at": "2026-06-01T01:33:21"
+  },
+  {
+    "type": "quest_archived",
+    "quest": "Project_Analysis_KDT_OS_HTML_CSS_20260601_004602.json",
+    "replacement": "Responsive_Card_Layout_20260601_013321.json",
+    "score": 62,
+    "reason": "Quest failed Quest Intelligence v2 review and was regenerated with a specific replacement.",
+    "created_at": "2026-06-01T01:33:21"
+  },
+  {
+    "type": "quest_regenerated",
+    "old": "Teach_Me_Mode_I_don_t_understand_what_CPU_usage_means__20260531_113936.json",
+    "new": "Teach_Me_Mode_I_don_t_understand_what_CPU_usage_means__20260601_001213.json",
+    "new_score": 87,
+    "created_at": "2026-06-01T00:12:13"
+  },
+  {
+    "type": "quest_archived",
+    "quest": "Teach_Me_Mode_I_don_t_understand_what_CPU_usage_means__20260531_113936.json",
+    "replacement": "Teach_Me_Mode_I_don_t_understand_what_CPU_usage_means__20260601_001213.json",
+    "score": 75,
+    "reason": "Quest failed quality governance and was regenerated.",
+    "created_at": "2026-06-01T00:12:13"
+  },
+  {
+    "type": "quest_regenerated",
+    "old": "Teach_Me_Mode_I_don_t_understand_Active_Directory_OUs__20260531_135203.json",
+    "new": "Teach_Me_Mode_I_don_t_understand_Active_Directory_OUs__20260601_001145.json",
+    "new_score": 87,
+    "created_at": "2026-06-01T00:11:45"
+  },
+  {
+    "type": "quest_archived",
+    "quest": "Teach_Me_Mode_I_don_t_understand_Active_Directory_OUs__20260531_135203.json",
+    "replacement": "Teach_Me_Mode_I_don_t_understand_Active_Directory_OUs__20260601_001145.json",
+    "score": 62,
+    "reason": "Quest failed quality governance and was regenerated.",
+    "created_at": "2026-06-01T00:11:45"
+  }
+]

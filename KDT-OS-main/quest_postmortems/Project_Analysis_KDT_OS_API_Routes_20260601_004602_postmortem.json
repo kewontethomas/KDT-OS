@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-06-01T03:05:09",
+  "original_file": "Project_Analysis_KDT_OS_API_Routes_20260601_004602.json",
+  "quest_title": "API Weather Lookup App",
+  "skill": "API / Routes",
+  "original_score": 73,
+  "action": "Upgrade",
+  "replacement_file": "api_weather_lookup_app_20260601_030509.json",
+  "failure_reasons": [
+    {
+      "check": "Useful step-by-step guide",
+      "fix": "Give at least 8 exact steps that move from start to proof."
+    },
+    {
+      "check": "Measurable success criteria",
+      "fix": "Success criteria must prove the quest worked."
+    },
+    {
+      "check": "Understanding check included",
+      "fix": "Require an explanation so proof is not blind copying."
+    }
+  ],
+  "lesson_learned": "Future quests must include exact blocker, smallest action, steps, success criteria, proof, and return path before becoming active."
+}

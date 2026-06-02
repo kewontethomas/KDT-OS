@@ -1,0 +1,136 @@
+{
+  "goal": {
+    "name": "Build KDT OS Into My Personal Operating System",
+    "why": "Use software to make fitness progress visible and repeatable."
+  },
+  "project": {
+    "name": "KDT OS",
+    "purpose": "Build a self-tracking tool for workouts and progress.",
+    "is_new_project_needed": false,
+    "reuse_existing_project": "KDT OS",
+    "reason": "Use the selected existing project.",
+    "knowledge_type": "fact",
+    "source_type": "Uploaded Project",
+    "confidence": 100,
+    "verification_status": "Verified",
+    "source_note": "This project was selected from tracked uploaded projects."
+  },
+  "request_type": "new_or_extend_project",
+  "problem_summary": "I want KDT OS to analyze local project folders, detect languages, frameworks, skills, project health, and changes over time so I don't have to manually explain every project.",
+  "tool_decision": {
+    "best_tool_type": "Browser/PWA first, mobile later",
+    "best_stack_now": [
+      "HTML/CSS/JavaScript",
+      "localStorage"
+    ],
+    "best_stack_later": [
+      "React",
+      "PWA",
+      "React Native",
+      "SQLite/PostgreSQL"
+    ],
+    "why_this_stack": "A browser app is the fastest MVP and can be used on phone before building a native app.",
+    "bridge_needed": true
+  },
+  "bottleneck": {
+    "current_bottleneck": "Saving progress",
+    "why_it_blocks_progress": "A tracker is not useful if workouts disappear after refresh.",
+    "next_smallest_action": "Save one workout entry to localStorage or SQLite."
+  },
+  "redundancy_review": {
+    "should_reuse_existing": true,
+    "reuse_project": "KDT OS",
+    "keep_separate_reason": "Keep separate only if the purpose is different from existing tracked work.",
+    "redundant_items_to_remove": []
+  },
+  "required_skills": [
+    {
+      "skill": "JavaScript Events",
+      "status": "Known/Needs Proof",
+      "why_needed": "The app needs buttons and forms.",
+      "next_action": "Build an Add Workout form."
+    },
+    {
+      "skill": "Local Storage or SQLite",
+      "status": "Missing/Needs Proof",
+      "why_needed": "Workout progress must persist.",
+      "next_action": "Save and reload one workout."
+    }
+  ],
+  "quest_plan": [
+    {
+      "title": "Build a Saved Workout Form",
+      "skill": "JavaScript Local Storage",
+      "difficulty": "Beginner",
+      "estimated_time": "60-90 minutes",
+      "why": "This solves the core tracker blocker: saving progress.",
+      "what_to_build": "A browser page where you enter exercise, sets, reps, and save it so it remains after refresh.",
+      "requirements": [
+        "index.html",
+        "script.js",
+        "Exercise input",
+        "Sets input",
+        "Reps input",
+        "Save button",
+        "localStorage",
+        "Workout list"
+      ],
+      "steps": [
+        "Create folder",
+        "Create files",
+        "Build form",
+        "On submit create workout object",
+        "Save array to localStorage",
+        "Load workouts on page load",
+        "Display workouts"
+      ],
+      "success_criteria": [
+        "Workout saves",
+        "Workout remains after refresh",
+        "List displays saved entries"
+      ],
+      "proof_required": [
+        "Upload ZIP",
+        "Include screenshot",
+        "Explain where data is saved"
+      ]
+    }
+  ],
+  "proof_strategy": [
+    "Proof must show data persists after refresh",
+    "Upload ZIP and screenshot of saved workout list"
+  ],
+  "return_rule": "Complete one quest, submit proof, update skill evidence, then return to this path and choose the next quest.",
+  "decision_engine_score": 100,
+  "decision_engine_note": "KDT OS repaired or filled this path using the Universal Decision Engine when AI output was vague.",
+  "trust": {
+    "rule": "KDT OS must never treat an inference or suggestion as a fact.",
+    "project": {
+      "knowledge_type": "fact",
+      "source_type": "Uploaded Project",
+      "confidence": 100,
+      "verification_status": "Verified",
+      "source_note": "This project was selected from tracked uploaded projects."
+    },
+    "known_vs_inferred": [
+      "Facts come from uploaded/analyzed projects or direct user confirmation.",
+      "Inferences come from AI reasoning and require review.",
+      "Suggestions are ideas only until confirmed."
+    ]
+  },
+  "ai_generated": true,
+  "ai_raw_response": "{\n  \"goal\": {\n    \"name\": \"Build KDT OS Into My Personal Operating System\",\n    \"why\": \"Use software to make fitness progress visible and repeatable.\"\n  },\n  \"project\": {\n    \"name\": \"KDT OS\",\n    \"purpose\": \"Build a self-tracking tool for workouts and progress.\",\n    \"is_new_project_needed\": false,\n    \"reuse_existing_project\": \"KDT OS\",\n    \"reason\": \"Use the selected existing project.\"\n  },\n  \"request_type\": \"new_or_extend_project\",\n  \"problem_summary\": \"I want KDT OS to analyze local project folders, detect languages, frameworks, skills, project health, and changes over time so I don't have to manually explain every project.\",\n  \"tool_decision\": {\n    \"best_tool_type\": \"Browser/PWA first, mobile later\",\n    \"best_stack_now\": [\n      \"HTML/CSS/JavaScript\",\n      \"localStorage\"\n    ],\n    \"best_stack_later\": [\n      \"React\",\n      \"PWA\",\n      \"React Native\",\n      \"SQLite/PostgreSQL\"\n    ],\n    \"why_this_stack\": \"A browser app is the fastest MVP and can be used on phone before building a native app.\",\n    \"bridge_needed\": true\n  },\n  \"bottleneck\": {\n    \"current_bottleneck\": \"Saving progress\",\n    \"why_it_blocks_progress\": \"A tracker is not useful if workouts disappear after refresh.\",\n    \"next_smallest_action\": \"Save one workout entry to localStorage or SQLite.\"\n  },\n  \"redundancy_review\": {\n    \"should_reuse_existing\": true,\n    \"reuse_project\": \"KDT OS\",\n    \"keep_separate_reason\": \"Keep separate only if the purpose is different from existing tracked work.\",\n    \"redundant_items_to_remove\": []\n  },\n  \"required_skills\": [\n    {\n      \"skill\": \"JavaScript Events\",\n      \"status\": \"Known/Needs Proof\",\n      \"why_needed\": \"The app needs buttons and forms.\",\n      \"next_action\": \"Build an Add Workout form.\"\n    },\n    {\n      \"skill\": \"Local Storage or SQLite\",\n      \"status\": \"Missing/Needs Proof\",\n      \"why_needed\": \"Workout progress must persist.\",\n      \"next_action\": \"Save and reload one workout.\"\n    }\n  ],\n  \"quest_plan\": [\n    {\n      \"title\": \"Build a Saved Workout Form\",\n      \"skill\": \"JavaScript Local Storage\",\n      \"difficulty\": \"Beginner\",\n      \"estimated_time\": \"60-90 minutes\",\n      \"why\": \"This solves the core tracker blocker: saving progress.\",\n      \"what_to_build\": \"A browser page where you enter exercise, sets, reps, and save it so it remains after refresh.\",\n      \"requirements\": [\n        \"index.html\",\n        \"script.js\",\n        \"Exercise input\",\n        \"Sets input\",\n        \"Reps input\",\n        \"Save button\",\n        \"localStorage\",\n        \"Workout list\"\n      ],\n      \"steps\": [\n        \"Create folder\",\n        \"Create files\",\n        \"Build form\",\n        \"On submit create workout object\",\n        \"Save array to localStorage\",\n        \"Load workouts on page load\",\n        \"Display workouts\"\n      ],\n      \"success_criteria\": [\n        \"Workout saves\",\n        \"Workout remains after refresh\",\n        \"List displays saved entries\"\n      ],\n      \"proof_required\": [\n        \"Upload ZIP\",\n        \"Include screenshot\",\n        \"Explain where data is saved\"\n      ]\n    }\n  ],\n  \"proof_strategy\": [\n    \"Proof must show data persists after refresh\",\n    \"Upload ZIP and screenshot of saved workout list\"\n  ],\n  \"return_rule\": \"Complete one quest, submit proof, update skill evidence, then return to this path and choose the next quest.\"\n}",
+  "ai_parse_ok": true,
+  "created_at": "2026-06-01T00:49:19",
+  "project_selection": {
+    "mode": "existing",
+    "name": "KDT OS",
+    "knowledge_type": "fact",
+    "source_type": "Uploaded Project",
+    "confidence": 100,
+    "verification_status": "Verified",
+    "source_note": "This project was selected from tracked uploaded projects."
+  },
+  "original_input": "I want KDT OS to analyze local project folders, detect languages, frameworks, skills, project health, and changes over time so I don't have to manually explain every project.",
+  "filename": "kdt_os_20260601_004919.json"
+}

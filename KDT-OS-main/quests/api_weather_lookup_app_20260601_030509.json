@@ -1,0 +1,179 @@
+{
+  "created_at": "2026-06-01T03:05:09",
+  "source_project": "Project Analysis: KDT OS",
+  "origin_report": "20260601_004601_KDT_OS.json",
+  "resume_project": "KDT OS",
+  "connected_goal": "",
+  "skill": "API / Routes",
+  "user_gap": "KDT OS detected API / Routes in this uploaded project and created a ready practice quest.",
+  "quest_type": "Auto Practice Quest",
+  "title": "API Weather Lookup App",
+  "goal": "Practice API requests, JSON parsing, button events, loading state, and error handling.",
+  "what_to_build": "A browser app with index.html, style.css, and script.js where a button fetches sample weather JSON and displays city, temperature, and condition.",
+  "requirements": [
+    "Create index.html",
+    "Create style.css",
+    "Create script.js",
+    "Add input id cityInput",
+    "Add button id searchBtn",
+    "Add result div id result",
+    "Use fetch()",
+    "Use response.json()",
+    "Show loading and error text"
+  ],
+  "steps": [
+    "Create folder api_weather_lookup",
+    "Create index.html, style.css, and script.js",
+    "In index.html add an input with id cityInput",
+    "Add a button with id searchBtn",
+    "Add a div with id result",
+    "Link script.js at the bottom of the HTML body",
+    "In script.js select cityInput, searchBtn, and result",
+    "Add a click event listener to searchBtn",
+    "Inside the click handler set result.textContent to Loading...",
+    "Use fetch() to request sample JSON or a real weather endpoint",
+    "Use response.json() to parse the data",
+    "Display city, temperature, and condition inside result",
+    "Add catch() or try/catch to show an error message",
+    "Open index.html and test the button",
+    "Create README.md explaining which API or sample JSON you used",
+    "Zip and submit the folder"
+  ],
+  "success_criteria": [
+    "index.html, style.css, and script.js exist",
+    "searchBtn click triggers JavaScript",
+    "fetch() is used",
+    "response.json() is used",
+    "result area changes after the request",
+    "Error text appears if request fails"
+  ],
+  "proof_required": [
+    "Upload ZIP",
+    "Include index.html, style.css, script.js, README.md",
+    "Include screenshot of result area after clicking",
+    "Answer: what does response.json() do?"
+  ],
+  "verification_patterns": [
+    "fetch(",
+    ".json()",
+    "addEventListener",
+    "cityInput",
+    "searchBtn",
+    "result"
+  ],
+  "difficulty": "Beginner",
+  "estimated_time": "45-75 minutes",
+  "ai_generated": false,
+  "ai_parse_mode": "quest_intelligence_v20_specific_template",
+  "ai_raw_response": "",
+  "teach_me_breakdown": [
+    {
+      "label": "What is an API?",
+      "answer": "An API is a way for one app to ask another app or service for data."
+    },
+    {
+      "label": "What is fetch()?",
+      "answer": "fetch() is JavaScript's way to make a web request from the browser."
+    },
+    {
+      "label": "What is JSON?",
+      "answer": "JSON is a data format that looks like JavaScript objects and is commonly returned by APIs."
+    },
+    {
+      "label": "What is an endpoint?",
+      "answer": "An endpoint is the URL you request, like /weather or /api/tasks."
+    }
+  ],
+  "status": "Assigned",
+  "submissions": [],
+  "why_this_exists": "Quest Intelligence V20 replaced or created this as a specific API / Routes quest with exact steps, measurable proof, and a return path.",
+  "resume_rule": "After this quest is complete, submit proof, update skill evidence, then return to the project or goal that caused this quest.",
+  "quest_quality": {
+    "score": 100,
+    "rating": "10/10 Ready",
+    "checks": [
+      {
+        "name": "Specific skill normalized",
+        "ok": true,
+        "fix": "Normalize confusion text into a real skill name.",
+        "weight": 6
+      },
+      {
+        "name": "Exact artifact named",
+        "ok": true,
+        "fix": "Name exact files, screenshots, database, or proof artifact.",
+        "weight": 12
+      },
+      {
+        "name": "Skill-specific details",
+        "ok": true,
+        "fix": "Add technology-specific commands, fields, functions, UI IDs, or outputs.",
+        "weight": 18
+      },
+      {
+        "name": "No generic template language",
+        "ok": true,
+        "fix": "Remove generic language that could fit any skill.",
+        "weight": 18
+      },
+      {
+        "name": "Useful step-by-step guide",
+        "ok": true,
+        "fix": "Give at least 8 exact steps that move from start to proof.",
+        "weight": 16
+      },
+      {
+        "name": "Required features are concrete",
+        "ok": true,
+        "fix": "List concrete files, fields, buttons, functions, or actions.",
+        "weight": 8
+      },
+      {
+        "name": "Measurable success criteria",
+        "ok": true,
+        "fix": "Success criteria must prove the quest worked.",
+        "weight": 10
+      },
+      {
+        "name": "Proof is specific",
+        "ok": true,
+        "fix": "Proof must name exactly what to upload and answer.",
+        "weight": 8
+      },
+      {
+        "name": "Understanding check included",
+        "ok": true,
+        "fix": "Require an explanation so proof is not blind copying.",
+        "weight": 4
+      },
+      {
+        "name": "Not semantically duplicated",
+        "ok": true,
+        "fix": "Archive or regenerate duplicate active quests.",
+        "weight": 14
+      }
+    ],
+    "passed": 10,
+    "total": 10,
+    "penalties": [],
+    "specificity_score": 7,
+    "generic_hits": 0,
+    "template_clone": false,
+    "duplicate_note": ""
+  },
+  "quest_standard": {
+    "rule": "Every KDT OS quest must be specific, non-duplicated, beginner-safe, step-by-step useful, measurable, and proof-backed.",
+    "minimum_fields": [
+      "Specific skill",
+      "Exact artifact",
+      "Useful steps",
+      "Success criteria",
+      "Proof",
+      "Understanding check",
+      "Return point"
+    ]
+  },
+  "regenerated_from": "Project_Analysis_KDT_OS_API_Routes_20260601_004602.json",
+  "version": 2,
+  "governance_note": "Generated by Quest Intelligence V20 because the previous quest was duplicated, generic, or not step-by-step useful enough."
+}

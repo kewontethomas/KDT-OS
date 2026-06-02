@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-06-01T01:35:10",
+  "original_file": "Project_Analysis_FieldSeed_Python_20260531_034204.json",
+  "quest_title": "Exact Practice Quest",
+  "skill": "Python",
+  "original_score": 62,
+  "action": "Regenerate",
+  "replacement_file": "Python_Function_Practice_Expense_Totaler_20260601_013510.json",
+  "failure_reasons": [
+    {
+      "check": "Step-by-step instructions",
+      "fix": "Add at least 7 exact steps from start to finish."
+    },
+    {
+      "check": "Not a template clone",
+      "fix": "This quest looks like the same generic template under a different title. Regenerate from project/skill context."
+    },
+    {
+      "check": "Understanding check",
+      "fix": "Require a short explanation so proof is not just uploaded blindly."
+    }
+  ],
+  "lesson_learned": "Future quests must include exact blocker, smallest action, steps, success criteria, proof, and return path before becoming active."
+}

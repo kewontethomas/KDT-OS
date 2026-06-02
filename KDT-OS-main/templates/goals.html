@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>KDT OS Goals</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head><body><main class="shell">
+{% include '_nav.html' %}
+{% with messages = get_flashed_messages() %}{% if messages %}<div class="alert success">{% for message in messages %}<p>{{ message }}</p>{% endfor %}</div>{% endif %}{% endwith %}
+<section class="hero"><p class="eyebrow">Goal Center</p><h1>Tell KDT OS what you want to become or build</h1><p>Goals give quests a reason. KDT OS should always connect practice back to something you care about.</p></section>
+<section class="card accent"><h2>Add Goal</h2><form action="{{ url_for('goals') }}" method="post"><label>Goal name<input name="goal_name" placeholder="Example: Become a developer who can build anything" required></label><label>Why does this matter?<textarea name="why" placeholder="Example: I want to build my own tools and not depend on others."></textarea></label><label>What would you like to build or achieve?<textarea name="build_want" placeholder="Example: I want to build KDT OS, Ab Coach, and tools that help my life."></textarea></label><button type="submit">Save Goal</button></form></section>
+<section class="card"><h2>Saved Goals</h2>{% if goals %}<div class="reports">{% for g in goals %}<a class="report-card" href="{{ url_for('view_goal', filename=g.filename) }}"><strong>{{ g.goal_name }}</strong><span>{{ g.status }}</span><p>{{ g.what_i_want_to_build }}</p></a>{% endfor %}</div>{% else %}<p class="muted">No goals saved yet.</p>{% endif %}</section>
+</main></body></html>

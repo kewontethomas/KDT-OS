@@ -1,0 +1,64 @@
+{
+  "created_at": "2026-05-31T03:42:04",
+  "source_project": "Project Analysis: FieldSeed",
+  "origin_report": "20260531_031935_FieldSeed.json",
+  "resume_project": "FieldSeed",
+  "connected_goal": "",
+  "skill": "Testing",
+  "user_gap": "KDT OS detected Testing in this uploaded project and created a ready practice quest.",
+  "title": "Smoke Test Builder",
+  "quest_type": "Auto Practice Quest",
+  "why_this_exists": "This quest came from: Project Analysis: FieldSeed. The skill being practiced is: Testing. Your stated blocker is: KDT OS detected Testing in this uploaded project and created a ready practice quest. This quest exists so practice connects back to something you care about instead of becoming random homework.",
+  "goal": "Practice proving a project still runs after changes.",
+  "what_to_build": "Add a tiny tests folder to a project and create at least one test that proves the app imports or starts.",
+  "requirements": [
+    "Create tests folder",
+    "Create test_smoke.py",
+    "Import the app or main module",
+    "Run pytest",
+    "Document test command"
+  ],
+  "success_criteria": [
+    "tests folder exists",
+    "test file exists",
+    "pytest or unittest detected",
+    "README includes test command"
+  ],
+  "steps": [
+    "Create tests folder",
+    "Create test_smoke.py",
+    "Import your app module",
+    "Write one assert",
+    "Install pytest if needed",
+    "Run pytest",
+    "Put the command in README.md"
+  ],
+  "proof_required": [
+    "Upload updated ZIP",
+    "Include tests folder",
+    "Include README test command"
+  ],
+  "verification_patterns": [
+    "pytest",
+    "unittest",
+    "def test_",
+    "assert ",
+    "tests/|tests\\\\"
+  ],
+  "teach_me_breakdown": [
+    {
+      "label": "What is this skill?",
+      "answer": "Testing is a skill KDT OS can practice through small exact quests."
+    },
+    {
+      "label": "Why practice it?",
+      "answer": "Practicing it in a tiny project makes it easier to use later in a larger project."
+    }
+  ],
+  "status": "Superseded",
+  "submissions": [],
+  "resume_rule": "After this quest is complete, return to the original project or goal that caused this quest unless you intentionally choose a different path.",
+  "archived_at": "2026-06-01T03:05:18",
+  "archive_reason": "Quest failed V20 anti-duplicate/specificity review and was regenerated.",
+  "superseded_by": "flask_route_smoke_test_suite_20260601_030518.json"
+}

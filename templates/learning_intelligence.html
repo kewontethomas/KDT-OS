@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KDT OS Learning Intelligence</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="shell">
+    {% include '_nav.html' %}
+
+    <section class="hero product-hero">
+        <p class="eyebrow">V32 · Learning Intelligence</p>
+        <h1>Learning Intelligence</h1>
+        <p>KDT OS now studies your quests, projects, proof, and weak spots to decide what skill should grow next.</p>
+    </section>
+
+    {% set totals = data.get('totals', {}) %}
+    <section class="grid four">
+        <div class="metric"><strong>{{ totals.get('average_skill_score', 0) }}%</strong><span>Average Skill Score</span></div>
+        <div class="metric"><strong>{{ totals.get('skills_tracked', 0) }}</strong><span>Skills Tracked</span></div>
+        <div class="metric"><strong>{{ totals.get('proofed_quests', 0) }}</strong><span>Proofed Quests</span></div>
+        <div class="metric"><strong>{{ totals.get('tracked_projects', 0) }}</strong><span>Projects Considered</span></div>
+    </section>
+
+    <section class="card accent">
+        <p class="eyebrow">Next Best Learning Move</p>
+        <h2>{{ data.get('next_action') }}</h2>
+        {% if data.get('bottleneck') %}
+        <div class="score-line">
+            Current bottleneck: <b>{{ data.bottleneck.skill }}</b> · Score {{ data.bottleneck.score }}% · {{ data.bottleneck.status }}
+        </div>
+        {% endif %}
+        {% if data.get('recommended_quest') %}
+        <a class="button-link" href="{{ url_for('view_quest', filename=data.recommended_quest.filename) }}">Open Recommended Quest</a>
+        {% endif %}
+        <a class="button-link ghost" href="{{ url_for('learning_intelligence_json') }}">View JSON</a>
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">Primary Bottleneck</p>
+            {% if data.get('bottleneck') %}
+            <h2>{{ data.bottleneck.skill }}</h2>
+            <p class="muted">KDT OS picked this because it has the weakest mix of proof, completion, quest quality, and project usefulness.</p>
+            <div class="mastery-bar"><span style="width: {{ data.bottleneck.score }}%;"></span></div>
+            <ul>
+                {% for blocker in data.bottleneck.blockers %}<li>{{ blocker }}</li>{% endfor %}
+            </ul>
+            {% else %}
+            <p>No bottleneck found yet.</p>
+            {% endif %}
+        </div>
+        <div class="card">
+            <p class="eyebrow">Learning Rule</p>
+            <h2>Proof beats assumptions</h2>
+            <p>{{ data.get('rule') }}</p>
+            <ul>
+                <li>Generated quests count as exposure, not mastery.</li>
+                <li>Submitted proof increases confidence.</li>
+                <li>Repeated weak quests reveal real blockers.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Skill Radar</p>
+        <h2>What KDT OS thinks you know right now</h2>
+        <div class="reports">
+            {% for skill in data.get('skills', [])[:12] %}
+            <div class="report-card {% if skill.score >= 80 %}success{% elif skill.score < 55 %}danger{% endif %}">
+                <small>{{ skill.status }} · {{ skill.quest_count }} quest(s) · Proof {{ skill.proof_rate }}%</small>
+                <strong>{{ skill.skill }}</strong>
+                <div class="mastery-bar"><span style="width: {{ skill.score }}%;"></span></div>
+                <p><b>{{ skill.score }}%</b> learning score</p>
+                {% if skill.concepts %}<p><b>Concepts:</b> {{ skill.concepts|join(', ') }}</p>{% endif %}
+                {% if skill.blockers %}<p><b>Blocker:</b> {{ skill.blockers[0] }}</p>{% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">Weakest Useful Skills</p>
+            <h2>Fix these first</h2>
+            <div class="route-list">
+                {% for skill in data.get('weakest_skills', []) %}
+                <div class="route-row">
+                    <span>{{ skill.skill }}</span>
+                    <small>{{ skill.score }}% · {{ skill.status }} · {{ skill.blockers[0] if skill.blockers else 'Needs more evidence' }}</small>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="card">
+            <p class="eyebrow">Strongest Evidence</p>
+            <h2>Build on these</h2>
+            <div class="route-list">
+                {% for skill in data.get('strongest_skills', []) %}
+                <div class="route-row">
+                    <span>{{ skill.skill }}</span>
+                    <small>{{ skill.score }}% · {{ skill.status }} · Proof {{ skill.proof_rate }}%</small>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Project Skill Gaps</p>
+        <h2>Which skills are blocking your projects?</h2>
+        <div class="reports">
+            {% for project in data.get('project_gaps', []) %}
+            <div class="report-card">
+                <strong>{{ project.project }}</strong>
+                {% if project.gaps %}
+                    <p><b>Gaps:</b></p>
+                    <ul>{% for gap in project.gaps %}<li>{{ gap.skill }} · {{ gap.score }}%</li>{% endfor %}</ul>
+                {% else %}
+                    <p>No major skill gaps detected from current evidence.</p>
+                {% endif %}
+                {% if project.detected_skills %}<small>{{ project.detected_skills|join(', ') }}</small>{% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+</body>
+</html>

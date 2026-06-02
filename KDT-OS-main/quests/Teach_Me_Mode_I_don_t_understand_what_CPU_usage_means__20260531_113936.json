@@ -1,0 +1,57 @@
+{
+  "created_at": "2026-05-31T11:39:36",
+  "source_project": "Teach Me Mode",
+  "origin_report": "",
+  "resume_project": "",
+  "connected_goal": "",
+  "skill": "I don't understand what CPU usage means.",
+  "user_gap": "I don't know where to start.",
+  "title": "Teach Me Quest: I don't understand what CPU usage means.",
+  "quest_type": "Teach Me Quest",
+  "why_this_exists": "You asked Teach Me Mode for help with I don't understand what CPU usage means.. Your blocker was: I don't know where to start.. Ollama generated this exact quest so you can practice the next achievable step.",
+  "goal": "Understand what CPU usage means and how to check it on Windows.",
+  "what_to_build": "A simple task that requires you to open Task Manager and observe the CPU usage.",
+  "requirements": [
+    "A computer with Windows installed",
+    "Basic knowledge of using a mouse and keyboard"
+  ],
+  "success_criteria": [
+    "You have successfully opened Task Manager, observed the CPU usage, and noted down the current value."
+  ],
+  "steps": [
+    "Press the Ctrl + Shift + Esc keys on your keyboard to open Task Manager.",
+    "Click on the Performance tab in the top menu bar.",
+    "Look for the CPU section, which displays the current CPU usage as a percentage.",
+    "Observe the CPU usage and note down the current value (e.g., 25%).",
+    "Close Task Manager by clicking on the X button."
+  ],
+  "proof_required": [
+    "Take a screenshot of the Task Manager window showing the CPU usage percentage. Save the screenshot as a JPEG file named \"cpu_usage_screenshot.jpg\" in your desktop folder.",
+    "Rules:",
+    "You must complete all steps exactly as described.",
+    "The screenshot proof must be saved with the exact filename and location specified.",
+    "If you encounter any issues, do not proceed until you have resolved them."
+  ],
+  "verification_patterns": [],
+  "difficulty": "Beginner (Easy)",
+  "estimated_time": "10-15 minutes",
+  "ai_generated": true,
+  "ai_parse_mode": "teach_me_sectioned_plain_text",
+  "ai_raw_response": "Here's your beginner-friendly practice quest:\n\n**Goal:**\nUnderstand what CPU usage means and how to check it on Windows.\n\n**What To Build:**\nA simple task that requires you to open Task Manager and observe the CPU usage.\n\n**Difficulty:**\nBeginner (Easy)\n\n**Estimated Time:**\n10-15 minutes\n\n**Requirements:**\n\n* A computer with Windows installed\n* Basic knowledge of using a mouse and keyboard\n\n**Exact Steps:**\n\n1. Press the **Ctrl + Shift + Esc** keys on your keyboard to open Task Manager.\n2. Click on the **Performance** tab in the top menu bar.\n3. Look for the **CPU** section, which displays the current CPU usage as a percentage.\n4. Observe the CPU usage and note down the current value (e.g., 25%).\n5. Close Task Manager by clicking on the **X** button.\n\n**Success Criteria:**\nYou have successfully opened Task Manager, observed the CPU usage, and noted down the current value.\n\n**Proof Needed:**\nTake a screenshot of the Task Manager window showing the CPU usage percentage. Save the screenshot as a JPEG file named \"cpu_usage_screenshot.jpg\" in your desktop folder.\n\n**Rules:**\n\n* You must complete all steps exactly as described.\n* The screenshot proof must be saved with the exact filename and location specified.\n* If you encounter any issues, do not proceed until you have resolved them.",
+  "teach_me_breakdown": [
+    {
+      "label": "What is this skill?",
+      "answer": "I don't understand what CPU usage means. is a skill KDT OS can practice through small exact quests."
+    },
+    {
+      "label": "Why practice it?",
+      "answer": "Practicing it in a tiny project makes it easier to use later in a larger project."
+    }
+  ],
+  "status": "Superseded",
+  "submissions": [],
+  "resume_rule": "After this quest is complete, return to the original project or goal that caused this quest unless you intentionally choose a different path.",
+  "archived_at": "2026-06-01T00:12:13",
+  "archive_reason": "Quest failed quality governance and was regenerated.",
+  "superseded_by": "Teach_Me_Mode_I_don_t_understand_what_CPU_usage_means__20260601_001213.json"
+}

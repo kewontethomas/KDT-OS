@@ -1,0 +1,162 @@
+{
+  "created_at": "2026-06-01T02:37:33",
+  "source_project": "Teach Me Mode",
+  "origin_report": "",
+  "resume_project": "Teach Me Mode",
+  "connected_goal": "",
+  "skill": "CPU Usage",
+  "user_gap": "I don't know where to start.",
+  "quest_type": "Teach Me Quest",
+  "difficulty": "Beginner",
+  "estimated_time": "10-15 minutes",
+  "ai_generated": false,
+  "ai_parse_mode": "governance_context_template_v2",
+  "ai_raw_response": "",
+  "submissions": [],
+  "status": "Assigned",
+  "resume_rule": "After this quest is complete, return to the original project or goal that caused this quest unless you intentionally choose a different path.",
+  "title": "CPU Usage Task Manager Proof Quest",
+  "type": "Teach Me Quest",
+  "goal": "Prove you can find CPU usage and explain what it means during troubleshooting.",
+  "what_to_build": "A screenshot-and-notes proof showing Task Manager CPU usage, the top CPU process, and a short explanation of what the percentage means.",
+  "requirements": [
+    "Open Task Manager",
+    "Open the Processes or Performance tab",
+    "Find CPU percentage",
+    "Identify one process using CPU",
+    "Take screenshot",
+    "Create cpu_usage_notes.txt"
+  ],
+  "success_criteria": [
+    "Screenshot shows Task Manager",
+    "CPU percentage is visible or written in notes",
+    "One process name is identified",
+    "Notes explain high vs low CPU",
+    "Proof can be reviewed"
+  ],
+  "steps": [
+    "Press Ctrl + Shift + Esc",
+    "Click More details if Task Manager opens small",
+    "Click Processes",
+    "Click the CPU column to sort by CPU usage",
+    "Write down the top process name",
+    "Click Performance",
+    "Click CPU",
+    "Write down the current CPU percentage",
+    "Take a screenshot",
+    "Create cpu_usage_notes.txt",
+    "Write what CPU percentage means in one sentence",
+    "Upload screenshot and notes"
+  ],
+  "verification_patterns": [
+    "Task Manager",
+    "CPU",
+    "cpu_usage_notes",
+    "process",
+    "%"
+  ],
+  "proof_required": [
+    "Upload screenshot of Task Manager",
+    "Include cpu_usage_notes.txt",
+    "Answer: What was the CPU percentage?",
+    "Answer: Which process used the most CPU?"
+  ],
+  "quest_quality": {
+    "score": 100,
+    "rating": "10/10 Ready",
+    "checks": [
+      {
+        "name": "Exact blocker identified",
+        "ok": true,
+        "fix": "Add the specific thing the user does not understand or cannot do yet.",
+        "weight": 8
+      },
+      {
+        "name": "Smallest visible action",
+        "ok": true,
+        "fix": "State the smallest visible thing to create, do, or prove.",
+        "weight": 10
+      },
+      {
+        "name": "Exact file/artifact named",
+        "ok": true,
+        "fix": "Name the exact file, folder, screenshot, database, or artifact required.",
+        "weight": 12
+      },
+      {
+        "name": "Step-by-step instructions",
+        "ok": true,
+        "fix": "Add at least 7 exact steps from start to finish.",
+        "weight": 12
+      },
+      {
+        "name": "Required features",
+        "ok": true,
+        "fix": "List concrete files, fields, buttons, commands, or actions required.",
+        "weight": 8
+      },
+      {
+        "name": "Measurable success criteria",
+        "ok": true,
+        "fix": "List measurable conditions that prove completion.",
+        "weight": 10
+      },
+      {
+        "name": "Specific proof method",
+        "ok": true,
+        "fix": "State exactly what to upload or answer as proof.",
+        "weight": 10
+      },
+      {
+        "name": "Return path",
+        "ok": true,
+        "fix": "Connect this quest back to a project, goal, or parent quest.",
+        "weight": 6
+      },
+      {
+        "name": "Not a template clone",
+        "ok": true,
+        "fix": "This quest looks like the same generic template under a different title. Regenerate from project/skill context.",
+        "weight": 16
+      },
+      {
+        "name": "Project/skill specificity",
+        "ok": true,
+        "fix": "Add technology-specific files, commands, fields, outputs, or UI elements.",
+        "weight": 10
+      },
+      {
+        "name": "Named output/result",
+        "ok": true,
+        "fix": "State what visible result, file, screen, or terminal output proves the work.",
+        "weight": 4
+      },
+      {
+        "name": "Understanding check",
+        "ok": true,
+        "fix": "Require a short explanation so proof is not just uploaded blindly.",
+        "weight": 4
+      }
+    ],
+    "passed": 12,
+    "total": 12,
+    "penalties": [],
+    "specificity_score": 3,
+    "template_clone": false
+  },
+  "quest_standard": {
+    "rule": "Every KDT OS quest must include exact steps, proof, success criteria, and a return path.",
+    "minimum_fields": [
+      "Goal",
+      "Blocker",
+      "What to build/do",
+      "Steps",
+      "Success criteria",
+      "Proof",
+      "Return point"
+    ]
+  },
+  "regenerated_from": "I_don_t_understand_what_CPU_usage_means_Single_Proof_Quest_20260601_013343.json",
+  "version": 4,
+  "governance_note": "Generated by Quest Governance v2 because the previous quest was weak, vague, cloned, or below the 85% quality standard."
+}

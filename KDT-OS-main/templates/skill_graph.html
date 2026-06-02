@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Verified Skill Graph</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head><body><main class="shell">
+{% include '_nav.html' %}
+<section class="hero"><p class="eyebrow">Verified Skill Graph</p><h1>Skills based on proof, not uploaded projects</h1><p>Uploaded projects discover skills. Only completed quests with proof raise verified confidence.</p></section>
+<section class="grid four">
+  <div class="metric"><strong>{{ graph.verified }}</strong><span>Verified+</span></div>
+  <div class="metric"><strong>{{ graph.learning }}</strong><span>Learning/Practiced</span></div>
+  <div class="metric"><strong>{{ graph.detected_only }}</strong><span>Detected Only</span></div>
+  <div class="metric"><strong>{{ graph.rusty }}</strong><span>Rusty</span></div>
+</section>
+<section class="card"><h2>Skill Proof Table</h2>
+{% if graph.skills %}<div class="reports">
+{% for s in graph.skills %}
+<a class="report-card" href="{{ url_for('view_skill', skill_name=s.name) }}">
+  <strong>{{ s.name }}</strong>
+  <span>{{ s.status }} · Verified Confidence: {{ s.verified_confidence or 0 }}%</span>
+  <small>Completed quests: {{ s.completed_quests|length }} · Submissions: {{ s.submissions|length }} · Project detections: {{ s.evidence_count }}</small>
+  <p>{{ s.confidence_label }}</p>
+</a>
+{% endfor %}
+</div>{% else %}<p class="muted">No skills yet. Analyze a project or complete a quest.</p>{% endif %}</section>
+</main></body></html>

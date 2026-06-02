@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KDT OS Shared Helpers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="shell">
+    {% include '_nav.html' %}
+
+    <section class="hero product-hero">
+        <p class="eyebrow">V31 · Shared Helper Layer</p>
+        <h1>Shared Helpers</h1>
+        <p>KDT OS now has safe pure utility helpers so future modules can avoid duplicating tiny functions inside app.py.</p>
+    </section>
+
+    <section class="grid four">
+        <div class="metric"><strong>{{ snapshot.app_py_lines }}</strong><span>app.py Lines</span></div>
+        <div class="metric"><strong>{{ snapshot.readiness }}%</strong><span>Helper Readiness</span></div>
+        <div class="metric"><strong>{{ snapshot.helpers_extracted }}</strong><span>Helpers Extracted</span></div>
+        <div class="metric"><strong>{{ snapshot.candidate_count }}</strong><span>Safe Candidates</span></div>
+    </section>
+
+    <section class="card accent">
+        <p class="eyebrow">Helper Rule</p>
+        <h2>Move boring utility logic first</h2>
+        <p>{{ snapshot.rule }}</p>
+        <div class="score-line">V31 creates core/helpers.py. Future route and engine modules should import these helpers instead of recreating them.</div>
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">Core Files</p>
+            <h2>Helper foundation created</h2>
+            <div class="reports">
+                {% for f in snapshot.core_files %}
+                <div class="report-card {% if f.exists %}success{% endif %}">
+                    <strong>{{ f.path }}</strong>
+                    <p>{{ f.lines }} lines · {{ f.size }} · {% if f.exists %}Ready{% else %}Missing{% endif %}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="card">
+            <p class="eyebrow">Proof</p>
+            <h2>Reusable helpers are available</h2>
+            <ul>
+                {% for h in snapshot.helpers %}
+                <li><b>{{ h.name }}</b> — {% if h.available %}available{% else %}missing{% endif %} · {{ h.usage_count }} call(s)</li>
+                {% endfor %}
+            </ul>
+            <a class="button-link ghost" href="{{ url_for('shared_helpers_json') }}">View JSON</a>
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Extraction Candidates</p>
+        <h2>What app.py still has that may move later</h2>
+        <p class="muted">This is a map, not an automatic move list. Route/rendering functions must stay until their family is extracted safely.</p>
+        <div class="route-table">
+            {% for c in snapshot.candidates %}
+            <div class="route-row">
+                <span class="route-chip">{{ c.risk }}</span>
+                <strong>{{ c.name }}</strong>
+                <small>Line {{ c.line }} · {{ c.lines }} lines · {{ c.reason }}</small>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Next Targets</p>
+        <h2>Use helpers without breaking working pages</h2>
+        <div class="reports">
+            {% for target in snapshot.next_targets %}
+            <div class="report-card">
+                <small>{{ target.phase }}</small>
+                <strong>{{ target.title }}</strong>
+                <p><b>Move:</b> {{ target.move }}</p>
+                <p><b>Proof:</b> {{ target.proof }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+</body>
+</html>

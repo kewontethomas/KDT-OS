@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KDT OS Learning Intelligence</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="shell">
+    {% include '_nav.html' %}
+
+    <section class="hero product-hero">
+        <p class="eyebrow">V32 · Learning Intelligence</p>
+        <h1>Learning Intelligence</h1>
+        <p>KDT OS now studies your quests, projects, and proof signals to decide what you know, what is weak, and what to learn next.</p>
+    </section>
+
+    <section class="grid four">
+        <div class="metric"><strong>{{ snapshot.average_learning_score }}%</strong><span>Average Learning Score</span></div>
+        <div class="metric"><strong>{{ snapshot.skills_tracked }}</strong><span>Skills Tracked</span></div>
+        <div class="metric"><strong>{{ snapshot.strong_skills }}</strong><span>Strong Skills</span></div>
+        <div class="metric"><strong>{{ snapshot.needs_practice }}</strong><span>Need Practice</span></div>
+    </section>
+
+    <section class="card accent">
+        <p class="eyebrow">Learning Rule</p>
+        <h2>Recommend from evidence, not vibes</h2>
+        <p>{{ snapshot.rule }}</p>
+        <div class="score-line">V32 connects active quests, skill scores, and project technology gaps so KDT OS can coach your next move.</div>
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">Primary Bottleneck</p>
+            <h2>{{ snapshot.bottleneck.skill }}</h2>
+            <div class="metric compact"><strong>{{ snapshot.bottleneck.score }}%</strong><span>Current Score</span></div>
+            <ul>
+                {% for item in snapshot.bottleneck.evidence %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+            <p><b>Recommended Quest:</b> {{ snapshot.bottleneck.recommended_quest }}</p>
+            <p><b>Next Action:</b> {{ snapshot.bottleneck.next_action }}</p>
+            {% if snapshot.bottleneck.quest_filename %}
+            <a class="button-link" href="{{ url_for('view_quest', filename=snapshot.bottleneck.quest_filename) }}">Open Recommended Quest</a>
+            {% endif %}
+        </div>
+
+        <div class="card">
+            <p class="eyebrow">Learn This Next</p>
+            <h2>{{ snapshot.recommended_next.skill }}</h2>
+            <div class="metric compact"><strong>{{ snapshot.recommended_next.score }}%</strong><span>Score</span></div>
+            <p>{{ snapshot.recommended_next.reason }}</p>
+            <div class="score-line">{{ snapshot.recommended_next.action }}</div>
+            <a class="button-link ghost" href="{{ url_for('learning_intelligence_json') }}">View JSON</a>
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Skill Radar</p>
+        <h2>What KDT OS thinks you know right now</h2>
+        <div class="reports">
+            {% for skill in snapshot.skill_rows %}
+            <div class="report-card {% if skill.score >= 85 %}success{% elif skill.score < 70 %}danger{% endif %}">
+                <small>{{ skill.status }} · {{ skill.quest_count }} quest(s)</small>
+                <strong>{{ skill.skill }}</strong>
+                <p><b>{{ skill.score }}%</b> · Strong: {{ skill.strong_count }} · Weak: {{ skill.weak_count }} · Completed: {{ skill.completed_count }}</p>
+                <div class="mastery-bar"><span style="width: {{ skill.score }}%;"></span></div>
+                <p><b>Next:</b> {{ skill.recommended_action }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Project Skill Gaps</p>
+        <h2>Which skills are blocking your real projects?</h2>
+        <div class="reports">
+            {% for project in snapshot.project_gaps %}
+            <div class="report-card">
+                <small>{{ project.gap_count }} gap(s)</small>
+                <strong>{{ project.project }}</strong>
+                <p><b>Tech:</b> {{ project.technologies|join(', ') }}</p>
+                {% if project.missing_skills %}
+                <ul>
+                    {% for gap in project.missing_skills %}
+                    <li><b>{{ gap.skill }}</b> — {{ gap.reason }}</li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No obvious missing skill gaps from current project data.</p>
+                {% endif %}
+                <div class="score-line">{{ project.recommendation }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Strong Skills</p>
+        <h2>Skills KDT OS can safely build on</h2>
+        <div class="trust-grid">
+            {% for skill in snapshot.top_skills %}
+            <div><strong>{{ skill.skill }}</strong><span>{{ skill.score }}%</span></div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Next Intelligence Targets</p>
+        <h2>Make learning scores react to real proof</h2>
+        <div class="reports">
+            {% for target in snapshot.next_targets %}
+            <div class="report-card">
+                <small>{{ target.phase }}</small>
+                <strong>{{ target.title }}</strong>
+                <p><b>Move:</b> {{ target.move }}</p>
+                <p><b>Proof:</b> {{ target.proof }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+</body>
+</html>

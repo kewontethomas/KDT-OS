@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>{{ quest.title }}</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><main class="shell">
+{% include '_nav.html' %}
+<a class="back" href="{{ url_for('quests') }}">← Back to Quests</a>
+{% with messages = get_flashed_messages() %}{% if messages %}<div class="alert success">{% for message in messages %}<p>{{ message }}</p>{% endfor %}</div>{% endif %}{% endwith %}
+<section class="hero"><p class="eyebrow">{% if quest.parent_quest %}Quest Breakdown{% else %}{{ quest.quest_type }}{% endif %}</p><h1>{{ quest.title }}</h1><p>Source: {{ quest.source_project }} · Skill: {{ quest.skill }} · Status: {{ quest.status }}</p>{% if quest.parent_quest %}<p><strong>Created from:</strong> I Don’t Know How · <strong>Parent quest:</strong> <a href="{{ url_for('view_quest', filename=quest.parent_quest) }}">Return to original quest</a></p>{% endif %}</section>
+
+{% if parent_quest %}
+<section class="card parent-callout">
+    <h2>This is a smaller breakdown step</h2>
+    <p>This page is not replacing the original quest. It exists because you clicked <strong>I Don’t Know How</strong>.</p>
+    <p><strong>Original quest:</strong> {{ parent_quest.title }}</p>
+    <a class="button-link" href="{{ url_for('view_quest', filename=quest.parent_quest) }}">Resume Original Quest</a>
+</section>
+{% endif %}
+
+
+{% if quest.ai_generated or quest.parent_quest %}
+<section class="card ai-card {% if quest.ai_generated %}ai-ready{% else %}ai-warn{% endif %}">
+    <h2>{% if quest.parent_quest %}AI Breakdown Source{% else %}AI Quest Source{% endif %}</h2>
+    {% if quest.ai_generated %}
+        <p><strong>Ollama generated the main instructions for this {% if quest.parent_quest %}breakdown{% else %}quest{% endif %}.</strong></p>
+        <p>Parse mode: {{ quest.ai_parse_mode }}</p>
+        {% if quest.ai_raw_response %}<details class="explain-card"><summary>View raw Ollama response</summary><pre>{{ quest.ai_raw_response }}</pre></details>{% endif %}
+    {% else %}
+        <p><strong>Template fallback was used.</strong> This means Ollama did not generate usable instructions for this step.</p>
+        <p class="muted">Open AI Diagnostics to test whether KDT OS is sending prompts and receiving responses.</p>
+    {% endif %}
+</section>
+{% endif %}
+<section class="card"><h2>Why this quest exists</h2><p>{{ quest.why_this_exists }}</p><p><strong>Your gap:</strong> {{ quest.user_gap }}</p>{% if quest.connected_goal %}<p><strong>Connected goal:</strong> {{ quest.connected_goal }}</p>{% endif %}{% if quest.resume_project %}<p><strong>Return to this project after:</strong> {{ quest.resume_project }}</p>{% endif %}<p class="muted">{{ quest.resume_rule }}</p></section>
+<section class="grid three">
+    <div class="metric"><strong>{{ quest.difficulty or 'Beginner' }}</strong><span>Difficulty</span></div>
+    <div class="metric"><strong>{{ quest.estimated_time or '30-60 minutes' }}</strong><span>Estimated Time</span></div>
+    <div class="metric"><strong>{{ quest.quest_quality.score if quest.quest_quality else '?' }}%</strong><span>Quest Quality</span></div>
+</section>
+{% if quest.quest_quality %}<section class="card"><h2>10/10 Quest Quality</h2><p><strong>{{ quest.quest_quality.rating }}</strong></p><p class="muted">KDT OS checks whether this quest is exact, small, verifiable, and connected to a return path.</p><a class="button-link" href="{{ url_for('quest_quality', filename=filename) }}">Open Quality Checklist</a></section>{% endif %}
+<section class="card accent"><h2>What You Must Build</h2><p>{{ quest.what_to_build }}</p></section>
+<section class="card"><h2>Required Features</h2><ul>{% for item in quest.requirements %}<li>{{ item }}</li>{% endfor %}</ul></section>
+<section class="card"><h2>Step-by-Step Instructions</h2><ol>{% for step in quest.steps %}<li>{{ step }}</li>{% endfor %}</ol></section>
+<section class="card"><h2>Success Criteria</h2><ul>{% for item in quest.success_criteria %}<li>{{ item }}</li>{% endfor %}</ul></section>
+{% if quest.quest_standard %}<section class="card"><h2>Quest Standard</h2><p>{{ quest.quest_standard.rule }}</p><p><strong>Required fields:</strong> {{ quest.quest_standard.minimum_fields|join(', ') }}</p></section>{% endif %}<section class="card"><h2>Proof Required</h2><ul>{% for item in quest.proof_required %}<li>{{ item }}</li>{% endfor %}</ul></section>
+
+{% if child_quests %}
+<section class="card breakdown-panel">
+    <h2>Quest Breakdown Steps</h2>
+    <p class="muted">These smaller steps were created from I Don’t Know How. Finish them when the main quest feels too big, then come back here.</p>
+    <div class="reports">
+        {% for child in child_quests %}
+        <a class="report-card breakdown-card" href="{{ url_for('view_quest', filename=child.filename) }}">
+            <span class="quest-type breakdown-type">Breakdown Step</span>
+            <strong>{{ child.title }}</strong>
+            <small>{{ child.status }}</small>
+            <p>{{ child.what_to_build }}</p>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<section class="card accent"><h2>I Don’t Know How</h2><p class="muted">Use this when the quest is still too big. KDT OS will create a smaller micro-quest and preserve this quest as the thing to return to.</p>
+    {% if quest.teach_me_breakdown %}<div class="stack">{% for item in quest.teach_me_breakdown %}<details class="explain-card"><summary>{{ item.label }}</summary><p>{{ item.answer }}</p></details>{% endfor %}</div>{% endif %}
+    <form action="{{ url_for('breakdown_quest', filename=filename) }}" method="post">
+        <label>What part is stopping you?<input name="obstacle" placeholder="Example: I don't understand what a table means"></label>
+        <button type="submit">Break This Down Further</button>
+    </form>
+</section>
+
+<section class="card accent"><h2>Submit Quest Proof</h2><p class="muted">Upload your finished quest ZIP. KDT OS will run rule checks, then use the AI layer to judge whether the work and explanation match the quest.</p><form action="{{ url_for('submit_quest', filename=filename) }}" method="post" enctype="multipart/form-data"><label>Quest ZIP<input type="file" name="submission_zip" accept=".zip" required></label><label>Explain what you built and what confused you<textarea name="reflection" placeholder="Example: I created test_smoke.py, imported app.py, and used pytest to make sure the app imports without crashing."></textarea></label><button type="submit">Check My Quest</button></form></section>
+{% if quest.submissions %}<section class="card"><h2>Submission History</h2>{% for s in quest.submissions %}<div class="mini"><strong>{{ s.status }} — Rule Check: {{ s.score }}%</strong><p>Files checked: {{ s.file_count }}</p>{% if s.reflection %}<p><strong>Your explanation:</strong> {{ s.reflection }}</p>{% endif %}{% if s.missing_patterns %}<p><strong>Needs work:</strong> {{ s.missing_patterns|join(', ') }}</p>{% endif %}{% if s.ai_evaluation %}<details class="explain-card" open><summary>AI Evaluation</summary>{% if s.ai_evaluation.available %}<p><strong>Build verification:</strong> {{ s.ai_evaluation.build_verification }}%</p><p><strong>Understanding verification:</strong> {{ s.ai_evaluation.understanding_verification }}%</p><p><strong>Verdict:</strong> {{ s.ai_evaluation.verdict }}</p>{% if s.ai_evaluation.what_worked %}<p><strong>What worked:</strong> {{ s.ai_evaluation.what_worked|join(', ') }}</p>{% endif %}{% if s.ai_evaluation.what_is_missing %}<p><strong>What is missing:</strong> {{ s.ai_evaluation.what_is_missing|join(', ') }}</p>{% endif %}<p><strong>Next exact step:</strong> {{ s.ai_evaluation.next_exact_step }}</p>{% if s.ai_evaluation.questions_to_answer %}<p><strong>Questions to answer:</strong> {{ s.ai_evaluation.questions_to_answer|join(' | ') }}</p>{% endif %}{% else %}<p>{{ s.ai_evaluation.error }}</p>{% endif %}</details>{% endif %}<small>{{ s.submitted_at }}</small></div>{% endfor %}</section>{% endif %}
+</main></body></html>

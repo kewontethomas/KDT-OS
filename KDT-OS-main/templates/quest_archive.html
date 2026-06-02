@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Quest Archive</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><main class="shell">
+{% include '_nav.html' %}
+<section class="hero"><p class="eyebrow">Quest Governance</p><h1>Archived Quests & Postmortems</h1><p>Old weak quests are preserved so KDT OS can document what went wrong and avoid repeating it.</p></section>
+<section class="card"><h2>Archived / Superseded Quests</h2>{% if archived %}<div class="reports">{% for q in archived %}<div class="report-card"><strong>{{ q.title }}</strong><span>{{ q.status }}</span><small>{{ q.archived_at }}</small><p>{{ q.archive_reason }}</p>{% if q.superseded_by %}<p><strong>Superseded by:</strong> {{ q.superseded_by }}</p>{% endif %}</div>{% endfor %}</div>{% else %}<p class="muted">No archived quests yet.</p>{% endif %}</section>
+<section class="card"><h2>Postmortems</h2>{% if postmortems %}{% for p in postmortems %}<div class="mini"><strong>{{ p.quest_title }}</strong><p>Original score: {{ p.original_score }} · {{ p.action }}</p><p>{{ p.lesson_learned }}</p><ul>{% for r in p.failure_reasons %}<li><strong>{{ r.check }}</strong>: {{ r.fix }}</li>{% endfor %}</ul></div>{% endfor %}{% else %}<p class="muted">No postmortems yet.</p>{% endif %}</section>
+</main></body></html>

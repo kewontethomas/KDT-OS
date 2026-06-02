@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-06-01T02:37:33",
+  "original_file": "I_don_t_understand_what_CPU_usage_means_Single_Proof_Quest_20260601_013406.json",
+  "quest_title": "I don't understand what CPU usage means. Single Proof Quest",
+  "skill": "I don't understand what CPU usage means.",
+  "original_score": 62,
+  "action": "Regenerate",
+  "replacement_file": "CPU_Usage_Task_Manager_Proof_Quest_20260601_023733.json",
+  "failure_reasons": [
+    {
+      "check": "Not a template clone",
+      "fix": "This quest looks like the same generic template under a different title. Regenerate from project/skill context."
+    },
+    {
+      "check": "Named output/result",
+      "fix": "State what visible result, file, screen, or terminal output proves the work."
+    }
+  ],
+  "lesson_learned": "Future quests must include exact blocker, smallest action, steps, success criteria, proof, and return path before becoming active."
+}

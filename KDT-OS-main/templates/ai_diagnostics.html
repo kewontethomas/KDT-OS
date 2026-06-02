@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>KDT OS AI Diagnostics</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head><body><main class="shell">
+{% include '_nav.html' %}
+<a class="back" href="{{ url_for('ai_settings') }}">← Back to AI Settings</a>
+<section class="hero"><p class="eyebrow">AI Diagnostics</p><h1>Prove Ollama Is Driving KDT OS</h1><p>This page shows the last prompt, last response, parse status, and whether KDT OS fell back to templates.</p></section>
+<section class="card ai-card {% if ai_status.available %}ai-ready{% else %}ai-warn{% endif %}">
+    <h2>Connection</h2>
+    <p>{{ ai_status.message }}</p>
+    <p><strong>Model:</strong> {{ ai_status.model }}</p>
+    <p><strong>Host:</strong> {{ ai_status.host }}</p>
+</section>
+<section class="card accent">
+    <h2>Run Test Prompt</h2>
+    <form method="post">
+        <label>Test blocker or question<textarea name="prompt" placeholder="Example: I don't know what CPU usage means."></textarea></label>
+        <button type="submit">Send Test To Ollama</button>
+    </form>
+</section>
+{% if test_result %}
+<section class="card {% if test_result.ok %}ai-ready{% else %}ai-warn{% endif %}">
+    <h2>Test Result</h2>
+    <p><strong>OK:</strong> {{ test_result.ok }}</p>
+    <p><strong>Parse OK:</strong> {{ test_result.parse_ok }}</p>
+    {% if test_result.parse_note %}<p><strong>Parse Note:</strong> {{ test_result.parse_note }}</p>{% endif %}
+    {% if test_result.error %}<p><strong>Error:</strong> {{ test_result.error }}</p>{% endif %}
+    <pre>{{ test_result.text }}</pre>
+    {% if test_result.parsed_sections %}
+    <details class="explain-card" open><summary>Parsed Quest Sections</summary>
+        <p><strong>Goal:</strong> {{ test_result.parsed_sections.goal|join(' ') }}</p>
+        <p><strong>What To Build / Do:</strong> {{ test_result.parsed_sections.what_to_build|join(' ') }}</p>
+        <p><strong>Steps:</strong></p><ul>{% for step in test_result.parsed_sections.steps %}<li>{{ step }}</li>{% endfor %}</ul>
+        <p><strong>Proof:</strong></p><ul>{% for proof in test_result.parsed_sections.proof %}<li>{{ proof }}</li>{% endfor %}</ul>
+    </details>
+    {% endif %}
+</section>
+{% endif %}
+<section class="card">
+    <h2>Last AI Call</h2>
+    <p><strong>Feature:</strong> {{ log.last_feature }}</p>
+    <p><strong>Used at:</strong> {{ log.last_used_at }}</p>
+    <p><strong>Parse OK:</strong> {{ log.last_parse_ok }}</p>
+    <p><strong>Fallback used:</strong> {{ log.last_fallback_used }}</p>
+    {% if log.last_error %}<p><strong>Error / Note:</strong> {{ log.last_error }}</p>{% endif %}
+    <details class="explain-card" open><summary>Last Prompt Sent</summary><pre>{{ log.last_prompt }}</pre></details>
+    <details class="explain-card" open><summary>Last Response Received</summary><pre>{{ log.last_response }}</pre></details>
+</section>
+<section class="card">
+    <h2>Recent AI Calls</h2>
+    {% if log.calls %}
+        {% for call in log.calls[:10] %}
+            <div class="mini"><strong>{{ call.feature }}</strong><p>{{ call.at }}</p><p>Parse OK: {{ call.parse_ok }} · Fallback: {{ call.fallback_used }}</p>{% if call.error %}<p>{{ call.error }}</p>{% endif %}</div>
+        {% endfor %}
+    {% else %}<p class="muted">No AI calls logged yet.</p>{% endif %}
+</section>
+</main></body></html>

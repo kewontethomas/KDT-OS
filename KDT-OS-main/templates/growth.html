@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>KDT OS Growth</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><main class="shell">
+{% include '_nav.html' %}
+<section class="hero product-hero">
+    <p class="eyebrow">Growth Graph</p>
+    <h1>Your proof-backed progress.</h1>
+    <p>KDT OS connects goals, projects, quests, and verified skills so progress is based on evidence.</p>
+</section>
+
+<section class="grid four">
+    <div class="metric"><strong>{{ goals|length }}</strong><span>Goals</span></div>
+    <div class="metric"><strong>{{ projects|length }}</strong><span>Projects</span></div>
+    <div class="metric"><strong>{{ graph.verified }}</strong><span>Verified Skills</span></div>
+    <div class="metric"><strong>{{ graph.detected_only }}</strong><span>Detected Only</span></div>
+</section>
+
+<section class="card accent">
+    <h2>Memory Graph</h2>
+    <p class="muted">This is the core loop KDT OS should keep strengthening.</p>
+    <div class="memory-flow">
+        <div><strong>Goal</strong><span>What you want to become</span></div>
+        <div><strong>Project</strong><span>The tool that makes it real</span></div>
+        <div><strong>Skill</strong><span>What must be learned</span></div>
+        <div><strong>Quest</strong><span>The smallest action</span></div>
+        <div><strong>Proof</strong><span>Evidence that updates confidence</span></div>
+    </div>
+</section>
+
+<section class="grid two">
+    <div class="card">
+        <h2>Goals</h2>
+        {% if goals %}
+            <div class="stack">
+            {% for g in goals[:6] %}
+                <a class="mini link-card" href="{{ url_for('view_goal', filename=g.filename) }}">
+                    <strong>{{ g.goal_name }}</strong>
+                    <p>{{ g.what_i_want_to_build }}</p>
+                </a>
+            {% endfor %}
+            </div>
+        {% else %}<p class="muted">No goals yet.</p>{% endif %}
+    </div>
+
+    <div class="card">
+        <h2>Active Quests</h2>
+        {% if active_quests %}
+            <div class="stack">
+            {% for q in active_quests %}
+                <a class="mini link-card" href="{{ url_for('view_quest', filename=q.filename) }}">
+                    <strong>{{ q.title }}</strong>
+                    <span>{{ q.skill }} · {{ q.status }}</span>
+                    <p>{{ q.what_to_build }}</p>
+                </a>
+            {% endfor %}
+            </div>
+        {% else %}<p class="muted">No active quests.</p>{% endif %}
+    </div>
+</section>
+
+<section class="card">
+    <h2>Verified Skill Graph</h2>
+    {% if graph.skills %}
+        <div class="reports">
+        {% for s in graph.skills[:12] %}
+            <a class="report-card" href="{{ url_for('view_skill', skill_name=s.name) }}">
+                <strong>{{ s.name }}</strong>
+                <span>{{ s.status }} · {{ s.verified_confidence or 0 }}%</span>
+                <small>Completed quests: {{ s.completed_quests|length }} · Project detections: {{ s.evidence_count }}</small>
+                <p>{{ s.confidence_label }}</p>
+            </a>
+        {% endfor %}
+        </div>
+    {% else %}<p class="muted">No skill evidence yet.</p>{% endif %}
+</section>
+</main></body></html>

@@ -1,0 +1,822 @@
+{
+  "Python": {
+    "skill": "Python",
+    "evidence_count": 550,
+    "projects": [
+      "FieldSeed",
+      "KDT OS"
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "evidence": [
+      {
+        "project": "FieldSeed",
+        "report_file": "20260531_040514_FieldSeed.json",
+        "seen_at": "2026-05-31T04:05:14",
+        "source": "project_analysis",
+        "score": 120,
+        "explanation": "A general-purpose programming language. In your projects, it usually powers backend logic, automation, file scanning, or data processing."
+      },
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 429,
+        "explanation": "A general-purpose programming language. In your projects, it usually powers backend logic, automation, file scanning, or data processing."
+      }
+    ],
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet.",
+    "verified_confidence": 0
+  },
+  "PowerShell": {
+    "skill": "PowerShell",
+    "evidence_count": 48,
+    "projects": [
+      "FieldSeed",
+      "KDT OS"
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "evidence": [
+      {
+        "project": "FieldSeed",
+        "report_file": "20260531_040514_FieldSeed.json",
+        "seen_at": "2026-05-31T04:05:14",
+        "source": "project_analysis",
+        "score": 13,
+        "explanation": "Windows automation scripting. Useful for IT support, health checks, setup scripts, and admin tasks."
+      },
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 34,
+        "explanation": "Windows automation scripting. Useful for IT support, health checks, setup scripts, and admin tasks."
+      }
+    ],
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet.",
+    "verified_confidence": 0
+  },
+  "SQLite": {
+    "skill": "SQLite",
+    "evidence_count": 71,
+    "projects": [
+      "FieldSeed",
+      "KDT OS"
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "evidence": [
+      {
+        "project": "FieldSeed",
+        "report_file": "20260531_040514_FieldSeed.json",
+        "seen_at": "2026-05-31T04:05:14",
+        "source": "project_analysis",
+        "score": 12,
+        "explanation": "A lightweight database stored in a local file. Useful for personal apps because it does not require a separate database server."
+      },
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 58,
+        "explanation": "A lightweight database stored in a local file. Useful for personal apps because it does not require a separate database server."
+      }
+    ],
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet.",
+    "verified_confidence": 0
+  },
+  "GitHub/Versioning": {
+    "skill": "GitHub/Versioning",
+    "evidence_count": 150,
+    "projects": [
+      "FieldSeed",
+      "KDT OS"
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "evidence": [
+      {
+        "project": "FieldSeed",
+        "report_file": "20260531_040514_FieldSeed.json",
+        "seen_at": "2026-05-31T04:05:14",
+        "source": "project_analysis",
+        "score": 8,
+        "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+      },
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 141,
+        "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+      }
+    ],
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet.",
+    "verified_confidence": 0
+  },
+  "Ticket System": {
+    "skill": "Ticket System",
+    "evidence_count": 1194,
+    "projects": [
+      "FieldSeed",
+      "KDT OS"
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "evidence": [
+      {
+        "project": "FieldSeed",
+        "report_file": "20260531_040514_FieldSeed.json",
+        "seen_at": "2026-05-31T04:05:14",
+        "source": "project_analysis",
+        "score": 354,
+        "explanation": "The project likely manages issues, incidents, root causes, resolutions, or support tickets."
+      },
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 839,
+        "explanation": "The project likely manages issues, incidents, root causes, resolutions, or support tickets."
+      }
+    ],
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet.",
+    "verified_confidence": 0
+  },
+  "Repair Planning": {
+    "skill": "Repair Planning",
+    "evidence_count": 694,
+    "projects": [
+      "FieldSeed",
+      "KDT OS"
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "evidence": [
+      {
+        "project": "FieldSeed",
+        "report_file": "20260531_040514_FieldSeed.json",
+        "seen_at": "2026-05-31T04:05:14",
+        "source": "project_analysis",
+        "score": 194,
+        "explanation": "The project likely suggests fixes, repairs files, creates backups, or plans recovery steps."
+      },
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 499,
+        "explanation": "The project likely suggests fixes, repairs files, creates backups, or plans recovery steps."
+      }
+    ],
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet.",
+    "verified_confidence": 0
+  },
+  "Health Monitoring": {
+    "skill": "Health Monitoring",
+    "evidence_count": 1114,
+    "projects": [
+      "FieldSeed",
+      "KDT OS"
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "evidence": [
+      {
+        "project": "FieldSeed",
+        "report_file": "20260531_040514_FieldSeed.json",
+        "seen_at": "2026-05-31T04:05:14",
+        "source": "project_analysis",
+        "score": 183,
+        "explanation": "The project likely checks whether something is working correctly, scans for issues, or reports status."
+      },
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 930,
+        "explanation": "The project likely checks whether something is working correctly, scans for issues, or reports status."
+      }
+    ],
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet.",
+    "verified_confidence": 0
+  },
+  "Evidence Collection": {
+    "skill": "Evidence Collection",
+    "evidence_count": 1008,
+    "projects": [
+      "FieldSeed",
+      "KDT OS"
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "evidence": [
+      {
+        "project": "FieldSeed",
+        "report_file": "20260531_040514_FieldSeed.json",
+        "seen_at": "2026-05-31T04:05:14",
+        "source": "project_analysis",
+        "score": 94,
+        "explanation": "The project likely saves screenshots, attachments, proof, logs, or supporting evidence."
+      },
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 913,
+        "explanation": "The project likely saves screenshots, attachments, proof, logs, or supporting evidence."
+      }
+    ],
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet.",
+    "verified_confidence": 0
+  },
+  "Task Management": {
+    "skill": "Task Management",
+    "evidence_count": 765,
+    "projects": [
+      "FieldSeed",
+      "KDT OS"
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "evidence": [
+      {
+        "project": "FieldSeed",
+        "report_file": "20260531_040514_FieldSeed.json",
+        "seen_at": "2026-05-31T04:05:14",
+        "source": "project_analysis",
+        "score": 93,
+        "explanation": "The project likely tracks tasks, statuses, checklists, or completions."
+      },
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 671,
+        "explanation": "The project likely tracks tasks, statuses, checklists, or completions."
+      }
+    ],
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet.",
+    "verified_confidence": 0
+  },
+  "Knowledge Base": {
+    "skill": "Knowledge Base",
+    "evidence_count": 522,
+    "projects": [
+      "FieldSeed",
+      "KDT OS"
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "evidence": [
+      {
+        "project": "FieldSeed",
+        "report_file": "20260531_040514_FieldSeed.json",
+        "seen_at": "2026-05-31T04:05:14",
+        "source": "project_analysis",
+        "score": 90,
+        "explanation": "The project likely stores lessons, notes, memory, documentation, or reusable knowledge."
+      },
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 431,
+        "explanation": "The project likely stores lessons, notes, memory, documentation, or reusable knowledge."
+      }
+    ],
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet.",
+    "verified_confidence": 0
+  },
+  "Database Storage": {
+    "skill": "Database Storage",
+    "evidence_count": 350,
+    "projects": [
+      "FieldSeed",
+      "KDT OS"
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "evidence": [
+      {
+        "project": "FieldSeed",
+        "report_file": "20260531_040514_FieldSeed.json",
+        "seen_at": "2026-05-31T04:05:14",
+        "source": "project_analysis",
+        "score": 42,
+        "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+      },
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 307,
+        "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+      }
+    ],
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet.",
+    "verified_confidence": 0
+  },
+  "Project Tracking": {
+    "skill": "Project Tracking",
+    "evidence_count": 1562,
+    "projects": [
+      "FieldSeed",
+      "KDT OS"
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "evidence": [
+      {
+        "project": "FieldSeed",
+        "report_file": "20260531_040514_FieldSeed.json",
+        "seen_at": "2026-05-31T04:05:14",
+        "source": "project_analysis",
+        "score": 25,
+        "explanation": "The project likely stores project progress, milestones, roadmap items, or build status."
+      },
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 1536,
+        "explanation": "The project likely stores project progress, milestones, roadmap items, or build status."
+      }
+    ],
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet.",
+    "verified_confidence": 0
+  },
+  "File Handling": {
+    "skill": "File Handling",
+    "evidence_count": 183,
+    "projects": [
+      "FieldSeed",
+      "KDT OS"
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "evidence": [
+      {
+        "project": "FieldSeed",
+        "report_file": "20260531_040514_FieldSeed.json",
+        "seen_at": "2026-05-31T04:05:14",
+        "source": "project_analysis",
+        "score": 25,
+        "explanation": "The project reads, writes, moves, scans, or extracts files. This is a major skill for tools like analyzers and automation apps."
+      },
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 157,
+        "explanation": "The project reads, writes, moves, scans, or extracts files. This is a major skill for tools like analyzers and automation apps."
+      }
+    ],
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet.",
+    "verified_confidence": 0
+  },
+  "Automation/Scheduling": {
+    "skill": "Automation/Scheduling",
+    "evidence_count": 122,
+    "projects": [
+      "FieldSeed",
+      "KDT OS"
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "evidence": [
+      {
+        "project": "FieldSeed",
+        "report_file": "20260531_040514_FieldSeed.json",
+        "seen_at": "2026-05-31T04:05:14",
+        "source": "project_analysis",
+        "score": 22,
+        "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+      },
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 99,
+        "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+      }
+    ],
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet.",
+    "verified_confidence": 0
+  },
+  "Journal/Reflection": {
+    "skill": "Journal/Reflection",
+    "evidence_count": 150,
+    "projects": [
+      "FieldSeed",
+      "KDT OS"
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "evidence": [
+      {
+        "project": "FieldSeed",
+        "report_file": "20260531_040514_FieldSeed.json",
+        "seen_at": "2026-05-31T04:05:14",
+        "source": "project_analysis",
+        "score": 14,
+        "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+      },
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 135,
+        "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+      }
+    ],
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet.",
+    "verified_confidence": 0
+  },
+  "Notifications/Reminders": {
+    "skill": "Notifications/Reminders",
+    "evidence_count": 65,
+    "projects": [
+      "FieldSeed",
+      "KDT OS"
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "evidence": [
+      {
+        "project": "FieldSeed",
+        "report_file": "20260531_040514_FieldSeed.json",
+        "seen_at": "2026-05-31T04:05:14",
+        "source": "project_analysis",
+        "score": 12,
+        "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+      },
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 52,
+        "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+      }
+    ],
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet.",
+    "verified_confidence": 0
+  },
+  "Idea Capture": {
+    "skill": "Idea Capture",
+    "evidence_count": 119,
+    "projects": [
+      "FieldSeed",
+      "KDT OS"
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "evidence": [
+      {
+        "project": "FieldSeed",
+        "report_file": "20260531_040514_FieldSeed.json",
+        "seen_at": "2026-05-31T04:05:14",
+        "source": "project_analysis",
+        "score": 6,
+        "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+      },
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 112,
+        "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+      }
+    ],
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet.",
+    "verified_confidence": 0
+  },
+  "Dashboard/UI": {
+    "skill": "Dashboard/UI",
+    "evidence_count": 174,
+    "projects": [
+      "FieldSeed",
+      "KDT OS"
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "evidence": [
+      {
+        "project": "FieldSeed",
+        "report_file": "20260531_040514_FieldSeed.json",
+        "seen_at": "2026-05-31T04:05:14",
+        "source": "project_analysis",
+        "score": 6,
+        "explanation": "The project has visible screens, forms, buttons, or dashboard pages. This means it is meant for a person to use, not just run silently."
+      },
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 167,
+        "explanation": "The project has visible screens, forms, buttons, or dashboard pages. This means it is meant for a person to use, not just run silently."
+      }
+    ],
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet.",
+    "verified_confidence": 0
+  },
+  "Learning/Practice": {
+    "skill": "Learning/Practice",
+    "evidence_count": 1765,
+    "projects": [
+      "FieldSeed",
+      "KDT OS"
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "evidence": [
+      {
+        "project": "FieldSeed",
+        "report_file": "20260531_040514_FieldSeed.json",
+        "seen_at": "2026-05-31T04:05:14",
+        "source": "project_analysis",
+        "score": 5,
+        "explanation": "The project likely includes drills, lessons, quests, mastery tracking, or repeated practice."
+      },
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 1759,
+        "explanation": "The project likely includes drills, lessons, quests, mastery tracking, or repeated practice."
+      }
+    ],
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet.",
+    "verified_confidence": 0
+  },
+  "Authentication/Login": {
+    "skill": "Authentication/Login",
+    "evidence_count": 49,
+    "projects": [
+      "FieldSeed",
+      "KDT OS"
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "evidence": [
+      {
+        "project": "FieldSeed",
+        "report_file": "20260531_040514_FieldSeed.json",
+        "seen_at": "2026-05-31T04:05:14",
+        "source": "project_analysis",
+        "score": 2,
+        "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+      },
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 46,
+        "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+      }
+    ],
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet.",
+    "verified_confidence": 0
+  },
+  "HTML/CSS": {
+    "skill": "HTML/CSS",
+    "evidence_count": 55,
+    "projects": [
+      "KDT OS"
+    ],
+    "evidence": [
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 55,
+        "explanation": "The structure and styling of a web page. HTML creates the content; CSS controls how it looks."
+      }
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "completed_quests": [],
+    "submissions": [],
+    "note": "Project evidence means the skill appeared in code. Quest submissions prove practice.",
+    "verified_confidence": 0,
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet."
+  },
+  "API / Routes": {
+    "skill": "API / Routes",
+    "evidence_count": 53,
+    "projects": [
+      "KDT OS"
+    ],
+    "evidence": [
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 53,
+        "explanation": "A way for apps to request or send data. Routes are endpoints your app exposes; API calls are requests your app makes to another service."
+      }
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "completed_quests": [],
+    "submissions": [],
+    "note": "Project evidence means the skill appeared in code. Quest submissions prove practice.",
+    "verified_confidence": 0,
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet."
+  },
+  "JavaScript": {
+    "skill": "JavaScript",
+    "evidence_count": 22,
+    "projects": [
+      "KDT OS"
+    ],
+    "evidence": [
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 22,
+        "explanation": "Browser-side code used to make pages interactive, respond to clicks, update the screen, and handle dynamic UI behavior."
+      }
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "completed_quests": [],
+    "submissions": [],
+    "note": "Project evidence means the skill appeared in code. Quest submissions prove practice.",
+    "verified_confidence": 0,
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet."
+  },
+  "Flask": {
+    "skill": "Flask",
+    "evidence_count": 8,
+    "projects": [
+      "KDT OS"
+    ],
+    "evidence": [
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 8,
+        "explanation": "A Python web framework. If this is detected, the project probably has pages, routes, forms, or a local web dashboard."
+      }
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "completed_quests": [],
+    "submissions": [],
+    "note": "Project evidence means the skill appeared in code. Quest submissions prove practice.",
+    "verified_confidence": 0,
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet."
+  },
+  "React": {
+    "skill": "React",
+    "evidence_count": 4,
+    "projects": [
+      "KDT OS"
+    ],
+    "evidence": [
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 4,
+        "explanation": "A JavaScript library for building reusable interface pieces called components. React is useful when a page has many changing parts."
+      }
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "completed_quests": [],
+    "submissions": [],
+    "note": "Project evidence means the skill appeared in code. Quest submissions prove practice.",
+    "verified_confidence": 0,
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet."
+  },
+  "SQLAlchemy": {
+    "skill": "SQLAlchemy",
+    "evidence_count": 3,
+    "projects": [
+      "KDT OS"
+    ],
+    "evidence": [
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 3,
+        "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+      }
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "completed_quests": [],
+    "submissions": [],
+    "note": "Project evidence means the skill appeared in code. Quest submissions prove practice.",
+    "verified_confidence": 0,
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet."
+  },
+  "FastAPI": {
+    "skill": "FastAPI",
+    "evidence_count": 2,
+    "projects": [
+      "KDT OS"
+    ],
+    "evidence": [
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 2,
+        "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+      }
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "completed_quests": [],
+    "submissions": [],
+    "note": "Project evidence means the skill appeared in code. Quest submissions prove practice.",
+    "verified_confidence": 0,
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet."
+  },
+  "Django": {
+    "skill": "Django",
+    "evidence_count": 2,
+    "projects": [
+      "KDT OS"
+    ],
+    "evidence": [
+      {
+        "project": "KDT OS",
+        "report_file": "20260601_004601_KDT_OS.json",
+        "seen_at": "2026-06-01T00:46:02",
+        "source": "project_analysis",
+        "score": 2,
+        "explanation": "KDT OS detected this from keywords, files, and code patterns. Treat it as a clue, not a perfect conclusion."
+      }
+    ],
+    "last_seen": "2026-06-01T00:46:02",
+    "status": "Detected",
+    "confidence": 0,
+    "completed_quests": [],
+    "submissions": [],
+    "note": "Project evidence means the skill appeared in code. Quest submissions prove practice.",
+    "verified_confidence": 0,
+    "confidence_label": "Detected in project code only. This is exposure evidence, not proof you can rebuild it yet."
+  }
+}
