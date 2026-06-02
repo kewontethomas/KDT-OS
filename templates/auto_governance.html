@@ -11,29 +11,29 @@
     {% include '_nav.html' %}
 
     <section class="hero product-hero">
-        <p class="eyebrow">V24 · Unified Governance Gate</p>
+        <p class="eyebrow">{{ plan.version }} · Governance Intelligence</p>
         <h1>Auto Governance</h1>
-        <p class="hero-lead">KDT OS now uses the same scanner for Self Check and Auto Governance, so weak, duplicated, and generic quests can be repaired consistently.</p>
+        <p class="hero-lead">KDT OS now scores quests with weighted evidence, groups duplicate clusters, and repairs metadata before archiving or regenerating anything.</p>
     </section>
 
-    <section class="grid four">
-        <div class="metric"><strong>{{ plan.total_active_quests }}</strong><span>Active Quests Scanned</span></div>
-        <div class="metric"><strong>{{ plan.issues }}</strong><span>Issues Found</span></div>
-        <div class="metric"><strong>{{ plan.high_risk }}</strong><span>High Risk</span></div>
-        <div class="metric"><strong>{{ plan.medium_risk }}</strong><span>Medium Risk</span></div>
+    <section class="grid four governance-metrics">
+        <div class="metric"><strong>{{ plan.total_active_quests }}</strong><span>Active Quests</span></div>
+        <div class="metric"><strong>{{ plan.average_score }}%</strong><span>Average Score</span></div>
+        <div class="metric"><strong>{{ plan.issues }}</strong><span>Needs Attention</span></div>
+        <div class="metric"><strong>{{ plan.clean_count }}</strong><span>Clean / Strong</span></div>
     </section>
 
     <section class="card accent auto-governance-actions">
         <p class="eyebrow">Repair Control</p>
-        <h2>Run the gate</h2>
-        <p class="muted">Dry run previews the exact actions. Auto Repair safely rescores metadata and uses Quest Intelligence to archive/regenerate weak quests.</p>
+        <h2>Run the gate safely</h2>
+        <p class="muted">Preview shows exact actions. Auto Repair first adds trusted metadata and understanding checks, then archives only weaker duplicates. High-risk regeneration is attempted only when needed.</p>
         <div class="hero-actions">
             <form action="{{ url_for('auto_governance_run') }}" method="post">
                 <input type="hidden" name="dry_run" value="1">
                 <button type="submit">Preview Repair Plan</button>
             </form>
             <form action="{{ url_for('auto_governance_run') }}" method="post">
-                <button type="submit">Auto Repair Quest Governance</button>
+                <button type="submit">Auto Repair Safely</button>
             </form>
             <a class="button-link ghost" href="{{ url_for('auto_governance_json') }}">View JSON</a>
         </div>
@@ -45,29 +45,90 @@
         <h2>{% if result.dry_run %}Dry Run Complete{% else %}Auto Repair Complete{% endif %}</h2>
         <div class="grid four">
             <div class="metric"><strong>{{ result.actions_taken|length }}</strong><span>Actions Taken</span></div>
-            <div class="metric"><strong>{{ result.created_files|length }}</strong><span>Replacements Created</span></div>
-            <div class="metric"><strong>{{ result.rescored|length }}</strong><span>Rescored</span></div>
+            <div class="metric"><strong>{{ result.rescored|length }}</strong><span>Metadata Repairs</span></div>
+            <div class="metric"><strong>{{ result.archived|length }}</strong><span>Archived</span></div>
             <div class="metric"><strong>{{ result.errors|length }}</strong><span>Errors</span></div>
         </div>
-        {% if result.created_files %}<p><b>Created:</b> {{ result.created_files|join(', ') }}</p>{% endif %}
+        {% if result.planned_archive_targets %}<p><b>Planned archive targets:</b> {{ result.planned_archive_targets|length }}</p>{% endif %}
+        {% if result.planned_metadata_repairs %}<p><b>Planned metadata repairs:</b> {{ result.planned_metadata_repairs|length }}</p>{% endif %}
+        {% if result.archived %}<p><b>Archived:</b> {{ result.archived|join(', ') }}</p>{% endif %}
+        {% if result.regenerated %}<p><b>Regenerated:</b> {{ result.regenerated|join(', ') }}</p>{% endif %}
         {% if result.log_file %}<p><b>Log:</b> {{ result.log_file }}</p>{% endif %}
         {% if result.errors %}<pre class="ai-raw">{{ result.errors|tojson(indent=2) }}</pre>{% endif %}
     </section>
     {% endif %}
 
+    <section class="card governance-summary-card">
+        <div class="section-heading-row">
+            <div>
+                <p class="eyebrow">Governance Summary</p>
+                <h2>What needs attention first</h2>
+                <p class="muted">V25 groups issues by type so this page stays usable even when you have hundreds of quests.</p>
+            </div>
+        </div>
+
+        <div class="governance-category-grid">
+            {% for cat in plan.categories %}
+            <details class="governance-category" {% if loop.index <= 3 %}open{% endif %}>
+                <summary><span>{{ cat.name }}</span><strong>{{ cat.count }}</strong></summary>
+                <div class="compact-issue-list">
+                    {% for item in cat.get("items", [])[:8] %}
+                    <div class="compact-issue-row {{ item.risk }}">
+                        <strong>{{ item.score }}%</strong>
+                        <span>{{ item.title }}</span>
+                        <small>{{ item.filename }}</small>
+                    </div>
+                    {% endfor %}
+                </div>
+            </details>
+            {% else %}
+            <p>No issue categories found. Good work.</p>
+            {% endfor %}
+        </div>
+    </section>
+
+    {% if plan.clusters %}
     <section class="card">
-        <p class="eyebrow">Governance Plan</p>
-        <h2>Issues KDT OS can repair</h2>
+        <p class="eyebrow">Duplicate Clusters</p>
+        <h2>Keep the strongest version, archive weak copies</h2>
+        <div class="governance-clusters">
+            {% for cluster in plan.clusters %}
+            <details class="governance-cluster" {% if loop.index <= 2 %}open{% endif %}>
+                <summary><span>{{ cluster.title }}</span><strong>{{ cluster.count }} quests</strong></summary>
+                <div class="cluster-keep-box">
+                    <b>Keep:</b> {{ cluster.keep.title }} <small>{{ cluster.keep.filename }} · {{ cluster.keep.score }}%</small>
+                </div>
+                {% if cluster.archive %}
+                <p><b>Archive candidates:</b></p>
+                <ul>
+                    {% for item in cluster.archive %}
+                    <li>{{ item.title }} — {{ item.score }}% <small>{{ item.filename }}</small></li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p class="muted">No automatic archive candidate. These may be useful variations.</p>
+                {% endif %}
+                <p class="muted">{{ cluster.summary }}</p>
+            </details>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    <section class="card">
+        <p class="eyebrow">Quest Scores</p>
+        <h2>Repairable quests</h2>
         {% if plan.get('items', []) %}
-        <div class="self-check-grid">
+        <div class="self-check-grid governance-issue-grid">
             {% for item in plan.get('items', []) %}
             <article class="self-check-issue {{ item.risk }}">
-                <div class="issue-top"><span class="status-pill">{{ item.risk|title }}</span><small>{{ item.filename }}</small></div>
+                <div class="issue-top"><span class="status-pill">{{ item.rating }}</span><small>{{ item.filename }}</small></div>
                 <h3>{{ item.title }}</h3>
-                <p class="quest-meta">{{ item.skill }} · Score {{ item.score }}%</p>
-                <p><b>Actions:</b> {{ item.actions|join(', ') }}</p>
+                <p class="quest-meta">{{ item.skill }} · Score {{ item.score }}% · {{ item.age }}</p>
+                {% if item.strengths %}<p class="comparison-good"><b>Strengths:</b> {{ item.strengths|join(', ') }}</p>{% endif %}
+                {% if item.actions %}<p><b>Actions:</b> {{ item.actions|join(', ') }}</p>{% endif %}
                 <ul>
-                    {% for reason in item.reasons %}<li>{{ reason }}</li>{% endfor %}
+                    {% for p in item.penalties[:4] %}<li><b>-{{ p.points }}:</b> {{ p.reason }}</li>{% endfor %}
                 </ul>
                 <div class="exact-fix"><b>Exact fix</b><p>{{ item.exact_fix }}</p></div>
             </article>
@@ -77,6 +138,18 @@
         <p>No repairable quest governance issues found. Good work.</p>
         {% endif %}
     </section>
+
+    {% if plan.clean_items %}
+    <section class="card">
+        <p class="eyebrow">Strong Quests</p>
+        <h2>Already approved or low risk</h2>
+        <div class="compact-issue-list">
+            {% for item in plan.clean_items[:10] %}
+            <div class="compact-issue-row clean"><strong>{{ item.score }}%</strong><span>{{ item.title }}</span><small>{{ item.filename }}</small></div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
 </main>
 </body>
 </html>

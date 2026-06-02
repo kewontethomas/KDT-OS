@@ -1571,3 +1571,20 @@ textarea {
 .exact-fix p{
   margin:.35rem 0 0;
 }
+
+/* =========================================================
+   KDT OS V25 Governance Intelligence UI
+   ========================================================= */
+.governance-metrics .metric strong{color:var(--deep)}
+.governance-category-grid,.governance-clusters{display:grid;gap:14px}
+.governance-category,.governance-cluster{border:1px solid var(--line);border-radius:20px;background:#fff;overflow:hidden}
+.governance-category summary,.governance-cluster summary{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;font-weight:1000}
+.governance-category summary strong,.governance-cluster summary strong{background:#f5f0ff;color:var(--purple);border-radius:999px;padding:6px 10px;white-space:nowrap}
+.compact-issue-list{display:grid;gap:10px;padding:0 16px 16px}
+.compact-issue-row{display:grid;grid-template-columns:70px minmax(0,1fr);gap:8px;border:1px solid #dbe4f0;border-radius:14px;padding:10px;background:#fff;align-items:center}
+.compact-issue-row small{grid-column:2;color:#64748b;overflow-wrap:anywhere}.compact-issue-row span{font-weight:800;overflow-wrap:anywhere}.compact-issue-row strong{color:#7c3aed}
+.compact-issue-row.high{background:#fff1f2;border-color:#fb7185}.compact-issue-row.medium{background:#fff7ed;border-color:#fb923c}.compact-issue-row.warning{background:#fffbeb;border-color:#facc15}.compact-issue-row.clean{background:#ecfdf5;border-color:#86efac}
+.cluster-keep-box{margin:0 16px 12px;padding:14px;border:1px solid #86efac;background:#ecfdf5;border-radius:16px}.cluster-keep-box small{display:block;color:#64748b;margin-top:4px;overflow-wrap:anywhere}
+.governance-cluster ul{margin:0 18px 14px 34px}.governance-cluster li{margin:6px 0}.governance-cluster p{margin-left:16px;margin-right:16px}
+.governance-issue-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}.self-check-issue.warning{border-color:#facc15;background:#fffbeb}.self-check-issue.clean{border-color:#86efac;background:#ecfdf5}
+@media(max-width:900px){.compact-issue-row{grid-template-columns:1fr}.compact-issue-row small{grid-column:1}}
