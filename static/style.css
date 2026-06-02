@@ -1391,3 +1391,130 @@ textarea {
     padding:0 12px 36px;
   }
 }
+/* =========================================
+   V22 Self Check Center
+========================================= */
+.self-check-page{
+  width:100%;
+}
+
+.self-check-hero h1{
+  font-size:clamp(2.4rem, 5vw, 4.6rem);
+}
+
+.self-check-metrics .metric{
+  min-height:110px;
+}
+
+.health-score-card strong{
+  color:var(--purple);
+}
+
+.metric-good{
+  background:#ecfdf5;
+  border-color:#86efac;
+}
+
+.metric-warning{
+  background:#fff7ed;
+  border-color:#fdba74;
+}
+
+.section-heading-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.self-check-list{
+  display:grid;
+  gap:14px;
+}
+
+.self-check-audit{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:16px;
+}
+
+.self-check-audit summary{
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  font-weight:900;
+}
+
+.issue-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:14px;
+  margin-top:14px;
+}
+
+.issue-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:16px;
+  overflow-wrap:anywhere;
+}
+
+.issue-card h3{
+  font-size:1rem;
+  line-height:1.25;
+  margin:10px 0;
+}
+
+.issue-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+
+.issue-top small{
+  color:var(--muted);
+  font-weight:800;
+}
+
+.severity-high{
+  border-color:#fb7185;
+  background:#fff1f2;
+}
+
+.severity-medium{
+  border-color:#f59e0b;
+  background:#fffbeb;
+}
+
+.severity-low{
+  border-color:#93c5fd;
+  background:#eff6ff;
+}
+
+.fix-box{
+  background:rgba(255,255,255,.72);
+  border:1px dashed rgba(124,58,237,.32);
+  border-radius:14px;
+  padding:12px;
+  margin-top:10px;
+}
+
+.fix-box p{
+  margin:.35rem 0 0;
+}
+
+@media(max-width:700px){
+  .self-check-audit summary{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+  .issue-list{
+    grid-template-columns:1fr;
+  }
+}

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KDT OS Self Check</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="shell">
+    {% include '_nav.html' %}
+
+    <section class="content-panel self-check-page">
+        <section class="hero product-hero self-check-hero">
+            <p class="eyebrow">System Health</p>
+            <h1>KDT OS Self Check</h1>
+            <p class="hero-lead">
+                This page checks routes, templates, layout, JSON memory, quest governance,
+                and architecture before you trust a version.
+            </p>
+        </section>
+
+        <section class="grid four self-check-metrics">
+            <div class="metric health-score-card">
+                <strong>{{ check.score }}%</strong>
+                <span>Overall Health</span>
+            </div>
+            <div class="metric">
+                <strong>{{ check.status }}</strong>
+                <span>System Rating</span>
+            </div>
+            <div class="metric {% if check.critical_issues %}metric-warning{% else %}metric-good{% endif %}">
+                <strong>{{ check.critical_issues }}</strong>
+                <span>Critical Issues</span>
+            </div>
+            <div class="metric">
+                <strong>{{ check.audits|length }}</strong>
+                <span>Audits Run</span>
+            </div>
+        </section>
+
+        {% if check.next_fix %}
+        <section class="card accent next-fix-card">
+            <p class="eyebrow">Fix this first</p>
+            <h2>{{ check.next_fix.problem }}</h2>
+            <p><strong>File:</strong> {{ check.next_fix.file }}</p>
+            <p><strong>Line:</strong> {{ check.next_fix.line }}</p>
+            <div class="fix-box">
+                <strong>Exact fix</strong>
+                <p>{{ check.next_fix.exact_fix }}</p>
+            </div>
+        </section>
+        {% else %}
+        <section class="card success">
+            <h2>No critical repair needed</h2>
+            <p>KDT OS did not find a high-priority issue in this pass.</p>
+        </section>
+        {% endif %}
+
+        <section class="card">
+            <div class="section-heading-row">
+                <div>
+                    <p class="eyebrow">Diagnostic Results</p>
+                    <h2>Audit Breakdown</h2>
+                    <p class="muted">Open each audit to see exact problems and verbatim fixes.</p>
+                </div>
+                <a class="button-link ghost" href="{{ url_for('self_check_json') }}">View JSON</a>
+            </div>
+
+            <div class="self-check-list">
+                {% for audit in check.audits %}
+                <details class="self-check-audit" {% if audit.issues %}open{% endif %}>
+                    <summary>
+                        <span>{{ audit.name }}</span>
+                        <strong>{{ audit.score }}% · {{ audit.status }}</strong>
+                    </summary>
+                    <p class="muted">{{ audit.summary }}</p>
+
+                    {% if audit.issues %}
+                    <div class="issue-list">
+                        {% for issue in audit.issues %}
+                        <article class="issue-card severity-{{ issue.severity|lower }}">
+                            <div class="issue-top">
+                                <span class="status-pill">{{ issue.severity }}</span>
+                                <small>{{ issue.file }}{% if issue.line %}:{{ issue.line }}{% endif %}</small>
+                            </div>
+                            <h3>{{ issue.problem }}</h3>
+                            <div class="fix-box">
+                                <strong>Exact fix</strong>
+                                <p>{{ issue.exact_fix }}</p>
+                            </div>
+                        </article>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <p class="comparison-good">Passed.</p>
+                    {% endif %}
+                </details>
+                {% endfor %}
+            </div>
+        </section>
+    </section>
+</main>
+</body>
+</html>

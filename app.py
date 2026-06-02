@@ -4222,9 +4222,11 @@ def download_report(filename: str):
 import sys
 from kdt_quest_intelligence_v20 import install as install_v20
 from kdt_intelligence_v21 import install as install_v21
+from kdt_self_check_v22 import install as install_v22
 
 install_v20(sys.modules[__name__])
 install_v21(sys.modules[__name__])
+install_v22(sys.modules[__name__])
 
 if __name__ == "__main__":
     ensure_ollama_ready(wait_seconds=3.0)
