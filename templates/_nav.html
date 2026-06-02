@@ -12,44 +12,90 @@
             <span>Home</span>
         </a>
 
-        <details class="nav-group" {% if request.endpoint in ['projects','view_project','project_issue','sources','analyze_folder','path_builder','view_path','create_bridge_chain'] %}open{% endif %}>
-            <summary class="{% if request.endpoint in ['projects','view_project','project_issue','sources','analyze_folder','path_builder','view_path','create_bridge_chain'] %}active{% endif %}">
+        <details class="nav-group" {% if request.endpoint in
+            ['projects','view_project','project_issue','sources','analyze_folder','path_builder','view_path','create_bridge_chain']
+            %}open{% endif %}>
+            <summary
+                class="{% if request.endpoint in ['projects','view_project','project_issue','sources','analyze_folder','path_builder','view_path','create_bridge_chain'] %}active{% endif %}">
                 Build
             </summary>
-            <a href="{{ url_for('projects') }}" class="{% if request.endpoint in ['projects','view_project','project_issue'] %}active{% endif %}">Projects</a>
-            <a href="{{ url_for('sources') }}" class="{% if request.endpoint in ['sources','analyze_folder'] %}active{% endif %}">Sources</a>
-            <a href="{{ url_for('path_builder') }}" class="{% if request.endpoint in ['path_builder','view_path','create_bridge_chain'] %}active{% endif %}">Build Planner</a>
+            <a href="{{ url_for('projects') }}"
+                class="{% if request.endpoint in ['projects','view_project','project_issue'] %}active{% endif %}">Projects</a>
+            <a href="{{ url_for('sources') }}"
+                class="{% if request.endpoint in ['sources','analyze_folder'] %}active{% endif %}">Sources</a>
+            <a href="{{ url_for('path_builder') }}"
+                class="{% if request.endpoint in ['path_builder','view_path','create_bridge_chain'] %}active{% endif %}">Build
+                Planner</a>
         </details>
 
-        <details class="nav-group" {% if request.endpoint in ['teach','teach_create','quests','view_quest','submit_quest_proof','break_down_quest','create_quest_from_report','view_skill','skill_graph','growth','goals','view_goal'] %}open{% endif %}>
-            <summary class="{% if request.endpoint in ['teach','teach_create','quests','view_quest','submit_quest_proof','break_down_quest','create_quest_from_report','view_skill','skill_graph','growth','goals','view_goal'] %}active{% endif %}">
+        <details class="nav-group" {% if request.endpoint in
+            ['teach','teach_create','quests','view_quest','submit_quest_proof','break_down_quest','create_quest_from_report','view_skill','skill_graph','growth','goals','view_goal']
+            %}open{% endif %}>
+            <summary
+                class="{% if request.endpoint in ['teach','teach_create','quests','view_quest','submit_quest_proof','break_down_quest','create_quest_from_report','view_skill','skill_graph','growth','goals','view_goal'] %}active{% endif %}">
                 Learn
             </summary>
-            <a href="{{ url_for('teach') }}" class="{% if request.endpoint in ['teach','teach_create'] %}active{% endif %}">Teach Me</a>
-            <a href="{{ url_for('quests') }}" class="{% if request.endpoint in ['quests','view_quest','submit_quest_proof','break_down_quest','create_quest_from_report'] %}active{% endif %}">Quests</a>
+            <a href="{{ url_for('teach') }}"
+                class="{% if request.endpoint in ['teach','teach_create'] %}active{% endif %}">Teach Me</a>
+            <a href="{{ url_for('quests') }}"
+                class="{% if request.endpoint in ['quests','view_quest','submit_quest_proof','break_down_quest','create_quest_from_report'] %}active{% endif %}">Quests</a>
             <a href="{{ url_for('growth') }}" class="{% if request.endpoint == 'growth' %}active{% endif %}">Growth</a>
-            <a href="{{ url_for('skill_graph') }}" class="{% if request.endpoint in ['skill_graph','view_skill'] %}active{% endif %}">Verified Skills</a>
-            <a href="{{ url_for('goals') }}" class="{% if request.endpoint in ['goals','view_goal'] %}active{% endif %}">Goals</a>
+            <a href="{{ url_for('skill_graph') }}"
+                class="{% if request.endpoint in ['skill_graph','view_skill'] %}active{% endif %}">Verified Skills</a>
+            <a href="{{ url_for('goals') }}"
+                class="{% if request.endpoint in ['goals','view_goal'] %}active{% endif %}">Goals</a>
         </details>
 
-        <details class="nav-group" {% if request.endpoint in ['quest_maintenance','regenerate_weak_quests','regenerate_single_quest','quest_archive','quest_quality','vision_test'] %}open{% endif %}>
-            <summary class="{% if request.endpoint in ['quest_maintenance','regenerate_weak_quests','regenerate_single_quest','quest_archive','quest_quality','vision_test'] %}active{% endif %}">
+        <details class="nav-group" {% if request.endpoint in
+            ['quest_maintenance','regenerate_weak_quests','regenerate_single_quest','quest_archive','quest_quality','vision_test']
+            %}open{% endif %}>
+            <summary
+                class="{% if request.endpoint in ['quest_maintenance','regenerate_weak_quests','regenerate_single_quest','quest_archive','quest_quality','vision_test'] %}active{% endif %}">
                 Verify
             </summary>
-            <a href="{{ url_for('quest_maintenance') }}" class="{% if request.endpoint in ['quest_maintenance','regenerate_weak_quests','regenerate_single_quest'] %}active{% endif %}">Quest Intelligence</a>
-            <a href="{{ url_for('quest_archive') }}" class="{% if request.endpoint == 'quest_archive' %}active{% endif %}">Archive</a>
-            <a href="{{ url_for('vision_test') }}" class="{% if request.endpoint == 'vision_test' %}active{% endif %}">Vision Proof</a>
+            <a href="{{ url_for('quest_maintenance') }}"
+                class="{% if request.endpoint in ['quest_maintenance','regenerate_weak_quests','regenerate_single_quest'] %}active{% endif %}">Quest
+                Intelligence</a>
+            <a href="{{ url_for('quest_archive') }}"
+                class="{% if request.endpoint == 'quest_archive' %}active{% endif %}">Archive</a>
+            <a href="{{ url_for('vision_test') }}"
+                class="{% if request.endpoint == 'vision_test' %}active{% endif %}">Vision Proof</a>
         </details>
 
-        <details class="nav-group" {% if request.endpoint in ['upgrade','view_upgrade_plan','create_upgrade_quest','verify_upgrade_plan','ai_settings','ai_diagnostics','model_manager'] %}open{% endif %}>
-            <summary class="{% if request.endpoint in ['upgrade','view_upgrade_plan','create_upgrade_quest','verify_upgrade_plan','ai_settings','ai_diagnostics','model_manager'] %}active{% endif %}">
+        <details class="nav-group" {% if request.endpoint in
+            ['upgrade','view_upgrade_plan','create_upgrade_quest','verify_upgrade_plan','ai_settings','ai_diagnostics','model_manager']
+            %}open{% endif %}>
+            <summary
+                class="{% if request.endpoint in ['upgrade','view_upgrade_plan','create_upgrade_quest','verify_upgrade_plan','ai_settings','ai_diagnostics','model_manager'] %}active{% endif %}">
                 System
             </summary>
-            <a href="{{ url_for('upgrade') }}" class="{% if request.endpoint in ['upgrade','view_upgrade_plan','create_upgrade_quest','verify_upgrade_plan'] %}active{% endif %}">System Evolution</a>
-            <a href="{{ url_for('ai_settings') }}" class="{% if request.endpoint in ['ai_settings','ai_diagnostics'] %}active{% endif %}">AI</a>
-            <a href="{{ url_for('model_manager') }}" class="{% if request.endpoint == 'model_manager' %}active{% endif %}">Models</a>
+            <a href="{{ url_for('upgrade') }}"
+                class="{% if request.endpoint in ['upgrade','view_upgrade_plan','create_upgrade_quest','verify_upgrade_plan'] %}active{% endif %}">System
+                Evolution</a>
+            <a href="{{ url_for('ai_settings') }}"
+                class="{% if request.endpoint in ['ai_settings','ai_diagnostics'] %}active{% endif %}">AI</a>
+            <a href="{{ url_for('model_manager') }}"
+                class="{% if request.endpoint == 'model_manager' %}active{% endif %}">Models</a>
         </details>
-    </nav>
+        </nav>
+
+    <div class="sidebar-footer">
+        <div class="sidebar-stat">
+            <span class="stat-label">Quests</span>
+            <strong>{{ quest_count|default(0) }}</strong>
+        </div>
+
+        <div class="sidebar-stat">
+            <span class="stat-label">Projects</span>
+            <strong>{{ project_count|default(0) }}</strong>
+        </div>
+
+        <div class="sidebar-stat">
+            <span class="stat-label">Mastery</span>
+            <strong>{{ mastery_percent|default(0) }}%</strong>
+        </div>
+    </div>
+
 </aside>
 
 <div class="mobile-nav-strip">

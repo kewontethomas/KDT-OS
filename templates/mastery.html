@@ -1,150 +1,148 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>KDT OS Mastery</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
-<main class="app-shell mastery-page">
-    {% include '_nav.html' %}
+    <main class="app-shell">
+        {% include '_nav.html' %}
 
-    <section class="content-panel mastery-content">
-        <section class="hero mastery-hero">
-            <p class="eyebrow">KDT OS Intelligence Layer</p>
-            <h1>Mastery Map</h1>
-            <p>
-                KDT OS now tracks concepts, proof, next moves, project memory,
-                and how you learn — not just quest percentages.
-            </p>
-        </section>
+        <div class="mastery-page">
+            <section class="content-panel">
+                <section class="hero mastery-hero">
+                    <p class="eyebrow">KDT OS Intelligence Layer</p>
+                    <h1>Mastery Map</h1>
+                    <p>
+                        KDT OS now tracks concepts, proof, next moves, project memory,
+                        and how you learn — not just quest percentages.
+                    </p>
+                </section>
 
-        {% set mastery = data.get('mastery', {}) %}
-        {% set totals = mastery.get('totals', {}) %}
+                {% set mastery = data.get('mastery', {}) %}
+                {% set totals = mastery.get('totals', {}) %}
 
-        <section class="grid four mastery-metrics">
-            <div class="metric">
-                <strong>{{ totals.get('skills', 0) }}</strong>
-                <span>Tracked Skills</span>
-            </div>
-            <div class="metric">
-                <strong>{{ totals.get('proven_concepts', 0) }}</strong>
-                <span>Proven Concepts</span>
-            </div>
-            <div class="metric">
-                <strong>{{ totals.get('seen_concepts', 0) }}</strong>
-                <span>Seen Concepts</span>
-            </div>
-            <div class="metric">
-                <strong>{{ totals.get('missing_concepts', 0) }}</strong>
-                <span>Missing Concepts</span>
-            </div>
-        </section>
+                <section class="grid four">
+                    <div class="metric">
+                        <strong>{{ totals.get('skills', 0) }}</strong>
+                        <span>Tracked Skills</span>
+                    </div>
+                    <div class="metric">
+                        <strong>{{ totals.get('proven_concepts', 0) }}</strong>
+                        <span>Proven Concepts</span>
+                    </div>
+                    <div class="metric">
+                        <strong>{{ totals.get('seen_concepts', 0) }}</strong>
+                        <span>Seen Concepts</span>
+                    </div>
+                    <div class="metric">
+                        <strong>{{ totals.get('missing_concepts', 0) }}</strong>
+                        <span>Missing Concepts</span>
+                    </div>
+                </section>
 
-        <section class="card accent mastery-section">
-            <div class="section-heading-row">
-                <div>
-                    <p class="eyebrow">Focus</p>
+                <section class="card accent">
                     <h2>Today's Best Moves</h2>
                     <p class="muted">
                         These are selected from quest quality, mastery gaps, project memory,
                         and your learning style.
                     </p>
-                </div>
-            </div>
 
-            {% if data.get('moves') %}
-                <div class="reports mastery-move-grid">
-                    {% for move in data.get('moves', []) %}
-                        <div class="report-card mastery-move-card">
+                    {% if data.get('moves') %}
+                    <div class="reports">
+                        {% for move in data.get('moves', []) %}
+                        <div class="report-card">
                             <small>Priority {{ move.get('priority') }} · {{ move.get('type') }}</small>
                             <strong>{{ move.get('title') }}</strong>
                             <p>{{ move.get('why') }}</p>
                             <p><b>Action:</b> {{ move.get('action') }}</p>
                             <p><b>Proof:</b> {{ move.get('proof') }}</p>
                         </div>
-                    {% endfor %}
-                </div>
-            {% else %}
-                <p>No recommended moves yet.</p>
-            {% endif %}
-        </section>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <p>No recommended moves yet.</p>
+                    {% endif %}
+                </section>
 
-        <section class="card mastery-section">
-            <p class="eyebrow">Skills</p>
-            <h2>Concept Mastery</h2>
-            <p class="muted">
-                A skill is not truly mastered until its smaller concepts are proven with real quest evidence.
-            </p>
+                <section class="card">
+                    <h2>Concept Mastery</h2>
+                    <p class="muted">
+                        A skill is not truly mastered until its smaller concepts are proven.
+                    </p>
 
-            {% if mastery.get('skills') %}
-                <div class="mastery-list">
-                    {% for skill in mastery.get('skills', []) %}
+                    {% if mastery.get('skills') %}
+                    <div class="mastery-list">
+                        {% for skill in mastery.get('skills', []) %}
                         <article class="mastery-skill-card">
                             <div class="mastery-skill-head">
                                 <div>
                                     <strong>{{ skill.get('skill') }}</strong>
-                                    <small>{{ skill.get('status') }} · {{ skill.get('quests', [])|length }} quest(s)</small>
+                                    <small>{{ skill.get('status') }} · {{ skill.get('quests', [])|length }}
+                                        quest(s)</small>
                                 </div>
                                 <div class="mastery-score">{{ skill.get('score', 0) }}%</div>
                             </div>
 
-                            <div class="mastery-bar">
-                                <span style="width: {{ skill.get('score', 0) }}%"></span>
+                            {% set score = skill.get('score', 0)|int %}
+
+                            <div class="mastery-bar" data-score="{{ score }}">
+                                <span></span>
                             </div>
 
                             <div class="concept-grid">
                                 {% for concept in skill.get('concepts', []) %}
-                                    <div class="concept-pill {{ concept.get('status', 'Missing')|lower }}">
-                                        <b>{{ concept.get('name') }}</b>
-                                        <span>{{ concept.get('status') }}</span>
-                                        {% if concept.get('status') != 'Proven' %}
-                                            <small>{{ concept.get('next_micro_action') }}</small>
-                                        {% endif %}
-                                    </div>
+                                <div class="concept-pill {{ concept.get('status', 'Missing')|lower }}">
+                                    <b>{{ concept.get('name') }}</b>
+                                    <span>{{ concept.get('status') }}</span>
+                                    {% if concept.get('status') != 'Proven' %}
+                                    <small>{{ concept.get('next_micro_action') }}</small>
+                                    {% endif %}
+                                </div>
                                 {% endfor %}
                             </div>
                         </article>
-                    {% endfor %}
-                </div>
-            {% else %}
-                <p>No mastery data yet. Complete quests with proof to build this map.</p>
-            {% endif %}
-        </section>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <p>No mastery data yet. Complete quests with proof to build this map.</p>
+                    {% endif %}
+                </section>
 
-        <section class="grid two mastery-bottom-grid">
-            <div class="card mastery-section">
-                <p class="eyebrow">You</p>
-                <h2>Adaptive Profile</h2>
-                <p class="muted">How KDT OS should shape guidance for your learning style.</p>
+                <section class="grid two">
+                    <div class="card">
+                        <h2>Adaptive Profile</h2>
+                        <p class="muted">How KDT OS should shape guidance for you.</p>
 
-                {% set adaptive = data.get('adaptive', {}) %}
+                        {% set adaptive = data.get('adaptive', {}) %}
 
-                <h3>Learning Style</h3>
-                <ul>
-                    {% for item in adaptive.get('learning_style', []) %}
-                        <li>{{ item }}</li>
-                    {% endfor %}
-                </ul>
+                        <h3>Learning Style</h3>
+                        <ul>
+                            {% for item in adaptive.get('learning_style', []) %}
+                            <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
 
-                <h3>System Rules</h3>
-                <ul>
-                    {% for item in adaptive.get('rules', [])[:6] %}
-                        <li>{{ item }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
+                        <h3>System Rules</h3>
+                        <ul>
+                            {% for item in adaptive.get('rules', [])[:6] %}
+                            <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
 
-            <div class="card mastery-section">
-                <p class="eyebrow">Memory</p>
-                <h2>Project Memory</h2>
-                <p class="muted">KDT OS should treat projects as evolving entities.</p>
+                    <div class="card">
+                        <h2>Project Memory</h2>
+                        <p class="muted">KDT OS should treat projects as evolving entities.</p>
 
-                {% set projects = data.get('projects', {}).get('projects', []) %}
-                {% if projects %}
-                    {% for project in projects[:6] %}
-                        <div class="mini mastery-project-mini">
+                        {% set projects = data.get('projects', {}).get('projects', []) %}
+                        {% if projects %}
+                        {% for project in projects[:6] %}
+                        <div class="mini">
                             <strong>{{ project.get('name') }}</strong>
                             <p>
                                 Versions: {{ project.get('versions') }} ·
@@ -155,37 +153,49 @@
                                 {{ project.get('technologies', [])|join(', ') }}
                             </small>
                         </div>
-                    {% endfor %}
-                {% else %}
-                    <p>No project memory yet.</p>
-                {% endif %}
-            </div>
-        </section>
+                        {% endfor %}
+                        {% else %}
+                        <p>No project memory yet.</p>
+                        {% endif %}
+                    </div>
+                </section>
 
-        <section class="card mastery-section">
-            <p class="eyebrow">Governance</p>
-            <h2>Quest System Health</h2>
-            {% set qs = data.get('quest_summary', {}) %}
-            <div class="grid four mastery-metrics compact">
-                <div class="metric">
-                    <strong>{{ qs.get('total', 0) }}</strong>
-                    <span>Active Quests</span>
-                </div>
-                <div class="metric">
-                    <strong>{{ qs.get('approved', 0) }}</strong>
-                    <span>Approved</span>
-                </div>
-                <div class="metric">
-                    <strong>{{ qs.get('needs_work', 0) }}</strong>
-                    <span>Need Work</span>
-                </div>
-                <div class="metric">
-                    <strong>{{ qs.get('archive_count', 0) }}</strong>
-                    <span>Archived</span>
-                </div>
-            </div>
-        </section>
-    </section>
-</main>
+                <section class="card">
+                    <h2>Quest System Health</h2>
+                    {% set qs = data.get('quest_summary', {}) %}
+                    <div class="grid four">
+                        <div class="metric">
+                            <strong>{{ qs.get('total', 0) }}</strong>
+                            <span>Active Quests</span>
+                        </div>
+                        <div class="metric">
+                            <strong>{{ qs.get('approved', 0) }}</strong>
+                            <span>Approved</span>
+                        </div>
+                        <div class="metric">
+                            <strong>{{ qs.get('needs_work', 0) }}</strong>
+                            <span>Need Work</span>
+                        </div>
+                        <div class="metric">
+                            <strong>{{ qs.get('archive_count', 0) }}</strong>
+                            <span>Archived</span>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </main>
+
+    <script>
+    document.querySelectorAll(".mastery-bar").forEach(function (bar) {
+        const score = Number(bar.dataset.score || 0);
+        const fill = bar.querySelector("span");
+
+        if (fill) {
+            fill.style.width = Math.max(0, Math.min(score, 100)) + "%";
+        }
+    });
+</script>
 </body>
+
 </html>

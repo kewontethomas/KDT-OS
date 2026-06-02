@@ -4220,9 +4220,11 @@ def download_report(filename: str):
     return send_from_directory(REPORT_DIR, filename, as_attachment=True)
 
 import sys
-from kdt_quest_intelligence_v20 import install
+from kdt_quest_intelligence_v20 import install as install_v20
+from kdt_intelligence_v21 import install as install_v21
 
-install(sys.modules[__name__])
+install_v20(sys.modules[__name__])
+install_v21(sys.modules[__name__])
 
 if __name__ == "__main__":
     ensure_ollama_ready(wait_seconds=3.0)
