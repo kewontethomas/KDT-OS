@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KDT OS Tutor Engine</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="shell">
+    {% include '_nav.html' %}
+
+    <section class="hero product-hero">
+        <p class="eyebrow">V40 · Learning Tutor Engine</p>
+        <h1>Tutor Engine</h1>
+        <p>KDT OS turns quests into beginner training: what to do, why it matters, what can go wrong, and how to prove understanding.</p>
+        <div class="hero-actions">
+            <a class="button-link" href="{{ url_for('learning_intelligence') }}">Learning Intelligence</a>
+            <a class="button-link ghost" href="{{ url_for('tutor_engine_json') }}">View JSON</a>
+        </div>
+    </section>
+
+    <section class="grid four">
+        <div class="metric"><strong>{{ snapshot.quest_count }}</strong><span>Quests Scanned</span></div>
+        <div class="metric"><strong>{{ snapshot.guide_count }}</strong><span>Tutor Guides</span></div>
+        <div class="metric"><strong>{{ snapshot.average_beginner_readiness }}%</strong><span>Avg Beginner Readiness</span></div>
+        <div class="metric"><strong>{{ snapshot.skill_families|length }}</strong><span>Skill Families</span></div>
+    </section>
+
+    {% if snapshot.recommended_tutor_guide %}
+    <section class="card accent spotlight">
+        <p class="eyebrow">Start Here</p>
+        <h2>{{ snapshot.recommended_tutor_guide.quest_title }}</h2>
+        <p><b>Why this one:</b> This quest needs the most beginner support based on its instructions, proof, and success criteria.</p>
+        <p><b>Skill:</b> {{ snapshot.recommended_tutor_guide.skill_family }} · <b>Readiness:</b> {{ snapshot.recommended_tutor_guide.beginner_readiness }}%</p>
+        <p>{{ snapshot.recommended_tutor_guide.plain_definition }}</p>
+        <a class="button-link" href="{{ url_for('tutor_quest', filename=snapshot.recommended_tutor_guide.filename) }}">Open Tutor Guide</a>
+    </section>
+    {% endif %}
+
+    <section class="card">
+        <p class="eyebrow">Teaching Rule</p>
+        <h2>Do not just copy. Explain it back.</h2>
+        <p>{{ snapshot.rule }}</p>
+        <div class="score-line">A good quest must include objective, why it matters, analogy, exact steps, expected result, proof, common mistakes, and reflection questions.</div>
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">Skill Families</p>
+            <h2>What KDT OS can teach right now</h2>
+            <div class="trust-grid">
+                {% for family, count in snapshot.skill_families.items() %}
+                <div><strong>{{ family }}</strong><span>{{ count }}</span></div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="card">
+            <p class="eyebrow">Training Standard</p>
+            <h2>Every guide should answer</h2>
+            <ul>
+                <li>What am I building?</li>
+                <li>Why does this matter?</li>
+                <li>What is the real-world analogy?</li>
+                <li>What should I see when it works?</li>
+                <li>What mistakes should I avoid?</li>
+                <li>How do I prove I understand it?</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Tutor Guides</p>
+        <h2>Open a quest as a lesson</h2>
+        <div class="reports">
+            {% for guide in snapshot.guides %}
+            <div class="report-card">
+                <small>{{ guide.skill_family }} · {{ guide.estimated_time }} · Beginner readiness {{ guide.beginner_readiness }}%</small>
+                <strong>{{ guide.quest_title }}</strong>
+                <p>{{ guide.objective }}</p>
+                <p><b>Analogy:</b> {{ guide.real_world_analogy }}</p>
+                <a class="button-link" href="{{ url_for('tutor_quest', filename=guide.filename) }}">Open Tutor Guide</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+</body>
+</html>

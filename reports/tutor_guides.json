@@ -1,0 +1,1722 @@
+{
+  "version": "V40",
+  "created_at": "2026-06-03T00:47:31",
+  "quest_count": 22,
+  "guide_count": 22,
+  "skill_families": {
+    "SQLite": 3,
+    "Flask": 2,
+    "Troubleshooting": 5,
+    "Active Directory": 4,
+    "HTML/CSS": 2,
+    "Python": 5,
+    "Testing": 1
+  },
+  "average_beginner_readiness": 98.2,
+  "recommended_tutor_guide": {
+    "created_at": "2026-06-03T00:47:31",
+    "quest_title": "Smoke Test Builder",
+    "filename": "Project_Analysis_FieldSeed_Testing_20260531_034204.json",
+    "skill": "Testing",
+    "skill_family": "Testing",
+    "difficulty": "Beginner",
+    "estimated_time": "15-45 minutes",
+    "beginner_readiness": 90,
+    "objective": "Practice proving a project still runs after changes.",
+    "what_to_build": "Add a tiny tests folder to a project and create at least one test that proves the app imports or starts.",
+    "why_this_matters": "As projects grow, tests help you avoid breaking old features when adding new ones.",
+    "plain_definition": "Testing proves that code still works after changes. A test is a small automatic check with an expected result.",
+    "real_world_analogy": "A test is like checking if a light switch still turns on the light after you repair wiring.",
+    "mental_model": [
+      "Test file = place for checks",
+      "Assert = expected truth",
+      "Pass = behavior matched expectation",
+      "Fail = behavior changed or bug exists",
+      "Smoke test = quick basic check"
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Create tests folder",
+        "instruction": "Create tests folder",
+        "why": "The folder keeps all files for this quest together so you do not lose track of what belongs to this project.",
+        "expected_result": "You should see a new folder with the requested name.",
+        "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+        "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+      },
+      {
+        "number": 2,
+        "title": "Create test_smoke.py",
+        "instruction": "Create test_smoke.py",
+        "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+        "expected_result": "You should be able to point to a visible result or explain what changed.",
+        "proof_hint": "Keep the file in your project folder and include it in your uploaded proof.",
+        "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+      },
+      {
+        "number": 3,
+        "title": "Import your app module",
+        "instruction": "Import your app module",
+        "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+        "expected_result": "You should be able to point to a visible result or explain what changed.",
+        "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+        "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+      },
+      {
+        "number": 4,
+        "title": "Write one assert",
+        "instruction": "Write one assert",
+        "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+        "expected_result": "You should be able to point to a visible result or explain what changed.",
+        "proof_hint": "Write the answer in README.md or in your submission reflection.",
+        "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+      },
+      {
+        "number": 5,
+        "title": "Install pytest if needed",
+        "instruction": "Install pytest if needed",
+        "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+        "expected_result": "You should be able to point to a visible result or explain what changed.",
+        "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+        "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+      },
+      {
+        "number": 6,
+        "title": "Run pytest",
+        "instruction": "Run pytest",
+        "why": "Running the file proves that the computer can execute your work, not just that the code exists.",
+        "expected_result": "You should see terminal output, a created file, or no errors.",
+        "proof_hint": "Copy the terminal output or take a screenshot.",
+        "beginner_tip": "Make sure your terminal is opened inside the project folder before running commands."
+      },
+      {
+        "number": 7,
+        "title": "Put the command in README.md",
+        "instruction": "Put the command in README.md",
+        "why": "A README forces you to explain how the project works, which builds understanding and makes the project reusable.",
+        "expected_result": "README.md should explain what you built, how to run it, and what it proves.",
+        "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+        "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+      }
+    ],
+    "common_mistakes": [
+      "Testing too much at once.",
+      "Writing a test that does not actually assert anything.",
+      "Not running tests after changing code.",
+      "Ignoring failing tests instead of reading the error."
+    ],
+    "success_criteria": [
+      "tests folder exists",
+      "test file exists",
+      "pytest or unittest detected",
+      "README includes test command"
+    ],
+    "proof_required": [
+      "Upload updated ZIP",
+      "Include tests folder",
+      "Include README test command"
+    ],
+    "reflection_questions": [
+      "What did your test prove?",
+      "What would make it fail?",
+      "Why is a small test better than no test?"
+    ],
+    "study_rule": "Do not only copy the step. Before marking the quest complete, explain what the step did in your own words."
+  },
+  "guides": [
+    {
+      "created_at": "2026-06-03T00:47:31",
+      "quest_title": "SQLite CRUD Quest: Workout Database",
+      "filename": "sqlite_crud_quest_workout_database_20260601_030423.json",
+      "skill": "SQLite",
+      "skill_family": "SQLite",
+      "difficulty": "Beginner",
+      "estimated_time": "45-75 minutes",
+      "beginner_readiness": 100,
+      "objective": "Build a real SQLite CRUD app so database practice creates lasting proof.",
+      "what_to_build": "A command-line Python app named app.py that creates workouts.db, saves workouts, lists them, updates one, and deletes one.",
+      "why_this_matters": "Almost every serious app needs to remember information after the program closes. SQLite teaches the basic database skills used later in bigger apps.",
+      "plain_definition": "SQLite is a small database saved as a file. Your Python program can open the file, create tables, store rows, read rows, update rows, and delete rows.",
+      "real_world_analogy": "Think of the database file as a filing cabinet. A table is one drawer. A row is one sheet of paper in that drawer. A column is one label on every sheet, like Exercise, Sets, or Reps.",
+      "mental_model": [
+        "Database file = storage container",
+        "Table = organized category",
+        "Row = one saved item",
+        "Column = one detail about each item",
+        "Query = instruction you give the database"
+      ],
+      "steps": [
+        {
+          "number": 1,
+          "title": "Create a folder named workout_database_crud",
+          "instruction": "Create a folder named workout_database_crud",
+          "why": "The folder keeps all files for this quest together so you do not lose track of what belongs to this project.",
+          "expected_result": "You should see a new folder with the requested name.",
+          "proof_hint": "Screenshot the database/table or include the database file if the quest asks for it.",
+          "beginner_tip": "After changing data, remember that many database actions require saving/committing before the change is permanent."
+        },
+        {
+          "number": 2,
+          "title": "Create a file named app.py",
+          "instruction": "Create a file named app.py",
+          "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+          "expected_result": "You should see the new file inside your project folder.",
+          "proof_hint": "Keep the file in your project folder and include it in your uploaded proof.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 3,
+          "title": "At the top import sqlite3",
+          "instruction": "At the top import sqlite3",
+          "why": "This creates the storage structure that lets your app remember information.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "After changing data, remember that many database actions require saving/committing before the change is permanent."
+        },
+        {
+          "number": 4,
+          "title": "Connect to workouts.db",
+          "instruction": "Connect to workouts.db",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 5,
+          "title": "Create a workouts table with id INTEGER PRIMARY KEY, exercise TEXT, sets INTEGER, reps...",
+          "instruction": "Create a workouts table with id INTEGER PRIMARY KEY, exercise TEXT, sets INTEGER, reps INTEGER, date TEXT",
+          "why": "This creates the storage structure that lets your app remember information.",
+          "expected_result": "The table should exist and contain the columns the quest asked for.",
+          "proof_hint": "Screenshot the database/table or include the database file if the quest asks for it.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 6,
+          "title": "Write add_workout() that inserts one workout",
+          "instruction": "Write add_workout() that inserts one workout",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Write the answer in README.md or in your submission reflection.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 7,
+          "title": "Write list_workouts() that selects and prints all rows",
+          "instruction": "Write list_workouts() that selects and prints all rows",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Write the answer in README.md or in your submission reflection.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 8,
+          "title": "Write update_workout() that updates sets or reps by id",
+          "instruction": "Write update_workout() that updates sets or reps by id",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Write the answer in README.md or in your submission reflection.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 9,
+          "title": "Write delete_workout() that deletes by id",
+          "instruction": "Write delete_workout() that deletes by id",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Write the answer in README.md or in your submission reflection.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 10,
+          "title": "Create a while loop menu with choices 1 Add, 2 List, 3 Update, 4 Delete, 5 Exit",
+          "instruction": "Create a while loop menu with choices 1 Add, 2 List, 3 Update, 4 Delete, 5 Exit",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 11,
+          "title": "Run python app.py and add at least two workouts",
+          "instruction": "Run python app.py and add at least two workouts",
+          "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+          "expected_result": "You should see terminal output, a created file, or no errors.",
+          "proof_hint": "Copy the terminal output or take a screenshot.",
+          "beginner_tip": "Make sure your terminal is opened inside the project folder before running commands."
+        },
+        {
+          "number": 12,
+          "title": "Close and rerun the app to prove saved rows still exist",
+          "instruction": "Close and rerun the app to prove saved rows still exist",
+          "why": "Running the file proves that the computer can execute your work, not just that the code exists.",
+          "expected_result": "You should see terminal output, a created file, or no errors.",
+          "proof_hint": "Copy the terminal output or take a screenshot.",
+          "beginner_tip": "Make sure your terminal is opened inside the project folder before running commands."
+        },
+        {
+          "number": 13,
+          "title": "Create README.md with the run command and one sentence explaining what a row is",
+          "instruction": "Create README.md with the run command and one sentence explaining what a row is",
+          "why": "Running the file proves that the computer can execute your work, not just that the code exists.",
+          "expected_result": "You should see terminal output, a created file, or no errors.",
+          "proof_hint": "Copy the terminal output or take a screenshot.",
+          "beginner_tip": "Make sure your terminal is opened inside the project folder before running commands."
+        },
+        {
+          "number": 14,
+          "title": "Zip and submit the folder",
+          "instruction": "Zip and submit the folder",
+          "why": "The folder keeps all files for this quest together so you do not lose track of what belongs to this project.",
+          "expected_result": "You should see a new folder with the requested name.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        }
+      ],
+      "common_mistakes": [
+        "Forgetting conn.commit(), so changes do not save.",
+        "Creating a table but never inserting data.",
+        "Thinking a database is the same thing as a spreadsheet. It is similar, but code talks to it with SQL.",
+        "Not checking the database file after running the program."
+      ],
+      "success_criteria": [
+        "app.py exists",
+        "workouts.db is created after running",
+        "CREATE TABLE is used",
+        "INSERT, SELECT, UPDATE, and DELETE are used",
+        "At least two workouts can be listed after restart",
+        "README.md explains row vs table"
+      ],
+      "proof_required": [
+        "Upload ZIP",
+        "Include app.py",
+        "Include README.md",
+        "Include workouts.db if it was created",
+        "Include screenshot or copied terminal output showing rows listed after restart",
+        "Answer: what is the difference between a table and a row?"
+      ],
+      "reflection_questions": [
+        "What is the difference between a database and a table?",
+        "What does one row represent in your project?",
+        "Why does commit matter?"
+      ],
+      "study_rule": "Do not only copy the step. Before marking the quest complete, explain what the step did in your own words."
+    },
+    {
+      "created_at": "2026-06-03T00:47:31",
+      "quest_title": "Flask Route Smoke Test Suite",
+      "filename": "flask_route_smoke_test_suite_20260601_030518.json",
+      "skill": "Testing",
+      "skill_family": "Flask",
+      "difficulty": "Beginner",
+      "estimated_time": "45-75 minutes",
+      "beginner_readiness": 100,
+      "objective": "Prove a Flask project still opens its important pages after changes.",
+      "what_to_build": "A pytest file named tests/test_routes.py that imports the Flask app and checks at least three routes return HTTP 200 or redirect safely.",
+      "why_this_matters": "Flask lets your Python code become an app other people can use through a browser.",
+      "plain_definition": "Flask is a Python tool for making web pages and web endpoints. A route tells Flask what to do when someone visits a URL.",
+      "real_world_analogy": "Think of Flask as a building. A route is a labeled door. When someone knocks on /hello, Flask checks which function owns that door and sends back the response.",
+      "mental_model": [
+        "URL = address someone visits",
+        "Route = rule that listens for that address",
+        "Function = code that runs",
+        "Return value = what the browser receives",
+        "Template = HTML page Flask fills in"
+      ],
+      "steps": [
+        {
+          "number": 1,
+          "title": "Create a folder named tests",
+          "instruction": "Create a folder named tests",
+          "why": "The folder keeps all files for this quest together so you do not lose track of what belongs to this project.",
+          "expected_result": "You should see a new folder with the requested name.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 2,
+          "title": "Create tests/test_routes.py",
+          "instruction": "Create tests/test_routes.py",
+          "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Keep the file in your project folder and include it in your uploaded proof.",
+          "beginner_tip": "If the browser says Not Found, check that the URL matches the route exactly."
+        },
+        {
+          "number": 3,
+          "title": "Open app.py and confirm the Flask object is named app",
+          "instruction": "Open app.py and confirm the Flask object is named app",
+          "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Keep the file in your project folder and include it in your uploaded proof.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 4,
+          "title": "In test_routes.py write from app import app",
+          "instruction": "In test_routes.py write from app import app",
+          "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Keep the file in your project folder and include it in your uploaded proof.",
+          "beginner_tip": "If the browser says Not Found, check that the URL matches the route exactly."
+        },
+        {
+          "number": 5,
+          "title": "Create client = app.test_client() inside each test or a fixture",
+          "instruction": "Create client = app.test_client() inside each test or a fixture",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 6,
+          "title": "Write test_home_route() that requests /",
+          "instruction": "Write test_home_route() that requests /",
+          "why": "This creates a browser-accessible path that connects a URL to Python code.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Write the answer in README.md or in your submission reflection.",
+          "beginner_tip": "If the browser says Not Found, check that the URL matches the route exactly."
+        },
+        {
+          "number": 7,
+          "title": "Assert the status code is 200 or 302",
+          "instruction": "Assert the status code is 200 or 302",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 8,
+          "title": "Write test_quests_route() for /quests",
+          "instruction": "Write test_quests_route() for /quests",
+          "why": "This creates a browser-accessible path that connects a URL to Python code.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Write the answer in README.md or in your submission reflection.",
+          "beginner_tip": "If the browser says Not Found, check that the URL matches the route exactly."
+        },
+        {
+          "number": 9,
+          "title": "Write test_projects_route() for /projects",
+          "instruction": "Write test_projects_route() for /projects",
+          "why": "This creates a browser-accessible path that connects a URL to Python code.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Write the answer in README.md or in your submission reflection.",
+          "beginner_tip": "If the browser says Not Found, check that the URL matches the route exactly."
+        },
+        {
+          "number": 10,
+          "title": "Run python -m pytest",
+          "instruction": "Run python -m pytest",
+          "why": "Running the file proves that the computer can execute your work, not just that the code exists.",
+          "expected_result": "You should see terminal output, a created file, or no errors.",
+          "proof_hint": "Copy the terminal output or take a screenshot.",
+          "beginner_tip": "Make sure your terminal is opened inside the project folder before running commands."
+        },
+        {
+          "number": 11,
+          "title": "If an import fails, write the exact error in README.md",
+          "instruction": "If an import fails, write the exact error in README.md",
+          "why": "A README forces you to explain how the project works, which builds understanding and makes the project reusable.",
+          "expected_result": "README.md should explain what you built, how to run it, and what it proves.",
+          "proof_hint": "Write the answer in README.md or in your submission reflection.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 12,
+          "title": "Add the test command to README.md",
+          "instruction": "Add the test command to README.md",
+          "why": "A README forces you to explain how the project works, which builds understanding and makes the project reusable.",
+          "expected_result": "README.md should explain what you built, how to run it, and what it proves.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 13,
+          "title": "Zip and submit the updated project",
+          "instruction": "Zip and submit the updated project",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        }
+      ],
+      "common_mistakes": [
+        "Forgetting to restart Flask after changing code.",
+        "Changing a URL in HTML but not creating a matching Flask route.",
+        "Forgetting to return something from the route function.",
+        "Putting templates in the wrong folder."
+      ],
+      "success_criteria": [
+        "tests/test_routes.py exists",
+        "At least three route tests exist",
+        "app.test_client() is used",
+        "pytest runs and shows pass/fail output",
+        "README.md includes the test command"
+      ],
+      "proof_required": [
+        "Upload ZIP",
+        "Include tests/test_routes.py",
+        "Include README.md",
+        "Include screenshot or copied pytest output",
+        "Answer: which route would have caught the broken nav issue?"
+      ],
+      "reflection_questions": [
+        "What does a route do?",
+        "What happens if a user visits a route that does not exist?",
+        "Why does Flask need a function under the route?"
+      ],
+      "study_rule": "Do not only copy the step. Before marking the quest complete, explain what the step did in your own words."
+    },
+    {
+      "created_at": "2026-06-03T00:47:31",
+      "quest_title": "API Weather Lookup App",
+      "filename": "api_weather_lookup_app_20260601_030509.json",
+      "skill": "API / Routes",
+      "skill_family": "Flask",
+      "difficulty": "Beginner",
+      "estimated_time": "45-75 minutes",
+      "beginner_readiness": 100,
+      "objective": "Practice API requests, JSON parsing, button events, loading state, and error handling.",
+      "what_to_build": "A browser app with index.html, style.css, and script.js where a button fetches sample weather JSON and displays city, temperature, and condition.",
+      "why_this_matters": "Flask lets your Python code become an app other people can use through a browser.",
+      "plain_definition": "Flask is a Python tool for making web pages and web endpoints. A route tells Flask what to do when someone visits a URL.",
+      "real_world_analogy": "Think of Flask as a building. A route is a labeled door. When someone knocks on /hello, Flask checks which function owns that door and sends back the response.",
+      "mental_model": [
+        "URL = address someone visits",
+        "Route = rule that listens for that address",
+        "Function = code that runs",
+        "Return value = what the browser receives",
+        "Template = HTML page Flask fills in"
+      ],
+      "steps": [
+        {
+          "number": 1,
+          "title": "Create folder api_weather_lookup",
+          "instruction": "Create folder api_weather_lookup",
+          "why": "The folder keeps all files for this quest together so you do not lose track of what belongs to this project.",
+          "expected_result": "You should see a new folder with the requested name.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 2,
+          "title": "Create index.html, style.css, and script.js",
+          "instruction": "Create index.html, style.css, and script.js",
+          "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Keep the file in your project folder and include it in your uploaded proof.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 3,
+          "title": "In index.html add an input with id cityInput",
+          "instruction": "In index.html add an input with id cityInput",
+          "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Keep the file in your project folder and include it in your uploaded proof.",
+          "beginner_tip": "IDs must match exactly between HTML and JavaScript. One misspelled letter can break the feature."
+        },
+        {
+          "number": 4,
+          "title": "Add a button with id searchBtn",
+          "instruction": "Add a button with id searchBtn",
+          "why": "This proves the page can react to a user action instead of just sitting still.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "IDs must match exactly between HTML and JavaScript. One misspelled letter can break the feature."
+        },
+        {
+          "number": 5,
+          "title": "Add a div with id result",
+          "instruction": "Add a div with id result",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 6,
+          "title": "Link script.js at the bottom of the HTML body",
+          "instruction": "Link script.js at the bottom of the HTML body",
+          "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Keep the file in your project folder and include it in your uploaded proof.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 7,
+          "title": "In script.js select cityInput, searchBtn, and result",
+          "instruction": "In script.js select cityInput, searchBtn, and result",
+          "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Keep the file in your project folder and include it in your uploaded proof.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 8,
+          "title": "Add a click event listener to searchBtn",
+          "instruction": "Add a click event listener to searchBtn",
+          "why": "This proves the page can react to a user action instead of just sitting still.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 9,
+          "title": "Inside the click handler set result.textContent to Loading...",
+          "instruction": "Inside the click handler set result.textContent to Loading...",
+          "why": "This proves the page can react to a user action instead of just sitting still.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 10,
+          "title": "Use fetch() to request sample JSON or a real weather endpoint",
+          "instruction": "Use fetch() to request sample JSON or a real weather endpoint",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 11,
+          "title": "Use response.json() to parse the data",
+          "instruction": "Use response.json() to parse the data",
+          "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Keep the file in your project folder and include it in your uploaded proof.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 12,
+          "title": "Display city, temperature, and condition inside result",
+          "instruction": "Display city, temperature, and condition inside result",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 13,
+          "title": "Add catch() or try/catch to show an error message",
+          "instruction": "Add catch() or try/catch to show an error message",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 14,
+          "title": "Open index.html and test the button",
+          "instruction": "Open index.html and test the button",
+          "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Keep the file in your project folder and include it in your uploaded proof.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 15,
+          "title": "Create README.md explaining which API or sample JSON you used",
+          "instruction": "Create README.md explaining which API or sample JSON you used",
+          "why": "A README forces you to explain how the project works, which builds understanding and makes the project reusable.",
+          "expected_result": "README.md should explain what you built, how to run it, and what it proves.",
+          "proof_hint": "Write the answer in README.md or in your submission reflection.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 16,
+          "title": "Zip and submit the folder",
+          "instruction": "Zip and submit the folder",
+          "why": "The folder keeps all files for this quest together so you do not lose track of what belongs to this project.",
+          "expected_result": "You should see a new folder with the requested name.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        }
+      ],
+      "common_mistakes": [
+        "Forgetting to restart Flask after changing code.",
+        "Changing a URL in HTML but not creating a matching Flask route.",
+        "Forgetting to return something from the route function.",
+        "Putting templates in the wrong folder."
+      ],
+      "success_criteria": [
+        "index.html, style.css, and script.js exist",
+        "searchBtn click triggers JavaScript",
+        "fetch() is used",
+        "response.json() is used",
+        "result area changes after the request",
+        "Error text appears if request fails"
+      ],
+      "proof_required": [
+        "Upload ZIP",
+        "Include index.html, style.css, script.js, README.md",
+        "Include screenshot of result area after clicking",
+        "Answer: what does response.json() do?"
+      ],
+      "reflection_questions": [
+        "What does a route do?",
+        "What happens if a user visits a route that does not exist?",
+        "Why does Flask need a function under the route?"
+      ],
+      "study_rule": "Do not only copy the step. Before marking the quest complete, explain what the step did in your own words."
+    },
+    {
+      "created_at": "2026-06-03T00:47:31",
+      "quest_title": "Exact Practice Quest v2",
+      "filename": "Teach_Me_Mode_I_don_t_understand_what_CPU_usage_means__20260601_001213.json",
+      "skill": "I don't understand what CPU usage means.",
+      "skill_family": "Troubleshooting",
+      "difficulty": "Beginner",
+      "estimated_time": "30-60 minutes",
+      "beginner_readiness": 100,
+      "objective": "Practice one skill with a small, clear build.",
+      "what_to_build": "A small project that demonstrates the requested skill one time in a visible way.",
+      "why_this_matters": "Good IT work depends on evidence. You need to know what happened, why it happened, and how to prevent it from happening again.",
+      "plain_definition": "Troubleshooting means finding what is wrong, proving it with evidence, testing a fix, and documenting the result.",
+      "real_world_analogy": "It is like being a detective. You do not guess first. You collect clues, test theories, and write down what solved the case.",
+      "mental_model": [
+        "Symptom = what user sees",
+        "Evidence = proof from logs/screenshots",
+        "Hypothesis = possible cause",
+        "Test = action to confirm/deny",
+        "Resolution = verified fix"
+      ],
+      "steps": [
+        {
+          "number": 1,
+          "title": "Create a project folder",
+          "instruction": "Create a project folder",
+          "why": "The folder keeps all files for this quest together so you do not lose track of what belongs to this project.",
+          "expected_result": "You should see a new folder with the requested name.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 2,
+          "title": "Create the main file",
+          "instruction": "Create the main file",
+          "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+          "expected_result": "You should see the new file inside your project folder.",
+          "proof_hint": "Keep the file in your project folder and include it in your uploaded proof.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 3,
+          "title": "Implement the smallest working version",
+          "instruction": "Implement the smallest working version",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 4,
+          "title": "Test it",
+          "instruction": "Test it",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 5,
+          "title": "Add README.md",
+          "instruction": "Add README.md",
+          "why": "A README forces you to explain how the project works, which builds understanding and makes the project reusable.",
+          "expected_result": "README.md should explain what you built, how to run it, and what it proves.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 6,
+          "title": "Upload ZIP",
+          "instruction": "Upload ZIP",
+          "why": "Proof gives KDT OS evidence that the quest was completed and gives you something to review later.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        }
+      ],
+      "common_mistakes": [
+        "Guessing before collecting evidence.",
+        "Changing multiple things at once.",
+        "Not writing down what fixed the issue.",
+        "Ignoring screenshots or logs."
+      ],
+      "success_criteria": [
+        "The target skill appears in the code",
+        "The project can be explained in README",
+        "Proof can be uploaded"
+      ],
+      "proof_required": [
+        "Upload ZIP",
+        "Include README.md",
+        "Write what you practiced"
+      ],
+      "reflection_questions": [
+        "What evidence did you collect?",
+        "What was the likely cause?",
+        "How would you explain the issue to a non-technical person?"
+      ],
+      "study_rule": "Do not only copy the step. Before marking the quest complete, explain what the step did in your own words."
+    },
+    {
+      "created_at": "2026-06-03T00:47:31",
+      "quest_title": "Teach Me Quest: I don't understand what CPU usage means.",
+      "filename": "Teach_Me_Mode_I_don_t_understand_what_CPU_usage_means__20260531_113936.json",
+      "skill": "I don't understand what CPU usage means.",
+      "skill_family": "Troubleshooting",
+      "difficulty": "Beginner (Easy)",
+      "estimated_time": "10-15 minutes",
+      "beginner_readiness": 100,
+      "objective": "Understand what CPU usage means and how to check it on Windows.",
+      "what_to_build": "A simple task that requires you to open Task Manager and observe the CPU usage.",
+      "why_this_matters": "Good IT work depends on evidence. You need to know what happened, why it happened, and how to prevent it from happening again.",
+      "plain_definition": "Troubleshooting means finding what is wrong, proving it with evidence, testing a fix, and documenting the result.",
+      "real_world_analogy": "It is like being a detective. You do not guess first. You collect clues, test theories, and write down what solved the case.",
+      "mental_model": [
+        "Symptom = what user sees",
+        "Evidence = proof from logs/screenshots",
+        "Hypothesis = possible cause",
+        "Test = action to confirm/deny",
+        "Resolution = verified fix"
+      ],
+      "steps": [
+        {
+          "number": 1,
+          "title": "Press the Ctrl + Shift + Esc keys on your keyboard to open Task Manager.",
+          "instruction": "Press the Ctrl + Shift + Esc keys on your keyboard to open Task Manager.",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 2,
+          "title": "Click on the Performance tab in the top menu bar.",
+          "instruction": "Click on the Performance tab in the top menu bar.",
+          "why": "This proves the page can react to a user action instead of just sitting still.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 3,
+          "title": "Look for the CPU section, which displays the current CPU usage as a percentage.",
+          "instruction": "Look for the CPU section, which displays the current CPU usage as a percentage.",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 4,
+          "title": "Observe the CPU usage and note down the current value (e.g., 25%).",
+          "instruction": "Observe the CPU usage and note down the current value (e.g., 25%).",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 5,
+          "title": "Close Task Manager by clicking on the X button.",
+          "instruction": "Close Task Manager by clicking on the X button.",
+          "why": "This proves the page can react to a user action instead of just sitting still.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        }
+      ],
+      "common_mistakes": [
+        "Guessing before collecting evidence.",
+        "Changing multiple things at once.",
+        "Not writing down what fixed the issue.",
+        "Ignoring screenshots or logs."
+      ],
+      "success_criteria": [
+        "You have successfully opened Task Manager, observed the CPU usage, and noted down the current value."
+      ],
+      "proof_required": [
+        "Take a screenshot of the Task Manager window showing the CPU usage percentage. Save the screenshot as a JPEG file named \"cpu_usage_screenshot.jpg\" in your desktop folder.",
+        "Rules:",
+        "You must complete all steps exactly as described.",
+        "The screenshot proof must be saved with the exact filename and location specified.",
+        "If you encounter any issues, do not proceed until you have resolved them."
+      ],
+      "reflection_questions": [
+        "What evidence did you collect?",
+        "What was the likely cause?",
+        "How would you explain the issue to a non-technical person?"
+      ],
+      "study_rule": "Do not only copy the step. Before marking the quest complete, explain what the step did in your own words."
+    },
+    {
+      "created_at": "2026-06-03T00:47:31",
+      "quest_title": "Exact Practice Quest v2",
+      "filename": "Teach_Me_Mode_I_don_t_understand_Active_Directory_OUs__20260601_001145.json",
+      "skill": "I don't understand Active Directory OUs.",
+      "skill_family": "Active Directory",
+      "difficulty": "Beginner",
+      "estimated_time": "30-60 minutes",
+      "beginner_readiness": 100,
+      "objective": "Practice one skill with a small, clear build.",
+      "what_to_build": "A small project that demonstrates the requested skill one time in a visible way.",
+      "why_this_matters": "IT support uses Active Directory to manage accounts, computers, permissions, and organization structure.",
+      "plain_definition": "Active Directory organizes users, computers, groups, and permissions in a Windows domain.",
+      "real_world_analogy": "Think of Active Directory as a company filing system. OUs are folders. Users and computers are files inside the folders. Policies can be applied to folders.",
+      "mental_model": [
+        "Domain = managed environment",
+        "OU = organizational folder",
+        "User object = account",
+        "Computer object = managed machine",
+        "Group Policy = rule applied to users/computers"
+      ],
+      "steps": [
+        {
+          "number": 1,
+          "title": "Create a project folder",
+          "instruction": "Create a project folder",
+          "why": "The folder keeps all files for this quest together so you do not lose track of what belongs to this project.",
+          "expected_result": "You should see a new folder with the requested name.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 2,
+          "title": "Create the main file",
+          "instruction": "Create the main file",
+          "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+          "expected_result": "You should see the new file inside your project folder.",
+          "proof_hint": "Keep the file in your project folder and include it in your uploaded proof.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 3,
+          "title": "Implement the smallest working version",
+          "instruction": "Implement the smallest working version",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 4,
+          "title": "Test it",
+          "instruction": "Test it",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 5,
+          "title": "Add README.md",
+          "instruction": "Add README.md",
+          "why": "A README forces you to explain how the project works, which builds understanding and makes the project reusable.",
+          "expected_result": "README.md should explain what you built, how to run it, and what it proves.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 6,
+          "title": "Upload ZIP",
+          "instruction": "Upload ZIP",
+          "why": "Proof gives KDT OS evidence that the quest was completed and gives you something to review later.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        }
+      ],
+      "common_mistakes": [
+        "Confusing groups with OUs.",
+        "Creating an OU but not placing objects inside it.",
+        "Assuming moving an object changes permissions automatically.",
+        "Not documenting the OU path."
+      ],
+      "success_criteria": [
+        "The target skill appears in the code",
+        "The project can be explained in README",
+        "Proof can be uploaded"
+      ],
+      "proof_required": [
+        "Upload ZIP",
+        "Include README.md",
+        "Write what you practiced"
+      ],
+      "reflection_questions": [
+        "What is an OU for?",
+        "How is an OU different from a group?",
+        "Why would IT organize computers into OUs?"
+      ],
+      "study_rule": "Do not only copy the step. Before marking the quest complete, explain what the step did in your own words."
+    },
+    {
+      "created_at": "2026-06-03T00:47:31",
+      "quest_title": "Teach Me Quest: I don't understand Active Directory OUs.",
+      "filename": "Teach_Me_Mode_I_don_t_understand_Active_Directory_OUs__20260531_135203.json",
+      "skill": "I don't understand Active Directory OUs.",
+      "skill_family": "Active Directory",
+      "difficulty": "Beginner",
+      "estimated_time": "30-45 minutes",
+      "beginner_readiness": 100,
+      "objective": "Create and manage an Organizational Unit (OU) in an existing Active Directory domain.",
+      "what_to_build": "A single OU named \"Sales\" within the default Users container, with one user account moved to it.",
+      "why_this_matters": "IT support uses Active Directory to manage accounts, computers, permissions, and organization structure.",
+      "plain_definition": "Active Directory organizes users, computers, groups, and permissions in a Windows domain.",
+      "real_world_analogy": "Think of Active Directory as a company filing system. OUs are folders. Users and computers are files inside the folders. Policies can be applied to folders.",
+      "mental_model": [
+        "Domain = managed environment",
+        "OU = organizational folder",
+        "User object = account",
+        "Computer object = managed machine",
+        "Group Policy = rule applied to users/computers"
+      ],
+      "steps": [
+        {
+          "number": 1,
+          "title": "Open the ADUC console on your Domain Controller.",
+          "instruction": "Open the ADUC console on your Domain Controller.",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 2,
+          "title": "In the console tree, navigate to Users > [YourDomainName] > Users.",
+          "instruction": "In the console tree, navigate to Users > [YourDomainName] > Users.",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 3,
+          "title": "Right-click on the Users container and select New > Organizational Unit.",
+          "instruction": "Right-click on the Users container and select New > Organizational Unit.",
+          "why": "This proves the page can react to a user action instead of just sitting still.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 4,
+          "title": "Name the new OU \"Sales\" and click OK.",
+          "instruction": "Name the new OU \"Sales\" and click OK.",
+          "why": "This proves the page can react to a user action instead of just sitting still.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 5,
+          "title": "Move one user account from the Users container to the newly created Sales OU by:",
+          "instruction": "Move one user account from the Users container to the newly created Sales OU by:",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 6,
+          "title": "Selecting the user account in the console tree",
+          "instruction": "Selecting the user account in the console tree",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 7,
+          "title": "Right-clicking on the selected user and selecting Move",
+          "instruction": "Right-clicking on the selected user and selecting Move",
+          "why": "This proves the page can react to a user action instead of just sitting still.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 8,
+          "title": "Browsing to the Sales OU and clicking OK",
+          "instruction": "Browsing to the Sales OU and clicking OK",
+          "why": "This proves the page can react to a user action instead of just sitting still.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        }
+      ],
+      "common_mistakes": [
+        "Confusing groups with OUs.",
+        "Creating an OU but not placing objects inside it.",
+        "Assuming moving an object changes permissions automatically.",
+        "Not documenting the OU path."
+      ],
+      "success_criteria": [
+        "The Sales OU is created, and one user account is successfully moved into it."
+      ],
+      "proof_required": [
+        "Take a screenshot of the ADUC console showing the newly created Sales OU with the user account listed within it."
+      ],
+      "reflection_questions": [
+        "What is an OU for?",
+        "How is an OU different from a group?",
+        "Why would IT organize computers into OUs?"
+      ],
+      "study_rule": "Do not only copy the step. Before marking the quest complete, explain what the step did in your own words."
+    },
+    {
+      "created_at": "2026-06-03T00:47:31",
+      "quest_title": "Responsive Card Layout",
+      "filename": "Responsive_Card_Layout_20260601_013321.json",
+      "skill": "HTML/CSS",
+      "skill_family": "HTML/CSS",
+      "difficulty": "Beginner",
+      "estimated_time": "30-60 minutes",
+      "beginner_readiness": 100,
+      "objective": "Prove you can create and style a clean responsive page section.",
+      "what_to_build": "A browser page with three cards that stack on mobile and sit side-by-side on wider screens.",
+      "why_this_matters": "A project that works but looks confusing is hard to use. HTML/CSS makes your software readable and usable.",
+      "plain_definition": "HTML creates the structure of a page. CSS controls how that structure looks, moves, spaces out, and responds to screen size.",
+      "real_world_analogy": "HTML is the skeleton of a house. CSS is the paint, furniture, spacing, lighting, and room layout.",
+      "mental_model": [
+        "HTML tag = page object",
+        "Class = reusable style name",
+        "Flex/Grid = layout system",
+        "Padding = inside space",
+        "Margin = outside space",
+        "Media query = screen-size rule"
+      ],
+      "steps": [
+        {
+          "number": 1,
+          "title": "Create folder responsive_card_layout",
+          "instruction": "Create folder responsive_card_layout",
+          "why": "The folder keeps all files for this quest together so you do not lose track of what belongs to this project.",
+          "expected_result": "You should see a new folder with the requested name.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 2,
+          "title": "Create index.html",
+          "instruction": "Create index.html",
+          "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Keep the file in your project folder and include it in your uploaded proof.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 3,
+          "title": "Create style.css",
+          "instruction": "Create style.css",
+          "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 4,
+          "title": "Add a main container",
+          "instruction": "Add a main container",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 5,
+          "title": "Add three cards with headings and short text",
+          "instruction": "Add three cards with headings and short text",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 6,
+          "title": "Link style.css",
+          "instruction": "Link style.css",
+          "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 7,
+          "title": "Use display:grid or display:flex",
+          "instruction": "Use display:grid or display:flex",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 8,
+          "title": "Add a media query for small screens",
+          "instruction": "Add a media query for small screens",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 9,
+          "title": "Open index.html in browser",
+          "instruction": "Open index.html in browser",
+          "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Keep the file in your project folder and include it in your uploaded proof.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 10,
+          "title": "Write README.md with what you practiced",
+          "instruction": "Write README.md with what you practiced",
+          "why": "A README forces you to explain how the project works, which builds understanding and makes the project reusable.",
+          "expected_result": "README.md should explain what you built, how to run it, and what it proves.",
+          "proof_hint": "Write the answer in README.md or in your submission reflection.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        }
+      ],
+      "common_mistakes": [
+        "Styling the wrong class name.",
+        "Forgetting the dot before a CSS class selector.",
+        "Using fixed widths that break on small screens.",
+        "Not checking the page at multiple screen sizes."
+      ],
+      "success_criteria": [
+        "index.html exists",
+        "style.css exists",
+        "At least three cards appear",
+        "Grid or flexbox is used",
+        "Layout changes on smaller screens"
+      ],
+      "proof_required": [
+        "Upload ZIP",
+        "Include index.html",
+        "Include style.css",
+        "Include screenshot or README note explaining the mobile layout"
+      ],
+      "reflection_questions": [
+        "What is the difference between margin and padding?",
+        "Why use a class instead of styling every element separately?",
+        "What makes a layout responsive?"
+      ],
+      "study_rule": "Do not only copy the step. Before marking the quest complete, explain what the step did in your own words."
+    },
+    {
+      "created_at": "2026-06-03T00:47:31",
+      "quest_title": "Python Function Practice: Expense Totaler",
+      "filename": "Python_Function_Practice_Expense_Totaler_20260601_013510.json",
+      "skill": "Python",
+      "skill_family": "Python",
+      "difficulty": "Beginner",
+      "estimated_time": "20-40 minutes",
+      "beginner_readiness": 100,
+      "objective": "Practice Python functions, lists, loops, and simple output with an exact beginner build.",
+      "what_to_build": "A command-line app that stores three expenses in a list and prints the total cost.",
+      "why_this_matters": "Python is one of the best languages for building practical tools quickly, especially for IT automation and AI/data projects.",
+      "plain_definition": "Python lets you give the computer step-by-step instructions. It is useful for automation, data, web backends, scripts, and tools.",
+      "real_world_analogy": "A Python script is like a recipe. Variables are ingredients, functions are reusable recipe steps, and running the file is like cooking the recipe.",
+      "mental_model": [
+        "Variable = named value",
+        "Function = reusable action",
+        "List = ordered group of values",
+        "Dictionary = labeled group of values",
+        "File I/O = reading or writing files"
+      ],
+      "steps": [
+        {
+          "number": 1,
+          "title": "Create a folder named python_expense_totaler",
+          "instruction": "Create a folder named python_expense_totaler",
+          "why": "The folder keeps all files for this quest together so you do not lose track of what belongs to this project.",
+          "expected_result": "You should see a new folder with the requested name.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 2,
+          "title": "Create app.py",
+          "instruction": "Create app.py",
+          "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Keep the file in your project folder and include it in your uploaded proof.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 3,
+          "title": "Create an empty list named expenses",
+          "instruction": "Create an empty list named expenses",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 4,
+          "title": "Create add_expense(amount) that appends amount to expenses",
+          "instruction": "Create add_expense(amount) that appends amount to expenses",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 5,
+          "title": "Create calculate_total() that loops through expenses and returns the total",
+          "instruction": "Create calculate_total() that loops through expenses and returns the total",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 6,
+          "title": "Call add_expense three times with different numbers",
+          "instruction": "Call add_expense three times with different numbers",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 7,
+          "title": "Call calculate_total()",
+          "instruction": "Call calculate_total()",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 8,
+          "title": "Print the result as Total: $X",
+          "instruction": "Print the result as Total: $X",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 9,
+          "title": "Run python app.py",
+          "instruction": "Run python app.py",
+          "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+          "expected_result": "You should see terminal output, a created file, or no errors.",
+          "proof_hint": "Copy the terminal output or take a screenshot.",
+          "beginner_tip": "Make sure your terminal is opened inside the project folder before running commands."
+        },
+        {
+          "number": 10,
+          "title": "Create README.md with what you practiced",
+          "instruction": "Create README.md with what you practiced",
+          "why": "A README forces you to explain how the project works, which builds understanding and makes the project reusable.",
+          "expected_result": "README.md should explain what you built, how to run it, and what it proves.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 11,
+          "title": "Zip the project folder and submit it",
+          "instruction": "Zip the project folder and submit it",
+          "why": "The folder keeps all files for this quest together so you do not lose track of what belongs to this project.",
+          "expected_result": "You should see a new folder with the requested name.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        }
+      ],
+      "common_mistakes": [
+        "Not saving the file before running it.",
+        "Running the command from the wrong folder.",
+        "Misspelling variable names.",
+        "Confusing strings and numbers."
+      ],
+      "success_criteria": [
+        "app.py exists",
+        "add_expense function exists",
+        "calculate_total function exists",
+        "At least three expenses are added",
+        "Final total prints correctly"
+      ],
+      "proof_required": [
+        "Upload ZIP",
+        "Include app.py",
+        "Include README.md",
+        "Include screenshot or copied terminal output",
+        "Answer: what does calculate_total() return?"
+      ],
+      "reflection_questions": [
+        "What is a variable?",
+        "Why would you use a function?",
+        "What does the terminal output prove?"
+      ],
+      "study_rule": "Do not only copy the step. Before marking the quest complete, explain what the step did in your own words."
+    },
+    {
+      "created_at": "2026-06-03T00:47:31",
+      "quest_title": "Workout Database CRUD App",
+      "filename": "Project_Analysis_KDT_OS_SQLite_20260601_004602.json",
+      "skill": "SQLite",
+      "skill_family": "SQLite",
+      "difficulty": "Beginner",
+      "estimated_time": "30-60 minutes",
+      "beginner_readiness": 100,
+      "objective": "Practice saving, reading, updating, and deleting records in SQLite.",
+      "what_to_build": "A small Python app that stores workouts with exercise name, sets, reps, and date.",
+      "why_this_matters": "Almost every serious app needs to remember information after the program closes. SQLite teaches the basic database skills used later in bigger apps.",
+      "plain_definition": "SQLite is a small database saved as a file. Your Python program can open the file, create tables, store rows, read rows, update rows, and delete rows.",
+      "real_world_analogy": "Think of the database file as a filing cabinet. A table is one drawer. A row is one sheet of paper in that drawer. A column is one label on every sheet, like Exercise, Sets, or Reps.",
+      "mental_model": [
+        "Database file = storage container",
+        "Table = organized category",
+        "Row = one saved item",
+        "Column = one detail about each item",
+        "Query = instruction you give the database"
+      ],
+      "steps": [
+        {
+          "number": 1,
+          "title": "Create a folder named workout_database_crud",
+          "instruction": "Create a folder named workout_database_crud",
+          "why": "The folder keeps all files for this quest together so you do not lose track of what belongs to this project.",
+          "expected_result": "You should see a new folder with the requested name.",
+          "proof_hint": "Screenshot the database/table or include the database file if the quest asks for it.",
+          "beginner_tip": "After changing data, remember that many database actions require saving/committing before the change is permanent."
+        },
+        {
+          "number": 2,
+          "title": "Create app.py",
+          "instruction": "Create app.py",
+          "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Keep the file in your project folder and include it in your uploaded proof.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 3,
+          "title": "Import sqlite3",
+          "instruction": "Import sqlite3",
+          "why": "This creates the storage structure that lets your app remember information.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "After changing data, remember that many database actions require saving/committing before the change is permanent."
+        },
+        {
+          "number": 4,
+          "title": "Create workouts table with id, exercise, sets, reps, date",
+          "instruction": "Create workouts table with id, exercise, sets, reps, date",
+          "why": "This creates the storage structure that lets your app remember information.",
+          "expected_result": "The table should exist and contain the columns the quest asked for.",
+          "proof_hint": "Screenshot the database/table or include the database file if the quest asks for it.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 5,
+          "title": "Add a menu with choices 1 Add, 2 View, 3 Edit, 4 Delete, 5 Exit",
+          "instruction": "Add a menu with choices 1 Add, 2 View, 3 Edit, 4 Delete, 5 Exit",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 6,
+          "title": "Make each choice work",
+          "instruction": "Make each choice work",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 7,
+          "title": "Create README.md with run instructions",
+          "instruction": "Create README.md with run instructions",
+          "why": "Running the file proves that the computer can execute your work, not just that the code exists.",
+          "expected_result": "You should see terminal output, a created file, or no errors.",
+          "proof_hint": "Copy the terminal output or take a screenshot.",
+          "beginner_tip": "Make sure your terminal is opened inside the project folder before running commands."
+        }
+      ],
+      "common_mistakes": [
+        "Forgetting conn.commit(), so changes do not save.",
+        "Creating a table but never inserting data.",
+        "Thinking a database is the same thing as a spreadsheet. It is similar, but code talks to it with SQL.",
+        "Not checking the database file after running the program."
+      ],
+      "success_criteria": [
+        "CREATE TABLE exists",
+        "INSERT INTO exists",
+        "SELECT exists",
+        "UPDATE exists",
+        "DELETE exists"
+      ],
+      "proof_required": [
+        "Upload project ZIP",
+        "Include app.py",
+        "Include README.md",
+        "Include the .db file if one is created"
+      ],
+      "reflection_questions": [
+        "What is the difference between a database and a table?",
+        "What does one row represent in your project?",
+        "Why does commit matter?"
+      ],
+      "study_rule": "Do not only copy the step. Before marking the quest complete, explain what the step did in your own words."
+    },
+    {
+      "created_at": "2026-06-03T00:47:31",
+      "quest_title": "Python Function Practice: Expense Totaler",
+      "filename": "Project_Analysis_KDT_OS_Python_20260601_004602.json",
+      "skill": "Python",
+      "skill_family": "Python",
+      "difficulty": "Beginner",
+      "estimated_time": "20-40 minutes",
+      "beginner_readiness": 100,
+      "objective": "Practice Python functions, lists, loops, and simple output with an exact beginner build.",
+      "what_to_build": "A command-line app that stores three expenses in a list and prints the total cost.",
+      "why_this_matters": "Python is one of the best languages for building practical tools quickly, especially for IT automation and AI/data projects.",
+      "plain_definition": "Python lets you give the computer step-by-step instructions. It is useful for automation, data, web backends, scripts, and tools.",
+      "real_world_analogy": "A Python script is like a recipe. Variables are ingredients, functions are reusable recipe steps, and running the file is like cooking the recipe.",
+      "mental_model": [
+        "Variable = named value",
+        "Function = reusable action",
+        "List = ordered group of values",
+        "Dictionary = labeled group of values",
+        "File I/O = reading or writing files"
+      ],
+      "steps": [
+        {
+          "number": 1,
+          "title": "Create a folder named python_expense_totaler",
+          "instruction": "Create a folder named python_expense_totaler",
+          "why": "The folder keeps all files for this quest together so you do not lose track of what belongs to this project.",
+          "expected_result": "You should see a new folder with the requested name.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 2,
+          "title": "Create app.py",
+          "instruction": "Create app.py",
+          "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Keep the file in your project folder and include it in your uploaded proof.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 3,
+          "title": "Create an empty list named expenses",
+          "instruction": "Create an empty list named expenses",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 4,
+          "title": "Create add_expense(amount) that appends amount to expenses",
+          "instruction": "Create add_expense(amount) that appends amount to expenses",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 5,
+          "title": "Create calculate_total() that loops through expenses and returns the total",
+          "instruction": "Create calculate_total() that loops through expenses and returns the total",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 6,
+          "title": "Call add_expense three times with different numbers",
+          "instruction": "Call add_expense three times with different numbers",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 7,
+          "title": "Call calculate_total()",
+          "instruction": "Call calculate_total()",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 8,
+          "title": "Print the result as Total: $X",
+          "instruction": "Print the result as Total: $X",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 9,
+          "title": "Run python app.py",
+          "instruction": "Run python app.py",
+          "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+          "expected_result": "You should see terminal output, a created file, or no errors.",
+          "proof_hint": "Copy the terminal output or take a screenshot.",
+          "beginner_tip": "Make sure your terminal is opened inside the project folder before running commands."
+        },
+        {
+          "number": 10,
+          "title": "Create README.md with what you practiced",
+          "instruction": "Create README.md with what you practiced",
+          "why": "A README forces you to explain how the project works, which builds understanding and makes the project reusable.",
+          "expected_result": "README.md should explain what you built, how to run it, and what it proves.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 11,
+          "title": "Zip the project folder and submit it",
+          "instruction": "Zip the project folder and submit it",
+          "why": "The folder keeps all files for this quest together so you do not lose track of what belongs to this project.",
+          "expected_result": "You should see a new folder with the requested name.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        }
+      ],
+      "common_mistakes": [
+        "Not saving the file before running it.",
+        "Running the command from the wrong folder.",
+        "Misspelling variable names.",
+        "Confusing strings and numbers."
+      ],
+      "success_criteria": [
+        "app.py exists",
+        "add_expense function exists",
+        "calculate_total function exists",
+        "At least three expenses are added",
+        "Final total prints correctly"
+      ],
+      "proof_required": [
+        "Upload project ZIP",
+        "Include app.py",
+        "Include README.md"
+      ],
+      "reflection_questions": [
+        "What is a variable?",
+        "Why would you use a function?",
+        "What does the terminal output prove?"
+      ],
+      "study_rule": "Do not only copy the step. Before marking the quest complete, explain what the step did in your own words."
+    },
+    {
+      "created_at": "2026-06-03T00:47:31",
+      "quest_title": "Exact Practice Quest",
+      "filename": "Project_Analysis_KDT_OS_HTML_CSS_20260601_004602.json",
+      "skill": "HTML/CSS",
+      "skill_family": "HTML/CSS",
+      "difficulty": "Beginner",
+      "estimated_time": "30-60 minutes",
+      "beginner_readiness": 100,
+      "objective": "Practice one skill with a small, clear build.",
+      "what_to_build": "A small project that demonstrates the requested skill one time in a visible way.",
+      "why_this_matters": "A project that works but looks confusing is hard to use. HTML/CSS makes your software readable and usable.",
+      "plain_definition": "HTML creates the structure of a page. CSS controls how that structure looks, moves, spaces out, and responds to screen size.",
+      "real_world_analogy": "HTML is the skeleton of a house. CSS is the paint, furniture, spacing, lighting, and room layout.",
+      "mental_model": [
+        "HTML tag = page object",
+        "Class = reusable style name",
+        "Flex/Grid = layout system",
+        "Padding = inside space",
+        "Margin = outside space",
+        "Media query = screen-size rule"
+      ],
+      "steps": [
+        {
+          "number": 1,
+          "title": "Create a project folder",
+          "instruction": "Create a project folder",
+          "why": "The folder keeps all files for this quest together so you do not lose track of what belongs to this project.",
+          "expected_result": "You should see a new folder with the requested name.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 2,
+          "title": "Create the main file",
+          "instruction": "Create the main file",
+          "why": "The file gives your project a place to store the code or notes for this part of the quest.",
+          "expected_result": "You should see the new file inside your project folder.",
+          "proof_hint": "Keep the file in your project folder and include it in your uploaded proof.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 3,
+          "title": "Implement the smallest working version",
+          "instruction": "Implement the smallest working version",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 4,
+          "title": "Test it",
+          "instruction": "Test it",
+          "why": "This step is a small piece of the final proof. Completing it reduces the quest into something manageable.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 5,
+          "title": "Add README.md",
+          "instruction": "Add README.md",
+          "why": "A README forces you to explain how the project works, which builds understanding and makes the project reusable.",
+          "expected_result": "README.md should explain what you built, how to run it, and what it proves.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        },
+        {
+          "number": 6,
+          "title": "Upload ZIP",
+          "instruction": "Upload ZIP",
+          "why": "Proof gives KDT OS evidence that the quest was completed and gives you something to review later.",
+          "expected_result": "You should be able to point to a visible result or explain what changed.",
+          "proof_hint": "Take a screenshot or write one sentence explaining how you know this step is complete.",
+          "beginner_tip": "Do this step slowly. The goal is understanding, not speed."
+        }
+      ],
+      "common_mistakes": [
+        "Styling the wrong class name.",
+        "Forgetting the dot before a CSS class selector.",
+        "Using fixed widths that break on small screens.",
+        "Not checking the page at multiple screen sizes."
+      ],
+      "success_criteria": [
+        "The target skill appears in the code",
+        "The project can be explained in README",
+        "Proof can be uploaded"
+      ],
+      "proof_required": [
+        "Upload ZIP",
+        "Include README.md",
+        "Write what you practiced"
+      ],
+      "reflection_questions": [
+        "What is the difference between margin and padding?",
+        "Why use a class instead of styling every element separately?",
+        "What makes a layout responsive?"
+      ],
+      "study_rule": "Do not only copy the step. Before marking the quest complete, explain what the step did in your own words."
+    }
+  ],
+  "rule": "Every quest should teach what to do, why it matters, how to verify it, and how to explain it back."
+}

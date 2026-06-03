@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ guide.quest_title }} · Tutor Guide</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="shell">
+    {% include '_nav.html' %}
+
+    <section class="hero product-hero">
+        <p class="eyebrow">Tutor Guide · {{ guide.skill_family }}</p>
+        <h1>{{ guide.quest_title }}</h1>
+        <p>{{ guide.objective }}</p>
+        <div class="hero-actions">
+            <a class="button-link" href="{{ url_for('tutor_engine') }}">Back to Tutor Engine</a>
+            <a class="button-link ghost" href="{{ url_for('view_quest', filename=guide.filename) }}">Open Original Quest</a>
+            <a class="button-link ghost" href="{{ url_for('tutor_quest_json', filename=guide.filename) }}">View JSON</a>
+        </div>
+    </section>
+
+    <section class="grid four">
+        <div class="metric"><strong>{{ guide.beginner_readiness }}%</strong><span>Beginner Readiness</span></div>
+        <div class="metric"><strong>{{ guide.difficulty }}</strong><span>Difficulty</span></div>
+        <div class="metric"><strong>{{ guide.estimated_time }}</strong><span>Estimated Time</span></div>
+        <div class="metric"><strong>{{ guide.steps|length }}</strong><span>Explained Steps</span></div>
+    </section>
+
+    <section class="grid two">
+        <div class="card accent">
+            <p class="eyebrow">What are we building?</p>
+            <h2>{{ guide.what_to_build }}</h2>
+            <p>{{ guide.plain_definition }}</p>
+        </div>
+        <div class="card spotlight">
+            <p class="eyebrow">Why does this matter?</p>
+            <h2>Build the mental model</h2>
+            <p>{{ guide.why_this_matters }}</p>
+            <p><b>Analogy:</b> {{ guide.real_world_analogy }}</p>
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Mental Model</p>
+        <h2>Understand the pieces before you build</h2>
+        <div class="concept-grid">
+            {% for item in guide.mental_model %}
+            <div class="concept-pill seen"><b>{{ item.split('=')[0] }}</b><span>{{ item }}</span></div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Step-by-Step Tutor Mode</p>
+        <h2>Do each step slowly and explain it back</h2>
+        <div class="reports">
+            {% for step in guide.steps %}
+            <div class="report-card">
+                <small>Step {{ step.number }}</small>
+                <strong>{{ step.title }}</strong>
+                <p><b>Do this:</b> {{ step.instruction }}</p>
+                <p><b>Why:</b> {{ step.why }}</p>
+                <p><b>Expected result:</b> {{ step.expected_result }}</p>
+                <p><b>Proof hint:</b> {{ step.proof_hint }}</p>
+                <p><b>Beginner tip:</b> {{ step.beginner_tip }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">Common Mistakes</p>
+            <h2>Watch for these</h2>
+            <ul>
+                {% for mistake in guide.common_mistakes %}<li>{{ mistake }}</li>{% endfor %}
+            </ul>
+        </div>
+        <div class="card success">
+            <p class="eyebrow">Proof Required</p>
+            <h2>How to prove it</h2>
+            <ul>
+                {% for proof in guide.proof_required %}<li>{{ proof }}</li>{% endfor %}
+            </ul>
+        </div>
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">Success Criteria</p>
+            <h2>You are done when...</h2>
+            <ul>
+                {% for item in guide.success_criteria %}<li>{{ item }}</li>{% endfor %}
+            </ul>
+        </div>
+        <div class="card accent">
+            <p class="eyebrow">Reflection</p>
+            <h2>Prove understanding</h2>
+            <p>{{ guide.study_rule }}</p>
+            <ol>
+                {% for question in guide.reflection_questions %}<li>{{ question }}</li>{% endfor %}
+            </ol>
+        </div>
+    </section>
+</main>
+</body>
+</html>

@@ -4306,6 +4306,12 @@ try:
 except Exception as exc:
     print(f"KDT OS V39 Project Execution failed to install: {exc}")
 
+try:
+    from kdt_learning_tutor_v40 import install as install_v40
+    install_v40(sys.modules[__name__])
+except Exception as exc:
+    print(f"KDT OS V40 Learning Tutor failed to install: {exc}")
+
 if __name__ == "__main__":
     ensure_ollama_ready(wait_seconds=3.0)
     app.run(debug=True)
