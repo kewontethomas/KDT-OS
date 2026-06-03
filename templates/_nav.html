@@ -16,10 +16,10 @@
         </a>
 
         <details class="nav-group" {% if request.endpoint in
-            ['projects','view_project','project_issue','sources','analyze_folder','path_builder','view_path','create_bridge_chain','project_coach','project_coach_json']
+            ['projects','view_project','project_issue','sources','analyze_folder','path_builder','view_path','create_bridge_chain','project_coach','project_coach_json','project_execution','project_execution_json','project_execution_detail','project_execution_detail_json','start_project_execution','toggle_project_step']
             %}open{% endif %}>
             <summary
-                class="{% if request.endpoint in ['projects','view_project','project_issue','sources','analyze_folder','path_builder','view_path','create_bridge_chain','project_coach','project_coach_json'] %}active{% endif %}">
+                class="{% if request.endpoint in ['projects','view_project','project_issue','sources','analyze_folder','path_builder','view_path','create_bridge_chain','project_coach','project_coach_json','project_execution','project_execution_json','project_execution_detail','project_execution_detail_json','start_project_execution','toggle_project_step'] %}active{% endif %}">
                 Build
             </summary>
             <a href="{{ url_for('projects') }}"
@@ -31,6 +31,8 @@
                 Planner</a>
             <a href="{{ url_for('project_coach') }}"
                 class="{% if request.endpoint in ['project_coach','project_coach_json'] %}active{% endif %}">Project Coach</a>
+            <a href="{{ url_for('project_execution') }}"
+                class="{% if request.endpoint in ['project_execution','project_execution_json','project_execution_detail','project_execution_detail_json','start_project_execution','toggle_project_step'] %}active{% endif %}">Project Execution</a>
         </details>
 
         <details class="nav-group" {% if request.endpoint in

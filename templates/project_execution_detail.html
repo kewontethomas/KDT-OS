@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KDT OS Project Build</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="shell">
+    {% include '_nav.html' %}
+
+    {% if not detail.found %}
+    <section class="hero product-hero">
+        <p class="eyebrow">Project Execution</p>
+        <h1>Project not found</h1>
+        <p>This project execution plan could not be found.</p>
+        <a class="button-link" href="{{ url_for('project_execution') }}">Back to Project Execution</a>
+    </section>
+    {% else %}
+    {% set plan = detail.plan %}
+    <section class="hero product-hero">
+        <p class="eyebrow">V39.1 · BUILD MODE</p>
+        <h1>{{ plan.name }}</h1>
+        <p>{{ plan.why }}</p>
+        <div class="button-row">
+            <a class="button-link ghost" href="{{ url_for('project_execution') }}">← Back to Projects</a>
+            <a class="button-link ghost" href="{{ url_for('project_execution_detail_json', project_id=plan.project_id) }}">View JSON</a>
+        </div>
+    </section>
+
+    <section class="grid four">
+        <div class="metric"><strong>{{ plan.progress.complete }}/{{ plan.progress.total }}</strong><span>Steps Complete</span></div>
+        <div class="metric"><strong>{{ plan.progress.percent }}%</strong><span>Progress</span></div>
+        <div class="metric"><strong>{{ plan.difficulty }}</strong><span>Difficulty</span></div>
+        <div class="metric"><strong>{{ plan.estimated_time }}</strong><span>Time</span></div>
+    </section>
+
+    <section class="card accent">
+        <p class="eyebrow">Current Step</p>
+        {% if detail.next_step %}
+        <h2>Step {{ detail.next_step.index }}: {{ detail.next_step.title }}</h2>
+        <p><b>Task:</b> {{ detail.next_step.instructions }}</p>
+        <p><b>Expected output:</b> {{ detail.next_step.expected_output }}</p>
+        <p><b>Proof required:</b> {{ detail.next_step.proof_required }}</p>
+        <form method="post" action="{{ url_for('toggle_project_step') }}">
+            <input type="hidden" name="project_id" value="{{ plan.project_id }}">
+            <input type="hidden" name="step_index" value="{{ detail.next_step.index }}">
+            <button type="submit">Mark Current Step Complete</button>
+        </form>
+        {% else %}
+        <h2>Build complete</h2>
+        <p>All steps are complete. Submit final proof through the matching quest or project proof flow.</p>
+        {% endif %}
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">Project Skills</p>
+            <h2>What this build trains</h2>
+            <p>{{ plan.skills|join(', ') }}</p>
+        </div>
+        <div class="card">
+            <p class="eyebrow">Execution Rule</p>
+            <h2>{{ detail.rule }}</h2>
+            <p>Use this page as the working view. The dashboard stays clean and only shows project-level progress.</p>
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Step List</p>
+        <h2>Build plan</h2>
+        <div class="route-list clean-step-list">
+            {% for step in detail.steps %}
+            <div class="route-row {% if step.status == 'complete' %}success{% endif %}">
+                <span>{% if step.status == 'complete' %}✅{% else %}⬜{% endif %} Step {{ step.index }}: {{ step.title }}</span>
+                <small>{{ step.instructions }}</small>
+                <details>
+                    <summary>Proof and expected output</summary>
+                    <small><b>Expected:</b> {{ step.expected_output }}</small>
+                    <small><b>Proof:</b> {{ step.proof_required }}</small>
+                    <form method="post" action="{{ url_for('toggle_project_step') }}">
+                        <input type="hidden" name="project_id" value="{{ plan.project_id }}">
+                        <input type="hidden" name="step_index" value="{{ step.index }}">
+                        <button type="submit">{% if step.status == 'complete' %}Mark Incomplete{% else %}Mark Complete{% endif %}</button>
+                    </form>
+                </details>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+</main>
+</body>
+</html>

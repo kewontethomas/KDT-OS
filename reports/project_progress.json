@@ -1,0 +1,904 @@
+{
+  "version": "V39.1",
+  "created_at": "2026-06-02T16:21:12",
+  "recommended_focus": {
+    "project_id": "flask_route_smoke_test_suite",
+    "name": "Flask Route Smoke Test Suite",
+    "source": "Project Coach V38",
+    "difficulty": "Beginner",
+    "estimated_time": "1-2 hours",
+    "skills": [
+      "Flask",
+      "Testing",
+      "Routes",
+      "Python"
+    ],
+    "why": "Protects KDT OS from breaking as it grows by proving important routes still load.",
+    "first_step": "Create tests/test_routes.py and add one test that checks the home route returns 200.",
+    "proof": "Upload test_routes.py and a screenshot or copied output from pytest.",
+    "score": 100,
+    "steps": [
+      {
+        "index": 1,
+        "title": "Create test folder",
+        "instructions": "Create a tests folder and a test_routes.py file.",
+        "expected_output": "tests/test_routes.py exists.",
+        "proof_required": "Screenshot or ZIP.",
+        "status": "incomplete"
+      },
+      {
+        "index": 2,
+        "title": "Identify routes",
+        "instructions": "Write down 3 important routes that should return successfully.",
+        "expected_output": "README or test file lists the routes.",
+        "proof_required": "README or screenshot.",
+        "status": "incomplete"
+      },
+      {
+        "index": 3,
+        "title": "Create first smoke test",
+        "instructions": "Write one test that checks the home page returns status code 200.",
+        "expected_output": "One passing test exists.",
+        "proof_required": "test_routes.py.",
+        "status": "incomplete"
+      },
+      {
+        "index": 4,
+        "title": "Add second route test",
+        "instructions": "Add a second route test for a key page like /command_center or /project_coach.",
+        "expected_output": "Two tests exist.",
+        "proof_required": "test_routes.py.",
+        "status": "incomplete"
+      },
+      {
+        "index": 5,
+        "title": "Run pytest",
+        "instructions": "Run python -m pytest or document the exact command you would use.",
+        "expected_output": "Terminal shows test result or README explains blocker.",
+        "proof_required": "Screenshot or copied output.",
+        "status": "incomplete"
+      },
+      {
+        "index": 6,
+        "title": "Record failures",
+        "instructions": "If any route fails, write the route and error in README.md.",
+        "expected_output": "Failures are documented or marked none.",
+        "proof_required": "README.md.",
+        "status": "incomplete"
+      },
+      {
+        "index": 7,
+        "title": "Add proof summary",
+        "instructions": "Write what smoke tests protect against.",
+        "expected_output": "README explains route breakage prevention.",
+        "proof_required": "README.md.",
+        "status": "incomplete"
+      },
+      {
+        "index": 8,
+        "title": "Submit final proof",
+        "instructions": "Zip tests and README.",
+        "expected_output": "ZIP is ready.",
+        "proof_required": "Upload ZIP and reflection.",
+        "status": "incomplete"
+      }
+    ],
+    "created_at": "2026-06-02T16:21:12",
+    "status": "recommended",
+    "progress": {
+      "total": 8,
+      "complete": 0,
+      "percent": 0,
+      "started": false,
+      "next_step": {
+        "index": 1,
+        "title": "Create test folder",
+        "instructions": "Create a tests folder and a test_routes.py file.",
+        "expected_output": "tests/test_routes.py exists.",
+        "proof_required": "Screenshot or ZIP.",
+        "status": "incomplete"
+      }
+    }
+  },
+  "plans": [
+    {
+      "project_id": "flask_route_smoke_test_suite",
+      "name": "Flask Route Smoke Test Suite",
+      "source": "Project Coach V38",
+      "difficulty": "Beginner",
+      "estimated_time": "1-2 hours",
+      "skills": [
+        "Flask",
+        "Testing",
+        "Routes",
+        "Python"
+      ],
+      "why": "Protects KDT OS from breaking as it grows by proving important routes still load.",
+      "first_step": "Create tests/test_routes.py and add one test that checks the home route returns 200.",
+      "proof": "Upload test_routes.py and a screenshot or copied output from pytest.",
+      "score": 100,
+      "steps": [
+        {
+          "index": 1,
+          "title": "Create test folder",
+          "instructions": "Create a tests folder and a test_routes.py file.",
+          "expected_output": "tests/test_routes.py exists.",
+          "proof_required": "Screenshot or ZIP.",
+          "status": "incomplete"
+        },
+        {
+          "index": 2,
+          "title": "Identify routes",
+          "instructions": "Write down 3 important routes that should return successfully.",
+          "expected_output": "README or test file lists the routes.",
+          "proof_required": "README or screenshot.",
+          "status": "incomplete"
+        },
+        {
+          "index": 3,
+          "title": "Create first smoke test",
+          "instructions": "Write one test that checks the home page returns status code 200.",
+          "expected_output": "One passing test exists.",
+          "proof_required": "test_routes.py.",
+          "status": "incomplete"
+        },
+        {
+          "index": 4,
+          "title": "Add second route test",
+          "instructions": "Add a second route test for a key page like /command_center or /project_coach.",
+          "expected_output": "Two tests exist.",
+          "proof_required": "test_routes.py.",
+          "status": "incomplete"
+        },
+        {
+          "index": 5,
+          "title": "Run pytest",
+          "instructions": "Run python -m pytest or document the exact command you would use.",
+          "expected_output": "Terminal shows test result or README explains blocker.",
+          "proof_required": "Screenshot or copied output.",
+          "status": "incomplete"
+        },
+        {
+          "index": 6,
+          "title": "Record failures",
+          "instructions": "If any route fails, write the route and error in README.md.",
+          "expected_output": "Failures are documented or marked none.",
+          "proof_required": "README.md.",
+          "status": "incomplete"
+        },
+        {
+          "index": 7,
+          "title": "Add proof summary",
+          "instructions": "Write what smoke tests protect against.",
+          "expected_output": "README explains route breakage prevention.",
+          "proof_required": "README.md.",
+          "status": "incomplete"
+        },
+        {
+          "index": 8,
+          "title": "Submit final proof",
+          "instructions": "Zip tests and README.",
+          "expected_output": "ZIP is ready.",
+          "proof_required": "Upload ZIP and reflection.",
+          "status": "incomplete"
+        }
+      ],
+      "created_at": "2026-06-02T16:21:12",
+      "status": "recommended",
+      "progress": {
+        "total": 8,
+        "complete": 0,
+        "percent": 0,
+        "started": false,
+        "next_step": {
+          "index": 1,
+          "title": "Create test folder",
+          "instructions": "Create a tests folder and a test_routes.py file.",
+          "expected_output": "tests/test_routes.py exists.",
+          "proof_required": "Screenshot or ZIP.",
+          "status": "incomplete"
+        }
+      }
+    },
+    {
+      "project_id": "system_health_dashboard",
+      "name": "System Health Dashboard",
+      "source": "Project Coach V38",
+      "difficulty": "Intermediate",
+      "estimated_time": "4-6 hours",
+      "skills": [
+        "Health Monitoring",
+        "Python",
+        "Dashboard/UI",
+        "File Handling"
+      ],
+      "why": "Turns your server troubleshooting experience into a reusable tool for CPU, RAM, disk, and service checks.",
+      "first_step": "Create a Python script that outputs fake or real CPU, memory, disk, and service status as OK/WARNING.",
+      "proof": "Upload code and a screenshot of the dashboard or terminal health report.",
+      "score": 100,
+      "steps": [
+        {
+          "index": 1,
+          "title": "Create project folder",
+          "instructions": "Create a folder named system_health_dashboard with README.md and starter files.",
+          "expected_output": "Folder exists with README.md.",
+          "proof_required": "Screenshot or ZIP.",
+          "status": "incomplete"
+        },
+        {
+          "index": 2,
+          "title": "Write project purpose",
+          "instructions": "In README.md, explain what System Health Dashboard does and which skills it trains: Health Monitoring, Python, Dashboard/UI, File Handling.",
+          "expected_output": "README explains purpose and skills.",
+          "proof_required": "README.md.",
+          "status": "incomplete"
+        },
+        {
+          "index": 3,
+          "title": "Build the smallest working version",
+          "instructions": "Create a Python script that outputs fake or real CPU, memory, disk, and service status as OK/WARNING.",
+          "expected_output": "A small feature works visibly.",
+          "proof_required": "Screenshot, terminal output, or code.",
+          "status": "incomplete"
+        },
+        {
+          "index": 4,
+          "title": "Add one real input",
+          "instructions": "Let the user enter or change at least one piece of data.",
+          "expected_output": "Input changes the output or saved data.",
+          "proof_required": "Screenshot/code.",
+          "status": "incomplete"
+        },
+        {
+          "index": 5,
+          "title": "Save or display result",
+          "instructions": "Show the result clearly or save it to a file/database/localStorage.",
+          "expected_output": "Result is visible or persistent.",
+          "proof_required": "Screenshot or saved file.",
+          "status": "incomplete"
+        },
+        {
+          "index": 6,
+          "title": "Clean the UI/output",
+          "instructions": "Make the output readable and label the important values.",
+          "expected_output": "Output is easy to understand.",
+          "proof_required": "Screenshot.",
+          "status": "incomplete"
+        },
+        {
+          "index": 7,
+          "title": "Write proof summary",
+          "instructions": "Write 3-5 sentences explaining what worked and what skill improved.",
+          "expected_output": "Reflection is specific.",
+          "proof_required": "README or submission text.",
+          "status": "incomplete"
+        },
+        {
+          "index": 8,
+          "title": "Submit final proof",
+          "instructions": "Zip the project and include proof artifacts.",
+          "expected_output": "ZIP is ready.",
+          "proof_required": "Upload ZIP and reflection.",
+          "status": "incomplete"
+        }
+      ],
+      "created_at": "2026-06-02T16:21:12",
+      "status": "recommended",
+      "progress": {
+        "total": 8,
+        "complete": 0,
+        "percent": 0,
+        "started": false,
+        "next_step": {
+          "index": 1,
+          "title": "Create project folder",
+          "instructions": "Create a folder named system_health_dashboard with README.md and starter files.",
+          "expected_output": "Folder exists with README.md.",
+          "proof_required": "Screenshot or ZIP.",
+          "status": "incomplete"
+        }
+      }
+    },
+    {
+      "project_id": "workout_database_app",
+      "name": "Workout Database App",
+      "source": "Project Coach V38",
+      "difficulty": "Beginner",
+      "estimated_time": "2-4 hours",
+      "skills": [
+        "SQLite",
+        "Python",
+        "CRUD",
+        "Data Validation"
+      ],
+      "why": "Builds the exact SQLite CRUD skills KDT OS keeps detecting as useful while staying small and personal.",
+      "first_step": "Create a folder with app.py and workouts.json or workouts.db, then add one workout record with exercise, reps, sets, and date.",
+      "proof": "Upload a ZIP showing create, list, update, and delete working on workout records.",
+      "score": 99,
+      "steps": [
+        {
+          "index": 1,
+          "title": "Create project folder",
+          "instructions": "Create a folder named workout_database_app with README.md and app.py.",
+          "expected_output": "Folder exists with README.md and app.py.",
+          "proof_required": "Screenshot or ZIP showing the folder.",
+          "status": "incomplete"
+        },
+        {
+          "index": 2,
+          "title": "Design the workout record",
+          "instructions": "Write the fields you will store: exercise, sets, reps, date, and notes.",
+          "expected_output": "README.md lists the fields and explains each one.",
+          "proof_required": "README.md included in ZIP.",
+          "status": "incomplete"
+        },
+        {
+          "index": 3,
+          "title": "Create the database/table",
+          "instructions": "Use SQLite or a JSON starter file to create storage for workout records.",
+          "expected_output": "Storage file exists and has a workouts structure/table.",
+          "proof_required": "Screenshot or code showing the table/structure.",
+          "status": "incomplete"
+        },
+        {
+          "index": 4,
+          "title": "Add create behavior",
+          "instructions": "Add one function or form action that saves a workout record.",
+          "expected_output": "At least one workout can be added.",
+          "proof_required": "Code plus screenshot/output showing the added workout.",
+          "status": "incomplete"
+        },
+        {
+          "index": 5,
+          "title": "Add list behavior",
+          "instructions": "Display all saved workout records.",
+          "expected_output": "Saved workouts appear in terminal/browser/output.",
+          "proof_required": "Screenshot of listed workouts.",
+          "status": "incomplete"
+        },
+        {
+          "index": 6,
+          "title": "Add update behavior",
+          "instructions": "Change one saved workout record.",
+          "expected_output": "An existing workout can be edited.",
+          "proof_required": "Before/after screenshot or terminal output.",
+          "status": "incomplete"
+        },
+        {
+          "index": 7,
+          "title": "Add delete behavior",
+          "instructions": "Remove one workout record.",
+          "expected_output": "A workout can be deleted and no longer appears.",
+          "proof_required": "Screenshot or output proving deletion.",
+          "status": "incomplete"
+        },
+        {
+          "index": 8,
+          "title": "Submit final proof",
+          "instructions": "Zip the folder and write what this project proved about SQLite/CRUD.",
+          "expected_output": "ZIP and explanation are ready.",
+          "proof_required": "Upload ZIP and 3-5 sentence reflection.",
+          "status": "incomplete"
+        }
+      ],
+      "created_at": "2026-06-02T16:21:12",
+      "status": "recommended",
+      "progress": {
+        "total": 8,
+        "complete": 0,
+        "percent": 0,
+        "started": false,
+        "next_step": {
+          "index": 1,
+          "title": "Create project folder",
+          "instructions": "Create a folder named workout_database_app with README.md and app.py.",
+          "expected_output": "Folder exists with README.md and app.py.",
+          "proof_required": "Screenshot or ZIP showing the folder.",
+          "status": "incomplete"
+        }
+      }
+    },
+    {
+      "project_id": "javascript_form_saver",
+      "name": "JavaScript Form Saver",
+      "source": "Project Coach V38",
+      "difficulty": "Beginner",
+      "estimated_time": "2-3 hours",
+      "skills": [
+        "JavaScript",
+        "Forms",
+        "Local Storage",
+        "HTML/CSS"
+      ],
+      "why": "Builds browser app confidence by saving form input without needing a backend yet.",
+      "first_step": "Create a form with name, note, and category fields, then save one entry to localStorage.",
+      "proof": "Upload ZIP and screenshot showing saved data still appears after refresh.",
+      "score": 91,
+      "steps": [
+        {
+          "index": 1,
+          "title": "Create project folder",
+          "instructions": "Create a folder named javascript_form_saver with README.md and starter files.",
+          "expected_output": "Folder exists with README.md.",
+          "proof_required": "Screenshot or ZIP.",
+          "status": "incomplete"
+        },
+        {
+          "index": 2,
+          "title": "Write project purpose",
+          "instructions": "In README.md, explain what JavaScript Form Saver does and which skills it trains: JavaScript, Forms, Local Storage, HTML/CSS.",
+          "expected_output": "README explains purpose and skills.",
+          "proof_required": "README.md.",
+          "status": "incomplete"
+        },
+        {
+          "index": 3,
+          "title": "Build the smallest working version",
+          "instructions": "Create a form with name, note, and category fields, then save one entry to localStorage.",
+          "expected_output": "A small feature works visibly.",
+          "proof_required": "Screenshot, terminal output, or code.",
+          "status": "incomplete"
+        },
+        {
+          "index": 4,
+          "title": "Add one real input",
+          "instructions": "Let the user enter or change at least one piece of data.",
+          "expected_output": "Input changes the output or saved data.",
+          "proof_required": "Screenshot/code.",
+          "status": "incomplete"
+        },
+        {
+          "index": 5,
+          "title": "Save or display result",
+          "instructions": "Show the result clearly or save it to a file/database/localStorage.",
+          "expected_output": "Result is visible or persistent.",
+          "proof_required": "Screenshot or saved file.",
+          "status": "incomplete"
+        },
+        {
+          "index": 6,
+          "title": "Clean the UI/output",
+          "instructions": "Make the output readable and label the important values.",
+          "expected_output": "Output is easy to understand.",
+          "proof_required": "Screenshot.",
+          "status": "incomplete"
+        },
+        {
+          "index": 7,
+          "title": "Write proof summary",
+          "instructions": "Write 3-5 sentences explaining what worked and what skill improved.",
+          "expected_output": "Reflection is specific.",
+          "proof_required": "README or submission text.",
+          "status": "incomplete"
+        },
+        {
+          "index": 8,
+          "title": "Submit final proof",
+          "instructions": "Zip the project and include proof artifacts.",
+          "expected_output": "ZIP is ready.",
+          "proof_required": "Upload ZIP and reflection.",
+          "status": "incomplete"
+        }
+      ],
+      "created_at": "2026-06-02T16:21:12",
+      "status": "recommended",
+      "progress": {
+        "total": 8,
+        "complete": 0,
+        "percent": 0,
+        "started": false,
+        "next_step": {
+          "index": 1,
+          "title": "Create project folder",
+          "instructions": "Create a folder named javascript_form_saver with README.md and starter files.",
+          "expected_output": "Folder exists with README.md.",
+          "proof_required": "Screenshot or ZIP.",
+          "status": "incomplete"
+        }
+      }
+    },
+    {
+      "project_id": "api_weather_lookup_app",
+      "name": "API Weather Lookup App",
+      "source": "Project Coach V38",
+      "difficulty": "Beginner",
+      "estimated_time": "2-4 hours",
+      "skills": [
+        "JavaScript",
+        "API / Routes",
+        "HTML/CSS",
+        "Fetch/API"
+      ],
+      "why": "Turns API and JavaScript gaps into a visible browser app with an easy proof target.",
+      "first_step": "Create index.html, style.css, and script.js with a button that displays sample weather JSON.",
+      "proof": "Upload a ZIP and screenshot showing city, temperature, and condition displayed after button click.",
+      "score": 75,
+      "steps": [
+        {
+          "index": 1,
+          "title": "Create browser files",
+          "instructions": "Create index.html, style.css, and script.js in one project folder.",
+          "expected_output": "All three files exist.",
+          "proof_required": "Screenshot or ZIP showing the files.",
+          "status": "incomplete"
+        },
+        {
+          "index": 2,
+          "title": "Build the page structure",
+          "instructions": "Add a title, button, and result box to index.html.",
+          "expected_output": "Button and result box are visible.",
+          "proof_required": "Screenshot of the page.",
+          "status": "incomplete"
+        },
+        {
+          "index": 3,
+          "title": "Connect JavaScript",
+          "instructions": "Link script.js and select the button/result elements.",
+          "expected_output": "Console has no missing-file errors.",
+          "proof_required": "Code snippet or screenshot.",
+          "status": "incomplete"
+        },
+        {
+          "index": 4,
+          "title": "Add click event",
+          "instructions": "Use addEventListener so the button changes the result text.",
+          "expected_output": "Clicking the button changes text.",
+          "proof_required": "Screenshot before and after click.",
+          "status": "incomplete"
+        },
+        {
+          "index": 5,
+          "title": "Load sample weather data",
+          "instructions": "Create a sample weather object or fetch sample JSON and display city, temperature, and condition.",
+          "expected_output": "The three weather fields display on the page.",
+          "proof_required": "Screenshot showing displayed data.",
+          "status": "incomplete"
+        },
+        {
+          "index": 6,
+          "title": "Style the card",
+          "instructions": "Make the result box readable and clean on desktop and narrow width.",
+          "expected_output": "Page is readable at normal and narrow sizes.",
+          "proof_required": "Two screenshots: desktop and narrow.",
+          "status": "incomplete"
+        },
+        {
+          "index": 7,
+          "title": "Write explanation",
+          "instructions": "In README.md, explain what fetch/API-style data means and what your button does.",
+          "expected_output": "README answers both questions.",
+          "proof_required": "README included.",
+          "status": "incomplete"
+        },
+        {
+          "index": 8,
+          "title": "Submit final proof",
+          "instructions": "Zip the project and include screenshots.",
+          "expected_output": "ZIP is ready with files and proof.",
+          "proof_required": "Upload ZIP and reflection.",
+          "status": "incomplete"
+        }
+      ],
+      "created_at": "2026-06-02T16:21:12",
+      "status": "recommended",
+      "progress": {
+        "total": 8,
+        "complete": 0,
+        "percent": 0,
+        "started": false,
+        "next_step": {
+          "index": 1,
+          "title": "Create browser files",
+          "instructions": "Create index.html, style.css, and script.js in one project folder.",
+          "expected_output": "All three files exist.",
+          "proof_required": "Screenshot or ZIP showing the files.",
+          "status": "incomplete"
+        }
+      }
+    },
+    {
+      "project_id": "help_desk_ticket_tracker",
+      "name": "Help Desk Ticket Tracker",
+      "source": "Project Coach V38",
+      "difficulty": "Intermediate",
+      "estimated_time": "4-8 hours",
+      "skills": [
+        "Flask",
+        "SQLite",
+        "Forms",
+        "Ticket System",
+        "IT Support"
+      ],
+      "why": "Connects your IT support experience to a portfolio project that demonstrates real workflow understanding.",
+      "first_step": "Create a ticket form with fields for issue, device, priority, status, and resolution notes.",
+      "proof": "Upload a ZIP and screenshots showing create, update status, and resolution notes.",
+      "score": 70,
+      "steps": [
+        {
+          "index": 1,
+          "title": "Create project folder",
+          "instructions": "Create a folder named workout_database_app with README.md and app.py.",
+          "expected_output": "Folder exists with README.md and app.py.",
+          "proof_required": "Screenshot or ZIP showing the folder.",
+          "status": "incomplete"
+        },
+        {
+          "index": 2,
+          "title": "Design the workout record",
+          "instructions": "Write the fields you will store: exercise, sets, reps, date, and notes.",
+          "expected_output": "README.md lists the fields and explains each one.",
+          "proof_required": "README.md included in ZIP.",
+          "status": "incomplete"
+        },
+        {
+          "index": 3,
+          "title": "Create the database/table",
+          "instructions": "Use SQLite or a JSON starter file to create storage for workout records.",
+          "expected_output": "Storage file exists and has a workouts structure/table.",
+          "proof_required": "Screenshot or code showing the table/structure.",
+          "status": "incomplete"
+        },
+        {
+          "index": 4,
+          "title": "Add create behavior",
+          "instructions": "Add one function or form action that saves a workout record.",
+          "expected_output": "At least one workout can be added.",
+          "proof_required": "Code plus screenshot/output showing the added workout.",
+          "status": "incomplete"
+        },
+        {
+          "index": 5,
+          "title": "Add list behavior",
+          "instructions": "Display all saved workout records.",
+          "expected_output": "Saved workouts appear in terminal/browser/output.",
+          "proof_required": "Screenshot of listed workouts.",
+          "status": "incomplete"
+        },
+        {
+          "index": 6,
+          "title": "Add update behavior",
+          "instructions": "Change one saved workout record.",
+          "expected_output": "An existing workout can be edited.",
+          "proof_required": "Before/after screenshot or terminal output.",
+          "status": "incomplete"
+        },
+        {
+          "index": 7,
+          "title": "Add delete behavior",
+          "instructions": "Remove one workout record.",
+          "expected_output": "A workout can be deleted and no longer appears.",
+          "proof_required": "Screenshot or output proving deletion.",
+          "status": "incomplete"
+        },
+        {
+          "index": 8,
+          "title": "Submit final proof",
+          "instructions": "Zip the folder and write what this project proved about SQLite/CRUD.",
+          "expected_output": "ZIP and explanation are ready.",
+          "proof_required": "Upload ZIP and 3-5 sentence reflection.",
+          "status": "incomplete"
+        }
+      ],
+      "created_at": "2026-06-02T16:21:12",
+      "status": "recommended",
+      "progress": {
+        "total": 8,
+        "complete": 0,
+        "percent": 0,
+        "started": false,
+        "next_step": {
+          "index": 1,
+          "title": "Create project folder",
+          "instructions": "Create a folder named workout_database_app with README.md and app.py.",
+          "expected_output": "Folder exists with README.md and app.py.",
+          "proof_required": "Screenshot or ZIP showing the folder.",
+          "status": "incomplete"
+        }
+      }
+    },
+    {
+      "project_id": "expense_tracker_cli",
+      "name": "Expense Tracker CLI",
+      "source": "Project Coach V38",
+      "difficulty": "Beginner",
+      "estimated_time": "2-3 hours",
+      "skills": [
+        "Python",
+        "Functions",
+        "Lists",
+        "JSON",
+        "File Handling"
+      ],
+      "why": "Strengthens Python basics with a useful real-life tool and gives clear proof through saved totals.",
+      "first_step": "Create expense_tracker.py with a list of three expenses and print the total.",
+      "proof": "Upload the Python file and a screenshot of the terminal total.",
+      "score": 63,
+      "steps": [
+        {
+          "index": 1,
+          "title": "Create project folder",
+          "instructions": "Create a folder named expense_tracker_cli with README.md and starter files.",
+          "expected_output": "Folder exists with README.md.",
+          "proof_required": "Screenshot or ZIP.",
+          "status": "incomplete"
+        },
+        {
+          "index": 2,
+          "title": "Write project purpose",
+          "instructions": "In README.md, explain what Expense Tracker CLI does and which skills it trains: Python, Functions, Lists, JSON.",
+          "expected_output": "README explains purpose and skills.",
+          "proof_required": "README.md.",
+          "status": "incomplete"
+        },
+        {
+          "index": 3,
+          "title": "Build the smallest working version",
+          "instructions": "Create expense_tracker.py with a list of three expenses and print the total.",
+          "expected_output": "A small feature works visibly.",
+          "proof_required": "Screenshot, terminal output, or code.",
+          "status": "incomplete"
+        },
+        {
+          "index": 4,
+          "title": "Add one real input",
+          "instructions": "Let the user enter or change at least one piece of data.",
+          "expected_output": "Input changes the output or saved data.",
+          "proof_required": "Screenshot/code.",
+          "status": "incomplete"
+        },
+        {
+          "index": 5,
+          "title": "Save or display result",
+          "instructions": "Show the result clearly or save it to a file/database/localStorage.",
+          "expected_output": "Result is visible or persistent.",
+          "proof_required": "Screenshot or saved file.",
+          "status": "incomplete"
+        },
+        {
+          "index": 6,
+          "title": "Clean the UI/output",
+          "instructions": "Make the output readable and label the important values.",
+          "expected_output": "Output is easy to understand.",
+          "proof_required": "Screenshot.",
+          "status": "incomplete"
+        },
+        {
+          "index": 7,
+          "title": "Write proof summary",
+          "instructions": "Write 3-5 sentences explaining what worked and what skill improved.",
+          "expected_output": "Reflection is specific.",
+          "proof_required": "README or submission text.",
+          "status": "incomplete"
+        },
+        {
+          "index": 8,
+          "title": "Submit final proof",
+          "instructions": "Zip the project and include proof artifacts.",
+          "expected_output": "ZIP is ready.",
+          "proof_required": "Upload ZIP and reflection.",
+          "status": "incomplete"
+        }
+      ],
+      "created_at": "2026-06-02T16:21:12",
+      "status": "recommended",
+      "progress": {
+        "total": 8,
+        "complete": 0,
+        "percent": 0,
+        "started": false,
+        "next_step": {
+          "index": 1,
+          "title": "Create project folder",
+          "instructions": "Create a folder named expense_tracker_cli with README.md and starter files.",
+          "expected_output": "Folder exists with README.md.",
+          "proof_required": "Screenshot or ZIP.",
+          "status": "incomplete"
+        }
+      }
+    },
+    {
+      "project_id": "personal_project_portfolio_page",
+      "name": "Personal Project Portfolio Page",
+      "source": "Project Coach V38",
+      "difficulty": "Beginner",
+      "estimated_time": "2-4 hours",
+      "skills": [
+        "HTML/CSS",
+        "Responsive Layout",
+        "Project Tracking"
+      ],
+      "why": "Creates a clean place to show KDT OS, FieldSeed, and future projects while improving layout skills.",
+      "first_step": "Create index.html with cards for three projects: KDT OS, FieldSeed, and one future app.",
+      "proof": "Upload HTML/CSS and screenshot at full screen and mobile width.",
+      "score": 57,
+      "steps": [
+        {
+          "index": 1,
+          "title": "Create project folder",
+          "instructions": "Create a folder named personal_project_portfolio_page with README.md and starter files.",
+          "expected_output": "Folder exists with README.md.",
+          "proof_required": "Screenshot or ZIP.",
+          "status": "incomplete"
+        },
+        {
+          "index": 2,
+          "title": "Write project purpose",
+          "instructions": "In README.md, explain what Personal Project Portfolio Page does and which skills it trains: HTML/CSS, Responsive Layout, Project Tracking.",
+          "expected_output": "README explains purpose and skills.",
+          "proof_required": "README.md.",
+          "status": "incomplete"
+        },
+        {
+          "index": 3,
+          "title": "Build the smallest working version",
+          "instructions": "Create index.html with cards for three projects: KDT OS, FieldSeed, and one future app.",
+          "expected_output": "A small feature works visibly.",
+          "proof_required": "Screenshot, terminal output, or code.",
+          "status": "incomplete"
+        },
+        {
+          "index": 4,
+          "title": "Add one real input",
+          "instructions": "Let the user enter or change at least one piece of data.",
+          "expected_output": "Input changes the output or saved data.",
+          "proof_required": "Screenshot/code.",
+          "status": "incomplete"
+        },
+        {
+          "index": 5,
+          "title": "Save or display result",
+          "instructions": "Show the result clearly or save it to a file/database/localStorage.",
+          "expected_output": "Result is visible or persistent.",
+          "proof_required": "Screenshot or saved file.",
+          "status": "incomplete"
+        },
+        {
+          "index": 6,
+          "title": "Clean the UI/output",
+          "instructions": "Make the output readable and label the important values.",
+          "expected_output": "Output is easy to understand.",
+          "proof_required": "Screenshot.",
+          "status": "incomplete"
+        },
+        {
+          "index": 7,
+          "title": "Write proof summary",
+          "instructions": "Write 3-5 sentences explaining what worked and what skill improved.",
+          "expected_output": "Reflection is specific.",
+          "proof_required": "README or submission text.",
+          "status": "incomplete"
+        },
+        {
+          "index": 8,
+          "title": "Submit final proof",
+          "instructions": "Zip the project and include proof artifacts.",
+          "expected_output": "ZIP is ready.",
+          "proof_required": "Upload ZIP and reflection.",
+          "status": "incomplete"
+        }
+      ],
+      "created_at": "2026-06-02T16:21:12",
+      "status": "recommended",
+      "progress": {
+        "total": 8,
+        "complete": 0,
+        "percent": 0,
+        "started": false,
+        "next_step": {
+          "index": 1,
+          "title": "Create project folder",
+          "instructions": "Create a folder named personal_project_portfolio_page with README.md and starter files.",
+          "expected_output": "Folder exists with README.md.",
+          "proof_required": "Screenshot or ZIP.",
+          "status": "incomplete"
+        }
+      }
+    }
+  ],
+  "active_count": 0,
+  "completed_count": 0,
+  "open_steps": 0,
+  "average_progress": 0,
+  "available_count": 8,
+  "rule": "The dashboard shows projects only. Open one project to work through its steps without a giant wall of cards."
+}

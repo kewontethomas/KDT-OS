@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KDT OS Project Execution</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="shell">
+    {% include '_nav.html' %}
+
+    <section class="hero product-hero">
+        <p class="eyebrow">V39.1 · PROJECT EXECUTION UX CLEANUP</p>
+        <h1>Project Execution</h1>
+        <p>Choose one build, open it, and work the next step. No more giant wall of every project step.</p>
+    </section>
+
+    <section class="grid four">
+        <div class="metric"><strong>{{ snapshot.active_count }}</strong><span>Active Builds</span></div>
+        <div class="metric"><strong>{{ snapshot.completed_count }}</strong><span>Completed Builds</span></div>
+        <div class="metric"><strong>{{ snapshot.open_steps }}</strong><span>Open Steps</span></div>
+        <div class="metric"><strong>{{ snapshot.average_progress }}%</strong><span>Average Progress</span></div>
+    </section>
+
+    {% if snapshot.recommended_focus %}
+    <section class="card accent">
+        <p class="eyebrow">Recommended Build</p>
+        <h2>{{ snapshot.recommended_focus.name }}</h2>
+        <p>{{ snapshot.recommended_focus.why }}</p>
+        <div class="score-line">
+            {{ snapshot.recommended_focus.progress.complete }}/{{ snapshot.recommended_focus.progress.total }} steps complete · {{ snapshot.recommended_focus.progress.percent }}%
+        </div>
+        {% if snapshot.recommended_focus.progress.next_step %}
+        <p><b>Next step:</b> {{ snapshot.recommended_focus.progress.next_step.title }}</p>
+        {% endif %}
+        <div class="button-row">
+            <a class="button-link" href="{{ url_for('project_execution_detail', project_id=snapshot.recommended_focus.project_id) }}">Open This Build</a>
+            <a class="button-link ghost" href="{{ url_for('project_execution_json') }}">View JSON</a>
+        </div>
+    </section>
+    {% endif %}
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">Execution Rule</p>
+            <h2>One project. One next step.</h2>
+            <p>{{ snapshot.rule }}</p>
+            <ul>
+                <li>Dashboard shows project cards only.</li>
+                <li>Detailed steps live on the individual project page.</li>
+                <li>Only mark steps complete when proof exists.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <p class="eyebrow">How to use this</p>
+            <h2>Open, build, prove, repeat</h2>
+            <p>Pick one project below, open it, complete the current step, and come back later without losing progress.</p>
+        </div>
+    </section>
+
+    <section class="card">
+        <p class="eyebrow">Active Project List</p>
+        <h2>Recommended projects turned into build plans</h2>
+        {% if snapshot.plans %}
+        <div class="reports compact-project-grid">
+            {% for plan in snapshot.plans %}
+            <article class="report-card {% if plan.progress.percent == 100 %}success{% elif plan.progress.started %}accent{% endif %}">
+                <small>{{ plan.difficulty }} · {{ plan.estimated_time }} · Score {{ plan.score }}%</small>
+                <strong>{{ plan.name }}</strong>
+                <p>{{ plan.why }}</p>
+                <p><b>Skills:</b> {{ plan.skills|join(', ') }}</p>
+                <div class="score-line">{{ plan.progress.complete }}/{{ plan.progress.total }} complete · {{ plan.progress.percent }}%</div>
+                {% if plan.progress.next_step %}
+                <p><b>Next:</b> {{ plan.progress.next_step.title }}</p>
+                {% else %}
+                <p><b>Status:</b> All steps complete.</p>
+                {% endif %}
+                <div class="button-row">
+                    <a class="button-link" href="{{ url_for('project_execution_detail', project_id=plan.project_id) }}">Open Project</a>
+                    <form method="post" action="{{ url_for('start_project_execution') }}">
+                        <input type="hidden" name="project_id" value="{{ plan.project_id }}">
+                        <button type="submit">Start / Resume</button>
+                    </form>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No project execution plans yet. Open Project Coach first to generate recommendations.</p>
+        {% endif %}
+    </section>
+
+    <section class="grid two">
+        <div class="card">
+            <p class="eyebrow">Proof Standard</p>
+            <h2>Do not mark complete by feeling</h2>
+            <p>A step is complete only when the expected output exists and proof can be uploaded or shown.</p>
+        </div>
+        <div class="card">
+            <p class="eyebrow">Memory</p>
+            <h2>Execution progress is saved</h2>
+            <p>KDT OS stores active build progress in <code>reports/project_execution.json</code>.</p>
+        </div>
+    </section>
+</main>
+</body>
+</html>

@@ -4300,6 +4300,12 @@ try:
 except Exception as exc:
     print(f"KDT OS V38 Project Coach failed to install: {exc}")
 
+try:
+    from kdt_project_execution_v39 import install as install_v39
+    install_v39(sys.modules[__name__])
+except Exception as exc:
+    print(f"KDT OS V39 Project Execution failed to install: {exc}")
+
 if __name__ == "__main__":
     ensure_ollama_ready(wait_seconds=3.0)
     app.run(debug=True)
